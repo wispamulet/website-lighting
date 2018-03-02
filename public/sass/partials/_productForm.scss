@@ -1,0 +1,16 @@
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  font-size: 2rem;
+  .types {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .type {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    align-items: center;
+    font-size: 1.6rem;
+  }
+}

@@ -1,23 +1,43 @@
-html {
-  font-size: 10px;
+@font-face {
+  font-family: 'open sans';
+  src: url('/fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: 400;
 }
 
+html {
+  font-family: 'open sans', 'sans-serif';
+  font-size: 62.5%;
+}
 body {
-  background: $purple;
-  background:#efefef;
-  &:before {
-    content: '';
-    display: block;
-    background: $grad;
-    height: 10px;
-    width: 100%;
-  }
+  // background: floralwhite;
+  height: 1200px;
 }
 
 .inner {
-  max-width:900px;
+  max-width: 900px;
   margin: 0 auto;
-  @media all and (max-width: 900px) {
-    padding: 2rem;
+  padding: 0 5rem;
+  background: floralwhite;
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
   }
+}
+
+.add {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  a {
+    height: 50px;
+    color: black;
+    font-size: 2rem;
+    text-decoration: none;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+.error {
+  font-size: 1.5rem;
 }
