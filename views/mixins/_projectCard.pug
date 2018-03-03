@@ -1,0 +1,11 @@
+mixin projectCard(project = {})
+  .project
+    .project__image
+      image
+    .project__text
+      .project__text__heading
+        h2= project.name
+        .project__edit
+          a(href=`/project/${project._id}/edit`)
+            != h.icon('pencil')
+      .project__text__details

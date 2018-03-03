@@ -2,9 +2,23 @@
   .product {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    // &__edit {
+    //   display: grid;
+    //   align-content: center;
+    // }
+    &__text {
+      &__heading {
+        display: grid;
+        grid-template-columns: 1fr 3rem;
+        // grid-auto-flow: column;
+        align-items: center;
+      }
+    }
     h2 {
       color: $yellow;
+      font-size: 2rem;
     }
   }
 }

@@ -1,0 +1,13 @@
+mixin projectForm(project = {})
+  form(action=`/addProject/${project._id || ''}` method="POST")
+    label(for="type") Type:
+    - const choices = ['Indoor', 'Outdoor']
+    - const types = project.type || []
+    .types
+      each choice in choices
+        .type
+          input(type="checkbox" id=choice value=choice name="type" checked=(types.includes(choice)))
+          label(for=choice) #{choice}
+    label(for="name") Name:
+    input(type="text" id="name" name="name" value=project.name)
+    input(type="submit" value="Save")
