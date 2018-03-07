@@ -1,5 +1,5 @@
 mixin projectForm(project = {})
-  form(action=`/addProject/${project._id || ''}` method="POST")
+  form(action=`/addProject/${project._id || ''}` method="POST" enctype="multipart/form-data")
     label(for="type") Type:
     - const choices = ['Indoor', 'Outdoor']
     - const types = project.type || []
@@ -10,4 +10,12 @@ mixin projectForm(project = {})
           label(for=choice) #{choice}
     label(for="name") Name:
     input(type="text" id="name" name="name" value=project.name)
+    label(for="description") Description:
+    input(type="text" id="description" name="description" value=project.description)
+    label(for="photo") Photo1:
+    input(type="file" name="photo" accept="image/gif, image/png, image/jpeg")
+    label(for="photo") Photo2:
+    input(type="file" name="photo" accept="image/gif, image/png, image/jpeg")
+    label(for="photo") Photo3:
+    input(type="file" name="photo" accept="image/gif, image/png, image/jpeg")
     input(type="submit" value="Save")

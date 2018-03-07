@@ -1,7 +1,7 @@
 mixin projectCard(project = {})
   .project
     .project__image
-      image
+      image(src=`/uploads/${project.photo[0]}`)
     .project__text
       .project__text__heading
         h2= project.name

@@ -19,7 +19,19 @@ router.post('/addProduct/:id', catchErrors(productController.updateProduct));
 
 // project
 router.get('/addProject', projectController.addProject);
-router.post('/addProject', catchErrors(projectController.createProject));
+router.post(
+  '/addProject',
+  projectController.upload,
+  catchErrors(projectController.resize),
+  catchErrors(projectController.createProject)
+);
 router.get('/projects', catchErrors(projectController.getProjects));
+// editProject
+router.post(
+  '/addProject/:id',
+  projectController.upload,
+  catchErrors(projectController.resize),
+  catchErrors(projectController.updateProject)
+);
 
 module.exports = router;

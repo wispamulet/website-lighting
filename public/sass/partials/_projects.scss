@@ -7,10 +7,13 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 80% 1fr;
-    &__text__heading {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-auto-flow: column;
+    &__text {
+      padding: 1rem;
+      &__heading {
+        display: grid;
+        grid-template-columns: 1fr 3rem;
+        align-items: center;
+      }
     }
   }
 }

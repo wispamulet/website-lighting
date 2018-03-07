@@ -10,7 +10,12 @@ const projectSchema = new mongoose.Schema({
     required: 'Please enter a project name!'
   },
   slug: String,
-  type: String
+  type: String,
+  description: {
+    type: String,
+    trim: true
+  },
+  photo: [String]
 });
 
 projectSchema.pre('save', function (next) {

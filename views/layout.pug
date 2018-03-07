@@ -12,6 +12,8 @@ html(lang="en")
       .add
         a(href='/addProduct') Add Product
         a(href='/addProject') Add Project
+      .logo
+
       header
         nav.nav
           .nav__section.nav__section--pages
@@ -20,7 +22,8 @@ html(lang="en")
                 if item.dropdown
                   a.nav__link(href=item.slug class=(currentPath.startsWith(item.slug) ? 'nav__link--active' : ''))
                     span.nav__title #{item.title}
-                      span.down ∨
+                      span.down
+                        i.fa.fa-angle-down
                   - const list = item.dropdown
                   ul.nav__dropdown
                     each item in list
@@ -47,3 +50,4 @@ html(lang="en")
       .content
 
     block scripts
+      script(defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js")

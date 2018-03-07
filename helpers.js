@@ -39,3 +39,13 @@ exports.menu = [
   { slug: '/about-us', title: 'about us' },
   { slug: '/contact', title: 'contact' },
 ];
+
+// exports.menu = [
+//   { slug: '/home', title: 'home' },
+//   { slug: '/led-corn-light', title: 'corn' },
+//   { slug: '/led-garden-light', title: 'garden' },
+//   { slug: '/led-street-light', title: 'street' },
+//   { slug: '/support', title: 'support' },
+//   { slug: '/about-us', title: 'about us' },
+//   { slug: '/contact', title: 'contact' },
+// ];
