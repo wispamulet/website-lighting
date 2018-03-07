@@ -454,6 +454,9 @@ body {
 .error {
   font-size: 1.5rem; }
 
+header {
+  background: black; }
+
 .nav {
   background: black;
   display: -ms-grid;
@@ -472,8 +475,8 @@ body {
     font-size: 1.6rem;
     font-weight: 600;
     position: relative;
-    display: -ms-grid;
-    display: grid;
+    display: -ms-flexbox;
+    display: flex;
     -ms-flex-pack: center;
         justify-content: center;
     -ms-flex-align: center;
@@ -509,7 +512,7 @@ body {
     .nav__dropdown__link:hover {
       color: #f08519; }
   .nav .down {
-    padding: 0 .5rem; }
+    padding: 0 1rem; }
 
 .nav__section--pages {
   display: -ms-grid;
@@ -520,27 +523,54 @@ body {
   width: 60%;
   margin: 0 auto; }
 
-@media (max-width: 1200px) {
+[aria-controls="menu-list"] {
+  display: none;
+  background: black;
+  color: white;
+  width: 5rem;
+  height: 5rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: .5rem; }
+
+@media (max-width: 1250px) {
+  .nav__section {
+    width: 90%; } }
+
+@media (max-width: 900px) {
   .nav__section {
     width: 100%; } }
 
 @media (max-width: 800px) {
-  .nav__link {
-    -ms-flex-pack: start;
-        justify-content: flex-start; }
-  .nav__title {
-    padding: 0 1rem; }
-  .nav__dropdown {
-    position: relative; }
-    .nav__dropdown__link {
-      width: 100%;
-      font-size: 1.5rem;
-      height: 4rem; }
-      .nav__dropdown__link span {
-        padding: 0 2rem; }
+  .nav {
+    height: 0;
+    overflow: hidden; }
+    .nav__link {
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+    .nav__title {
+      padding: 0 1rem; }
+    .nav__dropdown {
+      position: relative; }
+      .nav__dropdown__link {
+        width: 100%;
+        font-size: 1.5rem;
+        height: 4rem; }
+        .nav__dropdown__link span {
+          padding: 0 2rem; }
   .nav__section--pages {
     -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr; } }
+        grid-template-columns: 1fr; }
+  [aria-controls="menu-list"] {
+    display: block; }
+  [aria-expanded="false"] > .close {
+    display: none; }
+  [aria-expanded="true"] > .close {
+    display: block; }
+  [aria-expanded="true"] > .open {
+    display: none; }
+  [aria-expanded="true"] ~ .nav {
+    height: 100%; } }
 
 form {
   display: -ms-grid;

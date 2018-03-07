@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -98,20 +98,48 @@ exports.$$ = $$;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(1);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.toggleNav = exports.navButton = undefined;
 
 var _bling = __webpack_require__(0);
+
+var navButton = (0, _bling.$)('header button[aria-expanded]');
+
+function toggleNav() {
+  var expanded = navButton.getAttribute('aria-expanded') === 'true' || false;
+  navButton.setAttribute('aria-expanded', !expanded);
+}
+
+exports.navButton = navButton;
+exports.toggleNav = toggleNav;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(2);
+
+var _bling = __webpack_require__(0);
+
+var _toggleNav = __webpack_require__(1);
+
+_toggleNav.navButton.on('click', _toggleNav.toggleNav);
 
 /***/ })
 /******/ ]);

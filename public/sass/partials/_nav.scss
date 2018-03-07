@@ -1,3 +1,6 @@
+header {
+  background: black;
+}
 .nav {
   // background: $yellow;
   background: black;
@@ -17,7 +20,7 @@
     font-size: 1.6rem;
     font-weight: 600;
     position: relative;
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     &--active {
@@ -61,7 +64,8 @@
   }
 
   .down {
-    padding: 0 .5rem;
+    // display: none;
+    padding: 0 1rem;
   }
 }
 
@@ -75,7 +79,26 @@
   }
 }
 
-@media (max-width: 1200px) {
+// hide navbar button
+[aria-controls="menu-list"] {
+  display: none;
+  background: black;
+  color: white;
+  width: 5rem;
+  height: 5rem;
+  font-size: 2rem;
+  // margin-bottom: 1rem;
+  border: none;
+  border-radius: .5rem;
+}
+
+@media (max-width: 1250px) {
+  .nav__section {
+    width: 90%;
+  }
+}
+
+@media (max-width: 900px) {
   .nav__section {
     width: 100%;
   }
@@ -83,8 +106,11 @@
 
 @media (max-width: 800px) {
   .nav {
+    // hide the navbar
+    height: 0;
+    overflow: hidden;
     &__link {
-      justify-content: flex-start;
+      justify-content: space-between;
     }
     &__title {
       padding: 0 1rem;
@@ -101,9 +127,35 @@
       }
     }
   }
+
   .nav__section {
     &--pages {
       grid-template-columns: 1fr;
     }
+  }
+
+  // display navbar button
+  [aria-controls="menu-list"] {
+    display: block;
+  }
+
+  [aria-expanded="false"] > .close {
+    display: none;
+  }
+
+  [aria-expanded="true"] > .close {
+    display: block;
+  }
+
+  [aria-expanded="true"] > .open {
+    display: none;
+  }
+
+  // display navbar
+  [aria-expanded="true"] ~ .nav {
+    height: 100%;
+    // .down {
+    //   display: block;
+    // }
   }
 }
