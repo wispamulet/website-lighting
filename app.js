@@ -9,6 +9,7 @@ const passport = require('passport');
 const promisify = require('es6-promisify');
 const flash = require('connect-flash');
 const expressValidator = require('express-validator');
+const i18n = require('i18n-express');
 const routes = require('./routes/index');
 const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
@@ -64,6 +65,14 @@ app.use((req, res, next) => {
   req.login = promisify(req.login, req);
   next();
 });
+
+//
+app.use(i18n({
+  translationsPath: path.join(__dirname, 'i18n'),
+  siteLangs: ['en', 'es'],
+  textsVarName: 'translation',
+  paramLangName: 'lang'
+}));
 
 // After allllll that above middleware, we finally handle our own routes!
 app.use('/', routes);

@@ -10,35 +10,49 @@ html(lang="en")
   body
     block header
       .add
-        a(href='/addProduct') Add Product
         a(href='/addProject') Add Project
-      .logo
-      header
-        button(aria-expanded="false" aria-controls="menu-list")
-          span.open
-            i.fa.fa-align-justify
-          span.close
-            i.fa.fa-times
-        nav.nav
-          .nav__section.nav__section--pages
-            each item in h.menu
-              li.nav__item
-                if item.dropdown
-                  a.nav__link(href=item.slug class=(currentPath.startsWith(item.slug) ? 'nav__link--active' : ''))
-                    span.nav__title #{item.title}
-                    span.down
-                      i.fa.fa-angle-down
-                  - const list = item.dropdown
-                  ul.nav__dropdown
-                    each item in list
-                      li.nav__dropdown__item
-                        a.nav__dropdown__link(href=item.slug)
-                          span #{item.title}
-                else
-                  a.nav__link(href=item.slug class=(currentPath.startsWith(item.slug) ? 'nav__link--active' : ''))
-                    span.nav__title #{item.title}
-          //- .nav__section.nav__section--search
-          //- .nav__section.nav__section--user
+        a(href='/addProduct') Add Product
+      .header__wrapper
+        .language__wrapper
+          .language
+            - console.log(currentPath)
+            //- a(href=`${currentPath}?lang=en`) EN
+            a.language--inactive() EN
+            span |
+            //- a(href=`${currentPath}?lang=es`) ES
+            a.language--inactive() ES
+            span |
+            a.language--inactive() fr
+        .logo
+          image(src="/images/photos/logo.jpg")
+        header
+          button(aria-expanded="false" aria-controls="menu-list")
+            span.open
+              i.fa.fa-align-justify
+            span.close
+              i.fa.fa-times
+          nav.nav
+            .nav__section.nav__section--pages
+              each item in h.menu
+                li.nav__item
+                  if item.dropdown
+                    //- href=item.slug
+                    a.nav__link( class=(currentPath.startsWith(item.slug) ? 'nav__link--active' : '') aria-expanded="false" aria-controls="dropdown-list")
+                      span.nav__title #{item.title}
+                      span.down
+                        i.fa.fa-angle-up
+                        i.fa.fa-angle-down
+                    - const list = item.dropdown
+                    ul.nav__dropdown
+                      each item in list
+                        li.nav__dropdown__item
+                          a.nav__dropdown__link(href=item.slug)
+                            span #{item.title}
+                  else
+                    a.nav__link(href=item.slug class=(currentPath.startsWith(item.slug) ? 'nav__link--active' : ''))
+                      span.nav__title #{item.title}
+            //- .nav__section.nav__section--search
+            //- .nav__section.nav__section--user
 
     block messages
       if locals.flashes
@@ -50,8 +64,19 @@ html(lang="en")
                 .flash(class=`flash--${category}`)
                   p.flash__text!= message
                   button.flash__remove(onClick="this.parentElement.remove()") &times;
+
     block content
       .content
+
+    block footer
+      footer
+        .socials
+          p 123
+        .contact
+          p 456
+        .copyright
+          p New Sunshine 2018
+
 
     block scripts
       script(defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js")

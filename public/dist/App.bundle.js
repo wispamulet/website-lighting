@@ -106,19 +106,17 @@ exports.$$ = $$;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.toggleNav = exports.navButton = undefined;
+function toggle() {
+  if (window.innerWidth > 800) {
+    return;
+  }
 
-var _bling = __webpack_require__(0);
-
-var navButton = (0, _bling.$)('header button[aria-expanded]');
-
-function toggleNav() {
-  var expanded = navButton.getAttribute('aria-expanded') === 'true' || false;
-  navButton.setAttribute('aria-expanded', !expanded);
+  var expanded = this.getAttribute('aria-expanded') === 'true' || false;
+  this.setAttribute('aria-expanded', !expanded);
+  // console.log('click');
 }
 
-exports.navButton = navButton;
-exports.toggleNav = toggleNav;
+exports.default = toggle;
 
 /***/ }),
 /* 2 */
@@ -137,9 +135,60 @@ __webpack_require__(2);
 
 var _bling = __webpack_require__(0);
 
-var _toggleNav = __webpack_require__(1);
+var _toggle = __webpack_require__(1);
 
-_toggleNav.navButton.on('click', _toggleNav.toggleNav);
+var _toggle2 = _interopRequireDefault(_toggle);
+
+var _changeLanguage = __webpack_require__(10);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _bling.$)('header button[aria-expanded]').on('click', _toggle2.default);
+(0, _bling.$$)('header a[aria-expanded]').forEach(function (btn) {
+  btn.on('click', _toggle2.default);
+});
+
+// const links = $$('.language a');
+console.log(_changeLanguage.links);
+_changeLanguage.links.forEach(function (link) {
+  link.on('click', _changeLanguage.changeLanguage);
+});
+
+/***/ }),
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.changeLanguage = exports.links = undefined;
+
+var _bling = __webpack_require__(0);
+
+var links = (0, _bling.$$)('.language a');
+
+function changeLanguage() {
+  // console.log(this);
+  this.classList.add('language--active');
+  var otherLinks = this.parentElement.querySelectorAll('.language--inactive');
+  console.log(otherLinks);
+  this.classList.remove('language--inactive');
+  otherLinks.forEach(function (link) {
+    link.classList.remove('language--active');
+  });
+}
+
+exports.links = links;
+exports.changeLanguage = changeLanguage;
 
 /***/ })
 /******/ ]);

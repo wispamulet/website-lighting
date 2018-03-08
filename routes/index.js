@@ -1,14 +1,17 @@
 const express = require('express');
-const homeController = require('../controllers/homeController');
+const navController = require('../controllers/navController');
 const productController = require('../controllers/productController');
 const projectController = require('../controllers/projectController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 const router = express.Router();
 
-// home
-router.get('/', homeController.index);
-router.get('/home', homeController.home);
+// navbar
+router.get('/', navController.index);
+router.get('/home', navController.home);
+router.get('/support', navController.support);
+router.get('/about-us', navController.aboutUs);
+router.get('/contact', navController.contact);
 
 // product
 router.get('/addProduct', productController.addProduct);

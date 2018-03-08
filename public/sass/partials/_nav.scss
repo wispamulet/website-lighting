@@ -1,9 +1,39 @@
-header {
-  background: black;
+.language__wrapper {
+  background: $black;
+  display: flex;
+  justify-content: flex-end;
+  .language {
+    font-size: 1.4rem;
+    padding: .5rem 5rem;
+    &--inactive {
+      color: $white !important;
+    }
+    &--active {
+      color: $yellow !important;
+    }
+    a {
+      text-decoration: none;
+    }
+    span {
+      color: lighten($black, 70%);
+    }
+  }
 }
+
+.logo {
+  background: $black;
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  background: $black;
+  display: grid;
+}
+
 .nav {
   // background: $yellow;
-  background: black;
+  background: $black;
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-flow: column;
@@ -12,13 +42,16 @@ header {
   &__item {
     list-style: none;
   }
+  &__item:hover > &__dropdown {
+    display: block;
+  }
   &__link {
     height: 5rem;
     text-decoration: none;
     text-transform: uppercase;
-    color: white;
+    color: $white;
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 500;
     position: relative;
     display: flex;
     justify-content: center;
@@ -28,18 +61,15 @@ header {
     }
   }
   &__link:hover {
-    // color: black;
+    // color: $black;
     color: $yellow;
     transition: all .5s ease;
-  }
-  &__item:hover > &__dropdown {
-    display: block;
   }
   &__dropdown {
     display: none;
     position: absolute;
-    // background: white;
-    background: black;
+    // background: $white;
+    background: $black;
     margin: 0;
     list-style: none;
     padding-left: 0;
@@ -52,7 +82,7 @@ header {
       align-items: center;
       border-bottom: 1px solid rgba(0, 0, 0, .1);
       // color: $yellow;
-      color: white;
+      color: $white;
       font-size: 1.4rem;
       span {
         padding-left: 2rem;
@@ -62,10 +92,11 @@ header {
       color: $yellow;
     }
   }
-
   .down {
-    // display: none;
-    padding: 0 1rem;
+    padding-left: 1rem;
+    .fa-angle-up {
+      display: none;
+    }
   }
 }
 
@@ -81,9 +112,10 @@ header {
 
 // hide navbar button
 [aria-controls="menu-list"] {
+  justify-self: flex-end;
   display: none;
-  background: black;
-  color: white;
+  background: $black;
+  color: $white;
   width: 5rem;
   height: 5rem;
   font-size: 2rem;
@@ -109,6 +141,9 @@ header {
     // hide the navbar
     height: 0;
     overflow: hidden;
+    &__item:hover > &__dropdown {
+      display: none;
+    }
     &__link {
       justify-content: space-between;
     }
@@ -154,8 +189,29 @@ header {
   // display navbar
   [aria-expanded="true"] ~ .nav {
     height: 100%;
-    // .down {
-    //   display: block;
-    // }
+    .down {
+      padding: 0 1rem;
+    }
+  }
+
+  // toggle navbar dropdown
+  [aria-expanded="false"] ~.nav__dropdown {
+    display: none !important;
+  }
+  [aria-expanded="false"] > .down .fa-angle-up {
+    display: none;
+  }
+  [aria-expanded="false"] > .down .fa-angle-down {
+    display: block;
+  }
+
+  [aria-expanded="true"] ~.nav__dropdown {
+    display: block !important;
+  }
+  [aria-expanded="true"] > .down .fa-angle-up {
+    display: block;
+  }
+  [aria-expanded="true"] > .down .fa-angle-down {
+    display: none;
   }
 }

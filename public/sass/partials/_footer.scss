@@ -1,0 +1,14 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  background: $black-lighter;
+  color: $white;
+  font-size: 1.5rem;
+  .socials {
+    height: 400px;
+  }
+  .contact {
+    background: $black;
+    height: 300px;;
+  }
+}

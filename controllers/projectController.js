@@ -17,10 +17,10 @@ const multerOption = {
   }
 };
 
-exports.upload = multer(multerOption).array('photo', 3);
 // The array of files will be stored in req.files, if no files, req.files = []
+exports.upload = multer(multerOption).array('photo', 3);
 
-exports.resize = async (req, res, next) => { // resize and save to uploads folder
+exports.resize = async (req, res, next) => { // resize and save to /public/uploads folder
   // console.log(req.files);
 
   const rename = (file) => {
