@@ -1,19 +1,6 @@
 .projects {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
-  .project {
-    height: 400px;
+  &-gallery {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 80% 1fr;
-    &__text {
-      padding: 1rem;
-      &__heading {
-        display: grid;
-        grid-template-columns: 1fr 3rem;
-        align-items: center;
-      }
-    }
+    grid-template-columns: repeat(3, 1fr);
   }
 }

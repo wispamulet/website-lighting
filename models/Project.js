@@ -12,10 +12,17 @@ const projectSchema = new mongoose.Schema({
   slug: String,
   type: String,
   description: {
-    type: String,
-    trim: true
+    type: [String],
+    trim: true,
   },
-  photo: [String]
+  photos: [String],
+  dimensions: [
+    {
+      w: String,
+      h: String
+    }
+  ],
+  photoThumbnails: [String]
 });
 
 projectSchema.pre('save', function (next) {

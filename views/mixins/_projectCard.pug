@@ -1,7 +1,9 @@
 mixin projectCard(project = {})
-  .project
+  //- .project
     .project__image
-      image(src=`/uploads/${project.photo[0]}`)
+      - const images = project.photo
+      each image in images
+        img(src=`/uploads/${image}` class=(image === project.photo[0] ? '' : 'project__image--hide'))
     .project__text
       .project__text__heading
         h2= project.name
@@ -9,3 +11,14 @@ mixin projectCard(project = {})
           a(href=`/project/${project._id}/edit`)
             != h.icon('pencil')
       .project__text__details
+        p= project.description[0]
+  - const images = project.photos
+  - const thumbnails = project.photoThumbnails
+  - const dimensions = project.dimensions
+  - let index = 0
+    each image in images
+      figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+        a(href=`/uploads/${image}` itemprop="contentUrl" data-size=`${dimensions[index].w}x${dimensions[index].h}`)
+          img(src=`/uploads/${thumbnails[index]}` itemprop="thumbnail" alt="Image description")
+        figcaption(itemprop="caption description")= project.description[index]
+      - index += 1;

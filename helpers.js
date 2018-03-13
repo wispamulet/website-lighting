@@ -19,33 +19,3 @@ exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`); /
 
 // Some details about the site
 exports.siteName = `New Sunshine LED Lighting Manufacturer`;
-
-const projectsDropdown = [
-  { slug: '/projects/indoor', title: 'Indoor' },
-  { slug: '/projects/outdoor', title: 'Outdoor' },
-];
-
-const productsDropdown = [
-  { slug: '/products/led-corn-light', title: 'LED Corn Light' },
-  { slug: '/products/led-garden-light', title: 'LED Garden Light' },
-  { slug: '/products/led-street-light', title: 'LED Street Light' }
-];
-
-exports.menu = [
-  { slug: '/home', title: 'home' },
-  { slug: '/projects', title: 'projects', dropdown: [...projectsDropdown] },
-  { slug: '/products', title: 'products', dropdown: [...productsDropdown] },
-  { slug: '/support', title: 'support' },
-  { slug: '/about-us', title: 'about us' },
-  { slug: '/contact', title: 'contact' },
-];
-
-// exports.menu = [
-//   { slug: '/home', title: 'home' },
-//   { slug: '/led-corn-light', title: 'corn' },
-//   { slug: '/led-garden-light', title: 'garden' },
-//   { slug: '/led-street-light', title: 'street' },
-//   { slug: '/support', title: 'support' },
-//   { slug: '/about-us', title: 'about us' },
-//   { slug: '/contact', title: 'contact' },
-// ];

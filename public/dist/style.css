@@ -420,9 +420,6 @@ html {
   font-family: 'open sans', 'sans-serif';
   font-size: 62.5%; }
 
-.content {
-  height: 500px; }
-
 .inner {
   max-width: 900px;
   margin: 0 auto;
@@ -463,11 +460,10 @@ html {
   .language__wrapper .language {
     font-size: 1.4rem;
     padding: .5rem 5rem; }
-    .language__wrapper .language--inactive {
-      color: #ffffff !important; }
     .language__wrapper .language--active {
       color: #f08519 !important; }
     .language__wrapper .language a {
+      color: #ffffff;
       text-decoration: none; }
     .language__wrapper .language span {
       color: #b3b3b3; }
@@ -485,6 +481,7 @@ header {
   display: grid; }
 
 .nav {
+  z-index: 1;
   background: #000000;
   display: -ms-grid;
   display: grid;
@@ -630,7 +627,99 @@ footer {
     height: 400px; }
   footer .contact {
     background: #000000;
-    height: 300px; }
+    padding: 30px 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px; }
+    footer .contact > * {
+      padding: 0 20px; }
+    footer .contact__about {
+      -ms-grid-column: 2;
+          grid-column-start: 2; }
+      footer .contact__about__description {
+        font-size: 1.6rem;
+        text-indent: 2rem;
+        line-height: 1.2; }
+      footer .contact__about__more {
+        color: #f08519;
+        text-transform: capitalize;
+        text-decoration: none; }
+        footer .contact__about__more span {
+          padding-left: 1.5rem; }
+    footer .contact__info > h2, footer .contact__email > h2 {
+      text-align: center;
+      color: #f08519;
+      font-size: 2rem;
+      text-transform: uppercase;
+      font-weight: 400; }
+    footer .contact__info .divide {
+      width: 100%;
+      height: 1px;
+      background: #4e4e4e; }
+    footer .contact__info p {
+      text-align: center;
+      font-size: 1.3rem; }
+      footer .contact__info p span {
+        font-style: italic;
+        color: #d8d6d6; }
+    footer .contact__email {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-align: center;
+          align-items: center; }
+      footer .contact__email button {
+        outline: none;
+        color: #ffffff;
+        background: #000000;
+        border: 1px #ffffff solid;
+        border-radius: .5rem;
+        padding: 1.2rem 2rem;
+        margin: 2rem 0;
+        font-size: 1.2rem;
+        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        transition: all .5s ease; }
+        footer .contact__email button:hover {
+          background: #f08519; }
+  footer .copyright {
+    font-size: 1.2rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[10];
+        grid-template-columns: repeat(10, 1fr); }
+    footer .copyright p {
+      grid-column: 3 / -1;
+      color: #f08519; }
+      footer .copyright p span {
+        color: #ffffff; }
+
+@media (max-width: 1200px) {
+  .contact {
+    -ms-grid-columns: (1fr)[3] !important;
+        grid-template-columns: repeat(3, 1fr) !important; }
+    .contact__about {
+      -ms-grid-column: 1 !important;
+          grid-column-start: 1 !important; } }
+
+@media (max-width: 800px) {
+  .contact {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important; }
+    .contact > * {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 3fr 1fr;
+          grid-template-columns: 1fr 3fr 1fr;
+      -ms-grid-column-align: center;
+          justify-items: center; }
+      .contact > * > * {
+        -ms-grid-column: 2;
+            grid-column-start: 2; } }
 
 form {
   display: -ms-grid;
@@ -671,29 +760,11 @@ form {
     color: #f08519;
     font-size: 2rem; }
 
-.projects {
+.projects-gallery {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem; }
-  .projects .project {
-    height: 400px;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: 80% 1fr;
-        grid-template-rows: 80% 1fr; }
-    .projects .project__text {
-      padding: 1rem; }
-      .projects .project__text__heading {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 1fr 3rem;
-            grid-template-columns: 1fr 3rem;
-        -ms-flex-align: center;
-            align-items: center; }
+      grid-template-columns: repeat(3, 1fr); }
 
 @keyframes slideIn {
   0% {
@@ -748,5 +819,76 @@ form {
     background: linear-gradient(35deg, #f1e767 0%, #feb645 100%); }
   .flash p {
     margin: 0; }
+
+.content .slideshow {
+  max-width: 100%;
+  position: relative; }
+  .content .slideshow:hover .dots {
+    opacity: 1 !important; }
+  .content .slideshow .slide {
+    display: none;
+    position: relative;
+    transition: all .5s ease-in-out; }
+    .content .slideshow .slide img {
+      width: 100%;
+      background-size: cover; }
+    .content .slideshow .slide__caption {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      padding: 1rem;
+      font-size: 1.2rem;
+      background: #4e4e4e;
+      color: #b3b3b3; }
+    .content .slideshow .slide--show {
+      display: block !important; }
+  .content .slideshow .prev, .content .slideshow .next {
+    position: absolute;
+    top: calc(50% - 50px);
+    font-size: 5rem;
+    padding: 0 3rem;
+    border-radius: 1rem;
+    height: 100px;
+    color: #ffffff;
+    background: rgba(150, 120, 120, 0.15);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+    .content .slideshow .prev:hover, .content .slideshow .next:hover {
+      background: rgba(150, 120, 120, 0.3); }
+  .content .slideshow .prev {
+    left: 0;
+    border-radius: 0 .5rem .5rem 0; }
+  .content .slideshow .next {
+    right: 0;
+    border-radius: .5rem 0 0 .5rem; }
+  .content .slideshow .dots {
+    width: 150px;
+    position: absolute;
+    bottom: 1rem;
+    left: calc(50% - 75px);
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (3rem)[5];
+        grid-template-columns: repeat(5, 3rem);
+    opacity: 0;
+    transition: all .5s ease-in-out; }
+    .content .slideshow .dots .dot {
+      background: #ffffff;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%;
+      transition: all .5s ease-out; }
+      .content .slideshow .dots .dot--active, .content .slideshow .dots .dot:hover {
+        background: #898686; }
+
+@keyframes fade {
+  from {
+    opacity: 0.8; }
+  to {
+    opacity: 1; } }
+  .content .slideshow .fade {
+    animation: fade 3s; }
 
 /*# sourceMappingURL=style.css.map*/

@@ -5,6 +5,8 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title= `${title} | ${h.siteName}`
+    link(rel="stylesheet", href="/photoswipe/photoswipe.css")
+    link(rel="stylesheet", href="/photoswipe/default-skin/default-skin.css")
     link(rel="stylesheet", href="/dist/style.css")
     link(rel="shortcut icon" type="image/png" href="/images/icons/doughnut.png")
   body
@@ -15,16 +17,11 @@ html(lang="en")
       .header__wrapper
         .language__wrapper
           .language
-            - console.log(currentPath)
-            //- a(href=`${currentPath}?lang=en`) EN
-            a.language--inactive() EN
+            a(href=`${currentPath}?clang=en` class=(lang === 'en' ? 'language--active' : '')) EN
             span |
-            //- a(href=`${currentPath}?lang=es`) ES
-            a.language--inactive() ES
-            span |
-            a.language--inactive() fr
+            a(href=`${currentPath}?clang=es` class=(lang === 'es' ? 'language--active' : '')) ES
         .logo
-          image(src="/images/photos/logo.jpg")
+          img(src="/images/photos/logo.jpg")
         header
           button(aria-expanded="false" aria-controls="menu-list")
             span.open
@@ -33,24 +30,23 @@ html(lang="en")
               i.fa.fa-times
           nav.nav
             .nav__section.nav__section--pages
-              each item in h.menu
+              each ITEM in TRANSLATION.MENU
                 li.nav__item
-                  if item.dropdown
-                    //- href=item.slug
-                    a.nav__link( class=(currentPath.startsWith(item.slug) ? 'nav__link--active' : '') aria-expanded="false" aria-controls="dropdown-list")
-                      span.nav__title #{item.title}
+                  if ITEM.DROPDOWN
+                    a.nav__link(href=ITEM.SLUG class=(currentPath.startsWith(ITEM.SLUG) ? 'nav__link--active' : '') aria-expanded="false" aria-controls="dropdown-list")
+                      span.nav__title #{ITEM.TITLE}
                       span.down
                         i.fa.fa-angle-up
                         i.fa.fa-angle-down
-                    - const list = item.dropdown
+                    - const LIST = ITEM.DROPDOWN
                     ul.nav__dropdown
-                      each item in list
+                      each ITEM in LIST
                         li.nav__dropdown__item
-                          a.nav__dropdown__link(href=item.slug)
-                            span #{item.title}
+                          a.nav__dropdown__link(href=ITEM.SLUG)
+                            span #{ITEM.TITLE}
                   else
-                    a.nav__link(href=item.slug class=(currentPath.startsWith(item.slug) ? 'nav__link--active' : ''))
-                      span.nav__title #{item.title}
+                    a.nav__link(href=ITEM.SLUG class=(currentPath.startsWith(ITEM.SLUG) ? 'nav__link--active' : ''))
+                      span.nav__title #{ITEM.TITLE}
             //- .nav__section.nav__section--search
             //- .nav__section.nav__section--user
 
@@ -71,11 +67,39 @@ html(lang="en")
     block footer
       footer
         .socials
-          p 123
+
         .contact
-          p 456
+          .contact__about
+            img(src="./images/photos/logo-about-us.png")
+            p.contact__about__description= TRANSLATION.CONTACT_DESCRIPTION
+            a(href="/about-us").contact__about__more= TRANSLATION.READ_MORE
+              span
+                i.fa.fa-long-arrow-alt-right
+          .contact__info
+            h2= TRANSLATION.CONTACT_INFO
+            p= TRANSLATION.CONTACT_INFO_ADDR_US
+            p= TRANSLATION.CONTACT_INFO_EMAIL_ROBERT
+            p
+              span Tel.&nbsp;
+              = TRANSLATION.CONTACT_INFO_TEL_ROBERT
+            p
+              span Tel.&nbsp;
+              = TRANSLATION.CONTACT_INFO_TEL_LYNA
+            .divide
+            p= TRANSLATION.CONTACT_INFO_ADDR_CN
+            p= TRANSLATION.CONTACT_INFO_EMAIL_CN
+            p
+              span Tel.&nbsp;
+              = TRANSLATION.CONTACT_INFO_TEL_CN1
+            p
+              span Tel.&nbsp;
+              = TRANSLATION.CONTACT_INFO_TEL_CN2
+          .contact__email
+            h2= TRANSLATION.CONTACT_US
+            button Send an email
         .copyright
-          p New Sunshine 2018
+          p &copy; New Sunshine 2018 |
+            span  Legacy
 
 
     block scripts

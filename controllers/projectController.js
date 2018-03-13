@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const multer = require('multer'); // upload file
 const jimp = require('jimp'); // resize images
 const uuid = require('uuid'); // rename images
+const sizeOf = require('image-size'); // get dimensions of images
 
 const Project = mongoose.model('Project');
 
@@ -22,35 +23,53 @@ exports.upload = multer(multerOption).array('photo', 3);
 
 exports.resize = async (req, res, next) => { // resize and save to /public/uploads folder
   // console.log(req.files);
-
-  const rename = (file) => {
-    const extension = file.mimetype.split('/')[1];
-    req.body.photo.push(`${uuid.v4()}.${extension}`);
+  const getDimensions = (file) => {
+    const dimensions = sizeOf(file.buffer);
+    // console.log(dimensions);
+    const { height: h, width: w } = dimensions;
+    req.body.dimensions.push({ w, h });
   };
 
-  const uploads = async (file) => {
+  const rename = (file) => {
+    const name = uuid.v4();
+    const extension = file.mimetype.split('/')[1];
+    req.body.photos.push(`${name}.${extension}`);
+    req.body.photoThumbnails.push(`${name}_thumbnail.${extension}`);
+  };
+
+  const toUploads = async (file, i = 0) => {
     const photo = await jimp.read(file.buffer);
-    await photo.resize(800, jimp.AUTO);
-    await req.body.photo.map((item) => {
-      photo.write(`./public/uploads/${item}`);
-    });
+    await photo.write(`./public/uploads/${req.body.photos[i]}`);
+    const photoThumbnail = await photo.resize(250, jimp.AUTO);
+    await photoThumbnail.write(`./public/uploads/${req.body.photoThumbnails[i]}`);
   };
 
   if (req.files.length === 0) {
     next(); // skip!
     return;
   } else if (req.files.length === 1) {
-    req.body.photo = [];
+    req.body.photos = [];
+    req.body.photoThumbnails = [];
+    req.body.dimensions = [];
+    // console.log(req.files[0]);
+    getDimensions(req.files[0]);
     rename(req.files[0]);
-    uploads(req.files[0]);
+    toUploads(req.files[0]);
   } else {
-    req.body.photo = [];
-    req.files.map((file) => {
+    let i = 0;
+    req.body.photos = [];
+    req.body.photoThumbnails = [];
+    req.body.dimensions = [];
+    req.files.map((file) => { // eslint-disable-line
+      // console.log(file);
+      getDimensions(file);
       rename(file);
-      uploads(file);
+      toUploads(file, i);
+      i += 1;
     });
   }
 
+  // res.json(req.body);
   next();
 };
 
@@ -59,7 +78,6 @@ exports.addProject = (req, res) => {
 };
 
 exports.createProject = async (req, res) => {
-  // res.json(req.body);
   const project = await (new Project(req.body)).save();
   req.flash('success', `Successfully create <strong>${project.name}</strong>!`);
   res.redirect(`/project/${project.slug}`);

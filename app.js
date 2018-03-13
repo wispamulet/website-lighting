@@ -70,8 +70,7 @@ app.use((req, res, next) => {
 app.use(i18n({
   translationsPath: path.join(__dirname, 'i18n'),
   siteLangs: ['en', 'es'],
-  textsVarName: 'translation',
-  paramLangName: 'lang'
+  textsVarName: 'TRANSLATION',
 }));
 
 // After allllll that above middleware, we finally handle our own routes!

@@ -1,6 +1,6 @@
 mixin projectForm(project = {})
   form(action=`/addProject/${project._id || ''}` method="POST" enctype="multipart/form-data")
-    label(for="type") Type:
+    label(for="type") Type (Required)
     - const choices = ['Indoor', 'Outdoor']
     - const types = project.type || []
     .types
@@ -8,14 +8,19 @@ mixin projectForm(project = {})
         .type
           input(type="checkbox" id=choice value=choice name="type" checked=(types.includes(choice)))
           label(for=choice) #{choice}
-    label(for="name") Name:
+    label(for="name") Name (Required)
     input(type="text" id="name" name="name" value=project.name)
-    label(for="description") Description:
-    input(type="text" id="description" name="description" value=project.description)
-    label(for="photo") Photo1:
-    input(type="file" name="photo" accept="image/gif, image/png, image/jpeg")
-    label(for="photo") Photo2:
-    input(type="file" name="photo" accept="image/gif, image/png, image/jpeg")
-    label(for="photo") Photo3:
-    input(type="file" name="photo" accept="image/gif, image/png, image/jpeg")
+
+    label(for="photo1") Photo1 (Required)
+    input(type="file" id="photo1" name="photo" accept="image/gif, image/png, image/jpeg")
+    label(for="description1") Description1 (Required)
+    input(type="text" id="description1" name="description" value=project.description)
+    label(for="photo2") Photo2:
+    input(type="file" id="photo2" name="photo" accept="image/gif, image/png, image/jpeg")
+    label(for="description2") Description2:
+    input(type="text" id="description2" name="description" value=project.description)
+    label(for="photo3") Photo3:
+    input(type="file" id="photo3" name="photo" accept="image/gif, image/png, image/jpeg")
+    label(for="description3") Description3:
+    input(type="text" id="description3" name="description" value=project.description)
     input(type="submit" value="Save")

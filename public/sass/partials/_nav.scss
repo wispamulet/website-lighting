@@ -5,13 +5,11 @@
   .language {
     font-size: 1.4rem;
     padding: .5rem 5rem;
-    &--inactive {
-      color: $white !important;
-    }
     &--active {
       color: $yellow !important;
     }
     a {
+      color: $white;
       text-decoration: none;
     }
     span {
@@ -32,6 +30,7 @@ header {
 }
 
 .nav {
+  z-index: 1;
   // background: $yellow;
   background: $black;
   display: grid;
