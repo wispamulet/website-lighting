@@ -27,6 +27,11 @@ pre {
     font-size: 2.5rem;
     text-align: center;
   }
+  h3 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 0;
+  }
   p {
     font-size: 1.5rem;
   }
@@ -44,6 +49,10 @@ pre {
   p {
     font-size: 1.5rem;
   }
+}
+
+.pswp {
+  font-family: 'sans-serif';
 }
 
 body {
@@ -85,7 +94,7 @@ body {
 
 .add {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
   a {
     height: 50px;
     color: black;
@@ -100,4 +109,5 @@ body {
 .error {
   font-size: 1.5rem;
   line-height: 2;
+  margin: 5rem;
 }

@@ -14,21 +14,23 @@ const projectSchema = new mongoose.Schema({
     type: String,
     required: 'Please choose a type!'
   },
+  photos: [
+    {
+      original: {
+        type: String,
+        trim: true
+      },
+      dimension: {
+        w: String,
+        h: String
+      },
+      thumbnail: String
+    }
+  ],
   descriptions: {
     type: [String],
     trim: true,
-  },
-  photos: {
-    type: [String],
-    trim: true,
-  },
-  dimensions: [
-    {
-      w: String,
-      h: String
-    }
-  ],
-  photoThumbnails: [String]
+  }
 });
 
 projectSchema.pre('save', async function (next) {
@@ -44,5 +46,13 @@ projectSchema.pre('save', async function (next) {
   }
   next();
 });
+
+projectSchema.statics.getTypesList = function () {
+  return this.aggregate([
+    { $unwind: '$type' },
+    { $group: { _id: '$type', count: { $sum: 1 } } },
+    { $sort: { count: -1 } }
+  ]);
+};
 
 module.exports = mongoose.model('Project', projectSchema);

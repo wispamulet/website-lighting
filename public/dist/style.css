@@ -431,6 +431,10 @@ pre {
   .inner h2 {
     font-size: 2.5rem;
     text-align: center; }
+  .inner h3 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 0; }
   .inner p {
     font-size: 1.5rem; }
 
@@ -443,6 +447,9 @@ pre {
     text-align: center; }
   .inner-2 p {
     font-size: 1.5rem; }
+
+.pswp {
+  font-family: 'sans-serif'; }
 
 body {
   position: relative; }
@@ -479,8 +486,8 @@ body {
 .add {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr; }
+  -ms-grid-columns: (minmax(100px, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(100px, 1fr)); }
   .add a {
     height: 50px;
     color: black;
@@ -495,7 +502,8 @@ body {
 
 .error {
   font-size: 1.5rem;
-  line-height: 2; }
+  line-height: 2;
+  margin: 5rem; }
 
 .language__wrapper {
   background: #000000;
@@ -797,27 +805,29 @@ footer {
         -ms-grid-column: 2;
             grid-column-start: 2; } }
 
-.product__form {
+.add__form {
   padding: 2rem 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   grid-gap: 2rem;
-  font-size: 2rem; }
-  .product__form input {
-    font-size: 1.6rem; }
-  .product__form span {
+  font-size: 1.8rem; }
+  .add__form input {
+    font-size: 1.6rem;
+    padding: 1rem;
+    border: 1px solid #d8d8d8; }
+  .add__form span {
     font-size: 1.2rem;
     background: #f08519;
     padding: .2rem;
     border-radius: .8rem; }
-  .product__form .types {
+  .add__form .types {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr; }
-  .product__form .type {
+  .add__form .type {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 2rem 1fr;
@@ -825,6 +835,13 @@ footer {
     -ms-flex-align: center;
         align-items: center;
     font-size: 1.6rem; }
+  .add__form img {
+    width: 200px; }
+  .add__form .button {
+    background: #f08519;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600; }
 
 .products {
   display: -ms-grid;
@@ -879,38 +896,6 @@ footer {
         margin: 0; }
         .products .product-gallery figure figcaption {
           display: none; }
-
-.project__form {
-  padding: 2rem 0;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  grid-gap: 2rem;
-  font-size: 2rem; }
-  .project__form input {
-    font-size: 1.6rem; }
-  .project__form span {
-    font-size: 1.2rem;
-    background: #f08519;
-    padding: .2rem;
-    border-radius: .8rem; }
-  .project__form .types {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr; }
-  .project__form .type {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 2rem 1fr;
-        grid-template-columns: 2rem 1fr;
-    -ms-flex-align: center;
-        align-items: center;
-    font-size: 1.6rem; }
-
-.pswp {
-  font-family: 'sans-serif'; }
 
 .projects-gallery {
   width: 90%;

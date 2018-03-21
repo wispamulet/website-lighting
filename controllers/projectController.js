@@ -21,40 +21,39 @@ const multerOption = {
 // files will be stored in req.files, if no files, req.files = []
 exports.upload = multer(multerOption).array('photos', 5);
 
-exports.resize = async (req, res, next) => { // resize and save to /public/uploads folder
+exports.resize = async (req, res, next) => { // resize and save to /public/uploads/ folder
   // console.log(req.files);
-  const getDimensions = (file) => {
+  const getDimensions = (file, photo) => {
     const dimensions = sizeOf(file.buffer);
-    // console.log(dimensions);
     const { height: h, width: w } = dimensions;
-    req.body.dimensions.push({ w, h });
+    photo.dimension = { w, h };
   };
 
-  const rename = (file) => {
+  const rename = (file, photo) => {
     const name = uuid.v4();
     const extension = file.mimetype.split('/')[1];
-    req.body.photos.push(`${name}.${extension}`);
-    req.body.photoThumbnails.push(`${name}_thumbnail.${extension}`);
+    photo.original = `${name}.${extension}`;
+    photo.thumbnail = `${name}_thumbnail.${extension}`;
   };
 
   const toUploads = async (file, i) => {
     const photo = await jimp.read(file.buffer);
-    await photo.write(`./public/uploads/${req.body.photos[i]}`);
-    const photoThumbnail = await photo.resize(300, jimp.AUTO);
-    await photoThumbnail.write(`./public/uploads/${req.body.photoThumbnails[i]}`);
+    await photo.write(`./public/uploads/photos/${req.body.photos[i].original}`);
+    const photoThumbnail = await photo.resize(350, jimp.AUTO);
+    await photoThumbnail.write(`./public/uploads/photos/${req.body.photos[i].thumbnail}`);
   };
 
   if (req.files.length === 0) {
-    next(); // skip!
+    next(); // if req.files === [], skip!
     return;
   } else {
     let i = 0;
     req.body.photos = [];
-    req.body.photoThumbnails = [];
-    req.body.dimensions = [];
     req.files.map((file) => {
-      getDimensions(file);
-      rename(file);
+      const photo = {};
+      getDimensions(file, photo);
+      rename(file, photo);
+      req.body.photos.push(photo);
       toUploads(file, i);
       i += 1;
     });
@@ -70,7 +69,8 @@ exports.addProject = (req, res) => {
 exports.createProject = async (req, res) => {
   const project = await (new Project(req.body)).save();
   req.flash('success', `Successfully create <strong>${project.name}</strong>!`);
-  res.redirect(`/project/${project.slug}`);
+  // res.redirect(`/project/${project.slug}`);
+  res.redirect('/projects');
 };
 
 exports.getProjects = async (req, res) => {
@@ -78,6 +78,11 @@ exports.getProjects = async (req, res) => {
   res.render('projects', { title: 'Projects', projects });
 };
 
-exports.editProject = async (req, res) => {
-  res.send('It works!');
+exports.getProjectsByType = async (req, res) => {
+  const { slug } = req.params; // e.g. 'indoor'
+  const type = [slug.charAt(0).toUpperCase(), ...slug.slice(1)].join(''); // 'Indoor'
+  const typePromise = Project.getTypesList();
+  const projectPromise = Project.find({ type });
+  const [types, projects] = await Promise.all([typePromise, projectPromise]);
+  res.render('projects', { title: `${type}`, types, projects });
 };

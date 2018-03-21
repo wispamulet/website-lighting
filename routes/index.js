@@ -2,6 +2,8 @@ const express = require('express');
 const navController = require('../controllers/navController');
 const productController = require('../controllers/productController');
 const projectController = require('../controllers/projectController');
+const userController = require('../controllers/userController');
+const authController = require('../controllers/authController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 const router = express.Router();
@@ -40,13 +42,20 @@ router.post(
   catchErrors(projectController.createProject)
 );
 router.get('/projects', catchErrors(projectController.getProjects));
-// editProject
-router.get('/projects/:id/edit', catchErrors(projectController.editProject));
+router.get('/projects/:slug', catchErrors(projectController.getProjectsByType));
+// TODO
+router.get('/projects/:id/edit');
+// TODO
+router.post('/addProject/:id');
+
+// user
+router.get('/login', userController.loginForm);
+router.get('/register', userController.registerForm);
 router.post(
-  '/addProject/:id',
-  projectController.upload,
-  catchErrors(projectController.resize),
-  catchErrors(projectController.updateProject)
+  '/register',
+  userController.validateRegister, // 1. Validate the registration data
+  catchErrors(userController.register), // 2. Register the user
+  authController.login // 3. Log them in
 );
 
 module.exports = router;

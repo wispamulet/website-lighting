@@ -16,6 +16,11 @@ html(lang="en")
       .add
         a(href='/addProject') Add Project
         a(href='/addProduct') Add Product
+        a(href='/register') Register
+        if user
+          a(href="/logout") Log Out
+        else
+          a(href='/login') Log In
       .header__wrapper#top
         .language__wrapper
           .language

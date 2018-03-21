@@ -34,9 +34,12 @@ mixin productCard(product = {})
     .product__image
       .product-gallery(itemscope itemtype="http://schema.org/ImageGallery")
         - const images = product.photos
+        - const descriptions = product.descriptions
+        - let i = 0
           each image in images
-            - const { original, thumbnail, dimension, description } = image
+            - const { original, thumbnail, dimension } = image
               figure(class=(image === images[0] ? '' : 'product__image--thumb') itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
                 a(href=`/uploads/photos/${original}` itemprop="contentUrl" data-size=`${dimension.w}x${dimension.h}`)
                   img(src=`/uploads/photos/${thumbnail || 'default_400x400.jpg'}` itemprop="thumbnail" alt="Image description")
-                figcaption(itemprop="caption description")= description
+                figcaption(itemprop="caption description")= descriptions[i]
+            - i += 1

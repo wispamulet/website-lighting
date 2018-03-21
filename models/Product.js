@@ -60,13 +60,13 @@ const productSchema = new mongoose.Schema({
         w: String,
         h: String
       },
-      thumbnail: String,
-      description: {
-        type: String,
-        trim: true
-      }
+      thumbnail: String
     }
-  ]
+  ],
+  descriptions: {
+    type: [String],
+    trim: true
+  }
 });
 
 productSchema.pre('save', async function (next) {

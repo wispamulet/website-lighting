@@ -29,7 +29,6 @@ exports.resize = async (req, res, next) => { // resize and save to ./public/uplo
   // console.log(req.files);
   // return;
   const savePdf = (file) => {
-    if (!file) return;
     const name = uuid.v4();
     const extension = file.mimetype.split('/')[1];
     req.body.brochure = `${name}.${extension}`;
@@ -53,27 +52,29 @@ exports.resize = async (req, res, next) => { // resize and save to ./public/uplo
   const toUploads = async (file, i) => {
     const photo = await jimp.read(file.buffer);
     await photo.write(`./public/uploads/photos/${req.body.photos[i].original}`);
-    const photoThumbnail = await photo.resize(400, jimp.AUTO);
+    const photoThumbnail = await photo.resize(350, jimp.AUTO);
     await photoThumbnail.write(`./public/uploads/photos/${req.body.photos[i].thumbnail}`);
   };
 
   if (Object.keys(req.files).length === 0) {
-    next(); // if there are no files in form, skip!
+    next(); // if req.files === {}, skip!
     return;
   } else {
-    savePdf(req.files.brochure[0]);
-    if (!req.files.photos) return;
-    let i = 0;
-    req.body.photos = [];
-    req.files.photos.map((file) => {
-      const photo = {};
-      photo.description = req.body.descriptions[i];
-      getDimension(file, photo);
-      rename(file, photo);
-      req.body.photos.push(photo);
-      toUploads(file, i);
-      i += 1;
-    });
+    if (req.files.brochure) {
+      savePdf(req.files.brochure[0]);
+    }
+    if (req.files.photos) {
+      let i = 0;
+      req.body.photos = [];
+      req.files.photos.map((file) => {
+        const photo = {};
+        getDimension(file, photo);
+        rename(file, photo);
+        req.body.photos.push(photo);
+        toUploads(file, i);
+        i += 1;
+      });
+    }
   }
   // res.json(req.body);
   next();
@@ -86,7 +87,8 @@ exports.addProduct = (req, res) => {
 exports.createProduct = async (req, res) => {
   const product = await (new Product(req.body)).save();
   req.flash('success', `Successfully create <strong>${product.name}</strong>!`);
-  res.redirect(`/product/${product.slug}`);
+  // res.redirect(`/product/${product.slug}`);
+  res.redirect(`/products/${product._id}/edit`); // eslint-disable-line
 };
 
 exports.getProducts = async (req, res) => {
@@ -105,7 +107,7 @@ exports.getProductsByType = async (req, res) => {
   const typePromise = Product.getTypesList();
   const productPromise = Product.find({ type });
   const [types, products] = await Promise.all([typePromise, productPromise]);
-  res.render('products', { title: `${type}`, products });
+  res.render('products', { title: `${type}`, types, products });
 };
 
 exports.editProduct = async (req, res) => {

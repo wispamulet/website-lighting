@@ -1,5 +1,5 @@
 mixin productForm(product = {})
-  form.product__form(action=`/addProduct/${product._id || ''}` method="POST" enctype="multipart/form-data")
+  form.add__form(action=`/addProduct/${product._id || ''}` method="POST" enctype="multipart/form-data")
     label(for="type")
       | Type&nbsp;
       span (Required)
@@ -10,6 +10,7 @@ mixin productForm(product = {})
         .type
           input(type="radio" id=choice value=choice name="type" checked=(type.includes(choice)) required)
           label(for=choice) #{choice}
+    h3 Product Details
     label(for="name")
       | Name&nbsp;
       span (Required)
@@ -30,21 +31,28 @@ mixin productForm(product = {})
     input#cri(type="text" name="cri" value=product.cri)
     label(for="application") Applications
     input#application(type="text" name="application" value=product.application)
-    label(for="brochure") Brochure
-    input#brochure(type="file" name="brochure" accept=".pdf" value=product.brochure)
-    - const index = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    - const photos = product.photos
-    - console.log(photos)
+    h3 Brochure
+    label(for="brochure")
+      | Brochure&nbsp;
+      span (Recommended)
+    input#brochure(type="file" name="brochure" accept=".pdf")
+    p= product.brochure
+    h3 Photos
+    - const index = [1, 2, 3, 4, 5, 6, 7]
+    - const photos = product.photos || []
+    - const descriptions = product.descriptions || []
       each i in index
         label(for=`photo${i}`)
           | Photo #{i}&nbsp;
           if i <= 3
             span (Required)
-        input(type="file" id=`photo${i}` name="photos" accept="image/gif, image/png, image/jpeg" value=)
+        input(type="file" id=`photo${i}` name="photos" accept="image/gif, image/png, image/jpeg")
           //-  required=(i <= 3 ? true : false)
+        if photos[i - 1]
+          img(src=`/uploads/photos/${photos[i - 1].thumbnail}`, alt="")
         label(for=`description${i}`)
           | Description #{i}&nbsp;
           if i <= 3
             span (Recommended)
-        input(type="text" id=`description${i}` name="descriptions" value=`${''}`)
+        input(type="text" id=`description${i}` name="descriptions" value=descriptions[i -1])
     input.button(type="submit" value="Save")
