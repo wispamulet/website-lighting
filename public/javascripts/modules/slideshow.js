@@ -1,11 +1,6 @@
-import { $, $$ } from './bling';
-
-const slides = $$('.slideshow .slide');
-const dots = $$('.slideshow .dots .dot');
-
 let index = 0;
 
-function slideshow() {
+function slideshow(slides, dots) {
   if (slides.length === 0) {
     return;
   }
@@ -24,7 +19,7 @@ function slideshow() {
   }
   slides[index - 1].classList.add('slide--show');
   dots[index - 1].classList.add('dot--active');
-  setTimeout(slideshow, 3000);
+  setTimeout(slideshow, 3000, slides, dots);
 }
 
 export default slideshow;

@@ -7,9 +7,36 @@ mixin productCard(product = {})
           a(href=`/products/${product._id}/edit`)
             != h.icon('pencil')
       .product__text__details
-        p= product.type
-        p= product.model
-        p= product.power
-        p= product.base
+        li
+          | Model No.
+          span #{product.model_no}
+        li
+          | Voltage
+          span #{product.voltage}
+        li
+          | Base Type
+          span #{product.base_type}
+        li
+          | Lumens
+          span #{product.lumen}
+        li
+          | Dimensions
+          span #{product.dimension}
+        li
+          | IP Rating
+          span #{product.ip_rating}
+        li
+          | CRI
+          span #{product.cri}
+        li
+          | Applications
+          span #{product.application}
     .product__image
-      image
+      .product-gallery(itemscope itemtype="http://schema.org/ImageGallery")
+        - const images = product.photos
+          each image in images
+            - const { original, thumbnail, dimension, description } = image
+              figure(class=(image === images[0] ? '' : 'product__image--thumb') itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+                a(href=`/uploads/photos/${original}` itemprop="contentUrl" data-size=`${dimension.w}x${dimension.h}`)
+                  img(src=`/uploads/photos/${thumbnail || 'default_400x400.jpg'}` itemprop="thumbnail" alt="Image description")
+                figcaption(itemprop="caption description")= description

@@ -15,10 +15,21 @@ router.get('/contact', navController.contact);
 
 // product
 router.get('/addProduct', productController.addProduct);
-router.post('/addProduct', catchErrors(productController.createProduct));
-router.get('/products', productController.getProducts);
+router.post(
+  '/addProduct',
+  productController.upload,
+  catchErrors(productController.resize),
+  catchErrors(productController.createProduct)
+);
+router.get('/products', catchErrors(productController.getProducts));
+router.get('/products/:slug', catchErrors(productController.getProductsByType));
 router.get('/products/:id/edit', catchErrors(productController.editProduct));
-router.post('/addProduct/:id', catchErrors(productController.updateProduct));
+router.post(
+  '/addProduct/:id',
+  productController.upload,
+  catchErrors(productController.resize),
+  catchErrors(productController.updateProduct)
+);
 
 // project
 router.get('/addProject', projectController.addProject);
@@ -30,6 +41,7 @@ router.post(
 );
 router.get('/projects', catchErrors(projectController.getProjects));
 // editProject
+router.get('/projects/:id/edit', catchErrors(projectController.editProject));
 router.post(
   '/addProject/:id',
   projectController.upload,

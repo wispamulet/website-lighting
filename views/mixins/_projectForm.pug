@@ -1,26 +1,30 @@
 mixin projectForm(project = {})
-  form(action=`/addProject/${project._id || ''}` method="POST" enctype="multipart/form-data")
-    label(for="type") Type (Required)
+  form.project__form(action=`/addProject/${project._id || ''}` method="POST" enctype="multipart/form-data")
+    label(for="type")
+      | Type&nbsp;
+      span (Required)
     - const choices = ['Indoor', 'Outdoor']
-    - const types = project.type || []
+    - const type = project.type || ''
     .types
       each choice in choices
         .type
-          input(type="checkbox" id=choice value=choice name="type" checked=(types.includes(choice)))
+          input(type="radio" id=choice value=choice name="type" checked=(type.includes(choice)) required)
           label(for=choice) #{choice}
-    label(for="name") Name (Required)
-    input(type="text" id="name" name="name" value=project.name)
-
-    label(for="photo1") Photo1 (Required)
-    input(type="file" id="photo1" name="photo" accept="image/gif, image/png, image/jpeg")
-    label(for="description1") Description1 (Required)
-    input(type="text" id="description1" name="description" value=project.description)
-    label(for="photo2") Photo2:
-    input(type="file" id="photo2" name="photo" accept="image/gif, image/png, image/jpeg")
-    label(for="description2") Description2:
-    input(type="text" id="description2" name="description" value=project.description)
-    label(for="photo3") Photo3:
-    input(type="file" id="photo3" name="photo" accept="image/gif, image/png, image/jpeg")
-    label(for="description3") Description3:
-    input(type="text" id="description3" name="description" value=project.description)
-    input(type="submit" value="Save")
+    label(for="name")
+      | Name&nbsp;
+      span (Required)
+    input(type="text" id="name" name="name" value=project.name required)
+    - const index = [1, 2, 3, 4, 5]
+    - const descriptions = project.description || []
+      each i in index
+        label(for=`photo${i}`)
+          | Photo#{i}&nbsp;
+          if i <= 1
+            span (Required)
+        input(type="file" id=`photo${i}` name="photos" accept="iamge/gif, image/png, image/jpeg" required=(i <= 1 ? true : false))
+        label(for=`description${i}`)
+          | Description#{i}&nbsp;
+          if i <= 1
+            span (Recommended)
+        input(type="text" id=`description${i}` name="descriptions" value=descriptions[i - 1])
+    input.button(type="submit" value="Save")

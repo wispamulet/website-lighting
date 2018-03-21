@@ -10,12 +10,18 @@ const projectSchema = new mongoose.Schema({
     required: 'Please enter a project name!'
   },
   slug: String,
-  type: String,
-  description: {
+  type: {
+    type: String,
+    required: 'Please choose a type!'
+  },
+  descriptions: {
     type: [String],
     trim: true,
   },
-  photos: [String],
+  photos: {
+    type: [String],
+    trim: true,
+  },
   dimensions: [
     {
       w: String,
@@ -25,12 +31,17 @@ const projectSchema = new mongoose.Schema({
   photoThumbnails: [String]
 });
 
-projectSchema.pre('save', function (next) {
+projectSchema.pre('save', async function (next) {
   if (!this.isModified('name')) {
     next();
     return;
   }
   this.slug = slug(this.name);
+  const slugRegEx = new RegExp(`^(${this.slug})((-[0-9]*$)?)$`, 'i');
+  const projectsWithSlug = await this.constructor.find({ slug: slugRegEx });
+  if (projectsWithSlug.length) {
+    this.slug = `${this.slug}-${projectsWithSlug.length + 1}`;
+  }
   next();
 });
 

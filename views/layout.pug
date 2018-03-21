@@ -5,16 +5,18 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title= `${title} | ${h.siteName}`
-    link(rel="stylesheet", href="/photoswipe/photoswipe.css")
-    link(rel="stylesheet", href="/photoswipe/default-skin/default-skin.css")
+    link(rel="stylesheet", href="/dist/photoswipe/photoswipe.css")
+    link(rel="stylesheet", href="/dist/photoswipe/default-skin/default-skin.css")
     link(rel="stylesheet", href="/dist/style.css")
     link(rel="shortcut icon" type="image/png" href="/images/icons/doughnut.png")
   body
     block header
+      button#toTop.top--hide
+        i.fa.fa-angle-double-up
       .add
         a(href='/addProject') Add Project
         a(href='/addProduct') Add Product
-      .header__wrapper
+      .header__wrapper#top
         .language__wrapper
           .language
             a(href=`${currentPath}?clang=en` class=(lang === 'en' ? 'language--active' : '')) EN
@@ -33,11 +35,13 @@ html(lang="en")
               each ITEM in TRANSLATION.MENU
                 li.nav__item
                   if ITEM.DROPDOWN
-                    a.nav__link(href=ITEM.SLUG class=(currentPath.startsWith(ITEM.SLUG) ? 'nav__link--active' : '') aria-expanded="false" aria-controls="dropdown-list")
+                    a.nav__link(href=ITEM.SLUG class=(currentPath.startsWith(ITEM.SLUG) ? 'nav__link--active' : ''))
                       span.nav__title #{ITEM.TITLE}
                       span.down
-                        i.fa.fa-angle-up
                         i.fa.fa-angle-down
+                    span.down--mobile(aria-expanded="false" aria-controls="dropdown-list")
+                      i.fa.fa-angle-up
+                      i.fa.fa-angle-down
                     - const LIST = ITEM.DROPDOWN
                     ul.nav__dropdown
                       each ITEM in LIST
@@ -70,7 +74,7 @@ html(lang="en")
 
         .contact
           .contact__about
-            img(src="./images/photos/logo-about-us.png")
+            img(src="/images/photos/logo-about-us.png")
             p.contact__about__description= TRANSLATION.CONTACT_DESCRIPTION
             a(href="/about-us").contact__about__more= TRANSLATION.READ_MORE
               span
@@ -96,7 +100,10 @@ html(lang="en")
               = TRANSLATION.CONTACT_INFO_TEL_CN2
           .contact__email
             h2= TRANSLATION.CONTACT_US
-            button Send an email
+            button= TRANSLATION.SEND_EMAIL
+            a(href="/contact").contact__about__more= TRANSLATION.READ_MORE
+              span
+                i.fa.fa-long-arrow-alt-right
         .copyright
           p &copy; New Sunshine 2018 |
             span  Legacy
@@ -104,4 +111,5 @@ html(lang="en")
 
     block scripts
       script(defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js")
+      script(src=`https://maps.googleapis.com/maps/api/js?key=${process.env.MAP_KEY}&libraries=places`)
       script(src="/dist/App.bundle.js")

@@ -18,8 +18,8 @@ const multerOption = {
   }
 };
 
-// The array of files will be stored in req.files, if no files, req.files = []
-exports.upload = multer(multerOption).array('photo', 3);
+// files will be stored in req.files, if no files, req.files = []
+exports.upload = multer(multerOption).array('photos', 5);
 
 exports.resize = async (req, res, next) => { // resize and save to /public/uploads folder
   // console.log(req.files);
@@ -37,38 +37,28 @@ exports.resize = async (req, res, next) => { // resize and save to /public/uploa
     req.body.photoThumbnails.push(`${name}_thumbnail.${extension}`);
   };
 
-  const toUploads = async (file, i = 0) => {
+  const toUploads = async (file, i) => {
     const photo = await jimp.read(file.buffer);
     await photo.write(`./public/uploads/${req.body.photos[i]}`);
-    const photoThumbnail = await photo.resize(250, jimp.AUTO);
+    const photoThumbnail = await photo.resize(300, jimp.AUTO);
     await photoThumbnail.write(`./public/uploads/${req.body.photoThumbnails[i]}`);
   };
 
   if (req.files.length === 0) {
     next(); // skip!
     return;
-  } else if (req.files.length === 1) {
-    req.body.photos = [];
-    req.body.photoThumbnails = [];
-    req.body.dimensions = [];
-    // console.log(req.files[0]);
-    getDimensions(req.files[0]);
-    rename(req.files[0]);
-    toUploads(req.files[0]);
   } else {
     let i = 0;
     req.body.photos = [];
     req.body.photoThumbnails = [];
     req.body.dimensions = [];
-    req.files.map((file) => { // eslint-disable-line
-      // console.log(file);
+    req.files.map((file) => {
       getDimensions(file);
       rename(file);
       toUploads(file, i);
       i += 1;
     });
   }
-
   // res.json(req.body);
   next();
 };
@@ -85,6 +75,9 @@ exports.createProject = async (req, res) => {
 
 exports.getProjects = async (req, res) => {
   const projects = await Project.find();
-  // res.json(projects);
   res.render('projects', { title: 'Projects', projects });
+};
+
+exports.editProject = async (req, res) => {
+  res.send('It works!');
 };

@@ -1,11 +1,12 @@
 @font-face {
-  font-family: 'open sans';
-  src: url('/fonts/OpenSans-Regular.ttf') format('truetype');
+  font-family: 'tienne';
+  src: url('/fonts/tienne.regular.ttf') format('truetype');
+  src: url('/fonts/tienne.bold.ttf') format('truetype');
   font-weight: 400;
 }
 
 html {
-  font-family: 'open sans', 'sans-serif';
+  font-family: 'tienne', 'sans-serif';
   font-size: 62.5%;
 }
 
@@ -13,11 +14,15 @@ html {
   // height: 500px;
 }
 
+pre {
+  font-size: 1.2rem;
+}
+
 .inner {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 5rem;
-  background: floralwhite;
+  // background: floralwhite;
   h2 {
     font-size: 2.5rem;
     text-align: center;
@@ -25,6 +30,57 @@ html {
   p {
     font-size: 1.5rem;
   }
+}
+
+.inner-2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5rem;
+  // background: floralwhite;
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+body {
+  position: relative;
+}
+
+#toTop {
+  background: $yellow;
+  outline: none;
+  border: none;
+  width: 5rem;
+  height: 5rem;
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+  border-radius: .5rem;
+  font-size: 2.5rem;
+  color: darken($white, 10%);
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  &:hover {
+    background: #80837c;
+  }
+}
+
+@media (max-width:600px) {
+  #toTop {
+    width: 3rem;
+    height: 3rem;
+    bottom: 3rem;
+    right: 3rem;
+    font-size: 1.5rem;
+  }
+}
+
+.top--hide {
+  transform: translateY(200%);
 }
 
 .add {
@@ -43,4 +99,5 @@ html {
 
 .error {
   font-size: 1.5rem;
+  line-height: 2;
 }

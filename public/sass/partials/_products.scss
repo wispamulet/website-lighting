@@ -1,9 +1,13 @@
 .products {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
   .product {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
     grid-gap: 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 2rem 0;
     // &__edit {
     //   display: grid;
     //   align-content: center;
@@ -14,11 +18,50 @@
         grid-template-columns: 1fr 3rem;
         // grid-auto-flow: column;
         align-items: center;
+        h2 {
+          color: $yellow;
+          font-size: 2rem;
+          text-align: left;
+        }
+      }
+      &__details {
+        padding: 3rem 0;
+        // display: grid;
+        // justify-content: flex-start;
+        li {
+          font-size: 1.4rem;
+          list-style: none;
+          display: grid;
+          grid-template-columns: 20% 1fr;
+          grid-gap: 2rem;
+          line-height: 2;
+          text-align: right;
+          span {
+            // border-left: 1px solid $black;
+            text-align: left;
+          }
+        }
       }
     }
-    h2 {
-      color: $yellow;
-      font-size: 2rem;
+    &__image {
+      &--thumb {
+
+      }
+    }
+    &-gallery {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 1fr 5rem;
+      grid-gap: .5rem;
+      > :nth-child(1) {
+        grid-column: 1 / -1;
+      }
+      figure {
+        margin: 0;
+        figcaption {
+          display: none;
+        }
+      }
     }
   }
 }

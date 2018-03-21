@@ -3,16 +3,16 @@ exports.index = (req, res) => {
 };
 
 exports.home = (req, res) => {
-  res.render('home', { title: 'LED corn light bulb, LED garden light, LED street light' });
+  res.render('home', { title: 'Home' });
 };
 
 exports.support = (req, res) => {
-  res.render('support', { title: 'LED corn light bulb, LED garden light, LED street light' });
+  res.render('support', { title: 'Support' });
 };
 
 exports.aboutUs = (req, res) => {
-  res.render('aboutUs', { title: 'LED corn light bulb, LED garden light, LED street light' });
+  res.render('aboutus', { title: 'About Us' });
 };
 exports.contact = (req, res) => {
-  res.render('contact', { title: 'LED corn light bulb, LED garden light, LED street light' });
+  res.render('contact', { title: 'Contact' });
 };

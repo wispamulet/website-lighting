@@ -1,19 +1,50 @@
 mixin productForm(product = {})
-  form(action=`/addProduct/${product._id || ''}` method="POST")
-    label(for="type") Type:
+  form.product__form(action=`/addProduct/${product._id || ''}` method="POST" enctype="multipart/form-data")
+    label(for="type")
+      | Type&nbsp;
+      span (Required)
     - const choices = ['LED Corn Light', 'LED Garden Light', 'LED Street Light']
-    - const types = product.type || []
+    - const type = product.type || ''
     .types
       each choice in choices
         .type
-          input(type="checkbox" id=choice value=choice name="type" checked=(types.includes(choice)))
+          input(type="radio" id=choice value=choice name="type" checked=(type.includes(choice)) required)
           label(for=choice) #{choice}
-    label(for="name") Name:
-    input#name(type="text" name="name" value=product.name)
-    label(for="model") Model Number:
-    input#model(type="text" name="model" value=product.model)
-    label(for="power") Power:
-    input#power(type="text" name="power" value=product.power)
-    label(for="base") Base Type:
-    input#base(type="text" name="base" value=product.base)
+    label(for="name")
+      | Name&nbsp;
+      span (Required)
+    input#name(type="text" name="name" value=product.name required)
+    label(for="model_no") Model No.
+    input#model_no(type="text" name="model_no" value=product.model_no)
+    label(for="voltage") Voltage
+    input#voltage(type="text" name="voltage" value=product.voltage)
+    label(for="base_type") Base Type
+    input#base_type(type="text" name="base_type" value=product.base_type)
+    label(for="lumen") Lumens
+    input#lumen(type="text" name="lumen" value=product.lumen)
+    label(for="dimension") Dimensions
+    input#dimension(type="text" name="dimension" value=product.dimension)
+    label(for="ip_rating")  IP (Ingress Protection) Rating
+    input#ip_rating(type="text" name="ip_rating" value=product.ip_rating)
+    label(for="cri") CRI (Color Rendering Index)
+    input#cri(type="text" name="cri" value=product.cri)
+    label(for="application") Applications
+    input#application(type="text" name="application" value=product.application)
+    label(for="brochure") Brochure
+    input#brochure(type="file" name="brochure" accept=".pdf" value=product.brochure)
+    - const index = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    - const photos = product.photos
+    - console.log(photos)
+      each i in index
+        label(for=`photo${i}`)
+          | Photo #{i}&nbsp;
+          if i <= 3
+            span (Required)
+        input(type="file" id=`photo${i}` name="photos" accept="image/gif, image/png, image/jpeg" value=)
+          //-  required=(i <= 3 ? true : false)
+        label(for=`description${i}`)
+          | Description #{i}&nbsp;
+          if i <= 3
+            span (Recommended)
+        input(type="text" id=`description${i}` name="descriptions" value=`${''}`)
     input.button(type="submit" value="Save")

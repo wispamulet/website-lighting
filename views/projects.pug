@@ -3,7 +3,33 @@ extends layout
 include mixins/_projectCard
 
 block content
-  .inner
+  //- .slideshow
+    .slide.fade
+      img(src="/images/photos/photo-1519172043277-7cf59084782d.jpg")
+      .slide__caption Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    .slide.fade
+      img(src="/images/photos/photo-1519986988383-5b8327613e72.jpg")
+      .slide__caption Lorem ipsum dolor sit.
+    .slide.fade
+      img(src="/images/photos/photo-1519994007676-baabab4bf574.jpg")
+      .slide__caption Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, quibusdam!
+    .slide.fade
+      img(src="/images/photos/photo-1520247478381-4d32def223c1.jpg")
+      .slide__caption Lorem ipsum dolor sit amet consectetur.
+    .slide.fade
+      img(src="/images/photos/photo-1520320142774-5381578416fa.jpg")
+      .slide__caption Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    //- a.prev
+    //-   i.fa.fa-angle-left
+    //- a.next
+    //-   i.fa.fa-angle-right
+    .dots
+      .dot
+      .dot
+      .dot
+      .dot
+      .dot
+  .inner-2
     h2= title
     //- pre= h.dump(projects)
     .pswp(tabindex="-1" role="dialog" aria-hidden="true")

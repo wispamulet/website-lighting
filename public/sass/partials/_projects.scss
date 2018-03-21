@@ -1,6 +1,106 @@
+.pswp {
+  font-family: 'sans-serif';
+}
+
 .projects {
   &-gallery {
+    width: 90%;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    .figure--hide {
+      display: none;
+    }
+    figure {
+      margin: 0;
+      background-color: $white;
+      text-decoration: none;
+      color: #444;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      position: relative;
+      top: 0;
+      transition: all .1s ease-in;
+      &:nth-child(1) {
+        grid-column: 1 / span 2;
+      }
+      &:hover {
+        top: -2px;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, .2);
+        cursor: pointer;
+      }
+      a, figcaption {
+        display: none;
+      }
+      artitle {
+        padding: 2rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .project {
+        &__image {
+          padding-bottom: 60%;
+          background-size: cover;
+          background-position: center center;
+        }
+        &__title {
+          text-align: left;
+          margin: 0;
+          color: #333;
+        }
+        &__detail {
+          margin-top: 2rem;
+        }
+        &__type {
+          text-transform: uppercase;
+          color: #999;
+          font-size: 1.2rem;
+          font-weight: bold;
+          letter-spacing: .1rem;
+          display: grid;
+          grid-template-columns: 1fr 3rem;
+          align-items: center;
+        }
+        &__edit {
+          z-index: 10;
+          display: block;
+          a {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .projects {
+    &-gallery {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .projects {
+    &-gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    :nth-child(1) {
+      grid-column: 1 / span 1 !important;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .projects {
+    &-gallery {
+      grid-template-columns: 1fr;
+    }
   }
 }

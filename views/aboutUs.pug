@@ -1,7 +1,26 @@
 extends layout
 
 block content
-  .content
-    .inner
-      h2= TRANSLATION.ABOUTUS_MSG
-      p It's #{h.moment().format('MMMM Do YYYY, h:mm:ss a')}
+  .inner
+    //- h2= TRANSLATION.ABOUTUS_MSG
+    .about__us
+      .about__us__story
+        .about__us__title
+          h2 About Us
+        .about__us__detail
+          .about__us__paragraph
+            p Lorem ipsum dolor sit.
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nesciunt consequuntur commodi esse reprehenderit modi veritatis distinctio, nemo in iusto sed vero quas adipisci. Excepturi error nulla assumenda natus possimus iure aspernatur?
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            a(href="/contact").about__us__contact Find us
+              span
+                i.fa.fa-long-arrow-alt-right
+          .about__us__photo
+            img(src="/images/photos/photo-1520121413907-210f36475b4e.jpg", alt="photo")
+      .about__us__logo
+        img(src="/images/photos/logo.jpg", alt="logo")
+        .about__us__paragraph
+          p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat ratione iusto repellat! Impedit possimus voluptatibus eius!
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, debitis.
+          p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet est quae, fuga accusantium saepe veniam ad nam quos neque. Eveniet excepturi molestias necessitatibus, quidem voluptates repellendus cupiditate praesentium ut quae.

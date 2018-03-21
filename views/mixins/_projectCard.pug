@@ -1,24 +1,19 @@
 mixin projectCard(project = {})
-  //- .project
-    .project__image
-      - const images = project.photo
-      each image in images
-        img(src=`/uploads/${image}` class=(image === project.photo[0] ? '' : 'project__image--hide'))
-    .project__text
-      .project__text__heading
-        h2= project.name
-        .project__edit
-          a(href=`/project/${project._id}/edit`)
-            != h.icon('pencil')
-      .project__text__details
-        p= project.description[0]
   - const images = project.photos
   - const thumbnails = project.photoThumbnails
   - const dimensions = project.dimensions
   - let index = 0
     each image in images
-      figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+      //- .project__edit
+        a(href=`/projects/${project._id}/edit`)
+          != h.icon('pencil')
+      figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class=(image === images[0] ? '' : 'figure--hide'))
         a(href=`/uploads/${image}` itemprop="contentUrl" data-size=`${dimensions[index].w}x${dimensions[index].h}`)
           img(src=`/uploads/${thumbnails[index]}` itemprop="thumbnail" alt="Image description")
-        figcaption(itemprop="caption description")= project.description[index]
+        figcaption(itemprop="caption description")= project.descriptions[index]
+        .project__image(style=`background-image: url(/uploads/${thumbnails[index]})`)
+        artitle
+          h2.project__title= project.name
+          p.project__detail= project.descriptions[index].split(' ').slice(0, 25).join(' ').concat('...')
+          .project__type= project.type
       - index += 1;

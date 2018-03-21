@@ -1,9 +1,11 @@
 {
+  "_comment_test_message": "",
   "WELCOME_MSG": "Hi! Welcome!",
   "HOME_MSG": "This is home!",
   "SUPPORT_MSG": "This is support!",
   "ABOUTUS_MSG": "This is about us!",
   "CONTACT_MSG": "This is contact!",
+  "_comment_navbar_menu_list": "",
   "MENU": [
     { "SLUG": "/home", "TITLE": "home" },
     { "SLUG": "/projects", "TITLE": "projects", "DROPDOWN": [
@@ -19,7 +21,8 @@
     { "SLUG": "/about-us", "TITLE": "about us" },
     { "SLUG": "/contact", "TITLE": "contact" }
   ],
-  "CONTACT_DESCRIPTION": "New Sunshine stands out a as leader in the country's LED industry. With its business expanded to over 64 countries over the world. In order to develop the Spanish speaking countries in South America, we opened a branch company in Lima, capital of Peru.",
+  "_footer_contact_area": "",
+  "CONTACT_DESCRIPTION": "New Sunshine stands out as leader in the country's LED industry. With its business expanded to over 64 countries over the world. In order to develop the Spanish speaking countries in South America, we opened a branch company in Lima, capital of Peru.",
   "READ_MORE": "Read more",
   "CONTACT_INFO": "Contact info",
   "CONTACT_INFO_ADDR_US": "13321 Garden Grove Blvd, #N, Garden Grove, CA 92843, USA",
@@ -30,5 +33,6 @@
   "CONTACT_INFO_EMAIL_CN": "order@newsunshine.net",
   "CONTACT_INFO_TEL_CN1":"+86 769 8800 4885",
   "CONTACT_INFO_TEL_CN2":"+86 138 2658 8764",
-  "CONTACT_US": "Contact us"
+  "CONTACT_US": "Contact us",
+  "SEND_EMAIL": "Send an email"
 }

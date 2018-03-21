@@ -93,9 +93,9 @@ header {
   }
   .down {
     padding-left: 1rem;
-    .fa-angle-up {
-      display: none;
-    }
+  }
+  .down--mobile {
+    display: none;
   }
 }
 
@@ -121,6 +121,7 @@ header {
   // margin-bottom: 1rem;
   border: none;
   border-radius: .5rem;
+  outline: none;
 }
 
 @media (max-width: 1250px) {
@@ -136,15 +137,27 @@ header {
 }
 
 @media (max-width: 800px) {
+  .language__wrapper {
+    .language {
+      padding: .5rem .5rem;
+    }
+  }
   .nav {
     // hide the navbar
     height: 0;
     overflow: hidden;
+    &__item {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-flow: column;
+    }
     &__item:hover > &__dropdown {
       display: none;
     }
     &__link {
-      justify-content: space-between;
+      justify-content: flex-start;
+      grid-column: 1 / -1;
+      grid-row-start: 1;
     }
     &__title {
       padding: 0 1rem;
@@ -189,28 +202,38 @@ header {
   [aria-expanded="true"] ~ .nav {
     height: 100%;
     .down {
-      padding: 0 1rem;
+      display: none;
+    }
+    .down--mobile {
+      display: block;
+      width: 5rem;
+      color: white;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
   // toggle navbar dropdown
-  [aria-expanded="false"] ~.nav__dropdown {
+  [aria-expanded="false"] ~ .nav__dropdown {
     display: none !important;
   }
-  [aria-expanded="false"] > .down .fa-angle-up {
+  .down--mobile[aria-expanded="false"] .fa-angle-up {
     display: none;
   }
-  [aria-expanded="false"] > .down .fa-angle-down {
+  .down--mobile[aria-expanded="false"] .fa-angle-down {
     display: block;
   }
 
-  [aria-expanded="true"] ~.nav__dropdown {
+  [aria-expanded="true"] ~ .nav__dropdown {
     display: block !important;
+    grid-column: 1 / span 2;
   }
-  [aria-expanded="true"] > .down .fa-angle-up {
+  .down--mobile[aria-expanded="true"] .fa-angle-up {
     display: block;
   }
-  [aria-expanded="true"] > .down .fa-angle-down {
+  .down--mobile[aria-expanded="true"] .fa-angle-down {
     display: none;
   }
 }
