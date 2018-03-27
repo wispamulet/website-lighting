@@ -85,7 +85,9 @@ exports.addProduct = (req, res) => {
 };
 
 exports.createProduct = async (req, res) => {
+  req.body.author = req.user._id;
   const product = await (new Product(req.body)).save();
+
   req.flash('success', `Successfully create <strong>${product.name}</strong>!`);
   // res.redirect(`/product/${product.slug}`);
   res.redirect(`/products/${product._id}/edit`); // eslint-disable-line
@@ -110,8 +112,16 @@ exports.getProductsByType = async (req, res) => {
   res.render('products', { title: `${type}`, types, products });
 };
 
+const confirmOwner = (product, user) => {
+  if (!product.author.equals(user._id)) {
+    throw Error('You can not edit this product!');
+  }
+};
+
 exports.editProduct = async (req, res) => {
   const product = await Product.findOne({ _id: req.params.id });
+  // confirm the user is the owner of the product
+  confirmOwner(product, req.user);
   res.render('editProduct', { title: `Edit ${product.name}`, product });
 };
 
@@ -120,6 +130,7 @@ exports.updateProduct = async (req, res) => {
     new: true,
     runValidators: true
   }).exec();
+
   req.flash('success', `Successfully updated <strong>${product.name}</strong>. <a href="/product/${product.slug}">View Product -></a>`);
   res.redirect(`/products/${product._id}/edit`); // eslint-disable-line
 };

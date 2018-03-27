@@ -66,6 +66,11 @@ const productSchema = new mongoose.Schema({
   descriptions: {
     type: [String],
     trim: true
+  },
+  author: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: 'You must supply an author!'
   }
 });
 
