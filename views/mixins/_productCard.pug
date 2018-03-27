@@ -3,9 +3,10 @@ mixin productCard(product = {})
     .product__text
       .product__text__heading
         h2= product.name
-        .product__edit
-          a(href=`/products/${product._id}/edit`)
-            != h.icon('pencil')
+        if user
+          .product__edit
+            a(href=`/products/${product._id}/edit`)
+              != h.icon('pencil')
       .product__text__details
         li
           | Model No.

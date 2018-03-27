@@ -1,5 +1,5 @@
 mixin projectForm(project = {})
-  form.add__form(action=`/addProject/${project._id || ''}` method="POST" enctype="multipart/form-data")
+  form.add__form(action=`/add-project/${project._id || ''}` method="POST" enctype="multipart/form-data")
     label(for="type")
       | Type&nbsp;
       span (Required)

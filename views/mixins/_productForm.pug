@@ -1,5 +1,5 @@
 mixin productForm(product = {})
-  form.add__form(action=`/addProduct/${product._id || ''}` method="POST" enctype="multipart/form-data")
+  form.add__form(action=`/add-product/${product._id || ''}` method="POST" enctype="multipart/form-data")
     label(for="type")
       | Type&nbsp;
       span (Required)

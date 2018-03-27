@@ -14,12 +14,13 @@ html(lang="en")
       button#toTop.top--hide
         i.fa.fa-angle-double-up
       .add
-        a(href='/addProject') Add Project
-        a(href='/addProduct') Add Product
-        a(href='/register') Register
         if user
+          a(href='/add-project') Add Project
+          a(href='/add-product') Add Product
+          a(href='/account') Account
           a(href="/logout") Log Out
         else
+          a(href='/register') Register
           a(href='/login') Log In
       .header__wrapper#top
         .language__wrapper
@@ -61,7 +62,7 @@ html(lang="en")
 
     block messages
       if locals.flashes
-        .inner
+        .flash-wrapper
           .flash-messages
             - const categories = Object.keys(locals.flashes)
             each category in categories

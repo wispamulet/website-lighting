@@ -94,7 +94,7 @@ body {
 
 .add {
   display: grid;
-  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   a {
     height: 50px;
     color: black;
@@ -103,6 +103,10 @@ body {
     display: grid;
     justify-content: center;
     align-content: center;
+    font-size: 1.4rem;
+  }
+  a:not(:last-child) {
+    border-right: 1px solid black;
   }
 }
 

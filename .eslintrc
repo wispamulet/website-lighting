@@ -17,7 +17,8 @@
     "comma-dangle": 0,
     "quotes": 0,
     "no-else-return": 0,
-    "array-callback-return": 1
+    "array-callback-return": 1,
+    "no-underscore-dangle": 1
   },
   "plugins": []
 }

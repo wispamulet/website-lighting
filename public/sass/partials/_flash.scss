@@ -10,6 +10,14 @@
   }
 }
 
+.flash-wrapper {
+  max-width: 900px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
 .flash {
   font-size: 1.5rem;
   background: white;

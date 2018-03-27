@@ -21,7 +21,7 @@ const multerOption = {
 
 // files will be stored in req.files, if no files, req.files = {}
 exports.upload = multer(multerOption).fields([
-  { name: 'photos', maxCount: 10 },
+  { name: 'photos', maxCount: 7 },
   { name: 'brochure', maxCount: 1 }
 ]);
 

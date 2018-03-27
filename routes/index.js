@@ -16,9 +16,13 @@ router.get('/about-us', navController.aboutUs);
 router.get('/contact', navController.contact);
 
 // product
-router.get('/addProduct', productController.addProduct);
+router.get(
+  '/add-product',
+  authController.isLoggedIn,
+  productController.addProduct
+);
 router.post(
-  '/addProduct',
+  '/add-product',
   productController.upload,
   catchErrors(productController.resize),
   catchErrors(productController.createProduct)
@@ -27,16 +31,20 @@ router.get('/products', catchErrors(productController.getProducts));
 router.get('/products/:slug', catchErrors(productController.getProductsByType));
 router.get('/products/:id/edit', catchErrors(productController.editProduct));
 router.post(
-  '/addProduct/:id',
+  '/add-product/:id',
   productController.upload,
   catchErrors(productController.resize),
   catchErrors(productController.updateProduct)
 );
 
 // project
-router.get('/addProject', projectController.addProject);
+router.get(
+  '/add-project',
+  authController.isLoggedIn,
+  projectController.addProject
+);
 router.post(
-  '/addProject',
+  '/add-project',
   projectController.upload,
   catchErrors(projectController.resize),
   catchErrors(projectController.createProject)
@@ -46,10 +54,9 @@ router.get('/projects/:slug', catchErrors(projectController.getProjectsByType));
 // TODO
 router.get('/projects/:id/edit');
 // TODO
-router.post('/addProject/:id');
+router.post('/add-project/:id');
 
 // user
-router.get('/login', userController.loginForm);
 router.get('/register', userController.registerForm);
 router.post(
   '/register',
@@ -57,5 +64,10 @@ router.post(
   catchErrors(userController.register), // 2. Register the user
   authController.login // 3. Log them in
 );
+router.get('/login', userController.loginForm);
+router.post('/login', authController.login);
+router.get('/logout', authController.logout);
+router.get('/account', userController.account);
+router.post('/account', catchErrors(userController.updateAccount));
 
 module.exports = router;
