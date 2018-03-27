@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .inner
+    //- when you submit a form without a action, the actual default is to the current URL you are on
+    form.add__form(method="POST")
+      h2= title
+      label(for="password") Password
+      input(type="password" name="password")
+      label(for="password-confirm") Confirm Password
+      input(type="password" name="password-confirm")
+      input.button(type="submit" value="Reset your password")

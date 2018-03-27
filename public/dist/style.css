@@ -816,6 +816,8 @@ footer {
       grid-template-columns: 1fr;
   grid-gap: 2rem;
   font-size: 1.8rem; }
+  .add__form h2 {
+    text-transform: uppercase; }
   .add__form input {
     font-size: 1.6rem;
     padding: 1rem;
@@ -1004,7 +1006,7 @@ footer {
   position: absolute;
   left: 0;
   right: 0;
-  margin: 0 auto; }
+  margin: 2rem auto; }
 
 .flash {
   font-size: 1.5rem;

@@ -5,6 +5,9 @@
     grid-template-columns: 1fr;
     grid-gap: 2rem;
     font-size: 1.8rem;
+    h2 {
+      text-transform: uppercase;
+    }
     input {
       font-size: 1.6rem;
       padding: 1rem;
