@@ -6,6 +6,7 @@ import slideshow from './modules/slideshow';
 import initPhotoSwipeFromDOM from './modules/photoswipe';
 import makeMap from './modules/map';
 import { scrollFunction, toTop } from './modules/toTop';
+import { queryOpen, queryClose } from './modules/query';
 
 // navbar toggle button
 $('header button[aria-expanded]').on('click', toggle);
@@ -28,3 +29,11 @@ window.onscroll = function () {
   scrollFunction($('#toTop'));
 };
 $('#toTop').on('click', toTop);
+
+// toggle query display
+$('#query').on('click', () => {
+  queryOpen($('.query-wrapper'), $('.query-overlay'));
+});
+$('.query-overlay').on('click', () => {
+  queryClose($('.query-wrapper'), $('.query-overlay'));
+});

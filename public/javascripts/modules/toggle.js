@@ -1,6 +1,6 @@
 function toggle() {
   if (window.innerWidth > 800) {
-    console.log('hello!');
+    // console.log('hello!');
     return;
   }
 

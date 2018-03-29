@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -76,6 +76,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+/* eslint-disable */
 // based on https://gist.github.com/paulirish/12fb951a8b893a454b32
 
 var $ = document.querySelector.bind(document);
@@ -85,7 +86,7 @@ Node.prototype.on = window.on = function (name, fn) {
   this.addEventListener(name, fn);
 };
 
-NodeList.prototype.__proto__ = Array.prototype; // eslint-disable-line
+NodeList.prototype.__proto__ = Array.prototype;
 
 NodeList.prototype.on = NodeList.prototype.addEventListener = function (name, fn) {
   this.forEach(function (elem) {
@@ -172,11 +173,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _photoswipe = __webpack_require__(8);
+var _photoswipe = __webpack_require__(9);
 
 var _photoswipe2 = _interopRequireDefault(_photoswipe);
 
-var _photoswipeUiDefault = __webpack_require__(7);
+var _photoswipeUiDefault = __webpack_require__(8);
 
 var _photoswipeUiDefault2 = _interopRequireDefault(_photoswipeUiDefault);
 
@@ -424,6 +425,29 @@ exports.default = initPhotoSwipeFromDOM;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+function queryOpen(query, overlay) {
+  query.classList.add('query-display');
+  overlay.classList.add('query-display');
+}
+
+function queryClose(query, overlay) {
+  query.classList.remove('query-display');
+  overlay.classList.remove('query-display');
+}
+
+exports.queryOpen = queryOpen;
+exports.queryClose = queryClose;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var index = 0;
 
 function slideshow(slides, dots) {
@@ -451,7 +475,7 @@ function slideshow(slides, dots) {
 exports.default = slideshow;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -479,7 +503,7 @@ exports.scrollFunction = scrollFunction;
 exports.toTop = toTop;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -490,7 +514,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 function toggle() {
   if (window.innerWidth > 800) {
-    console.log('hello!');
+    // console.log('hello!');
     return;
   }
 
@@ -502,13 +526,13 @@ function toggle() {
 exports.default = toggle;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1311,7 +1335,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 });
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4872,21 +4896,21 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 });
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(6);
+__webpack_require__(7);
 
 var _bling = __webpack_require__(0);
 
-var _toggle = __webpack_require__(5);
+var _toggle = __webpack_require__(6);
 
 var _toggle2 = _interopRequireDefault(_toggle);
 
-var _slideshow = __webpack_require__(3);
+var _slideshow = __webpack_require__(4);
 
 var _slideshow2 = _interopRequireDefault(_slideshow);
 
@@ -4898,7 +4922,9 @@ var _map = __webpack_require__(1);
 
 var _map2 = _interopRequireDefault(_map);
 
-var _toTop = __webpack_require__(4);
+var _toTop = __webpack_require__(5);
+
+var _query = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4923,6 +4949,14 @@ window.onscroll = function () {
   (0, _toTop.scrollFunction)((0, _bling.$)('#toTop'));
 };
 (0, _bling.$)('#toTop').on('click', _toTop.toTop);
+
+// toggle query display
+(0, _bling.$)('#query').on('click', function () {
+  (0, _query.queryOpen)((0, _bling.$)('.query-wrapper'), (0, _bling.$)('.query-overlay'));
+});
+(0, _bling.$)('.query-overlay').on('click', function () {
+  (0, _query.queryClose)((0, _bling.$)('.query-wrapper'), (0, _bling.$)('.query-overlay'));
+});
 
 /***/ })
 /******/ ]);

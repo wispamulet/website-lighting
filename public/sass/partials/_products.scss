@@ -12,41 +12,55 @@
     //   display: grid;
     //   align-content: center;
     // }
+    &__heading {
+      display: grid;
+      grid-template-columns: 1fr 3rem;
+      // grid-auto-flow: column;
+      align-items: center;
+      h2 {
+        color: $yellow;
+        font-size: 2rem;
+        text-align: left;
+      }
+    }
     &__text {
-      &__heading {
+      grid-column-start: 1;
+      padding: 3rem 0;
+      // display: grid;
+      // justify-content: flex-start;
+      li {
+        font-size: 1.4rem;
+        list-style: none;
         display: grid;
-        grid-template-columns: 1fr 3rem;
-        // grid-auto-flow: column;
-        align-items: center;
-        h2 {
-          color: $yellow;
-          font-size: 2rem;
+        grid-template-columns: 20% 1fr;
+        grid-gap: 2rem;
+        line-height: 2;
+        text-align: right;
+        span {
+          // border-left: 1px solid $black;
           text-align: left;
         }
       }
-      &__details {
-        padding: 3rem 0;
-        // display: grid;
-        // justify-content: flex-start;
-        li {
+      &__button {
+        margin-top: 3rem;
+        a {
+          border: 1px solid $yellow;
+          border-radius: .5rem;
+          color: $yellow;
           font-size: 1.4rem;
-          list-style: none;
-          display: grid;
-          grid-template-columns: 20% 1fr;
-          grid-gap: 2rem;
-          line-height: 2;
-          text-align: right;
-          span {
-            // border-left: 1px solid $black;
-            text-align: left;
+          text-decoration: none;
+          padding: .5rem;
+          transition: all .5s ease-out;
+          &:hover {
+            background: $yellow;
+            color: $white;
           }
         }
       }
     }
     &__image {
-      &--thumb {
-
-      }
+      grid-row: 1 / span 2;
+      grid-column-start: 2;
     }
     &-gallery {
       display: grid;
@@ -61,6 +75,23 @@
         figcaption {
           display: none;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .products {
+    .product {
+      grid-template-columns: 1fr;
+      &__text {
+        li {
+          grid-template-columns: 2fr 3fr;
+        }
+      }
+      &__image {
+        grid-row: 2 / span 2;
+        grid-column: 1 / -1;
       }
     }
   }

@@ -1,3 +1,4 @@
+// Deprecated code, use 'lang' variable in view engine instead
 function getSiblings(elem, query) {
   const others = elem.parentElement.querySelectorAll(query);
   const result = [...others].filter(other => other !== elem);

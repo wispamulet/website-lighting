@@ -112,6 +112,16 @@ exports.getProductsByType = async (req, res) => {
   res.render('products', { title: `${type}`, types, products });
 };
 
+exports.downloadBrochure = (req, res) => {
+  const brochure = `./public/uploads/pdf/${req.params.brochure}`;
+  res.download(brochure, (err) => {
+    if (err) {
+      req.flash('error', 'Oops! The brochure of this product might be missing!');
+      res.redirect('back');
+    }
+  });
+};
+
 const confirmOwner = (product, user) => {
   if (!product.author.equals(user._id)) {
     throw Error('You can not edit this product!');

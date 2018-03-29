@@ -14,6 +14,7 @@ router.get('/home', navController.home);
 router.get('/support', navController.support);
 router.get('/about-us', navController.aboutUs);
 router.get('/contact', navController.contact);
+router.post('/query', catchErrors(navController.query));
 
 // product
 router.get(
@@ -29,6 +30,7 @@ router.post(
 );
 router.get('/products', catchErrors(productController.getProducts));
 router.get('/products/:slug', catchErrors(productController.getProductsByType));
+router.get('/download/:brochure', productController.downloadBrochure);
 router.get('/products/:id/edit', catchErrors(productController.editProduct));
 router.post(
   '/add-product/:id',

@@ -1,37 +1,40 @@
 mixin productCard(product = {})
   .product
-    .product__text
-      .product__text__heading
-        h2= product.name
+    .product__heading
+      h2= product.name
         if user && product.author.equals(user._id)
           .product__edit
             a(href=`/products/${product._id}/edit`)
               != h.icon('pencil')
-      .product__text__details
-        li
-          | Model No.
-          span #{product.model_no}
-        li
-          | Voltage
-          span #{product.voltage}
-        li
-          | Base Type
-          span #{product.base_type}
-        li
-          | Lumens
-          span #{product.lumen}
-        li
-          | Dimensions
-          span #{product.dimension}
-        li
-          | IP Rating
-          span #{product.ip_rating}
-        li
-          | CRI
-          span #{product.cri}
-        li
-          | Applications
-          span #{product.application}
+    .product__text
+      li
+        | Model No.
+        span #{product.model_no}
+      li
+        | Voltage
+        span #{product.voltage}
+      li
+        | Base Type
+        span #{product.base_type}
+      li
+        | Lumens
+        span #{product.lumen}
+      li
+        | Dimensions
+        span #{product.dimension}
+      li
+        | IP Rating
+        span #{product.ip_rating}
+      li
+        | CRI
+        span #{product.cri}
+      li
+        | Applications
+        span #{product.application}
+      if product.brochure
+        .product__text__button
+          //- a(href=`uploads/pdf/${product.brochure}`) Peek Brochure
+          a(href=`/download/${product.brochure}`) Download Brochure
     .product__image
       .product-gallery(itemscope itemtype="http://schema.org/ImageGallery")
         - const images = product.photos

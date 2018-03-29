@@ -1,0 +1,21 @@
+mixin queryForm()
+  form.query__form(action="/query" method="POST")
+    label(for="name")
+      | Name&nbsp;
+      span (Required)
+    input#name(type="text" name="name" required)
+    label(for="email")
+      | Email&nbsp;
+      span (Required)
+    input#email(type="email" name="email" required)
+    label(for="phone") Phone
+    input#phone(type="text" name="phone")
+    label(for="country") Country
+    input#country(type="text" name="country")
+    label(for="subject") Subject
+    input#subject(type="text" name="subject")
+    label(for="message")
+      | Message
+      span (Required)
+    textarea#message(name="message", cols="30", rows="10" required)
+    input.button(type="submit" value="Send")

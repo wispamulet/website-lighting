@@ -64,7 +64,8 @@
       }
     }
   }
-  .contact__region__city {
+  .contact__region__cities {
+    grid-column: 1 / -1;
     grid-template-columns: 1fr;
   }
 }

@@ -34,3 +34,19 @@ exports.send = async (options) => {
   const sendMail = promisify(transport.sendMail, transport);
   return sendMail(mailOptions);
 };
+
+exports.query = async (options) => {
+  const html = generateHTML(options.filename, options.query);
+  const text = htmlToText.fromString(html);
+
+  const mailOptions = {
+    from: options.query.email,
+    to: 'nssled@order.com',
+    subject: options.subject,
+    html,
+    text
+  };
+
+  const sendMail = promisify(transport.sendMail, transport);
+  return sendMail(mailOptions);
+};
