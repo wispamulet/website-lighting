@@ -60,6 +60,7 @@ body {
 }
 
 #toTop {
+  z-index: 95;
   background: $yellow;
   outline: none;
   border: none;

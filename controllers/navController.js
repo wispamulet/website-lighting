@@ -1,3 +1,4 @@
+const axios = require('axios');
 const mail = require('../handlers/mail');
 const h = require('../helpers');
 
@@ -21,9 +22,30 @@ exports.contact = (req, res) => {
   res.render('contact', { title: 'Contact' });
 };
 
+exports.queryValidate = (req, res, next) => {
+  const url = 'https://www.google.com/recaptcha/api/siteverify';
+
+  axios
+    .post(url, {
+      secret: process.env.SECRET_KEY,
+      responsive: req.body['g-recaptcha-response']
+    })
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+
+  // if (!req.body['g-recaptcha-response']) {
+  //   req.flash('error', 'You must pass reCAPTCHA!');
+  //   res.redirect('back');
+  // } else {
+  //   next();
+  // }
+};
+
 exports.query = async (req, res) => {
-  // res.json(req.body);
-  // return;
   const query = req.body;
   const t = h.moment().format('MMMM Do YYYY, h:mm:ss a');
   query.t = t;
@@ -35,6 +57,6 @@ exports.query = async (req, res) => {
     filename: 'query'
   });
 
-  req.flash('success', 'Success!');
+  req.flash('success', 'Successfully send the query! We will send you a feedback as soon as possible.');
   res.redirect('back');
 };

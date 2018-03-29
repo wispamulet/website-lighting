@@ -11,10 +11,15 @@ const router = express.Router();
 // navbar
 router.get('/', navController.index);
 router.get('/home', navController.home);
-router.get('/support', navController.support);
+router.get('/support',
+  navController.support);
 router.get('/about-us', navController.aboutUs);
 router.get('/contact', navController.contact);
-router.post('/query', catchErrors(navController.query));
+router.post(
+  '/query',
+  // navController.queryValidate,
+  catchErrors(navController.query)
+);
 
 // product
 router.get(

@@ -455,6 +455,7 @@ body {
   position: relative; }
 
 #toTop {
+  z-index: 95;
   background: #f08519;
   outline: none;
   border: none;
@@ -1273,7 +1274,7 @@ footer {
   .query-wrapper {
     display: none;
     z-index: 99;
-    width: 50rem;
+    width: 40rem;
     min-height: 95vh;
     background: #ffffff;
     position: absolute;
@@ -1323,6 +1324,13 @@ footer {
 
 @media (max-width: 800px) {
   .query-wrapper {
-    width: 30rem; } }
+    width: 30rem; }
+  .query__form {
+    font-size: 1.2rem;
+    grid-gap: .5rem; }
+    .query__form input, .query__form textarea {
+      padding: .5rem; }
+    .query__form span {
+      font-size: 1rem; } }
 
 /*# sourceMappingURL=style.css.map*/
