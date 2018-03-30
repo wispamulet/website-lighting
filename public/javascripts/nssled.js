@@ -7,6 +7,7 @@ import initPhotoSwipeFromDOM from './modules/photoswipe';
 import makeMap from './modules/map';
 import { scrollFunction, toTop } from './modules/toTop';
 import { queryOpen, queryClose } from './modules/query';
+import skype from './modules/skype';
 
 // navbar toggle button
 $('header button[aria-expanded]').on('click', toggle);
@@ -37,3 +38,6 @@ $('#query').on('click', () => {
 $('.query-overlay').on('click', () => {
   queryClose($('.query-wrapper'), $('.query-overlay'));
 });
+
+// run skype
+skype();

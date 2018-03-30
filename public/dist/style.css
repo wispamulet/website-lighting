@@ -472,6 +472,12 @@ body {
   #toTop:hover {
     background: #80837c; }
 
+#skype {
+  z-index: 95;
+  position: fixed;
+  top: 80vh;
+  right: 0; }
+
 @media (max-width: 600px) {
   #toTop {
     width: 3rem;

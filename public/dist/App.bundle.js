@@ -4926,6 +4926,10 @@ var _toTop = __webpack_require__(5);
 
 var _query = __webpack_require__(3);
 
+var _skype = __webpack_require__(17);
+
+var _skype2 = _interopRequireDefault(_skype);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // navbar toggle button
@@ -4957,6 +4961,45 @@ window.onscroll = function () {
 (0, _bling.$)('.query-overlay').on('click', function () {
   (0, _query.queryClose)((0, _bling.$)('.query-wrapper'), (0, _bling.$)('.query-overlay'));
 });
+
+// run skype
+(0, _skype2.default)();
+
+/***/ }),
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* global Skype */
+
+var imageSize = 24;
+
+if (window.innerWidth < 800) {
+  imageSize = 20;
+}
+
+function skype() {
+  console.log('skype start');
+  Skype.ui({
+    name: "chat",
+    element: "SkypeButton_Call_live:ylyznl_1",
+    participants: ["live:ylyznl"],
+    imageSize: imageSize
+  });
+}
+
+exports.default = skype;
 
 /***/ })
 /******/ ]);
