@@ -1,0 +1,36 @@
+#toTop {
+  z-index: 95;
+  background: $yellow;
+  outline: none;
+  border: none;
+  width: 5rem;
+  height: 5rem;
+  position: fixed;
+  bottom: 5rem;
+  right: 3rem;
+  border-radius: .5rem;
+  font-size: 2.5rem;
+  color: darken($white, 10%);
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  &:hover {
+    background: #80837c;
+  }
+}
+
+.top--hide {
+  transform: translateY(200%);
+}
+
+@media (max-width:600px) {
+  #toTop {
+    width: 3rem;
+    height: 3rem;
+    bottom: 3rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    &:hover {
+      background: $yellow;
+    }
+  }
+}

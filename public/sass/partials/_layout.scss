@@ -1,21 +1,5 @@
-@font-face {
-  font-family: 'tienne';
-  src: url('/fonts/tienne.regular.ttf') format('truetype');
-  src: url('/fonts/tienne.bold.ttf') format('truetype');
-  font-weight: 400;
-}
-
-html {
-  font-family: 'tienne', 'sans-serif';
-  font-size: 62.5%;
-}
-
-.content {
-  // height: 500px;
-}
-
-pre {
-  font-size: 1.2rem;
+body {
+  position: relative;
 }
 
 .inner {
@@ -51,58 +35,6 @@ pre {
   }
 }
 
-.pswp {
-  font-family: 'sans-serif';
-}
-
-body {
-  position: relative;
-}
-
-#toTop {
-  z-index: 95;
-  background: $yellow;
-  outline: none;
-  border: none;
-  width: 5rem;
-  height: 5rem;
-  position: fixed;
-  bottom: 5rem;
-  right: 5rem;
-  border-radius: .5rem;
-  font-size: 2.5rem;
-  color: darken($white, 10%);
-  cursor: pointer;
-  transition: all .5s ease-in-out;
-  &:hover {
-    background: #80837c;
-  }
-}
-
-#skype {
-  z-index: 95;
-  position: fixed;
-  top: 80vh;
-  right: 0;
-}
-
-@media (max-width:600px) {
-  #toTop {
-    width: 3rem;
-    height: 3rem;
-    bottom: 3rem;
-    right: 3rem;
-    font-size: 1.5rem;
-    &:hover {
-      background: $yellow;
-    }
-  }
-}
-
-.top--hide {
-  transform: translateY(200%);
-}
-
 .add {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -119,14 +51,4 @@ body {
   a:not(:last-child) {
     border-right: 1px solid black;
   }
-}
-
-.error {
-  font-size: 1.5rem;
-  line-height: 2;
-  margin: 5rem;
-}
-
-footer {
-  position: relative;
 }
