@@ -2,6 +2,16 @@ body {
   position: relative;
 }
 
+body.nav-fixed header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+body.top--hide #toTop {
+  transform: translateY(200%);
+}
+
 .inner {
   max-width: 900px;
   margin: 0 auto;

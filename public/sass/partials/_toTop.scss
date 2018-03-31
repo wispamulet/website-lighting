@@ -8,7 +8,7 @@
   position: fixed;
   bottom: 5rem;
   right: 3rem;
-  border-radius: .5rem;
+  // border-radius: .5rem;
   font-size: 2.5rem;
   color: darken($white, 10%);
   cursor: pointer;
@@ -16,10 +16,6 @@
   &:hover {
     background: #80837c;
   }
-}
-
-.top--hide {
-  transform: translateY(200%);
 }
 
 @media (max-width:600px) {

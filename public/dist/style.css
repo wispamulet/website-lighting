@@ -414,6 +414,15 @@ template {
 body {
   position: relative; }
 
+body.nav-fixed header {
+  position: fixed;
+  width: 100%;
+  top: 0; }
+
+body.top--hide #toTop {
+  -ms-transform: translateY(200%);
+      transform: translateY(200%); }
+
 .inner {
   max-width: 900px;
   margin: 0 auto;
@@ -483,12 +492,13 @@ body {
       justify-content: center; }
 
 header {
+  z-index: 49;
   background: #000000;
   display: -ms-grid;
   display: grid; }
 
 .nav {
-  z-index: 1;
+  z-index: 49;
   background: #000000;
   display: -ms-grid;
   display: grid;
@@ -1133,6 +1143,9 @@ footer {
       #map .popup p {
         font-size: 1.2rem !important; } }
 
+.about__us h2 {
+  text-transform: uppercase; }
+
 .about__us > * {
   margin: 10rem 0; }
 
@@ -1164,6 +1177,17 @@ footer {
   display: block; }
   .about__us__contact span {
     padding-left: 1.5rem; }
+
+.about__video {
+  background: #000000;
+  padding: 5rem 0; }
+  .about__video-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center; }
 
 @media (max-width: 800px) {
   .about__us__detail {
@@ -1295,17 +1319,12 @@ footer {
   position: fixed;
   bottom: 5rem;
   right: 3rem;
-  border-radius: .5rem;
   font-size: 2.5rem;
   color: #e6e6e6;
   cursor: pointer;
   transition: all .5s ease-in-out; }
   #toTop:hover {
     background: #80837c; }
-
-.top--hide {
-  -ms-transform: translateY(200%);
-      transform: translateY(200%); }
 
 @media (max-width: 600px) {
   #toTop {
@@ -1320,8 +1339,12 @@ footer {
 #skype {
   z-index: 95;
   position: fixed;
-  top: 75vh;
+  top: 50vh;
   right: 0; }
+
+@media (max-width: 800px) {
+  #skype {
+    top: 75vh; } }
 
 @font-face {
   font-family: 'tienne';

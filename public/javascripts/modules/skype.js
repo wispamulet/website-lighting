@@ -1,10 +1,10 @@
 /* global Skype */
 
-let imageSize = 24;
+// let imageSize = 24;
 
-if (window.innerWidth < 800) {
-  imageSize = 20;
-}
+// if (window.innerWidth < 800) {
+//   imageSize = 20;
+// }
 
 function skype() {
   console.log('skype start');
@@ -12,7 +12,7 @@ function skype() {
     name: "chat",
     element: "SkypeButton_Call_live:ylyznl_1",
     participants: ["live:ylyznl"],
-    imageSize
+    imageSize: 24
   });
 }
 

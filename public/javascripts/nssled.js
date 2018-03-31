@@ -5,14 +5,23 @@ import toggle from './modules/toggle';
 import slideshow from './modules/slideshow';
 import initPhotoSwipeFromDOM from './modules/photoswipe';
 import makeMap from './modules/map';
-import { scrollFunction, toTop } from './modules/toTop';
+import { toggleToTopBtn, toTop } from './modules/toTop';
 import { queryOpen, queryClose } from './modules/query';
 import skype from './modules/skype';
+import setDimension from './modules/about-video';
+import fixNav from './modules/fixNav';
 
 // navbar toggle button
 $('header button[aria-expanded]').on('click', toggle);
 $$('header span[aria-expanded]').forEach((btn) => {
   btn.on('click', toggle);
+});
+
+// fix navbar
+const topOfNav = $('header').offsetTop;
+const heightOfNav = $('header').offsetHeight;
+window.on('scroll', () => {
+  fixNav(topOfNav, heightOfNav);
 });
 
 // slideshow
@@ -26,9 +35,9 @@ initPhotoSwipeFromDOM('.product-gallery');
 makeMap($('#map'));
 
 // scroll to top button
-window.onscroll = function () {
-  scrollFunction($('#toTop'));
-};
+window.on('scroll', () => {
+  toggleToTopBtn(topOfNav);
+});
 $('#toTop').on('click', toTop);
 
 // toggle query display
@@ -41,3 +50,6 @@ $('.query-overlay').on('click', () => {
 
 // run skype
 skype();
+
+// set video's width and heighr on about us page
+setDimension($('.about__video iframe'));

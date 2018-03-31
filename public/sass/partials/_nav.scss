@@ -25,12 +25,13 @@
 }
 
 header {
+  z-index: 49;
   background: $black;
   display: grid;
 }
 
 .nav {
-  z-index: 1;
+  z-index: 49;
   // background: $yellow;
   background: $black;
   display: grid;

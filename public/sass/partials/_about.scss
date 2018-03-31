@@ -1,4 +1,7 @@
 .about__us {
+  h2 {
+    text-transform: uppercase;
+  }
   & > * {
     margin: 10rem 0;
   }
@@ -30,6 +33,17 @@
     span {
       padding-left: 1.5rem;
     }
+  }
+}
+
+.about__video {
+  background: $black;
+  padding: 5rem 0;
+  &-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
   }
 }
 

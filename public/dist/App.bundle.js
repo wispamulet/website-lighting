@@ -63,11 +63,32 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function setDimension(element) {
+  if (!element) return;
+
+  var parent = element.parentElement;
+  var p = 315 / 560; // default height and width
+  element.width = parent.offsetWidth * 0.9;
+  element.height = element.width * p;
+}
+
+exports.default = setDimension;
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -98,7 +119,30 @@ exports.$ = $;
 exports.$$ = $$;
 
 /***/ }),
-/* 1 */
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function fixNav(topOfNav, heightOfNav) {
+  // console.log(topOfNav, window.scrollY);
+  if (window.scrollY >= topOfNav) {
+    document.body.style.paddingTop = heightOfNav + 'px';
+    document.body.classList.add('nav-fixed');
+  } else {
+    document.body.style.paddingTop = 0;
+    document.body.classList.remove('nav-fixed');
+  }
+}
+
+exports.default = fixNav;
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -163,7 +207,7 @@ function makeMap(mapDiv) {
 exports.default = makeMap;
 
 /***/ }),
-/* 2 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -173,11 +217,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _photoswipe = __webpack_require__(9);
+var _photoswipe = __webpack_require__(12);
 
 var _photoswipe2 = _interopRequireDefault(_photoswipe);
 
-var _photoswipeUiDefault = __webpack_require__(8);
+var _photoswipeUiDefault = __webpack_require__(11);
 
 var _photoswipeUiDefault2 = _interopRequireDefault(_photoswipeUiDefault);
 
@@ -416,7 +460,7 @@ var initPhotoSwipeFromDOM = function initPhotoSwipeFromDOM(gallerySelector) {
 exports.default = initPhotoSwipeFromDOM;
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -439,7 +483,37 @@ exports.queryOpen = queryOpen;
 exports.queryClose = queryClose;
 
 /***/ }),
-/* 4 */
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* global Skype */
+
+// let imageSize = 24;
+
+// if (window.innerWidth < 800) {
+//   imageSize = 20;
+// }
+
+function skype() {
+  console.log('skype start');
+  Skype.ui({
+    name: "chat",
+    element: "SkypeButton_Call_live:ylyznl_1",
+    participants: ["live:ylyznl"],
+    imageSize: 24
+  });
+}
+
+exports.default = skype;
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -475,7 +549,7 @@ function slideshow(slides, dots) {
 exports.default = slideshow;
 
 /***/ }),
-/* 5 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -484,12 +558,11 @@ exports.default = slideshow;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-function scrollFunction(element) {
-  // console.log('123');
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    element.classList.remove('top--hide');
+function toggleToTopBtn(topOfNav) {
+  if (document.body.scrollTop > topOfNav || document.documentElement.scrollTop > topOfNav) {
+    document.body.classList.remove('top--hide');
   } else {
-    element.classList.add('top--hide');
+    document.body.classList.add('top--hide');
   }
 }
 
@@ -499,11 +572,11 @@ function toTop() {
   document.documentElement.scrollTop = 0;
 }
 
-exports.scrollFunction = scrollFunction;
+exports.toggleToTopBtn = toggleToTopBtn;
 exports.toTop = toTop;
 
 /***/ }),
-/* 6 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -526,13 +599,13 @@ function toggle() {
 exports.default = toggle;
 
 /***/ }),
-/* 7 */
+/* 10 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 8 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1335,7 +1408,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 });
 
 /***/ }),
-/* 9 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4896,39 +4969,47 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 });
 
 /***/ }),
-/* 10 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(7);
+__webpack_require__(10);
 
-var _bling = __webpack_require__(0);
+var _bling = __webpack_require__(1);
 
-var _toggle = __webpack_require__(6);
+var _toggle = __webpack_require__(9);
 
 var _toggle2 = _interopRequireDefault(_toggle);
 
-var _slideshow = __webpack_require__(4);
+var _slideshow = __webpack_require__(7);
 
 var _slideshow2 = _interopRequireDefault(_slideshow);
 
-var _photoswipe = __webpack_require__(2);
+var _photoswipe = __webpack_require__(4);
 
 var _photoswipe2 = _interopRequireDefault(_photoswipe);
 
-var _map = __webpack_require__(1);
+var _map = __webpack_require__(3);
 
 var _map2 = _interopRequireDefault(_map);
 
-var _toTop = __webpack_require__(5);
+var _toTop = __webpack_require__(8);
 
-var _query = __webpack_require__(3);
+var _query = __webpack_require__(5);
 
-var _skype = __webpack_require__(17);
+var _skype = __webpack_require__(6);
 
 var _skype2 = _interopRequireDefault(_skype);
+
+var _aboutVideo = __webpack_require__(0);
+
+var _aboutVideo2 = _interopRequireDefault(_aboutVideo);
+
+var _fixNav = __webpack_require__(2);
+
+var _fixNav2 = _interopRequireDefault(_fixNav);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4936,6 +5017,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _bling.$)('header button[aria-expanded]').on('click', _toggle2.default);
 (0, _bling.$$)('header span[aria-expanded]').forEach(function (btn) {
   btn.on('click', _toggle2.default);
+});
+
+// fix navbar
+var topOfNav = (0, _bling.$)('header').offsetTop;
+var heightOfNav = (0, _bling.$)('header').offsetHeight;
+window.on('scroll', function () {
+  (0, _fixNav2.default)(topOfNav, heightOfNav);
 });
 
 // slideshow
@@ -4949,9 +5037,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _map2.default)((0, _bling.$)('#map'));
 
 // scroll to top button
-window.onscroll = function () {
-  (0, _toTop.scrollFunction)((0, _bling.$)('#toTop'));
-};
+window.on('scroll', function () {
+  (0, _toTop.toggleToTopBtn)(topOfNav);
+});
 (0, _bling.$)('#toTop').on('click', _toTop.toTop);
 
 // toggle query display
@@ -4965,41 +5053,8 @@ window.onscroll = function () {
 // run skype
 (0, _skype2.default)();
 
-/***/ }),
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-/* global Skype */
-
-var imageSize = 24;
-
-if (window.innerWidth < 800) {
-  imageSize = 20;
-}
-
-function skype() {
-  console.log('skype start');
-  Skype.ui({
-    name: "chat",
-    element: "SkypeButton_Call_live:ylyznl_1",
-    participants: ["live:ylyznl"],
-    imageSize: imageSize
-  });
-}
-
-exports.default = skype;
+// set video's width and heighr on about us page
+(0, _aboutVideo2.default)((0, _bling.$)('.about__video iframe'));
 
 /***/ })
 /******/ ]);

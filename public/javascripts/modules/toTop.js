@@ -1,9 +1,8 @@
-function scrollFunction(element) {
-  // console.log('123');
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    element.classList.remove('top--hide');
+function toggleToTopBtn(topOfNav) {
+  if (document.body.scrollTop > topOfNav || document.documentElement.scrollTop > topOfNav) {
+    document.body.classList.remove('top--hide');
   } else {
-    element.classList.add('top--hide');
+    document.body.classList.add('top--hide');
   }
 }
 
@@ -13,4 +12,4 @@ function toTop() {
   document.documentElement.scrollTop = 0;
 }
 
-export { scrollFunction, toTop };
+export { toggleToTopBtn, toTop };
