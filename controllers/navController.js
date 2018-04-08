@@ -23,6 +23,8 @@ exports.contact = (req, res) => {
 };
 
 exports.queryValidate = (req, res, next) => {
+  res.json(req.body);
+  // return;
   const url = 'https://www.google.com/recaptcha/api/siteverify';
 
   axios

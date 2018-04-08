@@ -12,13 +12,18 @@ html(lang="en")
     link(rel="stylesheet", href="/dist/style.css")
     link(rel="shortcut icon" type="image/png" href="/images/icons/doughnut.png")
 
-  body.top--hide
+  body.rb--hide
     block header
       #skype
         div(id="SkypeButton_Call_live:ylyznl_1")
-      button#toTop
-        i.fa.fa-angle-double-up
-      .add
+      .rb
+        button#weixin.rb__btn
+          i.fab.fa-weixin
+        button.rb__btn.query__btn
+          i.fa.fa-envelope
+        button#toTop.rb__btn
+          i.fa.fa-angle-double-up
+      //- .add
         if user
           a(href='/add-project') Add Project
           a(href='/add-product') Add Product
@@ -93,7 +98,7 @@ html(lang="en")
           .contact__info
             h2= TRANSLATION.CONTACT_INFO
             p= TRANSLATION.CONTACT_INFO_ADDR_US
-            p= TRANSLATION.CONTACT_INFO_EMAIL_ROBERT
+            a(href=`mailto:${TRANSLATION.CONTACT_INFO_EMAIL_ROBERT}`)= TRANSLATION.CONTACT_INFO_EMAIL_ROBERT
             p
               span Tel.&nbsp;
               = TRANSLATION.CONTACT_INFO_TEL_ROBERT
@@ -102,7 +107,7 @@ html(lang="en")
               = TRANSLATION.CONTACT_INFO_TEL_LYNA
             .divide
             p= TRANSLATION.CONTACT_INFO_ADDR_CN
-            p= TRANSLATION.CONTACT_INFO_EMAIL_CN
+            a(href=`mailto:${TRANSLATION.CONTACT_INFO_EMAIL_CN}`)= TRANSLATION.CONTACT_INFO_EMAIL_CN
             p
               span Tel.&nbsp;
               = TRANSLATION.CONTACT_INFO_TEL_CN1
@@ -111,19 +116,21 @@ html(lang="en")
               = TRANSLATION.CONTACT_INFO_TEL_CN2
           .contact__email
             h2= TRANSLATION.CONTACT_US
-            button#query= TRANSLATION.SEND_EMAIL
+            button.query__btn= TRANSLATION.SEND_EMAIL
             a(href="/contact").contact__about__more= TRANSLATION.READ_MORE
               span
                 i.fa.fa-long-arrow-alt-right
         .copyright
           p &copy; New Sunshine 2018 |
             span  Legacy
-        block query
-          .query
-            .query-overlay
-            .query-wrapper
-              button.query__remove &times;
-              +queryForm()
+
+    block query
+      .query
+        .query-overlay
+        .query-wrapper
+          button.query__remove
+            i.fas.fa-times
+          +queryForm()
 
     block scripts
       script(defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js")

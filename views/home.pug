@@ -27,6 +27,100 @@ block content
       .dot
       .dot
       .dot
-  .inner
-    h2= TRANSLATION.HOME_MSG
-    p It's #{h.moment().format('MMMM Do YYYY, h:mm:ss a')}
+  .content
+    .intro
+      .intro__company
+        .inner-2
+          //- h2= TRANSLATION.HOME_MSG
+          //- p It's #{h.moment().format('MMMM Do YYYY, h:mm:ss a')}
+          h2 New sunshine
+          p New Sunshine LED (New Sunshine Manufacturing Co.,Ltd) founded in 2004, we specialise in application of LED light technology for indoor-outdoor development and manufacture for illumination, such as LED street light, LED warehouse light, LED high bay light, LED corn bulb, LED flood light, LED tunnel light and other outdoor and indoor lights...
+      .intro__features-wrapper
+        h2 Features&Benefits
+        .inner-2
+          .intro__features
+            .intro__feature__img
+              img(src="/images/photos/1000x1000_01.jpg", alt="bg")
+            .intro__feature
+              .intro__feature__text
+                h2 Affordable
+                p Prices of the New Sunshine LED corn bulbs have come down to an affordable level price where it can most projects to make the switch it.
+              span.intro__feature__icon
+                i.fas.fa-money-bill-alt
+            .intro__feature
+              span.intro__feature__icon
+                i.fas.fa-money-bill-alt
+              .intro__feature__text
+                h2 Green without mercury
+                p Mercury is classified as a poison to humans, when disposed of improperly, it harmful to our health, New Sunshine LED light bulbs do not contain any mercury.
+            .intro__feature
+              .intro__feature__text
+                h2 80% Energy Save
+                p The New Sunshine LED corn bulbs consumes 80-85% less energy than incandescent lamp and high voltage sodium lamp.
+              span.intro__feature__icon
+                i.fas.fa-money-bill-alt
+            .intro__feature
+              span.intro__feature__icon
+                i.fas.fa-money-bill-alt
+              .intro__feature__text
+                h2 Green and recyclable
+                p New sunshine products do not contain any harmful substances, when the LED light bulb reaches its end of life simply toss it in the recycling bucket,Unlike traditional fluorescent lamp, need special treatment.
+            .intro__feature
+              .intro__feature__text
+                h2 Long lifespan, over 50,000 hours
+                p The New Sunshine LED corn bulb is tested to last 50,000 hours , if lighting 3 hours a day the New Sunshine LED lamp can last up to 31 years.
+              span.intro__feature__icon
+                i.fas.fa-money-bill-alt
+            .intro__feature
+              span.intro__feature__icon
+                i.fas.fa-money-bill-alt
+              .intro__feature__text
+                h2 Product quality assurance
+                p We have 8 Product certificates,With rights to import more than 80 countries and win thousands of companies trust.
+      .intro__products-wrapper
+        h2 3-5 Years Warranty
+        .pswp(tabindex="-1" role="dialog" aria-hidden="true")
+          .pswp__bg
+          .pswp__scroll-wrap
+            .pswp__container
+              .pswp__item
+              .pswp__item
+              .pswp__item
+            .pswp__ui.pswp__ui--hidden
+              .pswp__top-bar
+                .pswp__counter
+                button.pswp__button.pswp__button--close(title="Close (Esc)")
+                button.pswp__button.pswp__button--share(title="share")
+                button.pswp__button.pswp__button--fs(title="Toggle fullscreen")
+                button.pswp__button.pswp__button--zoom(title="Zoom in/out")
+                .pswp__preloader
+                  .pswp__preloader__icn
+                    .pswp__preloader__cut
+                      .pswp__preloader__donut
+              .pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+                .pswp__share-tooltip
+              button.pswp__button.pswp__button--arrow--left(title="Previous (arrow left)")
+              button.pswp__button.pswp__button--arrow--right(title="Next (arrow right)")
+              .pswp__caption
+                .pswp__caption__center
+        .inner-2
+          .intro__products-gallery(itemscope itemtype="http://schema.org/ImageGallery")
+            figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+              a(href="images/photos/1000x1000_01.jpg" itemprop="contentUrl" data-size="1000x1000")
+                img(src="images/photos/1000x1000_01.jpg" itemprop="thumbnail" alt="Image description" width=270 height=270)
+              figcaption(itemprop="caption description") 123
+            figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+              a(href="images/photos/1000x1000_02.jpg" itemprop="contentUrl" data-size="1000x1000")
+                img(src="images/photos/1000x1000_02.jpg" itemprop="thumbnail" alt="Image description" width=270 height=270)
+              figcaption(itemprop="caption description") 123
+            figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+              a(href="images/photos/1000x1000_03.jpg" itemprop="contentUrl" data-size="1000x1000")
+                img(src="images/photos/1000x1000_03.jpg" itemprop="thumbnail" alt="Image description" width=270 height=270)
+              figcaption(itemprop="caption description") 123
+            figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+              a(href="images/photos/1000x1000_04.jpg" itemprop="contentUrl" data-size="1000x1000")
+                img(src="images/photos/1000x1000_04.jpg" itemprop="thumbnail" alt="Image description" width=270 height=270)
+              figcaption(itemprop="caption description") 123
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+      .intro__projects

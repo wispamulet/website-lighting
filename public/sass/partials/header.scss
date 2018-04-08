@@ -1,0 +1,47 @@
+.language__wrapper {
+  background: $black;
+  display: flex;
+  justify-content: flex-end;
+  .language {
+    font-size: 1.4rem;
+    padding: .5rem 5rem;
+    &--active {
+      color: $yellow !important;
+    }
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+    span {
+      color: lighten($black, 70%);
+    }
+  }
+}
+
+.logo {
+  background: $black;
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  z-index: 49;
+  background: $black;
+  display: grid;
+}
+
+@media (max-width: 800px) {
+  .language__wrapper {
+    .language {
+      padding: .5rem .5rem;
+    }
+  }
+
+  .logo {
+    height: 112px;
+    img {
+      width: 154px;
+      height: 112px;
+    }
+  }
+}

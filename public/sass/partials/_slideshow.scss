@@ -15,11 +15,11 @@
     }
     &__caption {
       position: absolute;
-      right: 1rem;
-      bottom: 1rem;
+      right: 3rem;
+      bottom: 3rem;
       padding: 1rem;
       font-size: 1.2rem;
-      background: $grey;
+      background: lighten($black, 15%);
       color: lighten($black, 70%);
     }
     &--show {
@@ -80,5 +80,17 @@
   }
   .fade {
     animation: fade 3s;
+  }
+}
+
+@media (max-width: 800px) {
+  .slideshow {
+    .slide {
+      &__caption {
+        right: 1rem;
+        bottom: 1rem;
+        font-size: .8rem;
+      }
+    }
   }
 }

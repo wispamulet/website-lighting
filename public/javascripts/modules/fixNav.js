@@ -9,4 +9,15 @@ function fixNav(topOfNav, heightOfNav) {
   }
 }
 
-export default fixNav;
+function fixNavMobile(topOfNav) {
+  if (window.innerWidth > 800) {
+    return;
+  }
+  console.log(window.scrollY, topOfNav);
+  if (window.scrollY >= topOfNav * 2) {
+    // console.log('hello');
+    document.body.classList.remove('nav-fixed');
+  } else {}
+}
+
+export { fixNav, fixNavMobile };

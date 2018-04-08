@@ -139,7 +139,19 @@ function fixNav(topOfNav, heightOfNav) {
   }
 }
 
-exports.default = fixNav;
+function fixNavMobile(topOfNav) {
+  if (window.innerWidth > 800) {
+    return;
+  }
+  console.log(window.scrollY, topOfNav);
+  if (window.scrollY >= topOfNav * 2) {
+    // console.log('hello');
+    document.body.classList.remove('nav-fixed');
+  } else {}
+}
+
+exports.fixNav = fixNav;
+exports.fixNavMobile = fixNavMobile;
 
 /***/ }),
 /* 3 */
@@ -558,21 +570,20 @@ exports.default = slideshow;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-function toggleToTopBtn(topOfNav) {
+function rbToggle(topOfNav) {
   if (document.body.scrollTop > topOfNav || document.documentElement.scrollTop > topOfNav) {
-    document.body.classList.remove('top--hide');
+    document.body.classList.remove('rb--hide');
   } else {
-    document.body.classList.add('top--hide');
+    document.body.classList.add('rb--hide');
   }
 }
 
 function toTop() {
-  // console.log(this);
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
-exports.toggleToTopBtn = toggleToTopBtn;
+exports.rbToggle = rbToggle;
 exports.toTop = toTop;
 
 /***/ }),
@@ -5009,8 +5020,6 @@ var _aboutVideo2 = _interopRequireDefault(_aboutVideo);
 
 var _fixNav = __webpack_require__(2);
 
-var _fixNav2 = _interopRequireDefault(_fixNav);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // navbar toggle button
@@ -5020,11 +5029,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 // fix navbar
-var topOfNav = (0, _bling.$)('header').offsetTop;
-var heightOfNav = (0, _bling.$)('header').offsetHeight;
+var topOfNav = (0, _bling.$)('header').offsetTop; // offset top of navbar
+var heightOfNav = (0, _bling.$)('header').offsetHeight; // height of navbar
+
 window.on('scroll', function () {
-  (0, _fixNav2.default)(topOfNav, heightOfNav);
+  (0, _fixNav.fixNav)(topOfNav, heightOfNav);
 });
+
+// window.on('scroll', () => {
+//   fixNavMobile(topOfNav);
+// });
 
 // slideshow
 (0, _slideshow2.default)((0, _bling.$$)('.slideshow .slide'), (0, _bling.$$)('.slideshow .dots .dot'));
@@ -5032,28 +5046,37 @@ window.on('scroll', function () {
 // photoswipe
 (0, _photoswipe2.default)('.projects-gallery');
 (0, _photoswipe2.default)('.product-gallery');
+(0, _photoswipe2.default)('.intro__products-gallery');
 
 // contact page google map
 (0, _map2.default)((0, _bling.$)('#map'));
 
 // scroll to top button
 window.on('scroll', function () {
-  (0, _toTop.toggleToTopBtn)(topOfNav);
+  (0, _toTop.rbToggle)(topOfNav);
 });
+
 (0, _bling.$)('#toTop').on('click', _toTop.toTop);
 
 // toggle query display
-(0, _bling.$)('#query').on('click', function () {
-  (0, _query.queryOpen)((0, _bling.$)('.query-wrapper'), (0, _bling.$)('.query-overlay'));
+(0, _bling.$$)('.query__btn').forEach(function (btn) {
+  btn.on('click', function () {
+    (0, _query.queryOpen)((0, _bling.$)('.query-wrapper'), (0, _bling.$)('.query-overlay'));
+  });
 });
+
 (0, _bling.$)('.query-overlay').on('click', function () {
+  (0, _query.queryClose)((0, _bling.$)('.query-wrapper'), (0, _bling.$)('.query-overlay'));
+});
+
+(0, _bling.$)('.query__remove').on('click', function () {
   (0, _query.queryClose)((0, _bling.$)('.query-wrapper'), (0, _bling.$)('.query-overlay'));
 });
 
 // run skype
 (0, _skype2.default)();
 
-// set video's width and heighr on about us page
+// set video's width and height on about-us page
 (0, _aboutVideo2.default)((0, _bling.$)('.about__video iframe'));
 
 /***/ })

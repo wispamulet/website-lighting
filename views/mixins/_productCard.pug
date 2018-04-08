@@ -2,10 +2,10 @@ mixin productCard(product = {})
   .product
     .product__heading
       h2= product.name
-        if user && product.author.equals(user._id)
-          .product__edit
-            a(href=`/products/${product._id}/edit`)
-              != h.icon('pencil')
+      if user && product.author.equals(user._id)
+        .product__edit
+          a(href=`/products/${product._id}/edit`)
+            != h.icon('pencil')
     .product__text
       li
         | Model No.

@@ -18,5 +18,5 @@ mixin queryForm()
       | Message
       span (Required)
     textarea#message(name="message", cols="30", rows="10" required)
-    //- .g-recaptcha(data-sitekey=`${process.env.SITE_KEY}`)
+    .g-recaptcha(data-sitekey=`${process.env.SITE_KEY}`)
     input.button(type="submit" value="Send")

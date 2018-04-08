@@ -11,7 +11,7 @@ mixin projectCard(project = {})
             != h.icon('pencil')
         figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class=(image === images[0] ? '' : 'figure--hide'))
           a(href=`/uploads/photos/${original}` itemprop="contentUrl" data-size=`${dimension.w}x${dimension.h}`)
-            img(src=`/uploads/${thumbnail || 'default_300x300.jpg'}` itemprop="thumbnail" alt="Image description")
+            img(src=`/uploads/photos/${thumbnail || 'default_300x300.jpg'}` itemprop="thumbnail" alt="Image description")
           figcaption(itemprop="caption description")= descriptions[i]
           .project__image(style=`background-image: url(/uploads/photos/${thumbnail})`)
           artitle

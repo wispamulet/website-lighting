@@ -6,10 +6,12 @@ body.nav-fixed header {
   position: fixed;
   width: 100%;
   top: 0;
+  box-shadow: 0 5px 10px rgba(37, 37, 37, .7);
 }
 
-body.top--hide #toTop {
-  transform: translateY(200%);
+body.rb--hide .rb__btn {
+  transform: translateY(500%);
+  opacity: .5;
 }
 
 .inner {
@@ -60,5 +62,54 @@ body.top--hide #toTop {
   }
   a:not(:last-child) {
     border-right: 1px solid black;
+  }
+}
+
+.rb {
+  z-index: 95;
+  position: fixed;
+  right: 3rem;
+  bottom: 5rem;
+  height: 16rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: .5rem;
+  &__btn {
+    background: $yellow;
+    outline: none;
+    border: none;
+    width: 5rem;
+    height: 5rem;
+    font-size: 2.5rem;
+    color: darken($white, 10%);
+    cursor: pointer;
+    transition: all .5s ease-out;
+    opacity: .7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  // :nth-child(2) {
+  //   transition-delay: .3s;
+  // }
+  // :nth-child(3) {
+  //   transition-delay: .6s;
+  // }
+}
+
+@media (max-width: 800px) {
+  body.nav-fixed header {
+    box-shadow: 0 3px 10px rgba(37, 37, 37, .7);
+  }
+
+  .rb {
+    height: 10rem;
+    bottom: 3rem;
+    right: 1.5rem;
+    &__btn {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.5rem;
+    }
   }
 }

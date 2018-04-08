@@ -1,15 +1,14 @@
-function toggleToTopBtn(topOfNav) {
+function rbToggle(topOfNav) {
   if (document.body.scrollTop > topOfNav || document.documentElement.scrollTop > topOfNav) {
-    document.body.classList.remove('top--hide');
+    document.body.classList.remove('rb--hide');
   } else {
-    document.body.classList.add('top--hide');
+    document.body.classList.add('rb--hide');
   }
 }
 
 function toTop() {
-  // console.log(this);
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
-export { toggleToTopBtn, toTop };
+export { rbToggle, toTop };
