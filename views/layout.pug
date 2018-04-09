@@ -22,11 +22,11 @@ html(lang="en")
         button.rb__btn.query__btn
           i.fa.fa-envelope
         button#toTop.rb__btn
-          i.fa.fa-angle-double-up
-      //- .add
+          i.fa.fa-angle-up
+      .add
         if user
-          a(href='/add-project') Add Project
           a(href='/add-product') Add Product
+          a(href='/add-project') Add Project
           a(href='/account') Account
           a(href="/logout") Log Out
         else
@@ -116,7 +116,7 @@ html(lang="en")
               = TRANSLATION.CONTACT_INFO_TEL_CN2
           .contact__email
             h2= TRANSLATION.CONTACT_US
-            button.query__btn= TRANSLATION.SEND_EMAIL
+            .query__btn= TRANSLATION.SEND_EMAIL
             a(href="/contact").contact__about__more= TRANSLATION.READ_MORE
               span
                 i.fa.fa-long-arrow-alt-right

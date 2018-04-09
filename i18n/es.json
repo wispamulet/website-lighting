@@ -6,15 +6,12 @@
   "CONTACT_MSG": "Esto es contacto!",
   "MENU": [
     { "SLUG": "/home", "TITLE": "hogar" },
-    { "SLUG": "/projects", "TITLE": "proyectos", "DROPDOWN": [
-      { "SLUG": "/projects/indoor", "TITLE": "interior" },
-      { "SLUG": "/projects/outdoor", "TITLE": "al aire libre" }
-    ] },
     { "SLUG": "/products", "TITLE": "productos", "DROPDOWN": [
       { "SLUG": "/products/led-corn-light", "TITLE": "LED luz de maíz" },
       { "SLUG": "/products/led-garden-light", "TITLE": "LED luz de jardín" },
       { "SLUG": "/products/led-street-light", "TITLE": "farola LED" }
     ] },
+    { "SLUG": "/gallery", "TITLE": "galería" },
     { "SLUG": "/support", "TITLE": "apoyo" },
     { "SLUG": "/about-us", "TITLE": "nosotros" },
     { "SLUG": "/contact", "TITLE": "contacto" }

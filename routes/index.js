@@ -46,7 +46,7 @@ router.post(
   catchErrors(productController.updateProduct)
 );
 
-// project
+// gallery
 router.get(
   '/add-project',
   authController.isLoggedIn,
@@ -58,8 +58,8 @@ router.post(
   catchErrors(projectController.resize),
   catchErrors(projectController.createProject)
 );
-router.get('/projects', catchErrors(projectController.getProjects));
-router.get('/projects/:slug', catchErrors(projectController.getProjectsByType));
+router.get('/gallery', catchErrors(projectController.getProjectsByType));
+router.get('/gallery/:type', catchErrors(projectController.getProjectsByType));
 // TODO
 router.get('/projects/:id/edit');
 // TODO

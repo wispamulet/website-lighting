@@ -47,6 +47,10 @@ body.rb--hide .rb__btn {
   }
 }
 
+.content {
+  padding: 5rem 0;
+}
+
 .add {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));

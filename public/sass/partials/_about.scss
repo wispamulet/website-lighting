@@ -1,38 +1,28 @@
 .about__us {
+  max-width: 1000px;
+  padding: 5rem 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3fr 12fr 5fr;
+  grid-gap: 1rem 5rem;
+  h2, p {
+    grid-column: 2 / 3;
+  }
   h2 {
     text-transform: uppercase;
-  }
-  & > * {
-    margin: 10rem 0;
-  }
-  &__title {
-    h2 {
-      text-align: left;
-      color: $yellow;
-    }
-  }
-  &__detail {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 2rem;
-  }
-  &__logo {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 2rem;
-    img {
-      justify-self: center;
-    }
-  }
-  &__contact {
+    text-align: left;
     color: $yellow;
-    text-decoration: none;
-    font-size: 1.5rem;
-    margin-top: 5rem;
-    display: block;
-    span {
-      padding-left: 1.5rem;
-    }
+    font-size: 4rem;
+    font-style: italic;
+  }
+  p {
+    font-size: 2rem;
+    line-height: 1.8;
+    text-indent: 2rem;
+    margin: 0;
+  }
+  img {
+    grid-column: 1 / -1;
   }
 }
 
@@ -48,10 +38,5 @@
 }
 
 @media (max-width: 800px) {
-  .about__us {
-    &__detail {
-      grid-template-columns: 1fr;
-      justify-items: center;
-    }
-  }
+
 }

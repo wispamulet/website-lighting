@@ -14,9 +14,9 @@ footer {
     padding: 30px 0;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 20px;
+    grid-gap: 2rem;
     & > * {
-      padding: 0 20px;
+      padding: 0 5rem;
     }
     &__about {
       grid-column-start: 2;
@@ -72,19 +72,21 @@ footer {
       justify-content: center;
       justify-items: center;
       align-content: flex-start;
-      button {
+      .query__btn {
         outline: none;
         color: $white;
         background: $black;
         border: 1px $white solid;
         border-radius: .5rem;
-        padding: 1.2rem .6rem;
+        padding: .8rem .6rem;
         margin: 2rem 0;
         font-size: 1.2rem;
         // font-style: italic;
+        text-align: center;
         text-transform: uppercase;
         letter-spacing: .1rem;
         transition: all .5s ease;
+        cursor: pointer;
         &:hover {
           background: $yellow;
           // color: $black;

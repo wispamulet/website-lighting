@@ -33,7 +33,7 @@ window.on('scroll', () => {
 slideshow($$('.slideshow .slide'), $$('.slideshow .dots .dot'));
 
 // photoswipe
-initPhotoSwipeFromDOM('.projects-gallery');
+initPhotoSwipeFromDOM('.project-gallery');
 initPhotoSwipeFromDOM('.product-gallery');
 initPhotoSwipeFromDOM('.intro__products-gallery');
 

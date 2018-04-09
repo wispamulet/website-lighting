@@ -5044,7 +5044,7 @@ window.on('scroll', function () {
 (0, _slideshow2.default)((0, _bling.$$)('.slideshow .slide'), (0, _bling.$$)('.slideshow .dots .dot'));
 
 // photoswipe
-(0, _photoswipe2.default)('.projects-gallery');
+(0, _photoswipe2.default)('.project-gallery');
 (0, _photoswipe2.default)('.product-gallery');
 (0, _photoswipe2.default)('.intro__products-gallery');
 

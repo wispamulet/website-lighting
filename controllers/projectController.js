@@ -70,19 +70,21 @@ exports.createProject = async (req, res) => {
   const project = await (new Project(req.body)).save();
   req.flash('success', `Successfully create <strong>${project.name}</strong>!`);
   // res.redirect(`/project/${project.slug}`);
-  res.redirect('/projects');
+  res.redirect('/gallery');
 };
 
-exports.getProjects = async (req, res) => {
-  const projects = await Project.find();
-  res.render('projects', { title: 'Projects', projects });
-};
+// exports.getProjects = async (req, res) => {
+//   const projects = await Project.find();
+//   res.render('projects', { title: 'Gallery', projects });
+// };
 
 exports.getProjectsByType = async (req, res) => {
-  const { slug } = req.params; // e.g. 'indoor'
-  const type = [slug.charAt(0).toUpperCase(), ...slug.slice(1)].join(''); // 'Indoor'
+  const { type } = req.params;
+  const typeQuery = type || { $exists: true };
+  // console.log(typeQuery);
   const typePromise = Project.getTypesList();
-  const projectPromise = Project.find({ type });
+  const projectPromise = Project.find({ type: typeQuery });
   const [types, projects] = await Promise.all([typePromise, projectPromise]);
-  res.render('projects', { title: `${type}`, types, projects });
+  // console.log(projects);
+  res.render('projects', { title: `${type || 'Gallery'}`, type, types, projects });
 };

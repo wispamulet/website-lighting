@@ -1,21 +1,26 @@
 mixin projectCard(project = {})
-  - const name = project.name
-  - const type = project.type
-  - const images = project.photos
-  - const descriptions = project.descriptions
-  - let i = 0
-    each image in images
-      - const { original, thumbnail, dimension } = image
-        //- .project__edit
-          a(href=`/projects/${project._id}/edit`)
-            != h.icon('pencil')
-        figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class=(image === images[0] ? '' : 'figure--hide'))
-          a(href=`/uploads/photos/${original}` itemprop="contentUrl" data-size=`${dimension.w}x${dimension.h}`)
-            img(src=`/uploads/photos/${thumbnail || 'default_300x300.jpg'}` itemprop="thumbnail" alt="Image description")
-          figcaption(itemprop="caption description")= descriptions[i]
-          .project__image(style=`background-image: url(/uploads/photos/${thumbnail})`)
-          artitle
-            h2.project__title= name
-            p.project__detail= descriptions[i].split(' ').slice(0, 25).join(' ').concat('...')
-            .project__type= type
-        - i += 1;
+  .project
+    - const name = project.name
+    - const type = project.type
+    - const images = project.photos
+    - const descriptions = project.descriptions
+    .project-gallery(itemscope itemtype="http://schema.org/ImageGallery")
+      - let i = 0
+        each image in images
+          - const { original, thumbnail, dimension } = image
+            figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class=(image === images[0] ? '' : 'figure--hide'))
+              a(href=`/uploads/photos/${original}` itemprop="contentUrl" data-size=`${dimension.w}x${dimension.h}`)
+                img(src=`/uploads/photos/${thumbnail || 'default_300x300.jpg'}` itemprop="thumbnail" alt="Image description")
+                if image === images[0]
+                  .project__img(style=`background: url(/uploads/photos/${thumbnail || 'default_300x300.jpg'}) center center`)
+              figcaption(itemprop="caption description")= descriptions[i]
+            - i += 1;
+    article
+      .project__title
+        h2= project.name
+        if user
+          .project__edit
+            a(href=`/projects/${project._id}/edit`)
+              != h.icon('pencil')
+      p.project__detail= descriptions[0].split(' ').slice(0, 25).join(' ').concat('...')
+      .project__type= type

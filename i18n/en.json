@@ -8,15 +8,12 @@
   "_comment_navbar_menu_list": "",
   "MENU": [
     { "SLUG": "/home", "TITLE": "home" },
-    { "SLUG": "/projects", "TITLE": "projects", "DROPDOWN": [
-      { "SLUG": "/projects/indoor", "TITLE": "indoor" },
-      { "SLUG": "/projects/outdoor", "TITLE": "outdoor" }
-    ] },
     { "SLUG": "/products", "TITLE": "products", "DROPDOWN": [
       { "SLUG": "/products/led-corn-light", "TITLE": "LED Corn Light" },
       { "SLUG": "/products/led-garden-light", "TITLE": "LED Garden Light" },
       { "SLUG": "/products/led-street-light", "TITLE": "LED Street Light" }
     ] },
+    { "SLUG": "/gallery", "TITLE": "gallery" },
     { "SLUG": "/support", "TITLE": "support" },
     { "SLUG": "/about-us", "TITLE": "about us" },
     { "SLUG": "/contact", "TITLE": "contact" }
