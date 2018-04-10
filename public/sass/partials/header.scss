@@ -19,29 +19,46 @@
 }
 
 .logo {
-  background: $black;
-  display: flex;
-  justify-content: center;
+  display: none;
+
+  &-s {
+    display: block;
+    width: 10rem;
+  }
 }
 
 header {
   z-index: 49;
-  background: $black;
-  display: grid;
+  padding: 1rem 2rem;
+  background: black;
+  color: white;
+  // box-shadow: 0 5px 10px rgba(37, 37, 37, .3);
+  // border-bottom: 1px solid #dddddd;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1100px) {
+  .logo {
+    display: none;
+  }
+  .logo-s {
+    display: block;
+    width: 7rem;
+  }
 }
 
 @media (max-width: 800px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
   .language__wrapper {
     .language {
       padding: .5rem .5rem;
-    }
-  }
-
-  .logo {
-    height: 112px;
-    img {
-      width: 154px;
-      height: 112px;
     }
   }
 }

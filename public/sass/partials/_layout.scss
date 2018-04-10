@@ -6,7 +6,15 @@ body.nav-fixed header {
   position: fixed;
   width: 100%;
   top: 0;
-  box-shadow: 0 5px 10px rgba(37, 37, 37, .7);
+  // box-shadow: 0 5px 10px rgba(37, 37, 37, .7);
+  flex-direction: row;
+  .logo {
+    display: block;
+
+    &-s {
+      display: none;
+    }
+  }
 }
 
 body.rb--hide .rb__btn {
@@ -56,7 +64,8 @@ body.rb--hide .rb__btn {
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   a {
     height: 50px;
-    color: black;
+    background: white;
+    // color: white;
     font-size: 2rem;
     text-decoration: none;
     display: grid;
@@ -103,9 +112,13 @@ body.rb--hide .rb__btn {
 
 @media (max-width: 800px) {
   body.nav-fixed header {
-    box-shadow: 0 3px 10px rgba(37, 37, 37, .7);
+    .logo {
+      display: none;
+      &-s {
+        display: block;
+      }
+    }
   }
-
   .rb {
     height: 10rem;
     bottom: 3rem;

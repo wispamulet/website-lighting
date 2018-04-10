@@ -2,7 +2,7 @@
 const mapOptions = {
   center: { lat: 42.1, lng: -179.8 },
   zoom: 3,
-  maxZoom: 3.5
+  maxZoom: 3
 };
 
 function loadPlaces(map) {

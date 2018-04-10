@@ -1,23 +1,23 @@
-function fixNav(topOfNav, heightOfNav) {
-  // console.log(topOfNav, window.scrollY);
-  if (window.scrollY >= topOfNav) {
-    document.body.style.paddingTop = `${heightOfNav}px`;
-    document.body.classList.add('nav-fixed');
-  } else {
-    document.body.style.paddingTop = 0;
-    document.body.classList.remove('nav-fixed');
-  }
-}
-
-function fixNavMobile(topOfNav) {
+function fixNav(topOfNav, topOfHeader, heightOfHeader) {
   if (window.innerWidth > 800) {
-    return;
+    if (window.scrollY >= topOfNav) {
+      console.log('> 800');
+      document.body.style.paddingTop = `${heightOfHeader}px`;
+      document.body.classList.add('nav-fixed');
+    } else {
+      document.body.style.paddingTop = 0;
+      document.body.classList.remove('nav-fixed');
+    }
+  } else if (window.innerWidth <= 800) {
+    if (window.scrollY >= topOfHeader) {
+      console.log('< 800');
+      document.body.style.paddingTop = `${heightOfHeader}px`;
+      document.body.classList.add('nav-fixed');
+    } else {
+      document.body.style.paddingTop = 0;
+      document.body.classList.remove('nav-fixed');
+    }
   }
-  console.log(window.scrollY, topOfNav);
-  if (window.scrollY >= topOfNav * 2) {
-    // console.log('hello');
-    document.body.classList.remove('nav-fixed');
-  } else {}
 }
 
-export { fixNav, fixNavMobile };
+export default fixNav;

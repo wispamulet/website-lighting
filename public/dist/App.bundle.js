@@ -128,30 +128,29 @@ exports.$$ = $$;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-function fixNav(topOfNav, heightOfNav) {
-  // console.log(topOfNav, window.scrollY);
-  if (window.scrollY >= topOfNav) {
-    document.body.style.paddingTop = heightOfNav + 'px';
-    document.body.classList.add('nav-fixed');
-  } else {
-    document.body.style.paddingTop = 0;
-    document.body.classList.remove('nav-fixed');
-  }
-}
-
-function fixNavMobile(topOfNav) {
+function fixNav(topOfNav, topOfHeader, heightOfHeader) {
   if (window.innerWidth > 800) {
-    return;
+    if (window.scrollY >= topOfNav) {
+      console.log('> 800');
+      document.body.style.paddingTop = heightOfHeader + 'px';
+      document.body.classList.add('nav-fixed');
+    } else {
+      document.body.style.paddingTop = 0;
+      document.body.classList.remove('nav-fixed');
+    }
+  } else if (window.innerWidth <= 800) {
+    if (window.scrollY >= topOfHeader) {
+      console.log('< 800');
+      document.body.style.paddingTop = heightOfHeader + 'px';
+      document.body.classList.add('nav-fixed');
+    } else {
+      document.body.style.paddingTop = 0;
+      document.body.classList.remove('nav-fixed');
+    }
   }
-  console.log(window.scrollY, topOfNav);
-  if (window.scrollY >= topOfNav * 2) {
-    // console.log('hello');
-    document.body.classList.remove('nav-fixed');
-  } else {}
 }
 
-exports.fixNav = fixNav;
-exports.fixNavMobile = fixNavMobile;
+exports.default = fixNav;
 
 /***/ }),
 /* 3 */
@@ -167,7 +166,7 @@ Object.defineProperty(exports, "__esModule", {
 var mapOptions = {
   center: { lat: 42.1, lng: -179.8 },
   zoom: 3,
-  maxZoom: 3.5
+  maxZoom: 3
 };
 
 function loadPlaces(map) {
@@ -5020,6 +5019,8 @@ var _aboutVideo2 = _interopRequireDefault(_aboutVideo);
 
 var _fixNav = __webpack_require__(2);
 
+var _fixNav2 = _interopRequireDefault(_fixNav);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // navbar toggle button
@@ -5029,11 +5030,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 // fix navbar
-var topOfNav = (0, _bling.$)('header').offsetTop; // offset top of navbar
-var heightOfNav = (0, _bling.$)('header').offsetHeight; // height of navbar
+var topOfNav = (0, _bling.$)('.nav').offsetTop; // offset top of navbar
+var topOfHeader = (0, _bling.$)('header').offsetTop; // offset top of header
+var heightOfHeader = (0, _bling.$)('header').offsetHeight; // height of header
 
 window.on('scroll', function () {
-  (0, _fixNav.fixNav)(topOfNav, heightOfNav);
+  (0, _fixNav2.default)(topOfNav, topOfHeader, heightOfHeader);
 });
 
 // window.on('scroll', () => {

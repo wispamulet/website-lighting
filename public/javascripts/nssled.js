@@ -9,7 +9,7 @@ import { rbToggle, toTop } from './modules/toTop';
 import { queryOpen, queryClose } from './modules/query';
 import skype from './modules/skype';
 import setDimension from './modules/about-video';
-import { fixNav, fixNavMobile } from './modules/fixNav';
+import fixNav from './modules/fixNav';
 
 // navbar toggle button
 $('header button[aria-expanded]').on('click', toggle);
@@ -18,11 +18,12 @@ $$('header span[aria-expanded]').forEach((btn) => {
 });
 
 // fix navbar
-const topOfNav = $('header').offsetTop; // offset top of navbar
-const heightOfNav = $('header').offsetHeight; // height of navbar
+const topOfNav = $('.nav').offsetTop; // offset top of navbar
+const topOfHeader = $('header').offsetTop; // offset top of header
+const heightOfHeader = $('header').offsetHeight; // height of header
 
 window.on('scroll', () => {
-  fixNav(topOfNav, heightOfNav);
+  fixNav(topOfNav, topOfHeader, heightOfHeader);
 });
 
 // window.on('scroll', () => {

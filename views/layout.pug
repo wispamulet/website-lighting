@@ -23,7 +23,7 @@ html(lang="en")
           i.fa.fa-envelope
         button#toTop.rb__btn
           i.fa.fa-angle-up
-      .add
+      //- .add
         if user
           a(href='/add-product') Add Product
           a(href='/add-project') Add Project
@@ -38,9 +38,11 @@ html(lang="en")
             a(href=`${currentPath}?clang=en` class=(lang === 'en' ? 'language--active' : '')) EN
             span |
             a(href=`${currentPath}?clang=es` class=(lang === 'es' ? 'language--active' : '')) ES
-        .logo
-          img(src="/images/photos/logo.jpg")
         header
+          .logo
+            img(src="/images/photos/logo-about-us.png")
+          .logo-s
+            img(src="/images/photos/1-150H51K613642.png")
           button(aria-expanded="false" aria-controls="menu-list")
             span.open
               i.fa.fa-align-justify
