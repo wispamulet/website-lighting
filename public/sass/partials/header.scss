@@ -1,10 +1,11 @@
 .language__wrapper {
   background: $black;
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
   .language {
+    grid-column: -3 / -1;
     font-size: 1.4rem;
-    padding: .5rem 5rem;
+    padding: 1rem 0;
     &--active {
       color: $yellow !important;
     }
@@ -33,10 +34,8 @@ header {
   background: black;
   color: white;
   // box-shadow: 0 5px 10px rgba(37, 37, 37, .3);
-  // border-bottom: 1px solid #dddddd;
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
   align-items: center;
 }
 

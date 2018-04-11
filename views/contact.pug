@@ -7,7 +7,9 @@ block content
 
   .inner
     //- h2= TRANSLATION.CONTACT_MSG
-    h2 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    .contact__title
+      h2 Welcome to visit our factory or warehouse or&nbsp;
+        a.query__btn Send a Email
     .contact__region
       .contact__region__us
         h2 USA
@@ -16,7 +18,7 @@ block content
             h2 13321 Garden Grove Blvd, #N, Garden Grove, CA 92843
             .contact__region__person
               h3 Robert
-              p robert@nssled.com
+              a(href=`mailto:robert@nssled.com`) robert@nssled.com
               p
                 span Tel.&nbsp;
                 | +1 201 969 5019
@@ -30,7 +32,7 @@ block content
             h2 4/F, Block D, Dejiarun industrial park, 128 indstrial zone, Tangxia, Dongguan, Guangdong Province
             .contact__region__person
               h3 Lyna
-              p lyna@nssled.com
+              a(href=`mailto:lyna@nssled.com`) lyna@nssled.com
               p
                 span Tel.&nbsp;
                 | +1 323 616 7060

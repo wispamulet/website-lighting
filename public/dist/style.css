@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);html {
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,600);html {
   box-sizing: border-box; }
 
 *, *:before, *:after {
@@ -579,7 +579,7 @@ body.rb--hide .rb__btn {
   display: -ms-flexbox;
   display: flex; }
   .nav__section--pages > * {
-    padding: 1rem 2rem; }
+    padding: 0 2rem; }
 
 [aria-controls="menu-list"] {
   background: black;
@@ -1187,24 +1187,51 @@ footer {
       grid-template-columns: 3fr 12fr 5fr;
   grid-gap: 1rem 5rem; }
   .about__us h2, .about__us p {
-    grid-column: 2 / 3; }
+    grid-column: 2 / -2; }
   .about__us h2 {
     text-transform: uppercase;
     text-align: left;
     color: #f08519;
-    font-size: 4rem;
-    font-style: italic; }
+    font-size: 3rem; }
   .about__us p {
-    font-size: 2rem;
+    color: #333;
+    font-size: 1.8rem;
     line-height: 1.8;
-    text-indent: 2rem;
-    margin: 0; }
-  .about__us img {
+    text-indent: 2rem; }
+  .about__us figure {
     grid-column: 1 / -1; }
+  .about__us blockquote {
+    grid-column: 1 / -1;
+    margin: 0; }
+    .about__us blockquote p {
+      text-align: center;
+      font-size: 5rem;
+      font-style: italic; }
+  .about__us .tip {
+    background: #fafafa;
+    padding: 1rem; }
+    .about__us .tip p {
+      text-indent: 0; }
+      .about__us .tip p a {
+        font-weight: 500;
+        color: black;
+        text-decoration: underline wavy #f08519; }
+    .about__us .tip-right {
+      border-left: 0.2rem solid #f08519; }
+    .about__us .tip-left {
+      text-align: right;
+      border-right: 0.2rem solid #f08519; }
 
 .about__video {
   background: #000000;
   padding: 5rem 0; }
+  .about__video h2 {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 0;
+    padding-bottom: 5rem; }
   .about__video-wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -1299,17 +1326,43 @@ footer {
   line-height: 2;
   margin: 5rem; }
 
+.contact__title {
+  margin: 5rem 0; }
+  .contact__title h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: left; }
+  .contact__title .query__btn {
+    outline: none;
+    color: black;
+    background: white;
+    border: 1px black solid;
+    border-radius: .5rem;
+    padding: .8rem .6rem;
+    margin: 2rem 0;
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    transition: all .5s ease;
+    cursor: pointer; }
+    .contact__title .query__btn:hover {
+      background: #f08519;
+      color: white;
+      border-color: white; }
+
 .contact__region {
   margin: 5rem 0; }
   .contact__region > * {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 9fr;
-        grid-template-columns: 1fr 9fr; }
+    -ms-grid-columns: 1fr 3fr;
+        grid-template-columns: 1fr 3fr; }
     .contact__region > * > h2 {
       grid-column: 1 / -1;
       text-align: left;
-      color: #f08519; }
+      color: #f08519;
+      font-weight: 500; }
   .contact__region > *:not(:last-child) {
     border-bottom: 1px solid #b9b6b6; }
   .contact__region__cities {
@@ -1323,9 +1376,21 @@ footer {
   .contact__region__city {
     text-align: center; }
     .contact__region__city h2 {
-      font-size: 1.8rem; }
-  .contact__region__person span {
-    font-style: italic; }
+      font-size: 1.8rem;
+      font-weight: 500; }
+  .contact__region__person {
+    font-weight: 500; }
+    .contact__region__person h3 {
+      font-weight: 500;
+      font-style: italic; }
+    .contact__region__person a {
+      display: block;
+      margin: 1.5rem 0;
+      font-size: 1.5rem;
+      text-decoration: underline wavy #f08519;
+      color: #333; }
+    .contact__region__person span {
+      font-style: italic; }
 
 @media (max-width: 800px) {
   .contact__region__cities {
@@ -1352,13 +1417,14 @@ pre {
 
 .language__wrapper {
   background: #000000;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: end;
-      justify-content: flex-end; }
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[10];
+      grid-template-columns: repeat(10, 1fr); }
   .language__wrapper .language {
+    grid-column: -3 / -1;
     font-size: 1.4rem;
-    padding: .5rem 5rem; }
+    padding: 1rem 0; }
     .language__wrapper .language--active {
       color: #f08519 !important; }
     .language__wrapper .language a {
