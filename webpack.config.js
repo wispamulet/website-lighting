@@ -33,12 +33,19 @@ const postcss = {
 };
 
 // this is our sass/css loader. It handles files that are require('something.scss')
+// const styles = {
+//   test: /\.(scss)$/,
+//   // here we pass the options as query params b/c it's short.
+//   // remember above we used an object for each loader instead of just a string?
+//   // We don't just pass an array of loaders, we run them through the extract plugin so they can be outputted to their own .css file
+//   use: ExtractTextPlugin.extract(['css-loader?sourceMap', postcss, 'sass-loader?sourceMap'])
+// };
 const styles = {
-  test: /\.(scss)$/,
+  test: /\.(styl)$/,
   // here we pass the options as query params b/c it's short.
   // remember above we used an object for each loader instead of just a string?
   // We don't just pass an array of loaders, we run them through the extract plugin so they can be outputted to their own .css file
-  use: ExtractTextPlugin.extract(['css-loader?sourceMap', postcss, 'sass-loader?sourceMap'])
+  use: ExtractTextPlugin.extract(['css-loader?sourceMap', postcss, 'stylus-loader?sourceMap'])
 };
 
 // We can also use plugins - this one will compress the crap out of our JS

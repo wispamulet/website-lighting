@@ -1,4 +1,4 @@
-import '../sass/style.scss';
+import '../stylus/style.styl';
 
 import { $, $$ } from './modules/bling';
 import toggle from './modules/toggle';

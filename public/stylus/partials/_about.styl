@@ -1,0 +1,58 @@
+.about__us
+  max-width 1000px
+  padding 5rem 0
+  margin 0 auto
+  display grid
+  grid-template-columns 3fr 12fr 5fr
+  grid-gap 1rem 5rem
+  h2, p
+    grid-column 2 / -2
+  h2
+    text-transform uppercase
+    text-align left
+    color $orange
+    font-size 3rem
+  p
+    color: #333
+    font-size 1.8rem
+    line-height 1.8
+    text-indent 2rem
+  figure
+    grid-column 1 / -1
+  blockquote
+    grid-column 1 / -1
+    margin 0
+    p
+      text-align center
+      font-size 5rem
+      font-style italic
+  .tip
+    background #fafafa
+    padding 1rem
+    p
+      text-indent 0
+      a
+        font-weight 500
+        color black
+        text-decoration underline wavy $orange
+    &-right
+      border-left .2rem solid $orange
+    &-left
+      text-align right
+      border-right .2rem solid $orange
+
+.about__video
+  background black
+  padding 5rem 0
+  h2
+    text-align center
+    color white
+    text-transform uppercase
+    font-size 2rem
+    margin 0
+    padding-bottom 5rem
+  &-wrapper
+    max-width 1200px
+    margin 0 auto
+    display flex
+    justify-content center
