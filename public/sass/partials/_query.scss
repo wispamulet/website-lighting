@@ -39,10 +39,14 @@
     position: absolute;
     top: -1.5rem;
     right: -1.5rem;
-    border: .1rem $yellow solid;
+    border: .1rem $white solid;
     border-radius: 50%;
     background: $black;
-    color: $white;
+    color: $yellow;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__form {

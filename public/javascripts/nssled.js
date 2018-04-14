@@ -11,11 +11,13 @@ import skype from './modules/skype';
 import setDimension from './modules/about-video';
 import fixNav from './modules/fixNav';
 
-// navbar toggle button
-$('header button[aria-expanded]').on('click', toggle);
-$$('header span[aria-expanded]').forEach((btn) => {
-  btn.on('click', toggle);
-});
+// toggle navbar button
+if (window.innerWidth < 800) {
+  $('header button[aria-expanded]').on('click', toggle);
+  $$('header span[aria-expanded]').forEach((btn) => {
+    btn.on('click', toggle);
+  });
+}
 
 // fix navbar
 const topOfNav = $('.nav').offsetTop; // offset top of navbar
@@ -36,7 +38,7 @@ slideshow($$('.slideshow .slide'), $$('.slideshow .dots .dot'));
 // photoswipe
 initPhotoSwipeFromDOM('.project-gallery');
 initPhotoSwipeFromDOM('.product-gallery');
-initPhotoSwipeFromDOM('.intro__products-gallery');
+initPhotoSwipeFromDOM('.intro__product-gallery');
 
 // contact page google map
 makeMap($('#map'));
@@ -68,3 +70,6 @@ skype();
 
 // set video's width and height on about-us page
 setDimension($('.about__video iframe'));
+
+// toggle support page button
+$$('button[aria-controls="support-list"]').on('click', toggle);

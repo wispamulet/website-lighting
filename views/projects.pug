@@ -6,8 +6,11 @@ block content
   .content
     .inner-2
       h2 #{type || 'Gallery'}
-      //- pre= h.dump(types)
+      //- pre= h.dump(currentPath)
       .project-types
+        a.project__link(href=`/gallery` class=(currentPath === '/gallery' ? 'project__link--active' : ''))
+            span.project-type__text All
+            span.project-type__count= all
         each t in types
           a.project__link(href=`/gallery/${t._id}` class=(t._id === type ? 'project__link--active' : ''))
             span.project-type__text= t._id

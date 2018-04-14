@@ -85,6 +85,15 @@ exports.getProjectsByType = async (req, res) => {
   const typePromise = Project.getTypesList();
   const projectPromise = Project.find({ type: typeQuery });
   const [types, projects] = await Promise.all([typePromise, projectPromise]);
-  // console.log(projects);
-  res.render('projects', { title: `${type || 'Gallery'}`, type, types, projects });
+
+  let all = 0;
+  types.forEach((t) => {
+    all += t.count;
+    return all;
+  });
+  // types.unshift({ _id: 'Gallery', count: all });
+  // console.log(types);
+
+  // res.json(types);
+  res.render('projects', { title: `${type || 'Gallery'}`, type, types, all, projects });
 };

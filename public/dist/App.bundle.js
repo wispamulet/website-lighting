@@ -165,8 +165,8 @@ Object.defineProperty(exports, "__esModule", {
 /* globals google */
 var mapOptions = {
   center: { lat: 42.1, lng: -179.8 },
-  zoom: 3,
-  maxZoom: 3
+  zoom: 3
+  // maxZoom: 3
 };
 
 function loadPlaces(map) {
@@ -596,14 +596,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 function toggle() {
-  if (window.innerWidth > 800) {
-    // console.log('hello!');
-    return;
-  }
-
   var expanded = this.getAttribute('aria-expanded') === 'true' || false;
   this.setAttribute('aria-expanded', !expanded);
-  // console.log('click');
+  console.log('click');
 }
 
 exports.default = toggle;
@@ -5023,11 +5018,13 @@ var _fixNav2 = _interopRequireDefault(_fixNav);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// navbar toggle button
-(0, _bling.$)('header button[aria-expanded]').on('click', _toggle2.default);
-(0, _bling.$$)('header span[aria-expanded]').forEach(function (btn) {
-  btn.on('click', _toggle2.default);
-});
+// toggle navbar button
+if (window.innerWidth < 800) {
+  (0, _bling.$)('header button[aria-expanded]').on('click', _toggle2.default);
+  (0, _bling.$$)('header span[aria-expanded]').forEach(function (btn) {
+    btn.on('click', _toggle2.default);
+  });
+}
 
 // fix navbar
 var topOfNav = (0, _bling.$)('.nav').offsetTop; // offset top of navbar
@@ -5048,7 +5045,7 @@ window.on('scroll', function () {
 // photoswipe
 (0, _photoswipe2.default)('.project-gallery');
 (0, _photoswipe2.default)('.product-gallery');
-(0, _photoswipe2.default)('.intro__products-gallery');
+(0, _photoswipe2.default)('.intro__product-gallery');
 
 // contact page google map
 (0, _map2.default)((0, _bling.$)('#map'));
@@ -5080,6 +5077,9 @@ window.on('scroll', function () {
 
 // set video's width and height on about-us page
 (0, _aboutVideo2.default)((0, _bling.$)('.about__video iframe'));
+
+// toggle support page button
+(0, _bling.$$)('button[aria-controls="support-list"]').on('click', _toggle2.default);
 
 /***/ })
 /******/ ]);

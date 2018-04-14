@@ -1,4 +1,5 @@
 .language__wrapper {
+  padding-top: 1rem;
   background: $black;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -25,6 +26,7 @@
   &-s {
     display: block;
     width: 10rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -58,6 +60,11 @@ header {
   .language__wrapper {
     .language {
       padding: .5rem .5rem;
+    }
+  }
+  .logo {
+    &-s {
+      margin-bottom: 0;
     }
   }
 }
