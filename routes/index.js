@@ -9,7 +9,7 @@ const { catchErrors } = require('../handlers/errorHandlers');
 const router = express.Router();
 
 // navbar
-router.get('/', navController.index);
+router.get('/', navController.home);
 router.get('/home', navController.home);
 router.get(
   '/support',

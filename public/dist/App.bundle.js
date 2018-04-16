@@ -5054,6 +5054,7 @@ window.on('scroll', function () {
 // photoswipe
 (0, _photoswipe2.default)('.project-gallery');
 (0, _photoswipe2.default)('.product-gallery');
+(0, _photoswipe2.default)('.intro__company-gallery');
 (0, _photoswipe2.default)('.intro__product-gallery');
 
 // contact page google map

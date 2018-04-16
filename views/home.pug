@@ -35,6 +35,39 @@ block content
           //- h2= TRANSLATION.HOME_MSG
           //- p It's #{h.moment().format('MMMM Do YYYY, h:mm:ss a')}
           p New Sunshine LED (New Sunshine Manufacturing Co.,Ltd) was founded in 2004, we specialize in application of LED light technology for indoor-outdoor development and manufacture for illumination, such as LED street light, LED warehouse light, LED high bay light, LED corn bulb, LED flood light, LED tunnel light and other outdoor and indoor lights.
+          .intro__company-gallery(itemscope itemtype="http://schema.org/ImageGallery")
+            figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+              a(href="/images/photos/products.jpg" itemprop="contentUrl" data-size="1920x1080")
+                img(src="/images/photos/products.jpg" itemprop="thumbnail" alt="Img")
+                .intro__company__img(style="background: url(/images/photos/products.jpg);")
+              h2 Street
+              figcaption(itemprop="caption description") Street
+            figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+              a(href="/images/photos/projects.jpg" itemprop="contentUrl" data-size="1920x1080")
+                img(src="/images/photos/projects.jpg" itemprop="thumbnail" alt="Img")
+                .intro__company__img(style="background: url(/images/photos/projects.jpg);")
+              h2 Parking lot
+              figcaption(itemprop="caption description") Parking lot
+            figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+              a(href="/images/photos/products.jpg" itemprop="contentUrl" data-size="1920x1080")
+                img(src="/images/photos/products.jpg" itemprop="thumbnail" alt="Img")
+                .intro__company__img(style="background: url(/images/photos/products.jpg);")
+              h2 Supermarket
+              figcaption(itemprop="caption description") Supermarket
+            figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+              a(href="/images/photos/projects.jpg" itemprop="contentUrl" data-size="1920x1080")
+                img(src="/images/photos/projects.jpg" itemprop="thumbnail" alt="Img")
+                .intro__company__img(style="background: url(/images/photos/projects.jpg);")
+              h2 and more
+              figcaption(itemprop="caption description") and more
+            figure.figure--hide(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+              a(href="/images/photos/projects.jpg" itemprop="contentUrl" data-size="1920x1080")
+                img(src="/images/photos/projects.jpg" itemprop="thumbnail" alt="Img")
+              figcaption(itemprop="caption description") and more
+            figure.figure--hide(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+              a(href="/images/photos/projects.jpg" itemprop="contentUrl" data-size="1920x1080")
+                img(src="/images/photos/projects.jpg" itemprop="thumbnail" alt="Img")
+              figcaption(itemprop="caption description") and more
       .intro__products
         h2 Our Products
         .pswp(tabindex="-1" role="dialog" aria-hidden="true")
@@ -65,8 +98,8 @@ block content
           .intro__product
             .intro__product-gallery(itemscope itemtype="http://schema.org/ImageGallery")
               figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
-                a(href="/images/photos/Resources-3.jpg" itemprop="contentUrl" data-size="1000x1000")
-                  img(src="/images/photos/Resources-3.jpg" itemprop="thumbnail" alt="Img")
+                a(href="/images/photos/200w-dlc-ip64-led-corn-light-1.jpg" itemprop="contentUrl" data-size="1000x1000")
+                  img(src="/images/photos/200w-dlc-ip64-led-corn-light-1.jpg" itemprop="thumbnail" alt="Img")
                   //- .intro__product__img(style="background: url(/images/photos/Resources-3.jpg)")
                 figcaption(itemprop="caption description") 123
               figure.figure--hide(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
@@ -84,12 +117,12 @@ block content
                 h2 LED Garden Light
               .intro__product__detail
                 p Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              a(href="/") More
+              a(href="#") More
           .intro__product
             .intro__product-gallery(itemscope itemtype="http://schema.org/ImageGallery")
               figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
-                a(href="/images/photos/Resources-3.jpg" itemprop="contentUrl" data-size="1000x1000")
-                  img(src="/images/photos/Resources-3.jpg" itemprop="thumbnail" alt="Img")
+                a(href="/images/photos/60w-led-garden-light-01.jpg" itemprop="contentUrl" data-size="1000x1000")
+                  img(src="/images/photos/60w-led-garden-light-01.jpg" itemprop="thumbnail" alt="Img")
                   //- .intro__product__img(style="background: url(/images/photos/Resources-3.jpg)")
                 figcaption(itemprop="caption description") 123
               figure.figure--hide(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
@@ -107,12 +140,12 @@ block content
                 h2 LED Corn Light
               .intro__product__detail
                 p 123123123
-              a(href="/") More
+              a(href="#") More
           .intro__product
             .intro__product-gallery(itemscope itemtype="http://schema.org/ImageGallery")
               figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
-                a(href="/images/photos/Resources-3.jpg" itemprop="contentUrl" data-size="1000x1000")
-                  img(src="/images/photos/Resources-3.jpg" itemprop="thumbnail" alt="Img")
+                a(href="/images/photos/150W-LED-Street-Light-9.jpg" itemprop="contentUrl" data-size="1000x1000")
+                  img(src="/images/photos/150W-LED-Street-Light-9.jpg" itemprop="thumbnail" alt="Img")
                   //- .intro__product__img(style="background: url(/images/photos/Resources-3.jpg)")
                 figcaption(itemprop="caption description") 123
               figure.figure--hide(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
@@ -130,8 +163,8 @@ block content
                 h2 LED Street Light
               .intro__product__detail
                 p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A officiis optio aliquam sit soluta aspernatur voluptatibus?
-              a(href="/") More
-          .intro__product
+              a(href="#") More
+          //- .intro__product
             .intro__product-gallery(itemscope itemtype="http://schema.org/ImageGallery")
               figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
                 a(href="/images/photos/Resources-3.jpg" itemprop="contentUrl" data-size="1000x1000")
@@ -153,7 +186,9 @@ block content
                 h2 More
               .intro__product__detail
                 p 123123123
-              a(href="/") More
+              a(href="#") More
 
-      .intro__projects
-        h2 Our Projects
+    .quote
+      .inner
+        p.one "Tech innovation, quality first"
+        p.two is always our constant commitment to customers.

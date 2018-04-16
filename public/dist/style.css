@@ -297,23 +297,27 @@ footer {
   color: #fff;
   font-size: 1.5rem;
 }
-footer .quote {
-  background: #444;
-  text-align: center;
-  padding: 5rem 0;
-}
-footer .quote p {
-  font-size: 2rem;
-  line-height: 1.5;
-  margin: 0;
-}
-footer .quote p.one {
-  font-style: italic;
-  text-transform: uppercase;
-  font-size: 3.5rem;
-}
 footer .socials {
   height: 400px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+footer .socials__links {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 2fr;
+      grid-template-rows: 1fr 2fr;
+  -ms-grid-column-align: center;
+      justify-items: center;
+  grid-gap: 1rem;
+}
+footer .socials__links > * {
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  font-size: 3.5rem;
 }
 footer .contact {
   background: #000;
@@ -434,6 +438,10 @@ footer .copyright p span {
   }
 }
 @media (max-width: 800px) {
+  .socials {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+  }
   .contact {
     -ms-grid-columns: 1fr !important;
         grid-template-columns: 1fr !important;
@@ -475,7 +483,7 @@ footer .copyright p span {
 #top a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 header {
   z-index: 49;
@@ -497,11 +505,13 @@ header {
 @media (max-width: 1100px) {
   .header--logo {
     width: 7rem;
-    justify-self: flex-start;
-    margin-left: 1rem;
   }
 }
 @media (max-width: 800px) {
+  .header--logo {
+    justify-self: flex-start;
+    margin-left: 1.5rem;
+  }
   header {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -525,6 +535,39 @@ header {
   line-height: 1.5;
   text-indent: 2rem;
 }
+.intro__company__img {
+  height: 15rem;
+  background-size: cover !important;
+}
+.intro__company-gallery {
+  padding-top: 5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3.5rem;
+}
+.intro__company-gallery h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.intro__company-gallery figure {
+  margin: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+}
+.intro__company-gallery figure img {
+  display: none;
+}
+.intro__company-gallery .figure--hide {
+  display: none;
+}
+.intro__company-gallery figcaption {
+  display: none;
+}
 .intro__products {
   background: #ededed;
   padding: 3rem 0;
@@ -532,9 +575,9 @@ header {
 .intro__products .inner-2 {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2rem;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
 }
 .intro__products > h2 {
   display: -ms-grid;
@@ -558,7 +601,7 @@ header {
 }
 .intro__product {
   background: #fff;
-  height: 50rem;
+  height: 60rem;
   padding: 0 2rem;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -567,7 +610,7 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 .intro__product-gallery {
-  height: 25rem;
+  height: 30rem;
 }
 .intro__product figure {
   margin: 0;
@@ -579,7 +622,7 @@ header {
   display: none;
 }
 .intro__product article {
-  height: 25rem;
+  height: 30rem;
   padding: 2rem 0;
   display: -ms-flexbox;
   display: flex;
@@ -604,7 +647,7 @@ header {
   font-size: 1.4rem;
 }
 .intro__product article a {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   border: 1px solid #000;
   transition: all 0.5s ease-out;
 }
@@ -624,6 +667,13 @@ header {
   .intro__company p {
     font-size: 1.6rem;
     word-wrap: true;
+  }
+  .intro__company-gallery {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .intro__company__img {
+    height: 20rem;
   }
   .intro__products .inner-2 {
     -ms-grid-columns: 1fr;
@@ -648,6 +698,22 @@ body.rb--hide .rb__btn {
   -ms-transform: translateY(500%);
       transform: translateY(500%);
   opacity: 0.5;
+}
+.content .quote {
+  background: #444;
+  text-align: center;
+  padding: 5rem 0;
+  color: #fff;
+}
+.content .quote p {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.content .quote p.one {
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 3.5rem;
 }
 .inner,
 .inner-2 {
@@ -759,11 +825,11 @@ body.rb--hide .rb__btn {
   display: block;
 }
 .nav__link {
-  height: 7rem;
+  height: 6.5rem;
   text-decoration: none;
   text-transform: uppercase;
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 400;
   position: relative;
   display: -ms-flexbox;
@@ -799,7 +865,7 @@ body.rb--hide .rb__btn {
   -ms-flex-align: center;
       align-items: center;
   border-bottom: 1px solid rgba(0,0,0,0.1);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 .nav__dropdown__link span {
   padding-left: 2rem;
@@ -873,7 +939,6 @@ body.rb--hide .rb__btn {
   }
   .nav__dropdown__link {
     width: 100%;
-    font-size: 1.5rem;
     height: 4rem;
   }
   .nav__dropdown__link span {
@@ -1390,7 +1455,7 @@ template {
   font-weight: 600;
   letter-spacing: 0.1rem;
 }
-@media (max-width: 800) {
+@media (max-width: 800px) {
   .projects {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -1722,7 +1787,6 @@ a {
 a {
   color: #000;
   text-decoration: none;
-  text-transform: uppercase;
 }
 /*# sourceMappingURL=public/stylus/style.css.map */
 /*# sourceMappingURL=style.css.map*/

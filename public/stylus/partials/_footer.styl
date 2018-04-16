@@ -5,20 +5,21 @@ footer
   background #222
   color white
   font-size 1.5rem
-  .quote
-    background #444
-    text-align center
-    padding 5rem 0
-    p
-      font-size 2rem
-      line-height 1.5
-      margin 0
-    p.one
-      font-style italic
-      text-transform uppercase
-      font-size 3.5rem
+
   .socials
     height 400px
+    display grid
+    grid-template-columns repeat(3, 1fr)
+    grid-gap 2rem
+    &__links
+      display grid
+      grid-template-rows 1fr 2fr
+      justify-items center
+      grid-gap 1rem
+      > *
+        grid-row-start 2
+        font-size 3.5rem
+
   .contact
     background black
     padding 3rem 0
@@ -84,6 +85,7 @@ footer
         cursor pointer
         &:hover
           background $orange
+
   .copyright
     font-size 1.2rem
     display grid
@@ -102,6 +104,9 @@ footer
       grid-column-start 1 !important
 
 @media (max-width: 800px)
+  .socials
+    grid-template-columns 1fr !important
+
   .contact
     grid-template-columns 1fr !important
     & > *

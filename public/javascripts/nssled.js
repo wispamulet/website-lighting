@@ -46,6 +46,7 @@ slideshow($$('.slideshow .slide'), $$('.slideshow .dots .dot'));
 // photoswipe
 initPhotoSwipeFromDOM('.project-gallery');
 initPhotoSwipeFromDOM('.product-gallery');
+initPhotoSwipeFromDOM('.intro__company-gallery');
 initPhotoSwipeFromDOM('.intro__product-gallery');
 
 // contact page google map
