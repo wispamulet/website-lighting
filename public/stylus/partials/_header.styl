@@ -20,37 +20,29 @@
     text-decoration none
     font-size 1.4rem
 
-.logo
-  display none
-  &-s
-    display block
-    width 10rem
-    margin-bottom 2rem
-
 header
   z-index 49
-  padding 1rem 2rem
+  // padding 1rem 2rem
   background black
   color white
   display grid !important
   grid-template-rows auto 1fr
-  justify-items center
+  justify-content center
   align-items center
 
+.header--logo
+  justify-self center
+  width 10rem
+
 @media (max-width: 1100px)
-  .logo
-    display none
-    &-s
-      display block
-      width 7rem
+  .header--logo
+    width 7rem
+    justify-self flex-start
+    margin-left 1rem
 
 @media (max-width: 800px)
   header
-    justify-items stretch
     grid-template-columns 1fr 1fr
   .language-wrapper
     .language
       padding 5px 5px
-  .logo
-    &-s
-      margin-bottom 0

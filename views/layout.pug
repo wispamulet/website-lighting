@@ -23,7 +23,7 @@ html(lang="en")
         //-   i.fa.fa-envelope
         button#toTop.rb__btn
           i.fa.fa-angle-up
-      .header__wrapper
+      .header-wrapper
         #top
           .user
             if user
@@ -39,9 +39,7 @@ html(lang="en")
             span |
             a(href=`${currentPath}?clang=es` class=(lang === 'es' ? 'language--active' : '')) ES
         header
-          .logo
-            img(src="/images/photos/logo-about-us.png")
-          .logo-s
+          .header--logo
             img(src="/images/photos/1-150H51K613642.png")
           button(aria-expanded="false" aria-controls="menu-list")
             span.open
@@ -49,6 +47,8 @@ html(lang="en")
             span.close
               i.fa.fa-times
           nav.nav
+            .nav__section.nav__section--logo
+              img(src="/images/photos/logo-about-us.png")
             .nav__section.nav__section--pages
               each ITEM in TRANSLATION.MENU
                 li.nav__item

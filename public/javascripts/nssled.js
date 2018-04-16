@@ -20,13 +20,21 @@ if (window.innerWidth < 800) {
 }
 
 // fix navbar
-const topOfNav = $('.nav').offsetTop; // offset top of navbar
-const topOfHeader = $('header').offsetTop; // offset top of header
-const heightOfHeader = $('header').offsetHeight; // height of header
+const nav = $('.nav');
+const topOfNav = nav.offsetTop;
+const header = $('header');
+const topOfHeader = header.offsetTop;
 
 window.on('scroll', () => {
-  fixNav(topOfNav, topOfHeader, heightOfHeader);
+  fixNav(topOfNav, nav, topOfHeader, header);
 });
+
+// scroll to top button
+window.on('scroll', () => {
+  rbToggle(topOfNav);
+});
+
+$('#toTop').on('click', toTop);
 
 // window.on('scroll', () => {
 //   fixNavMobile(topOfNav);
@@ -42,13 +50,6 @@ initPhotoSwipeFromDOM('.intro__product-gallery');
 
 // contact page google map
 makeMap($('#map'));
-
-// scroll to top button
-window.on('scroll', () => {
-  rbToggle(topOfNav);
-});
-
-$('#toTop').on('click', toTop);
 
 // toggle query display
 $$('.query__btn').forEach((btn) => {

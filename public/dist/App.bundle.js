@@ -128,20 +128,21 @@ exports.$$ = $$;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-function fixNav(topOfNav, topOfHeader, heightOfHeader) {
+function fixNav(topOfNav, nav, topofHeader, header) {
   if (window.innerWidth > 800) {
     if (window.scrollY >= topOfNav) {
       console.log('> 800');
-      document.body.style.paddingTop = heightOfHeader + 'px';
+      // document.body.style.paddingTop = `${heightOfHeader}px`;
+      document.body.style.paddingTop = nav.offsetHeight + 'px';
       document.body.classList.add('nav-fixed');
     } else {
       document.body.style.paddingTop = 0;
       document.body.classList.remove('nav-fixed');
     }
   } else if (window.innerWidth <= 800) {
-    if (window.scrollY >= topOfHeader) {
+    if (window.scrollY >= topofHeader) {
       console.log('< 800');
-      document.body.style.paddingTop = heightOfHeader + 'px';
+      document.body.style.paddingTop = header.offsetHeight + 'px';
       document.body.classList.add('nav-fixed');
     } else {
       document.body.style.paddingTop = 0;
@@ -5027,13 +5028,21 @@ if (window.innerWidth < 800) {
 }
 
 // fix navbar
-var topOfNav = (0, _bling.$)('.nav').offsetTop; // offset top of navbar
-var topOfHeader = (0, _bling.$)('header').offsetTop; // offset top of header
-var heightOfHeader = (0, _bling.$)('header').offsetHeight; // height of header
+var nav = (0, _bling.$)('.nav');
+var topOfNav = nav.offsetTop;
+var header = (0, _bling.$)('header');
+var topOfHeader = header.offsetTop;
 
 window.on('scroll', function () {
-  (0, _fixNav2.default)(topOfNav, topOfHeader, heightOfHeader);
+  (0, _fixNav2.default)(topOfNav, nav, topOfHeader, header);
 });
+
+// scroll to top button
+window.on('scroll', function () {
+  (0, _toTop.rbToggle)(topOfNav);
+});
+
+(0, _bling.$)('#toTop').on('click', _toTop.toTop);
 
 // window.on('scroll', () => {
 //   fixNavMobile(topOfNav);
@@ -5049,13 +5058,6 @@ window.on('scroll', function () {
 
 // contact page google map
 (0, _map2.default)((0, _bling.$)('#map'));
-
-// scroll to top button
-window.on('scroll', function () {
-  (0, _toTop.rbToggle)(topOfNav);
-});
-
-(0, _bling.$)('#toTop').on('click', _toTop.toTop);
 
 // toggle query display
 (0, _bling.$$)('.query__btn').forEach(function (btn) {

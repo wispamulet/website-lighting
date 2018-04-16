@@ -1,17 +1,12 @@
-@require './_variables.styl'
-
 body
   position relative
-  &.nav-fixed header
+  &.nav-fixed .nav
     position fixed
     width 100%
     top 0
-    // flex-direction row
-    grid-template-columns auto 1fr
-    .logo
-      display block
-      &-s
-        display none
+    .nav__section
+      &--logo
+        display block
     .nav
       justify-self flex-end
   &.rb--hide .rb__btn
@@ -19,7 +14,7 @@ body
     opacity .5
 
 .content
-  padding 5rem 0
+  // padding 5rem 0
 
 .inner, .inner-2
   max-width 900px
@@ -28,20 +23,6 @@ body
 
 .inner-2
   max-width 1200px
-
-// .add
-//   display grid
-//   grid-template-columns repeat(auto-fit, minmax(100px, 1fr))
-//   outline  1px solid black
-//   a
-//     height 5rem
-//     background white
-//     text-decoration none
-//     display grid
-//     justify-content center
-//     align-content center
-//     &:not(:last-child)
-//       border-right 1px solid black
 
 .rb
   z-index 95
@@ -70,12 +51,14 @@ body
 @media (max-width: 800px)
   body
     &.nav-fixed header
-      .logo
-        display none
-        &-s
-          display block
+      position fixed
+      width 100%
+      top 0
       .nav
-        justify-self unset
+        position unset
+      .nav__section
+        &--logo
+          display none !important
   .rb
     height 10rem
     bottom 3rem
