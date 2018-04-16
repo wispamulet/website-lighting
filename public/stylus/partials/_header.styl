@@ -1,11 +1,56 @@
 @require './_variables.styl'
 
-.language__wrapper
-  padding-top 1rem
+#top
+  padding 1rem 0
   background black
   display grid
-  grid-template-columns repeat(10, 1fr)
+  grid-template-columns 4fr 1fr
+  grid-gap .5rem
+  .user
+    justify-self flex-end
+    > *
+      padding 0 .5rem
   .language
-    grid-column -3 / -1
+    &--active
+      color $orange !important
+    span
+      color #b3b3b3
+  a
+    color white
+    text-decoration none
     font-size 1.4rem
-    padding 1rem 0
+
+.logo
+  display none
+  &-s
+    display block
+    width 10rem
+    margin-bottom 2rem
+
+header
+  z-index 49
+  padding 1rem 2rem
+  background black
+  color white
+  display grid !important
+  grid-template-rows auto 1fr
+  justify-items center
+  align-items center
+
+@media (max-width: 1100px)
+  .logo
+    display none
+    &-s
+      display block
+      width 7rem
+
+@media (max-width: 800px)
+  header
+    justify-items stretch
+    grid-template-columns 1fr 1fr
+  .language-wrapper
+    .language
+      padding 5px 5px
+  .logo
+    &-s
+      margin-bottom 0

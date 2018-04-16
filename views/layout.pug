@@ -23,17 +23,17 @@ html(lang="en")
         //-   i.fa.fa-envelope
         button#toTop.rb__btn
           i.fa.fa-angle-up
-      .add
-        if user
-          a(href='/add-product') Add Product
-          a(href='/add-project') Add Project
-          a(href='/account') Account
-          a(href="/logout") Log Out
-        else
-          a(href='/register') Register
-          a(href='/login') Log In
-      .header__wrapper#top
-        .language__wrapper
+      .header__wrapper
+        #top
+          .user
+            if user
+              a(href='/add-product') Add Product
+              a(href='/add-project') Add Project
+              a(href='/account') Account
+              a(href="/logout") Log Out
+            else
+              a(href='/register') Register
+              a(href='/login') Log In
           .language
             a(href=`${currentPath}?clang=en` class=(lang === 'en' ? 'language--active' : '')) EN
             span |

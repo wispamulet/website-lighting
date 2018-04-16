@@ -6,11 +6,14 @@ body
     position fixed
     width 100%
     top 0
-    flex-direction row
+    // flex-direction row
+    grid-template-columns auto 1fr
     .logo
       display block
       &-s
         display none
+    .nav
+      justify-self flex-end
   &.rb--hide .rb__btn
     transform translateY(500%)
     opacity .5
@@ -26,19 +29,19 @@ body
 .inner-2
   max-width 1200px
 
-.add
-  display grid
-  grid-template-columns repeat(auto-fit, minmax(100px, 1fr))
-  outline  1px solid black
-  a
-    height 5rem
-    background white
-    text-decoration none
-    display grid
-    justify-content center
-    align-content center
-    &:not(:last-child)
-      border-right 1px solid black
+// .add
+//   display grid
+//   grid-template-columns repeat(auto-fit, minmax(100px, 1fr))
+//   outline  1px solid black
+//   a
+//     height 5rem
+//     background white
+//     text-decoration none
+//     display grid
+//     justify-content center
+//     align-content center
+//     &:not(:last-child)
+//       border-right 1px solid black
 
 .rb
   z-index 95
@@ -66,11 +69,13 @@ body
 
 @media (max-width: 800px)
   body
-    .nav-fixed header
+    &.nav-fixed header
       .logo
         display none
         &-s
           display block
+      .nav
+        justify-self unset
   .rb
     height 10rem
     bottom 3rem

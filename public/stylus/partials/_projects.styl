@@ -1,0 +1,74 @@
+@require './_variables.styl'
+
+.project
+  &-types
+    margin 5rem 0
+    display flex
+    justify-content center
+  &__link
+    display grid
+    grid-template-columns 1fr 1rem
+    grid-gap 2rem
+    font-size 1.8rem
+    text-decoration none
+    color #3a3a3a
+    background white
+    border 1px solid #d8d8d8
+    padding .5rem 1rem
+    transition all .2s ease-out
+    &:hover, &--active
+      background $orange
+      color white
+
+.projects
+  display grid
+  grid-template-columns repeat(4, 1fr)
+  grid-gap 2rem
+  .project
+    background white
+    height 50rem
+    position relative
+    top 0
+    text-decoration none
+    color #444
+    box-shadow 0 2px 5px rgba(0, 0, 0, .1)
+    &:hover
+      top -2px
+      box-shadow 0 4px 5px rgba(0, 0, 0, .2)
+
+    &-gallery
+      figure
+        margin 0
+        &.figure--hide, img, figcaption
+          display none
+
+    &__img
+      height 25rem
+
+    article
+      height 25rem
+      display flex
+      padding 2rem
+      flex-direction column
+      justify-content space-between
+      p
+        flex 1
+
+      &__title
+        display grid
+        grid-template-columns 1fr 3rem
+        align-items center
+        h2
+          text-align left
+          font-size 2rem
+
+      &__type
+        text-transform uppercase
+        color #999
+        font-size 1.2rem
+        font-weight 600
+        letter-spacing .1rem
+
+@media (max-width: 800)
+  .projects
+    grid-template-columns 1fr

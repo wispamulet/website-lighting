@@ -1,0 +1,159 @@
+@require './_variables.styl'
+
+.nav
+  flex 1
+  z-index 49
+  display flex
+  // justify-content flex-end
+  &__item
+    list-style none
+  &__item:hover > &__dropdown
+    display block
+  &__link
+    height 5rem
+    text-decoration none
+    text-transform uppercase
+    color white
+    font-size 1.6rem
+    font-weight 400
+    position relative
+    display flex
+    justify-content center
+    align-items center
+    &--active
+      color $orange
+    &:hover
+      color $orange
+      transition all .5s ease
+  &__dropdown
+    display none
+    position absolute
+    margin 0
+    list-style none
+    padding-left 0
+    &__link
+      text-decoration none
+      text-transform capitalize
+      width 18rem
+      height 3rem
+      background black
+      color white
+      display grid
+      align-items center
+      border-bottom 1px solid rgba(0, 0, 0, .1)
+      font-size 1.4rem
+      span
+        padding-left 2rem
+      &:hover
+        color $orange
+  .down
+    padding-left 1rem
+    &--mobile
+      display none
+  &__section
+    &--pages
+      display flex
+      & > *
+        padding 0 2rem
+
+// hide navbar button
+[aria-controls="menu-list"]
+  background black
+  color white
+  justify-self flex-end
+  display none
+  width 5rem
+  height 5rem
+  font-size 2rem
+  border none
+  border-radius .5rem
+  outline none
+
+@media (max-width: 1100px)
+  .nav
+    &__section
+      &__pages
+        & > *
+          padding 1rem 1rem
+
+@media (max-width: 800px)
+  .nav
+    grid-column 1 / -1
+    justify-content flex-start
+    display flex
+    // hide navbar
+    height 0
+    overflow hidden
+    &__item
+      display grid
+      grid-template-columns 1fr
+      grid-auto-flow column
+    &__item:hover > &__dropdown
+      display none
+    &__link
+      justify-content flex-start
+      grid-column 1 / -1
+      grid-row-start 1
+    &__title
+      padding 0 1rem
+    &__dropdown
+      position relative
+      &__link
+        width 100%
+        font-size 1.5rem
+        height 4rem
+        span
+          padding 0 2rem
+    &__section
+      &--pages
+        flex 1
+        display grid
+        grid-template-columns 1fr
+        & > *
+          padding 1rem 0
+
+  // display navbar button
+  [aria-controls="menu-list"]
+    display block
+
+  [aria-expanded="false"]
+     > .close
+      display none
+
+  [aria-expanded="true"]
+    > .close
+      display block
+    > .open
+      display none
+
+  // display navbar
+  [aria-expanded="true"] ~ .nav
+    height 100%
+    .down
+      display none
+      &--mobile
+        display block
+        width 5rem
+        color white
+        font-size 2rem
+        display flex
+        justify-content center
+        align-items center
+
+  // toggle navbar dropdown
+  [aria-expanded="false"]
+    ~ .nav__dropdown
+      display none !important
+    .fa-angle-up
+      display none
+    .fa-angle-down
+      display block
+
+  [aria-expanded="true"]
+    ~ .nav__dropdown
+      display block !important
+      grid-column 1 / span 2
+    .fa-angle-up
+      display block
+    .fa-angle-down
+      display none

@@ -1,0 +1,78 @@
+.products
+  display grid
+  grid-template-columns 1fr
+  grid-gap 2rem
+  .product
+    display grid
+    grid-template-columns 3fr 2fr
+    grid-gap 1rem
+    border-bottom 1px solid rgba(0, 0, 0, .3)
+    padding 2rem 0
+
+    &__heading
+      display grid
+      grid-template-columns 1fr 3rem
+      align-items center
+      h2
+        color $orange
+        font-size 2rem
+        text-align left
+
+    &__text
+      grid-column-start 1
+      padding 3rem 0
+      li
+        font-size 1.4rem
+        list-style none
+        display grid
+        grid-template-columns 20% 1fr
+        grid-gap 2rem
+        line-height 2
+        text-align right
+        span
+          text-align left
+      &__button
+        margin-top 3rem
+        a
+          border 1px solid $orange
+          border-radius .5rem
+          color $orange
+          font-size 1.4rem
+          text-decoration none
+          padding .5rem
+          transition all .5s ease-out
+          &:hover
+            background $orange
+            color white
+
+    &__image
+      grid-column-start 2
+      grid-row 1 / span 2
+
+    &-gallery
+      display grid
+      grid-template-columns repeat(6, 1fr)
+      grid-template-rows 1fr 5rem
+      grid-gap .5rem
+      figure
+        margin 0
+        padding .1rem
+        outline 1px solid #999
+        display flex
+        align-items center
+        figcaption
+          display none
+        &:nth-child(1)
+          grid-column 1 / -1
+          padding .2rem
+
+@media (max-width: 800px)
+  .products
+    .product
+      grid-template-columns 1fr
+      &__text
+        li
+          grid-template-columns 2fr 3fr
+      &__image
+        grid-column 1 / -1
+        grid-row 2 / span 2

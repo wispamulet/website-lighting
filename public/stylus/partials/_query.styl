@@ -1,0 +1,85 @@
+.query
+  color black
+  &-overlay
+    display none
+    z-index 98
+    width 100vw
+    height 100vh
+    position fixed
+    top 0
+    background black
+    opacity .5
+    cursor pointer
+  &-wrapper
+    display none
+    z-index 99
+    width 36.4rem
+    min-height 95vh
+    background white
+    position fixed
+    top 3vh
+    left 0
+    right 0
+    margin 0 auto
+    padding 3rem
+    opacity 1
+    box-shadow 0 0 10px 3px rgba(0, 0, 0, .7)
+  &-display
+    display block
+
+  &__remove
+    width 3rem
+    height 3rem
+    font-size 1.4rem
+    position absolute
+    top -1.5rem
+    right -1.5rem
+    border 1px white solid
+    border-radius 50%
+    background black
+    color $orange
+    outline none
+    display flex
+    justify-content center
+    align-items center
+  &__form
+    display grid
+    grid-template-columns 1fr
+    grid-gap 1rem
+    font-size 1.6rem
+    input, textarea
+      font-size 1.4rem
+      padding 1rem
+      border 1px solid #d8d8d8
+      margin-bottom 1rem
+    span
+      font-size 1.2rem
+      background $orange
+      padding 2px
+      border-radius 8px
+    textarea
+      resize none
+    .button
+      text-transform uppercase
+      background $orange
+      font-weight 600
+
+@media (max-width: 800px)
+  .query
+    &-wrapper
+      width 32.4rem
+      padding 1rem
+
+    &__form
+      font-size 1.2rem
+      grid-gap .5rem
+      input, textarea
+        padding .5rem
+      span
+        font-size 1rem
+    &__remove
+      width 2.5rem
+      height 2.5rem
+      font-size 1.2rem
+      top -1.2rem
+      right -1.2rem
