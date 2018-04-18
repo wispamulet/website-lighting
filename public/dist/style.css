@@ -8,17 +8,17 @@
       grid-template-columns: 3fr 12fr 5fr;
   grid-gap: 1rem 5rem;
 }
-.about__us h2,
-.about__us p {
+.about__us > h2,
+.about__us > p {
   grid-column: 2/-2;
 }
-.about__us h2 {
+.about__us > h2 {
   text-transform: uppercase;
   text-align: left;
   color: #f08519;
   font-size: 3rem;
 }
-.about__us p {
+.about__us > p {
   color: #333;
   font-size: 1.8rem;
   line-height: 1.8;
@@ -30,11 +30,14 @@
 .about__us blockquote {
   grid-column: 1/-1;
   margin: 0;
+  text-align: center;
+  font-style: italic;
 }
 .about__us blockquote p {
-  text-align: center;
   font-size: 5rem;
-  font-style: italic;
+}
+.about__us blockquote:last-child {
+  text-transform: uppercase;
 }
 .about__us .tip {
   background: #fafafa;
@@ -193,10 +196,9 @@
   font-style: italic;
 }
 .contact__region__person a {
-  display: block;
-  margin: 1.5rem 0;
   font-size: 1.5rem;
-  text-decoration: underline wavy #f08519;
+  -webkit-text-decoration-color: #f08519;
+          text-decoration-color: #f08519;
 }
 .contact__region__person span {
   font-style: italic;
@@ -369,14 +371,15 @@ footer .contact__info .divide {
 }
 footer .contact__info p,
 footer .contact__info a {
-  margin: 5px;
   text-align: center;
   font-size: 1.3rem;
 }
 footer .contact__info p span,
 footer .contact__info a span {
   font-style: italic;
-  color: #d8d6d6;
+}
+footer .contact__info p {
+  margin: 5px;
 }
 footer .contact__info a {
   color: #d8d6d6;
@@ -1259,6 +1262,11 @@ template {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   grid-gap: 2rem;
+  padding: 2rem 0;
+}
+.products__banner {
+  height: 30rem;
+  background: url("/images/photos/products.jpg") center 35%;
 }
 .products .product {
   display: -ms-grid;
@@ -1266,8 +1274,10 @@ template {
   -ms-grid-columns: 3fr 2fr;
       grid-template-columns: 3fr 2fr;
   grid-gap: 1rem;
-  border-bottom: 1px solid rgba(0,0,0,0.3);
   padding: 2rem 0;
+}
+.products .product:not(:last-child) {
+  border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 .products .product__heading {
   display: -ms-grid;
@@ -1397,6 +1407,10 @@ template {
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
+}
+.projects__banner {
+  height: 30rem;
+  background: url("/images/photos/projects.jpg") center 67%;
 }
 .projects .project {
   background: #fff;

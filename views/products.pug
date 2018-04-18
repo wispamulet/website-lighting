@@ -3,60 +3,36 @@ extends layout
 include mixins/_productCard
 
 block content
-  //- .slideshow
-    .slide.fade
-      img(src="/images/photos/photo-1519172043277-7cf59084782d.jpg")
-      .slide__caption Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    .slide.fade
-      img(src="/images/photos/photo-1519986988383-5b8327613e72.jpg")
-      .slide__caption Lorem ipsum dolor sit.
-    .slide.fade
-      img(src="/images/photos/photo-1519994007676-baabab4bf574.jpg")
-      .slide__caption Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, quibusdam!
-    .slide.fade
-      img(src="/images/photos/photo-1520247478381-4d32def223c1.jpg")
-      .slide__caption Lorem ipsum dolor sit amet consectetur.
-    .slide.fade
-      img(src="/images/photos/photo-1520320142774-5381578416fa.jpg")
-      .slide__caption Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    //- a.prev
-    //-   i.fa.fa-angle-left
-    //- a.next
-    //-   i.fa.fa-angle-right
-    .dots
-      .dot
-      .dot
-      .dot
-      .dot
-      .dot
-  .inner
-    h2= title
-    //- pre= h.dump(user)
-    .pswp(tabindex="-1" role="dialog" aria-hidden="true")
-      .pswp__bg
-      .pswp__scroll-wrap
-        .pswp__container
-          .pswp__item
-          .pswp__item
-          .pswp__item
-        .pswp__ui.pswp__ui--hidden
-          .pswp__top-bar
-            .pswp__counter
-            button.pswp__button.pswp__button--close(title="Close (Esc)")
-            button.pswp__button.pswp__button--share(title="share")
-            button.pswp__button.pswp__button--fs(title="Toggle fullscreen")
-            button.pswp__button.pswp__button--zoom(title="Zoom in/out")
-            .pswp__preloader
-              .pswp__preloader__icn
-                .pswp__preloader__cut
-                  .pswp__preloader__donut
-          .pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
-            .pswp__share-tooltip
-          button.pswp__button.pswp__button--arrow--left(title="Previous (arrow left)")
-          button.pswp__button.pswp__button--arrow--right(title="Next (arrow right)")
-          .pswp__caption
-            .pswp__caption__center
+  .content
+    .products__banner
+    .inner
+      h2= title
+      //- pre= h.dump(user)
+      .pswp(tabindex="-1" role="dialog" aria-hidden="true")
+        .pswp__bg
+        .pswp__scroll-wrap
+          .pswp__container
+            .pswp__item
+            .pswp__item
+            .pswp__item
+          .pswp__ui.pswp__ui--hidden
+            .pswp__top-bar
+              .pswp__counter
+              button.pswp__button.pswp__button--close(title="Close (Esc)")
+              button.pswp__button.pswp__button--share(title="share")
+              button.pswp__button.pswp__button--fs(title="Toggle fullscreen")
+              button.pswp__button.pswp__button--zoom(title="Zoom in/out")
+              .pswp__preloader
+                .pswp__preloader__icn
+                  .pswp__preloader__cut
+                    .pswp__preloader__donut
+            .pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+              .pswp__share-tooltip
+            button.pswp__button.pswp__button--arrow--left(title="Previous (arrow left)")
+            button.pswp__button.pswp__button--arrow--right(title="Next (arrow right)")
+            .pswp__caption
+              .pswp__caption__center
 
-    .products
-      each product in products
-        +productCard(product)
+      .products
+        each product in products
+          +productCard(product)

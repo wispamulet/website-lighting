@@ -113,22 +113,24 @@ html(lang="en")
           .contact__info
             h2= TRANSLATION.CONTACT_INFO
             p= TRANSLATION.CONTACT_INFO_ADDR_US
-            a(href=`mailto:${TRANSLATION.CONTACT_INFO_EMAIL_ROBERT}`)= TRANSLATION.CONTACT_INFO_EMAIL_ROBERT
+            p
+              a(href=`mailto:${TRANSLATION.CONTACT_INFO_EMAIL_ROBERT}`)= TRANSLATION.CONTACT_INFO_EMAIL_ROBERT
             p
               span Tel.&nbsp;
-              = TRANSLATION.CONTACT_INFO_TEL_ROBERT
+              a(href=`tel:${TRANSLATION.CONTACT_INFO_TEL_ROBERT}`)= `${TRANSLATION.CONTACT_INFO_TEL_ROBERT} (Robert)`
             p
               span Tel.&nbsp;
-              = TRANSLATION.CONTACT_INFO_TEL_LYNA
+              a(href=`tel:${TRANSLATION.CONTACT_INFO_TEL_LYNA}`)= `${TRANSLATION.CONTACT_INFO_TEL_LYNA} (Lyna)`
             .divide
             p= TRANSLATION.CONTACT_INFO_ADDR_CN
-            a(href=`mailto:${TRANSLATION.CONTACT_INFO_EMAIL_CN}`)= TRANSLATION.CONTACT_INFO_EMAIL_CN
+            p
+              a(href=`mailto:${TRANSLATION.CONTACT_INFO_EMAIL_CN}`)= TRANSLATION.CONTACT_INFO_EMAIL_CN
             p
               span Tel.&nbsp;
-              = TRANSLATION.CONTACT_INFO_TEL_CN1
+              a(href=`tel:${TRANSLATION.CONTACT_INFO_TEL_CN1}`)= TRANSLATION.CONTACT_INFO_TEL_CN1
             p
               span Tel.&nbsp;
-              = TRANSLATION.CONTACT_INFO_TEL_CN2
+              a(href=`tel:${TRANSLATION.CONTACT_INFO_TEL_CN2}`)= TRANSLATION.CONTACT_INFO_TEL_CN2
           .contact__email
             h2= TRANSLATION.CONTACT_US
             .query__btn= TRANSLATION.SEND_EMAIL
