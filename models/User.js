@@ -20,8 +20,16 @@ const userSchema = new mongoose.Schema({
     required: 'Please supply a name!',
     trim: true
   },
+  level: Number,
   resetPasswordToken: String,
   resetPasswordExpires: Date
+});
+
+userSchema.pre('save', async function (next) {
+  // 1 for admin
+  // 10 for worksers
+  // 20 for visitors
+  this.level = 20;
 });
 
 userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
