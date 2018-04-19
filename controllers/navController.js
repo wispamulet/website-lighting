@@ -43,7 +43,6 @@ exports.queryValidate = async (req, res, next) => {
       //   formSubmit: false,
       //   errors: recaptcha.translateErrors(errorCodes)
       // });
-      const errors = recaptcha.translateErrors(errorCodes);
       req.flash('error', 'You must pass reCAPTCHA!');
       res.redirect('back');
     });
@@ -60,7 +59,7 @@ exports.query = async (req, res) => {
   const query = req.body;
   const t = h.moment().format('MMMM Do YYYY, h:mm:ss a');
   query.t = t;
-  const subject = `Query from ${req.headers.host}`;
+  const subject = `Query from ${req.headers.host} 😜`;
 
   await mail.query({
     query,

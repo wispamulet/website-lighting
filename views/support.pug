@@ -12,24 +12,28 @@ block content
         - const value = "true"
         +supportBtn(value)
         .support__QA__details
-          ul
-            li
-              .support__qa
-                h2 How to visit us?
-                p About 30 minutes’ driving from Luohu or Huanggang border (come from Hongkong).
-            li
-              .support__qa
-                h2 How to get the samples?
-                p Please email us what items and how many you need. Our teams will send you a PI (Proforma Invoice) for your ref. Normally it takes 3-5 days to prepare samples after we confirm your payments.
-            li
-              .support__qa
-                h2 How to pay us?
-                ol
-                  li Paypal account:
-                    ul
-                      li robertqin86@163.com
-                  li Wester Union:
-                    ul
+          .support__qa
+            h2 How to visit us?
+            p About 30 minutes’ driving from Luohu or Huanggang border (come from Hongkong).
+          .support__qa
+            h2 How to get the samples?
+            p Please email us what items and how many you need. Our team will send you a PI (Proforma Invoice) for your ref. Normally it takes 3-5 days to prepare samples after we confirm your payments.
+          .support__qa
+            h2 How to pay us?
+            .payment__info
+              .payment__info--name
+                h3 Paypal Account:
+              .payment__info--detail
+                p robertqin86@163.com
+            .payment__info
+              .payment__info--name
+                h3 Wester Union:
+              .payment__info--detail
+                h3 Beneficiary:
+                .payment__info--detail-l
+                  h3 Fore name:
+                .payment__info--detail-r
+                  p Dangui
       .support__certificates
         h2 Certificates
         +supportBtn()

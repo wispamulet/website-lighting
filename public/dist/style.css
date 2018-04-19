@@ -530,7 +530,7 @@ header {
   text-transform: uppercase;
 }
 .intro__company {
-  padding: 5rem 0;
+  padding-bottom: 5rem;
 }
 .intro__company p {
   font-size: 1.8rem;
@@ -1345,7 +1345,6 @@ template {
 .products .product-gallery figure {
   margin: 0;
   padding: 0.1rem;
-  outline: 1px solid #999;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -1405,7 +1404,7 @@ template {
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 5rem 2rem;
 }
 .projects__banner {
   height: 30rem;
@@ -1413,7 +1412,6 @@ template {
 }
 .projects .project {
   background: #fff;
-  height: 50rem;
   position: relative;
   top: 0;
   text-decoration: none;
@@ -1436,7 +1434,6 @@ template {
   height: 25rem;
 }
 .projects .project article {
-  height: 25rem;
   display: -ms-flexbox;
   display: flex;
   padding: 2rem;
@@ -1754,12 +1751,44 @@ template {
 }
 .support__qa h2 {
   font-size: 1.8rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+.support__qa h3 {
+  font-size: 1.6rem;
+  text-align: left;
+  font-weight: 500;
 }
 .support__qa p {
   font-size: 1.5rem;
 }
-.support__qa ol {
-  font-size: 1.8rem;
+.support .payment__info {
+  margin-bottom: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr;
+      grid-template-columns: 1fr 4fr;
+  grid-gap: 1.5rem;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.support .payment__info h3,
+.support .payment__info p {
+  margin: 0;
+}
+.support .payment__info--name {
+  justify-self: flex-end;
+}
+.support .payment__info--detail {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr;
+      grid-template-columns: 1fr 4fr;
+  grid-gap: 1rem;
+}
+.support .payment__info--detail h3 {
+  grid-column: 1/-1;
+  justify-self: flex-end;
 }
 .support__certificate {
   display: -ms-grid;

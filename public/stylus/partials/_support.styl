@@ -50,10 +50,32 @@
   &__qa
     h2
       font-size 1.8rem
+      text-align left
+      text-transform uppercase
+    h3
+      font-size 1.6rem
+      text-align left
+      font-weight 500
     p
       font-size 1.5rem
-    ol
-      font-size 1.8rem
+
+  .payment__info
+    margin-bottom 2rem
+    display grid
+    grid-template-columns 1fr 4fr
+    grid-gap 1.5rem
+    align-items center
+    h3, p
+      margin 0
+    &--name
+      justify-self flex-end
+    &--detail
+      display grid
+      grid-template-columns 1fr 4fr
+      grid-gap 1rem
+      h3
+        grid-column 1 / -1
+        justify-self flex-end
 
   &__certificate
     display grid
