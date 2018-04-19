@@ -27,8 +27,8 @@ const userSchema = new mongoose.Schema({
 
 userSchema.pre('save', async function (next) {
   // 1 for admin
-  // 10 for worksers
-  // 20 for visitors
+  // 10 for staff
+  // 20 for the others
   this.level = 20;
 });
 

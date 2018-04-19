@@ -197,8 +197,7 @@
 }
 .contact__region__person a {
   font-size: 1.5rem;
-  -webkit-text-decoration-color: #f08519;
-          text-decoration-color: #f08519;
+  text-decoration: underline wavy #f08519;
 }
 .contact__region__person span {
   font-style: italic;

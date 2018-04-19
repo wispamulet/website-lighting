@@ -23,7 +23,7 @@ exports.contact = (req, res) => {
 };
 
 exports.queryValidate = (req, res, next) => {
-  res.json(req.body);
+  // res.json(req.body);
   // return;
   const url = 'https://www.google.com/recaptcha/api/siteverify';
 
@@ -33,9 +33,11 @@ exports.queryValidate = (req, res, next) => {
       responsive: req.body['g-recaptcha-response']
     })
     .then((data) => {
+      console.log('yes');
       res.json(data);
     })
     .catch((err) => {
+      console.log('no');
       res.json(err);
     });
 

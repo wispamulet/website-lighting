@@ -38,10 +38,11 @@ block content
             h2= addrTransform(TRANSLATION.CONTACT_INFO_ADDR_CN)
             .contact__region__person
               h3 Lyna
-              a(href=`mailto:lyna@nssled.com`) lyna@nssled.com
+              p
+                a(href=`mailto:lyna@nssled.com`) lyna@nssled.com
               p
                 span Tel.&nbsp;
-                | +1 323 616 7060
+                a(href=`tel:${TRANSLATION.CONTACT_INFO_TEL_LYNA}`)= TRANSLATION.CONTACT_INFO_TEL_LYNA
               p
-                span Skype&nbsp;
-                | +1 323 616 7060
+                span Skype.&nbsp;
+                a(href=`callto:${TRANSLATION.CONTACT_INFO_TEL_LYNA}`)= TRANSLATION.CONTACT_INFO_TEL_LYNA
