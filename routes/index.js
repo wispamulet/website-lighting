@@ -19,7 +19,7 @@ router.get('/about-us', navController.aboutUs);
 router.get('/contact', navController.contact);
 router.post(
   '/query',
-  navController.queryValidate,
+  catchErrors(navController.queryValidate),
   catchErrors(navController.query)
 );
 

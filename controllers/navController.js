@@ -22,23 +22,38 @@ exports.contact = (req, res) => {
   res.render('contact', { title: 'Contact' });
 };
 
-exports.queryValidate = (req, res, next) => {
+exports.queryValidate = async (req, res, next) => {
   // res.json(req.body);
   // return;
+  // const secret = process.env.SECRET_KEY;
+  // const response = req.body['g-recaptcha-response'];
+  // const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${response}`;
+
   const url = 'https://www.google.com/recaptcha/api/siteverify';
 
-  axios
-    .post(url, {
+  // await axios
+  //   .post(url, {
+  //     // secret: process.env.SECRET_KEY,
+  //     // response: req.body['g-recaptcha-response']
+  //   })
+  //   .then((data) => {
+  //     console.log('yes');
+  //     res.json(data);
+  //   })
+  //   .catch((err) => {
+  //     console.log('no');
+  //     res.json(err);
+  //   });
+  await axios({
+    method: 'post',
+    url,
+    params: {
       secret: process.env.SECRET_KEY,
-      responsive: req.body['g-recaptcha-response']
-    })
+      response: req.body['g-recaptcha-response']
+    }
+  })
     .then((data) => {
-      console.log('yes');
       res.json(data);
-    })
-    .catch((err) => {
-      console.log('no');
-      res.json(err);
     });
 
   // if (!req.body['g-recaptcha-response']) {
