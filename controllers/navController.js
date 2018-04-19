@@ -27,20 +27,25 @@ exports.queryValidate = async (req, res, next) => {
   // res.json(req.body);
   // return;
 
-  const recaptcha = new reCAPTCHA({
+  const recaptcha = new reCAPTCHA({ // eslint-disable-line
     siteKey: process.env.SITE_KEY,
     secretKey: process.env.SECRET_KEY
   });
 
+  // validate recaptcha on server side
   await recaptcha.validateRequest(req)
     .then(() => {
-      res.json({ formSubmit: true });
+      // res.json({ formSubmit: true });
+      next();
     })
     .catch((errorCodes) => {
-      res.json({
-        formSubmit: false,
-        errors: recaptcha.translateErrors(errorCodes)
-      });
+      // res.json({
+      //   formSubmit: false,
+      //   errors: recaptcha.translateErrors(errorCodes)
+      // });
+      const errors = recaptcha.translateErrors(errorCodes);
+      req.flash('error', 'You must pass reCAPTCHA!');
+      res.redirect('back');
     });
 
   // if (!req.body['g-recaptcha-response']) {

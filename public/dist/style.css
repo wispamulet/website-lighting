@@ -1506,6 +1506,10 @@ template {
 .query-display {
   display: block;
 }
+.query-btn[disabled="disabled"] {
+  background: #ccc !important;
+  color: #999;
+}
 .query__remove {
   width: 3rem;
   height: 3rem;
@@ -1553,6 +1557,7 @@ template {
   text-transform: uppercase;
   background: #f08519;
   font-weight: 600;
+  transition: all 1s ease-in;
 }
 @media (max-width: 800px) {
   .query-wrapper {

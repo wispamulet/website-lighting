@@ -18,5 +18,9 @@ mixin queryForm()
       | Message&nbsp;
       span (Required)
     textarea#message(name="message", cols="30", rows="10" required)
-    .g-recaptcha(data-sitekey=`${process.env.SITE_KEY}`)
-    input.button(type="submit" value="Send")
+    //- validate recaptcha on client side
+    //- enable submit button only when user pass recaptcha
+    //- don't forget to validate it also on server side
+    script(src="/javascripts/modules/recaptcha.js")
+    .g-recaptcha(data-sitekey=`${process.env.SITE_KEY}` data-callback="recaptchaCallback")
+    input.button.query-btn(type="submit" value="Send" disabled="disabled")
