@@ -1,4 +1,5 @@
-const axios = require('axios');
+// const axios = require('axios');
+const reCAPTCHA = require('recaptcha2');
 const mail = require('../handlers/mail');
 const h = require('../helpers');
 
@@ -25,21 +26,21 @@ exports.contact = (req, res) => {
 exports.queryValidate = async (req, res, next) => {
   // res.json(req.body);
   // return;
-  const secret = process.env.SECRET_KEY;
-  const response = req.body['g-recaptcha-response'];
-  const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${response}`;
 
-  // const url = 'https://www.google.com/recaptcha/api/siteverify';
+  const recaptcha = new reCAPTCHA({
+    siteKey: process.env.SITE_KEY,
+    secretKey: process.env.SECRET_KEY
+  });
 
-  await axios
-    .post(url)
-    .then((data) => {
-      console.log('yes');
-      res.json(data);
+  await recaptcha.validateRequest(req)
+    .then(() => {
+      res.json({ formSubmit: true });
     })
-    .catch((err) => {
-      console.log('no');
-      res.json(err);
+    .catch((errorCodes) => {
+      res.json({
+        formSubmit: false,
+        errors: recaptcha.translateErrors(errorCodes)
+      });
     });
 
   // if (!req.body['g-recaptcha-response']) {
