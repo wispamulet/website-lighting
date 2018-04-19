@@ -25,35 +25,21 @@ exports.contact = (req, res) => {
 exports.queryValidate = async (req, res, next) => {
   // res.json(req.body);
   // return;
-  // const secret = process.env.SECRET_KEY;
-  // const response = req.body['g-recaptcha-response'];
-  // const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${response}`;
+  const secret = process.env.SECRET_KEY;
+  const response = req.body['g-recaptcha-response'];
+  const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${response}`;
 
-  const url = 'https://www.google.com/recaptcha/api/siteverify';
+  // const url = 'https://www.google.com/recaptcha/api/siteverify';
 
-  // await axios
-  //   .post(url, {
-  //     // secret: process.env.SECRET_KEY,
-  //     // response: req.body['g-recaptcha-response']
-  //   })
-  //   .then((data) => {
-  //     console.log('yes');
-  //     res.json(data);
-  //   })
-  //   .catch((err) => {
-  //     console.log('no');
-  //     res.json(err);
-  //   });
-  await axios({
-    method: 'post',
-    url,
-    params: {
-      secret: process.env.SECRET_KEY,
-      response: req.body['g-recaptcha-response']
-    }
-  })
+  await axios
+    .post(url)
     .then((data) => {
+      console.log('yes');
       res.json(data);
+    })
+    .catch((err) => {
+      console.log('no');
+      res.json(err);
     });
 
   // if (!req.body['g-recaptcha-response']) {
