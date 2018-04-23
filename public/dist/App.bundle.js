@@ -271,6 +271,7 @@ var initPhotoSwipeFromDOM = function initPhotoSwipeFromDOM(gallerySelector) {
   if (!pswpElement) {
     return;
   }
+  console.log(pswpElement);
   // parse slide data (url, title, size ...) from DOM elements
   // (children of gallerySelector)
   var parseThumbnailElements = function parseThumbnailElements(el) {
@@ -5056,6 +5057,7 @@ window.on('scroll', function () {
 (0, _photoswipe2.default)('.product-gallery');
 (0, _photoswipe2.default)('.intro__company-gallery');
 (0, _photoswipe2.default)('.intro__product-gallery');
+(0, _photoswipe2.default)('.support__certificate-gallery');
 
 // contact page google map
 (0, _map2.default)((0, _bling.$)('#map'));

@@ -1,11 +1,14 @@
 extends layout
 
+include mixins/_pswp
 include mixins/_supportBtn
+include mixins/_certificateCard
 
 block content
   .content
     //- h2= TRANSLATION.SUPPORT_MSG
     //- p It's #{h.moment().format('MMMM Do YYYY, h:mm:ss a')}
+    +pswp()
     .support
       .support__QA
         h2 Q&A
@@ -34,18 +37,31 @@ block content
                   h3 Fore name:
                 .payment__info--detail-r
                   p Dangui
+      .support__FB
+        h2 Features&Benefits
+        +supportBtn()
+        .support__FB__details
+          .support__fb
+            h2 Affordable
+            p Prices of the New Sunshine LED corn bulbs have come down to an affordable level price where it can most projects to make the switch it.
+          .support__fb
+            h2 80% Energy Save
+            p The New Sunshine LED corn bulbs consumes 80-85% less energy than incandescent lamp and high voltage sodium lamp.
+          .support__fb
+            h2 Long lifespan, over 50,000 hours
+            p The New Sunshine LED corn bulb is tested to last 50,000 hours , if lighting 3 hours a day the New Sunshine LED lamp can last up to 31 years.
+          .support__fb
+            h2 Green without mercury
+            p Mercury is classified as a poison to humans, when disposed of improperly, it harmful to our health, New Sunshine LED light bulbs do not contain any mercury.
+          .support__fb
+            h2 Green and recyclable
+            p New sunshine products do not contain any harmful substances, when the LED light bulb reaches its end of life simply toss it in the recycling bucket,Unlike traditional fluorescent lamp, need special treatment.
+          .support__fb
+            h2 Product quality assurance
+            p We have 8 Product certificates,With rights to import more than 80 countries and win thousands of companies trust.
       .support__certificates
         h2 Certificates
         +supportBtn()
         .support__certificates__details
-          .support__certificate
-            h2 USA Patents
-            +supportBtn()
-            .support__certificate__detail
-              p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti illum, sunt, enim reprehenderit alias assumenda, veniam dolorem sed numquam tenetur natus. Facilis delectus explicabo quis esse magni sunt amet tenetur.
-          .support__certificate
-            h2 USA Patents
-            +supportBtn()
-            .support__certificate__detail
-              p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti illum, sunt, enim reprehenderit alias assumenda, veniam dolorem sed numquam tenetur natus. Facilis delectus explicabo quis esse magni sunt amet tenetur.
-
+          each certificate in certificates
+            +certificateCard(certificate)

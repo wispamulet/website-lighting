@@ -11,10 +11,6 @@ exports.home = (req, res) => {
   res.render('home', { title: 'Home' });
 };
 
-exports.support = (req, res) => {
-  res.render('support', { title: 'Support' });
-};
-
 exports.aboutUs = (req, res) => {
   res.render('aboutus', { title: 'About Us' });
 };

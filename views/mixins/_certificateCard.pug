@@ -1,0 +1,15 @@
+mixin certificateCard(certificate = {})
+  .support__certificate
+    - const name = certificate.name
+    - const images = certificate.photos
+      h2= name
+      +supportBtn()
+      .support__certificate-gallery(itemscope itemtype="http://schema.org/ImageGallery")
+        - let i = 0
+          each image in images
+            - const { original, thumbnail, dimension } = image
+              figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+                a(href=`/uploads/certificates/${original}` itemprop="contentUrl" data-size=`${dimension.w}x${dimension.h}`)
+                  img(src=`/uploads/certificates/${thumbnail || 'default_300x300.jpg'}` itemprop="thumbnail" alt="Image description")
+                figcaption(itemprop="caption description")
+              - i += 1

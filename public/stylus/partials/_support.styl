@@ -33,7 +33,7 @@
     & ~ *
       display grid
 
-  &__QA, &__certificates
+  &__QA, &__FB, &__certificates
     display grid
     grid-template-columns auto 1fr
     align-items center
@@ -47,7 +47,7 @@
       grid-template-columns 1fr
       grid-gap 1rem
 
-  &__qa
+  &__qa, &__fb, &__certificate
     h2
       font-size 1.8rem
       text-align left
@@ -85,5 +85,10 @@
       width 2.4rem
       height 2.4rem
       font-size 2.2rem
-    &__detail
+    &-gallery
       grid-column 1 / -1
+      display grid
+      grid-template-columns repeat(5, minmax(100px, 1fr))
+      grid-gap 2rem
+      figure
+        margin 0

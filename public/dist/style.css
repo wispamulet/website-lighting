@@ -555,6 +555,7 @@ header {
   text-transform: uppercase;
 }
 .intro__company-gallery figure {
+  cursor: pointer;
   margin: 0;
   display: -ms-flexbox;
   display: flex;
@@ -1669,9 +1670,6 @@ template {
 .slideshow .dots .dot:hover {
   background: #898686;
 }
-.slideshow .fade {
-  animation: fade 3s;
-}
 @keyframes fade {
   from {
     opacity: 0.8;
@@ -1727,6 +1725,7 @@ template {
   display: grid;
 }
 .support__QA,
+.support__FB,
 .support__certificates {
   display: -ms-grid;
   display: grid;
@@ -1736,11 +1735,13 @@ template {
       align-items: center;
 }
 .support__QA > h2,
+.support__FB > h2,
 .support__certificates > h2 {
   font-size: 2.5rem;
   color: #f08519;
 }
 .support__QA__details,
+.support__FB__details,
 .support__certificates__details {
   background: #eee;
   grid-column: 1/-1;
@@ -1749,17 +1750,23 @@ template {
       grid-template-columns: 1fr;
   grid-gap: 1rem;
 }
-.support__qa h2 {
+.support__qa h2,
+.support__fb h2,
+.support__certificate h2 {
   font-size: 1.8rem;
   text-align: left;
   text-transform: uppercase;
 }
-.support__qa h3 {
+.support__qa h3,
+.support__fb h3,
+.support__certificate h3 {
   font-size: 1.6rem;
   text-align: left;
   font-weight: 500;
 }
-.support__qa p {
+.support__qa p,
+.support__fb p,
+.support__certificate p {
   font-size: 1.5rem;
 }
 .support .payment__info {
@@ -1803,8 +1810,16 @@ template {
   height: 2.4rem;
   font-size: 2.2rem;
 }
-.support__certificate__detail {
+.support__certificate-gallery {
   grid-column: 1/-1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(100px, 1fr))[5];
+      grid-template-columns: repeat(5, minmax(100px, 1fr));
+  grid-gap: 2rem;
+}
+.support__certificate-gallery figure {
+  margin: 0;
 }
 html {
   font-family: 'Montserrat', 'sans-serif';

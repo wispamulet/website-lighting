@@ -2,6 +2,7 @@ const express = require('express');
 const navController = require('../controllers/navController');
 const productController = require('../controllers/productController');
 const projectController = require('../controllers/projectController');
+const certificateController = require('../controllers/certificateController');
 const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
 const { catchErrors } = require('../handlers/errorHandlers');
@@ -11,10 +12,7 @@ const router = express.Router();
 // navbar
 router.get('/', navController.home);
 router.get('/home', navController.home);
-router.get(
-  '/support',
-  navController.support
-);
+
 router.get('/about-us', navController.aboutUs);
 router.get('/contact', navController.contact);
 router.post(
@@ -64,6 +62,24 @@ router.get('/gallery/:type', catchErrors(projectController.getProjectsByType));
 router.get('/projects/:id/edit');
 // TODO
 router.post('/add-project/:id');
+
+// support
+router.get(
+  '/add-certificate',
+  authController.isLoggedIn,
+  certificateController.addCertificate
+);
+router.post(
+  '/add-certificate',
+  certificateController.upload,
+  catchErrors(certificateController.resize),
+  catchErrors(certificateController.createCertificate)
+);
+router.get('/support', certificateController.support);
+// TODO
+router.get('/support/:id/edit');
+// TODO
+router.post('/add-certificate/:id');
 
 // user
 router.get('/register', userController.registerForm);

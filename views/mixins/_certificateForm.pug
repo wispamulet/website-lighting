@@ -1,0 +1,14 @@
+mixin certificateForm(certificate = {})
+  form.add__form(action=`/add-certificate/${certificate._id || ''}` method="POST" enctype="multipart/form-data")
+    label(for="name")
+      | Name&nbsp;
+      span (Required)
+    input(type="text" id="name" name="name" value=certificate.name required)
+    - const index = [1, 2, 3, 4, 5]
+      each i in index
+        label(for=`photo${i}`)
+          | Photo#{i}&nbsp;
+          if i <= 1
+            span (Required)
+        input(type="file" id=`photo${i}` name="photos" accept="iamge/gif, image/png, image/jpeg" required=(i <= 1 ? true : false))
+    input.button(type="submit" value="Save")
