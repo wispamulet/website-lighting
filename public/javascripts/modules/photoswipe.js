@@ -37,7 +37,7 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
   if (!pswpElement) {
     return;
   }
-  console.log(pswpElement);
+  // console.log(pswpElement);
   // parse slide data (url, title, size ...) from DOM elements
   // (children of gallerySelector)
   var parseThumbnailElements = function (el) {
