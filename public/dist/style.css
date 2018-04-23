@@ -1346,6 +1346,7 @@ template {
 .products .product-gallery figure {
   margin: 0;
   padding: 0.1rem;
+  outline: 1px solid #ccc;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -1743,7 +1744,6 @@ template {
 .support__QA__details,
 .support__FB__details,
 .support__certificates__details {
-  background: #eee;
   grid-column: 1/-1;
   padding: 1rem 2rem;
   -ms-grid-columns: 1fr;
@@ -1804,6 +1804,15 @@ template {
       grid-template-columns: auto 1fr;
   -ms-flex-align: center;
       align-items: center;
+}
+.support__certificate h2 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.support__certificate__edit {
+  width: 3rem;
 }
 .support__certificate button[aria-controls="support-list"] {
   width: 2.4rem;

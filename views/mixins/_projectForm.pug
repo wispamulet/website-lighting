@@ -15,13 +15,16 @@ mixin projectForm(project = {})
       span (Required)
     input(type="text" id="name" name="name" value=project.name required)
     - const index = [1, 2, 3, 4, 5]
+    - const photos = project.photos || []
     - const descriptions = project.description || []
       each i in index
         label(for=`photo${i}`)
           | Photo#{i}&nbsp;
           if i <= 1
             span (Required)
-        input(type="file" id=`photo${i}` name="photos" accept="iamge/gif, image/png, image/jpeg" required=(i <= 1 ? true : false))
+        input(type="file" id=`photo${i}` name="photos" accept="iamge/gif, image/png, image/jpeg")
+        if photos[i - 1]
+          img(src=`/uploads/projects/${photos[i - 1].thumbnail}`, alt="")
         label(for=`description${i}`)
           | Description#{i}&nbsp;
           if i <= 1

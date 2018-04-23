@@ -43,7 +43,7 @@ mixin productCard(product = {})
           each image in images
             - const { original, thumbnail, dimension } = image
               figure(class=(image === images[0] ? '' : 'product__image--thumb') itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
-                a(href=`/uploads/photos/${original}` itemprop="contentUrl" data-size=`${dimension.w}x${dimension.h}`)
-                  img(src=`/uploads/photos/${thumbnail || 'default_400x400.jpg'}` itemprop="thumbnail" alt="Image description")
+                a(href=`/uploads/products/${original}` itemprop="contentUrl" data-size=`${dimension.w}x${dimension.h}`)
+                  img(src=`/uploads/products/${thumbnail || 'default_400x400.jpg'}` itemprop="thumbnail" alt="Image description")
                 figcaption(itemprop="caption description")= descriptions[i]
             - i += 1

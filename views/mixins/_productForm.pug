@@ -49,7 +49,7 @@ mixin productForm(product = {})
         input(type="file" id=`photo${i}` name="photos" accept="image/gif, image/png, image/jpeg")
           //-  required=(i <= 3 ? true : false)
         if photos[i - 1]
-          img(src=`/uploads/photos/${photos[i - 1].thumbnail}`, alt="")
+          img(src=`/uploads/products/${photos[i - 1].thumbnail}`, alt="")
         label(for=`description${i}`)
           | Description #{i}&nbsp;
           if i <= 3

@@ -20,7 +20,12 @@ const certificateSchema = new mongoose.Schema({
       },
       thumbnail: String
     }
-  ]
+  ],
+  author: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: 'You must supply an author!'
+  }
 });
 
 module.exports = mongoose.model('Certificate', certificateSchema);

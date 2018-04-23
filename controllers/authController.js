@@ -2,6 +2,7 @@ const passport = require('passport');
 const crypto = require('crypto');
 const promisify = require('es6-promisify');
 const mongoose = require('mongoose');
+
 const mail = require('../handlers/mail');
 
 const User = mongoose.model('User');
@@ -104,4 +105,11 @@ exports.update = async (req, res) => {
 
   req.flash('success', '😛 Nice! Your password has been reset! You are now logged in!');
   res.redirect('/');
+};
+
+// confirm owner when edit items
+exports.confirmOwner = (item, user) => {
+  if (!item.author.equals(user._id)) { // eslint-disable-line
+    throw Error('You can not edit this item!');
+  }
 };

@@ -29,8 +29,8 @@ router.get(
 );
 router.post(
   '/add-product',
-  productController.upload,
-  catchErrors(productController.resize),
+  productController.multer,
+  catchErrors(productController.save),
   catchErrors(productController.createProduct)
 );
 router.get('/products', catchErrors(productController.getProducts));
@@ -39,8 +39,8 @@ router.get('/download/:brochure', productController.downloadBrochure);
 router.get('/products/:id/edit', catchErrors(productController.editProduct));
 router.post(
   '/add-product/:id',
-  productController.upload,
-  catchErrors(productController.resize),
+  productController.multer,
+  catchErrors(productController.save),
   catchErrors(productController.updateProduct)
 );
 
@@ -52,16 +52,19 @@ router.get(
 );
 router.post(
   '/add-project',
-  projectController.upload,
-  catchErrors(projectController.resize),
+  projectController.multer,
+  catchErrors(projectController.save),
   catchErrors(projectController.createProject)
 );
 router.get('/gallery', catchErrors(projectController.getProjectsByType));
 router.get('/gallery/:type', catchErrors(projectController.getProjectsByType));
-// TODO
-router.get('/projects/:id/edit');
-// TODO
-router.post('/add-project/:id');
+router.get('/projects/:id/edit', catchErrors(projectController.editProject));
+router.post(
+  '/add-project/:id',
+  projectController.multer,
+  catchErrors(projectController.save),
+  catchErrors(projectController.updateProject)
+);
 
 // support
 router.get(
@@ -71,15 +74,18 @@ router.get(
 );
 router.post(
   '/add-certificate',
-  certificateController.upload,
-  catchErrors(certificateController.resize),
+  certificateController.multer,
+  catchErrors(certificateController.save),
   catchErrors(certificateController.createCertificate)
 );
 router.get('/support', certificateController.support);
-// TODO
-router.get('/support/:id/edit');
-// TODO
-router.post('/add-certificate/:id');
+router.get('/certificates/:id/edit', catchErrors(certificateController.editCertificate));
+router.post(
+  '/add-certificate/:id',
+  certificateController.multer,
+  catchErrors(certificateController.save),
+  catchErrors(certificateController.updateCertificate)
+);
 
 // user
 router.get('/register', userController.registerForm);

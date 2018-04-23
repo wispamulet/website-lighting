@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const multer = require('multer'); // upload file
-const jimp = require('jimp'); // resize images
-const uuid = require('uuid'); // rename images
-const sizeOf = require('image-size'); // get dimensions of images
+
+const uploadController = require('./uploadController');
+const authController = require('./authController');
 
 const Certificate = mongoose.model('Certificate');
 
@@ -18,30 +18,11 @@ const multerOption = {
   }
 };
 
-exports.upload = multer(multerOption).array('photos', 5);
+// files will be stored in req.files, if no files, req.files = []
+exports.multer = multer(multerOption).array('photos', 5);
 
-exports.resize = async (req, res, next) => { // resize and save to /public/uploads/ folder
+exports.save = async (req, res, next) => { // resize and save to /public/uploads/ folder
   // console.log(req.files);
-  const getDimensions = (file, photo) => {
-    const dimensions = sizeOf(file.buffer);
-    const { height: h, width: w } = dimensions;
-    photo.dimension = { w, h };
-  };
-
-  const rename = (file, photo) => {
-    const name = uuid.v4();
-    const extension = file.mimetype.split('/')[1];
-    photo.original = `${name}.${extension}`;
-    photo.thumbnail = `${name}_thumbnail.${extension}`;
-  };
-
-  const toUploads = async (file, i) => {
-    const photo = await jimp.read(file.buffer);
-    await photo.write(`./public/uploads/certificates/${req.body.photos[i].original}`);
-    const photoThumbnail = await photo.resize(200, jimp.AUTO);
-    await photoThumbnail.write(`./public/uploads/certificates/${req.body.photos[i].thumbnail}`);
-  };
-
   if (req.files.length === 0) {
     next(); // if req.files === [], skip!
     return;
@@ -50,10 +31,10 @@ exports.resize = async (req, res, next) => { // resize and save to /public/uploa
     req.body.photos = [];
     req.files.map((file) => {
       const photo = {};
-      getDimensions(file, photo);
-      rename(file, photo);
+      uploadController.getDimension(file, photo);
+      uploadController.rename(file, photo);
       req.body.photos.push(photo);
-      toUploads(file, i);
+      uploadController.toUploads(file, req, i, 'certificates');
       i += 1;
     });
   }
@@ -71,7 +52,27 @@ exports.addCertificate = (req, res) => {
 };
 
 exports.createCertificate = async (req, res) => {
+  req.body.author = req.user._id; // eslint-disable-line
   const certificate = await (new Certificate(req.body)).save();
+
   req.flash('success', `Successfully create <strong>${certificate.name}</strong>!`);
   res.redirect('/support');
+};
+
+exports.editCertificate = async (req, res) => {
+  const certificate = await Certificate.findOne({ _id: req.params.id });
+  authController.confirmOwner(certificate, req.user);
+
+  res.render('editCertificate', { title: `Edit ${certificate.name}`, certificate });
+};
+
+exports.updateCertificate = async (req, res) => {
+  // res.json(req.body);
+  const certificate = await Certificate.findOneAndUpdate({ _id: req.params.id }, req.body, {
+    new: true,
+    rundValidators: true
+  }).exec();
+
+  req.flash('success', `Successfully updated <strong>${certificate.name}</strong>`);
+  res.redirect(`/certificates/${certificate._id}/edit`); // eslint-disable-line
 };
