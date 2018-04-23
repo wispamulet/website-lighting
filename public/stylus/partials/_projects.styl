@@ -36,6 +36,8 @@
     text-decoration none
     color #444
     box-shadow 0 2px 5px rgba(0, 0, 0, .1)
+    display flex
+    flex-direction column
     &:hover
       top -2px
       box-shadow 0 4px 5px rgba(0, 0, 0, .2)
@@ -50,7 +52,7 @@
       height 25rem
 
     article
-      // height 25rem
+      flex 1
       display flex
       padding 2rem
       flex-direction column
@@ -58,13 +60,13 @@
       p
         flex 1
 
-    &__title
-      display grid
-      grid-template-columns 1fr 3rem
-      align-items center
-      h2
-        text-align left
-        font-size 2rem
+    h2
+      text-align left
+      font-size 2rem
+
+    &__edit
+      width 3rem
+      align-self center
 
     &__type
       text-transform uppercase

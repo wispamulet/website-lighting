@@ -1419,6 +1419,10 @@ template {
   text-decoration: none;
   color: #444;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
 }
 .projects .project:hover {
   top: -2px;
@@ -1436,6 +1440,8 @@ template {
   height: 25rem;
 }
 .projects .project article {
+  -ms-flex: 1;
+      flex: 1;
   display: -ms-flexbox;
   display: flex;
   padding: 2rem;
@@ -1448,17 +1454,15 @@ template {
   -ms-flex: 1;
       flex: 1;
 }
-.projects .project__title {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 3rem;
-      grid-template-columns: 1fr 3rem;
-  -ms-flex-align: center;
-      align-items: center;
-}
-.projects .project__title h2 {
+.projects .project h2 {
   text-align: left;
   font-size: 2rem;
+}
+.projects .project__edit {
+  width: 3rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 .projects .project__type {
   text-transform: uppercase;
