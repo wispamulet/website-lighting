@@ -58,6 +58,12 @@
       font-weight 500
     p
       font-size 1.5rem
+  &__qa:nth-child(3)
+    display grid
+    grid-template-columns auto 1fr
+    align-items center
+    .payment__info
+      grid-column 1 / -1
 
   .payment__info
     margin-bottom 2rem
@@ -71,11 +77,17 @@
       justify-self flex-end
     &--detail
       display grid
-      grid-template-columns 1fr 4fr
-      grid-gap 1rem
-      h3
+      grid-template-columns 1fr 3fr
+      grid-gap 1rem 2rem
+      > h3
         grid-column 1 / -1
-        justify-self flex-end
+        justify-self center
+      &-l
+        h3
+          text-align right
+      &-r
+        display flex
+        align-items center
 
   &__certificate
     display grid
