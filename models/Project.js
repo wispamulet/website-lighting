@@ -60,4 +60,11 @@ projectSchema.statics.getTypesList = function () {
   ]);
 };
 
+projectSchema.statics.getIntroList = function () {
+  return this.aggregate([
+    { $unwind: '$type' },
+    { $sample: { size: 3 } }
+  ]);
+};
+
 module.exports = mongoose.model('Project', projectSchema);

@@ -2,7 +2,7 @@ mixin loginForm()
   form.add__form(action="/login" method="POST")
     h2 Login
     label(for="email") Email
-    input#email(type="email" name="email")
+    input(type="email" name="email" required)
     label(for="password") Password
-    input#password(type="password" name="password")
+    input(type="password" name="password" required)
     input.button(type="submit" value="Log In")

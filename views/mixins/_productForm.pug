@@ -15,12 +15,22 @@ mixin productForm(product = {})
       | Name&nbsp;
       span (Required)
     input#name(type="text" name="name" value=product.name required)
+    label(for="description")
+      | Description&nbsp;
+      span (Required)
+    input#description(type="text" name="description" value=product.description required)
     label(for="model_no") Model No.
     input#model_no(type="text" name="model_no" value=product.model_no)
     label(for="voltage") Voltage
     input#voltage(type="text" name="voltage" value=product.voltage)
     label(for="base_type") Base Type
-    input#base_type(type="text" name="base_type" value=product.base_type)
+    - const baseTypeChoices = ['E26', 'E27', 'E39', 'E40']
+    - const baseTypes = product['base_type'] || ''
+    .types
+      each choice in baseTypeChoices
+        .type
+          input(type="checkbox" id=choice name="base_types" checked=(baseTypes.includes(choice)) required)
+          label(for=choice) #{choice}
     label(for="lumen") Lumens
     input#lumen(type="text" name="lumen" value=product.lumen)
     label(for="dimension") Dimensions

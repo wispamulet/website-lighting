@@ -22,8 +22,8 @@ const productSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  base_type: {
-    type: String,
+  base_types: {
+    type: [String],
     trim: true
   },
   lumen: {

@@ -28,10 +28,11 @@ html(lang="en")
           .user
             if user
               if user.level === 1
-                a(href='/add-product') Add Product
-                a(href='/add-project') Add Project
+                //- a(href="/add-slideshow") Add Slideshow
+                a(href="/add-product") Add Product
+                a(href="/add-project") Add Project
                 a(href="/add-certificate") Add Certificate
-              a(href='/account') Account
+              a(href="/account") Account
               a(href="/logout") Log Out
             else
               a(href='/register') Register
@@ -104,6 +105,7 @@ html(lang="en")
               span
                 i.fab.fa-youtube
             .socials__twitter
+              p Coming soon...
             .socials__fb
         .contact
           .contact__about

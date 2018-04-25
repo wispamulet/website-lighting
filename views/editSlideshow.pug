@@ -1,0 +1,8 @@
+extends layout
+
+include mixins/_slideshowForm
+
+block content
+  .inner
+    h2= title
+    +slideshowForm(slideshow)

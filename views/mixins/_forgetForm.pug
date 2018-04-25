@@ -1,6 +1,6 @@
 mixin forgetForm()
   form.add__form(action="/account/forgot" method="POST")
     h2 I forget my password!
-    label(for="email") Email
-    input(type="email" name="email")
+    label(for="email-reset") Email
+    input(type="email" name="email" required)
     input.button(type="submit" value="send a reset")

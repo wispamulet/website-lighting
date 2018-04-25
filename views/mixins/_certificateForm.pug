@@ -12,7 +12,7 @@ mixin certificateForm(certificate = {})
           | Photo#{i}&nbsp;
           if i <= 1
             span (Required)
-        input(type="file" id=`photo${i}` name='photos' accept="iamge/gif, image/png, image/jpeg")
+        input(type="file" id=`photo${i}` name='photos' accept="image/gif, image/png, image/jpeg")
         if photos[i - 1]
           img(src=`/uploads/certificates/${photos[i - 1].thumbnail}`, alt="")
     input.button(type="submit" value="Save")
