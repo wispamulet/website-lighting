@@ -1,0 +1,55 @@
+extends layout
+
+include mixins/_pswp
+
+block content
+  .content
+    //- pre= h.dump(product)
+    h2= title
+    +pswp()
+    .single
+      .single__descriptions
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        ol
+          each point in product.bullet_points
+            if point
+              li= point
+        .single__features
+          h2 Features
+          ul
+            li
+              span Power:&nbsp;
+              | #{product.power}
+            li
+              span Voltage:&nbsp;
+              | #{product.voltage}
+            li
+              - const bt = product.base_types || []
+              span Base:&nbsp;
+              | #{bt.join(' ')}
+            li
+              - const ct = product.color_temperatures || []
+              span Color Temperature&nbsp;
+              | #{ct.join(' ')}
+            li
+              span IP rate:&nbsp;
+              | #{product.ip_rate}
+            li
+              span CRI:&nbsp;
+              | #{product.cri}
+        .single__applications
+          h2 Applications
+        .single__documents
+          h2 Documents
+          .single__brochure
+            //- a(href=`uploads/pdf/${product.brochure}`) Peek Brochure
+            a(href=`/download/${product.brochure}`) Download Brochure
+      .single-gallery(itemscope itemtype="http://schema.org/ImageGallery")
+        - let i = 0
+          each image in product.photos
+            - const { original, thumbnail, dimension } = image
+              figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+                a(href=`/uploads/products/${original}` itemprop="contentUrl" data-size=`${dimension.w}x${dimension.h}`)
+                  img(src=`/uploads/products/${thumbnail || 'default_300x300.jpg'}` itemprop="thumbnail" alt="Image description")
+      .single__table
+        h2 Specifications

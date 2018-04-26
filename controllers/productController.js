@@ -64,23 +64,22 @@ exports.createProduct = async (req, res) => {
   res.redirect('/products');
 };
 
-exports.getProducts = async (req, res) => {
-  const products = await Product.find();
-  res.render('products', { title: 'Products', products });
-};
+// exports.getProducts = async (req, res) => {
+//   const products = await Product.find();
+//   res.render('products', { title: 'Products', products });
+// };
 
 exports.getProductsByType = async (req, res) => {
-  function slugToType(slug) { // e.g. 'led-corn-light' => 'LED Corn Light'
-    const [led, ...others] = slug.split('-');
-    return [led.toUpperCase(), ...others.map(other => other.charAt(0).toUpperCase() + other.slice(1))].join(' ');
-  }
-
-  const { slug } = req.params; // 'led-corn-light'
-  const type = slugToType(slug); // 'LED Corn Light'
+  // function toType(type = '') { // e.g. 'led-corn-light' => 'LED Corn Light'
+  //   const [led, ...others] = type.split('-');
+  //   return [led.toUpperCase(), ...others.map(other => other.charAt(0).toUpperCase() + other.slice(1))].join(' ');
+  // }
+  const { type } = req.params;
+  const typeQuery = type || { $exists: true };
   const typePromise = Product.getTypesList();
-  const productPromise = Product.find({ type });
+  const productPromise = Product.find({ type: typeQuery });
   const [types, products] = await Promise.all([typePromise, productPromise]);
-  res.render('products', { title: `${type}`, types, products });
+  res.render('products', { title: `${type || 'Products'}`, types, products });
 };
 
 exports.downloadBrochure = (req, res) => {
@@ -92,6 +91,12 @@ exports.downloadBrochure = (req, res) => {
       res.redirect('back');
     }
   });
+};
+
+exports.getProductBySlug = async (req, res, next) => {
+  const product = await Product.findOne({ slug: req.params.slug });
+  if (!product) return next();
+  res.render('product', { product, title: product.name });
 };
 
 exports.editProduct = async (req, res) => {

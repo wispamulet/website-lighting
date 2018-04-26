@@ -1,11 +1,13 @@
 extends layout
 
+include mixins/_pswp
 include mixins/_projectCard
 
 block content
   .content
     .projects__banner
     .inner-2
+      //- pre= h.dump(type)
       h2 #{type || 'Gallery'}
       p Coming soon...
       //- pre= h.dump(currentPath)
@@ -18,30 +20,7 @@ block content
             span.project-type__text= t._id
             span.project-type__count= t.count
       //- pre= h.dump(projects)
-      .pswp(tabindex="-1" role="dialog" aria-hidden="true")
-        .pswp__bg
-        .pswp__scroll-wrap
-          .pswp__container
-            .pswp__item
-            .pswp__item
-            .pswp__item
-          .pswp__ui.pswp__ui--hidden
-            .pswp__top-bar
-              .pswp__counter
-              button.pswp__button.pswp__button--close(title="Close (Esc)")
-              button.pswp__button.pswp__button--share(title="share")
-              button.pswp__button.pswp__button--fs(title="Toggle fullscreen")
-              button.pswp__button.pswp__button--zoom(title="Zoom in/out")
-              .pswp__preloader
-                .pswp__preloader__icn
-                  .pswp__preloader__cut
-                    .pswp__preloader__donut
-            .pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
-              .pswp__share-tooltip
-            button.pswp__button.pswp__button--arrow--left(title="Previous (arrow left)")
-            button.pswp__button.pswp__button--arrow--right(title="Next (arrow right)")
-            .pswp__caption
-              .pswp__caption__center
+      +pswp()
       .projects
         each project in projects
           +projectCard(project)

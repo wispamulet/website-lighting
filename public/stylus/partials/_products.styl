@@ -1,42 +1,36 @@
 .products
+  @extend .inner-2
   display grid
-  grid-template-columns 1fr
-  grid-gap 2rem
-  padding 2rem 0
+  grid-template-columns repeat(3, 1fr)
+  grid-gap 3rem
 
   &__banner
     height 30rem
     background url(/images/photos/products.jpg) center 35%
 
   .product
-    display grid
-    grid-template-columns 3fr 2fr
-    grid-gap 1rem
-    padding 2rem 0
-    &:not(:last-child)
-      border-bottom 1px solid rgba(0, 0, 0, .3)
-    &__heading
-      display grid
-      grid-template-columns 1fr 3rem
-      align-items center
+    padding 0 2rem
+    transition all .3s ease-in-out
+    box-shadow 0 2px 5px rgba(0, 0, 0, .1)
+    &:hover
+      top -2px
+      box-shadow 0 2px 5px rgba(0, 0, 0, .3)
+
+    article
+      padding 2rem 0
+
+    &__title
       h2
         color $orange
         font-size 2rem
-        text-align left
-
-    &__text
-      grid-column-start 1
-      padding 3rem 0
+    &__edit
+      width 3rem
+    &__detail
       li
         font-size 1.4rem
         list-style none
-        display grid
-        grid-template-columns 20% 1fr
-        grid-gap 2rem
         line-height 2
-        text-align right
-        span
-          text-align left
+        text-align center
       &__button
         margin-top 3rem
         a
@@ -50,35 +44,15 @@
           &:hover
             background $orange
             color white
-
-    &__image
-      grid-column-start 2
-      grid-row 1 / span 2
+    &__figure--hide
+      display none
 
     &-gallery
-      display grid
-      grid-template-columns repeat(6, 1fr)
-      grid-template-rows 1fr 5rem
-      grid-gap .5rem
       figure
         margin 0
-        padding .1rem
-        outline 1px solid #ccc
-        display flex
-        align-items center
         figcaption
           display none
-        &:nth-child(1)
-          grid-column 1 / -1
-          padding .2rem
 
 @media (max-width: 800px)
   .products
-    .product
-      grid-template-columns 1fr
-      &__text
-        li
-          grid-template-columns 2fr 3fr
-      &__image
-        grid-column 1 / -1
-        grid-row 2 / span 2
+    background #000

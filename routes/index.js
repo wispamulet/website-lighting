@@ -45,8 +45,9 @@ router.post(
   catchErrors(productController.save),
   catchErrors(productController.createProduct)
 );
-router.get('/products', catchErrors(productController.getProducts));
-router.get('/products/:slug', catchErrors(productController.getProductsByType));
+router.get('/products', catchErrors(productController.getProductsByType));
+router.get('/products/:type', catchErrors(productController.getProductsByType));
+router.get('/product/:slug', catchErrors(productController.getProductBySlug));
 router.get('/download/:brochure', productController.downloadBrochure);
 router.get('/products/:id/edit', catchErrors(productController.editProduct));
 router.post(

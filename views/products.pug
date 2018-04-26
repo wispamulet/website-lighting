@@ -5,35 +5,9 @@ include mixins/_productCard
 block content
   .content
     .products__banner
-    .inner
-      h2= title
-      p Coming soon...
-      //- pre= h.dump(user)
-      .pswp(tabindex="-1" role="dialog" aria-hidden="true")
-        .pswp__bg
-        .pswp__scroll-wrap
-          .pswp__container
-            .pswp__item
-            .pswp__item
-            .pswp__item
-          .pswp__ui.pswp__ui--hidden
-            .pswp__top-bar
-              .pswp__counter
-              button.pswp__button.pswp__button--close(title="Close (Esc)")
-              button.pswp__button.pswp__button--share(title="share")
-              button.pswp__button.pswp__button--fs(title="Toggle fullscreen")
-              button.pswp__button.pswp__button--zoom(title="Zoom in/out")
-              .pswp__preloader
-                .pswp__preloader__icn
-                  .pswp__preloader__cut
-                    .pswp__preloader__donut
-            .pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
-              .pswp__share-tooltip
-            button.pswp__button.pswp__button--arrow--left(title="Previous (arrow left)")
-            button.pswp__button.pswp__button--arrow--right(title="Next (arrow right)")
-            .pswp__caption
-              .pswp__caption__center
-
-      .products
-        each product in products
-          +productCard(product)
+    //- p Coming soon...
+    //- pre= h.dump(title)
+    h2= title
+    .products
+      each product in products
+        +productCard(product)

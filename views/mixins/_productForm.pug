@@ -15,32 +15,44 @@ mixin productForm(product = {})
       | Name&nbsp;
       span (Required)
     input#name(type="text" name="name" value=product.name required)
-    label(for="description")
-      | Description&nbsp;
-      span (Required)
-    input#description(type="text" name="description" value=product.description required)
-    label(for="model_no") Model No.
-    input#model_no(type="text" name="model_no" value=product.model_no)
-    label(for="voltage") Voltage
-    input#voltage(type="text" name="voltage" value=product.voltage)
+    //- label(for="model_no") Model No.
+    //- input#model_no(type="text" name="model_no" value=product.model_no)
+    label(for="power") Power
+    input#power(type="text" name="power" value=product.power)
     label(for="base_type") Base Type
     - const baseTypeChoices = ['E26', 'E27', 'E39', 'E40']
-    - const baseTypes = product['base_type'] || ''
+    - const baseTypes = product.base_types || []
     .types
       each choice in baseTypeChoices
         .type
-          input(type="checkbox" id=choice name="base_types" checked=(baseTypes.includes(choice)) required)
+          input(type="checkbox" id=choice value=choice name="base_types" checked=(baseTypes.includes(choice)))
           label(for=choice) #{choice}
-    label(for="lumen") Lumens
-    input#lumen(type="text" name="lumen" value=product.lumen)
-    label(for="dimension") Dimensions
-    input#dimension(type="text" name="dimension" value=product.dimension)
-    label(for="ip_rating")  IP (Ingress Protection) Rating
-    input#ip_rating(type="text" name="ip_rating" value=product.ip_rating)
-    label(for="cri") CRI (Color Rendering Index)
-    input#cri(type="text" name="cri" value=product.cri)
-    label(for="application") Applications
-    input#application(type="text" name="application" value=product.application)
+    label(for="color_temperature") Color Temperature
+    - const colorTemperatureChoices = ['3000K', '4000K', '5000K', '6000K']
+    - const colorTemperatures = product.color_temperatures || []
+    .types
+      each choice in colorTemperatureChoices
+        .type
+          input(type="checkbox" id=choice value=choice name="color_temperatures" checked=(colorTemperatures.includes(choice)))
+          label(for=choice) #{choice}
+    //- label(for="voltage") Voltage
+    //- input#voltage(type="text" name="voltage" value=product.voltage)
+    //- label(for="lumen") Lumens
+    //- input#lumen(type="text" name="lumen" value=product.lumen)
+    //- label(for="dimension") Dimensions
+    //- input#dimension(type="text" name="dimension" value=product.dimension)
+    //- label(for="ip_rating")  IP (Ingress Protection) Rating
+    //- input#ip_rating(type="text" name="ip_rating" value=product.ip_rating)
+    //- label(for="cri") CRI (Color Rendering Index)
+    //- input#cri(type="text" name="cri" value=product.cri)
+    //- label(for="application") Applications
+    //- input#application(type="text" name="application" value=product.application)
+    h3 Bullet Points
+    - const num = [1, 2, 3, 4, 5]
+    - const bulletPoints = product.bullet_points || []
+      each n in num
+        label(for=`bullet_point${n}`) Description#{n}
+        input(type="text" id=`bullet_point${n}` name="bullet_points" value=bulletPoints[n - 1])
     h3 Brochure
     label(for="brochure")
       | Brochure&nbsp;

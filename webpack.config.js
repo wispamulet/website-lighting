@@ -75,9 +75,9 @@ const config = {
   module: {
     rules: [javascript, styles]
   },
-  // finally we pass it an array of our plugins - uncomment if you want to uglify
-  // plugins: [uglify]
   plugins: [
+    // finally we pass it an array of our plugins - uncomment if you want to uglify
+    uglify,
     // here is where we tell it to output our css to a separate file
     new ExtractTextPlugin('style.css'),
   ]

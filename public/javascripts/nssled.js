@@ -44,8 +44,9 @@ $('#toTop').on('click', toTop);
 slideshow($$('.slideshow .slide'), $$('.slideshow .dots .dot'));
 
 // photoswipe
+initPhotoSwipeFromDOM('.single-gallery');
 initPhotoSwipeFromDOM('.project-gallery');
-initPhotoSwipeFromDOM('.product-gallery');
+// initPhotoSwipeFromDOM('.product-gallery');
 initPhotoSwipeFromDOM('.intro__company-gallery');
 initPhotoSwipeFromDOM('.intro__product-gallery');
 initPhotoSwipeFromDOM('.support__certificate-gallery');

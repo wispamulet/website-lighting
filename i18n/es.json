@@ -7,9 +7,9 @@
   "MENU": [
     { "SLUG": "/home", "TITLE": "hogar" },
     { "SLUG": "/products", "TITLE": "productos", "DROPDOWN": [
-      { "SLUG": "/products/led-corn-light", "TITLE": "LED luz de maíz" },
-      { "SLUG": "/products/led-garden-light", "TITLE": "LED luz de jardín" },
-      { "SLUG": "/products/led-street-light", "TITLE": "farola LED" }
+      { "SLUG": "/products/LED Corn Light", "TITLE": "LED luz de maíz" },
+      { "SLUG": "/products/LED Garden Light", "TITLE": "LED luz de jardín" },
+      { "SLUG": "/products/LED Street Light", "TITLE": "farola LED" }
     ] },
     { "SLUG": "/gallery", "TITLE": "galería" },
     { "SLUG": "/support", "TITLE": "apoyo" },

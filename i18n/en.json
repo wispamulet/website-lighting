@@ -10,9 +10,9 @@
   "MENU": [
     { "SLUG": "/home", "TITLE": "home" },
     { "SLUG": "/products", "TITLE": "products", "DROPDOWN": [
-      { "SLUG": "/products/led-corn-light", "TITLE": "LED Corn Light" },
-      { "SLUG": "/products/led-garden-light", "TITLE": "LED Garden Light" },
-      { "SLUG": "/products/led-street-light", "TITLE": "LED Street Light" }
+      { "SLUG": "/products/LED Corn Light", "TITLE": "LED Corn Light" },
+      { "SLUG": "/products/LED Garden Light", "TITLE": "LED Garden Light" },
+      { "SLUG": "/products/LED Street Light", "TITLE": "LED Street Light" }
     ] },
     { "SLUG": "/gallery", "TITLE": "gallery" },
     { "SLUG": "/support", "TITLE": "support" },

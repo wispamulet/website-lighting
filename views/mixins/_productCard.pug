@@ -1,49 +1,24 @@
 mixin productCard(product = {})
   .product
-    .product__heading
-      h2= product.name
+    .product__img
+      - const slug = product.slug
+      - const photo = product.photos[0].thumbnail
+      - const description = product.descriptions[0]
+      a(href=`/product/${slug}`)
+        img(src=`/uploads/products/${photo}`, alt=`${description}`)
+    article
+      .product__title
+        h2= product.name
       if user && product.author.equals(user._id)
         .product__edit
           a(href=`/products/${product._id}/edit`)
             != h.icon('pencil')
-    .product__text
-      li
-        | Model No.
-        span #{product.model_no}
-      li
-        | Voltage
-        span #{product.voltage}
-      li
-        | Base Type
-        span #{product.base_type}
-      li
-        | Lumens
-        span #{product.lumen}
-      li
-        | Dimensions
-        span #{product.dimension}
-      li
-        | IP Rating
-        span #{product.ip_rating}
-      li
-        | CRI
-        span #{product.cri}
-      li
-        | Applications
-        span #{product.application}
-      if product.brochure
-        .product__text__button
-          //- a(href=`uploads/pdf/${product.brochure}`) Peek Brochure
-          a(href=`/download/${product.brochure}`) Download Brochure
-    .product__image
-      .product-gallery(itemscope itemtype="http://schema.org/ImageGallery")
-        - const images = product.photos
-        - const descriptions = product.descriptions
-        - let i = 0
-          each image in images
-            - const { original, thumbnail, dimension } = image
-              figure(class=(image === images[0] ? '' : 'product__image--thumb') itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
-                a(href=`/uploads/products/${original}` itemprop="contentUrl" data-size=`${dimension.w}x${dimension.h}`)
-                  img(src=`/uploads/products/${thumbnail || 'default_400x400.jpg'}` itemprop="thumbnail" alt="Image description")
-                figcaption(itemprop="caption description")= descriptions[i]
-            - i += 1
+      .product__detail
+        li= product.power
+        li= product.base_types.join(' | ')
+        li= product.color_temperatures.join(' | ')
+        //- if product.brochure
+          .product__text__button
+            //- a(href=`uploads/pdf/${product.brochure}`) Peek Brochure
+            a(href=`/download/${product.brochure}`) Download Brochure
+      a(href=`/product/${slug}`) More

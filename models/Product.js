@@ -14,36 +14,20 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: 'Please choose a type!'
   },
-  model_no: {
-    type: String,
-    trim: true
-  },
-  voltage: {
-    type: String,
-    trim: true
+  bullet_points: {
+    type: [String],
+    trim: true,
   },
   base_types: {
     type: [String],
     trim: true
   },
-  lumen: {
+  power: {
     type: String,
     trim: true
   },
-  dimension: {
-    type: String,
-    trim: true
-  },
-  ip_rating: {
-    type: String,
-    trim: true
-  },
-  cri: {
-    type: String,
-    trim: true
-  },
-  application: {
-    type: String,
+  color_temperatures: {
+    type: [String],
     trim: true
   },
   brochure: {
