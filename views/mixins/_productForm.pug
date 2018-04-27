@@ -10,23 +10,22 @@ mixin productForm(product = {})
         .type
           input(type="radio" id=choice value=choice name="type" checked=(type.includes(choice)) required)
           label(for=choice) #{choice}
+    //- Product details
     h3 Product Details
     label(for="name")
       | Name&nbsp;
       span (Required)
     input#name(type="text" name="name" value=product.name required)
-    //- label(for="model_no") Model No.
-    //- input#model_no(type="text" name="model_no" value=product.model_no)
-    label(for="power") Power
-    input#power(type="text" name="power" value=product.power)
-    label(for="base_type") Base Type
-    - const baseTypeChoices = ['E26', 'E27', 'E39', 'E40']
-    - const baseTypes = product.base_types || []
-    .types
-      each choice in baseTypeChoices
-        .type
-          input(type="checkbox" id=choice value=choice name="base_types" checked=(baseTypes.includes(choice)))
-          label(for=choice) #{choice}
+    label(for="voltage") Voltage
+    input#voltage(type="text" name="voltage" value=product.voltage)
+    label(for="ip_rate") IP Rate
+    input#ip_rate(type="text" name="ip_rate" value=product.ip_rate)
+    label(for="cri") CRI
+    input#cri(type="text" name="cri" value=product.cri)
+    label(for="lifespan") Lifespan
+    input#lifespan(type="text" name="lifespan" value=product.lifespan)
+    label(for="application") Application
+    input#application(type="text" name="application" value=product.application)
     label(for="color_temperature") Color Temperature
     - const colorTemperatureChoices = ['3000K', '4000K', '5000K', '6000K']
     - const colorTemperatures = product.color_temperatures || []
@@ -35,30 +34,41 @@ mixin productForm(product = {})
         .type
           input(type="checkbox" id=choice value=choice name="color_temperatures" checked=(colorTemperatures.includes(choice)))
           label(for=choice) #{choice}
-    //- label(for="voltage") Voltage
-    //- input#voltage(type="text" name="voltage" value=product.voltage)
-    //- label(for="lumen") Lumens
-    //- input#lumen(type="text" name="lumen" value=product.lumen)
-    //- label(for="dimension") Dimensions
-    //- input#dimension(type="text" name="dimension" value=product.dimension)
-    //- label(for="ip_rating")  IP (Ingress Protection) Rating
-    //- input#ip_rating(type="text" name="ip_rating" value=product.ip_rating)
-    //- label(for="cri") CRI (Color Rendering Index)
-    //- input#cri(type="text" name="cri" value=product.cri)
-    //- label(for="application") Applications
-    //- input#application(type="text" name="application" value=product.application)
+    //- Specifications
+    h3 Specifications
+    .form-specification
+      label(for="model_no") Model No.
+      input#model_no(type="text" name="model_no" value=product.model_no)
+      label(for="power") Power
+      input#power(type="text" name="power" value=product.power)
+      label(for="base_type") Base Type
+      input#base_type(type="text" name="base_type" value=product.base_type)
+      label(for="lumen") Lumens
+      input#lumen(type="text" name="lumen" value=product.lumen)
+      label(for="dim") Dimensions
+      input#dim(type="text" name="dim" value=product.dim)
+      label(for="ctn_size") CTN Size
+      input#ctn_size(type="text" name="ctn_size" value=product.ctn_size)
+      label(for="ctn_quantity") CTN Quantity
+      input#ctn_quantity(type="text" name="ctn_quantity" value=product.ctn_quantity)
+      label(for="ctn_weight") CTN Weight
+      input#ctn_weight(type="text" name="ctn_weight" value=product.ctn_weight)
+    input#form-add-item(type="button" value="Add One Item")
+    //- Bullet points
     h3 Bullet Points
     - const num = [1, 2, 3, 4, 5]
     - const bulletPoints = product.bullet_points || []
       each n in num
         label(for=`bullet_point${n}`) Description#{n}
         input(type="text" id=`bullet_point${n}` name="bullet_points" value=bulletPoints[n - 1])
+    //- Brochure
     h3 Brochure
     label(for="brochure")
       | Brochure&nbsp;
       span (Recommended)
     input#brochure(type="file" name="brochure" accept=".pdf")
     p= product.brochure
+    //- Photos
     h3 Photos
     - const index = [1, 2, 3, 4, 5, 6, 7]
     - const photos = product.photos || []

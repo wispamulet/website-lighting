@@ -2,8 +2,8 @@ mixin productCard(product = {})
   .product
     .product__img
       - const slug = product.slug
-      - const photo = product.photos[0].thumbnail
-      - const description = product.descriptions[0]
+      - const photo = product.photos[0].thumbnail || ''
+      - const description = product.descriptions[0] || ''
       a(href=`/product/${slug}`)
         img(src=`/uploads/products/${photo}`, alt=`${description}`)
     article
@@ -15,7 +15,6 @@ mixin productCard(product = {})
             != h.icon('pencil')
       .product__detail
         li= product.power
-        li= product.base_types.join(' | ')
         li= product.color_temperatures.join(' | ')
         //- if product.brochure
           .product__text__button

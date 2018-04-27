@@ -4,38 +4,32 @@ include mixins/_pswp
 
 block content
   .content
+    .products__banner
     //- pre= h.dump(product)
-    h2= title
     +pswp()
     .single
       .single__descriptions
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        h2= title
         ol
           each point in product.bullet_points
             if point
               li= point
         .single__features
-          h2 Features
-          ul
-            li
-              span Power:&nbsp;
-              | #{product.power}
-            li
-              span Voltage:&nbsp;
-              | #{product.voltage}
+          //- h2 Features
+          ol
+            li #{product.power} available
+            li= product.voltage
             li
               - const bt = product.base_types || []
-              span Base:&nbsp;
+              span Base Type:&nbsp;
               | #{bt.join(' ')}
             li
               - const ct = product.color_temperatures || []
-              span Color Temperature&nbsp;
+              span Color Temperature:&nbsp;
               | #{ct.join(' ')}
+            li= product.ip_rate
             li
-              span IP rate:&nbsp;
-              | #{product.ip_rate}
-            li
-              span CRI:&nbsp;
+              span CRI > &nbsp;
               | #{product.cri}
         .single__applications
           h2 Applications
@@ -53,3 +47,117 @@ block content
                   img(src=`/uploads/products/${thumbnail || 'default_300x300.jpg'}` itemprop="thumbnail" alt="Image description")
       .single__table
         h2 Specifications
+        .single__table__details
+          table
+            tbody
+              tr
+                td
+                  p Model
+                td
+                  p Power
+                td
+                  p Base
+                td
+                  p Lumens
+                td
+                  p Dim.(E26)
+              tr
+                td
+                  p NS-GLA20W-01
+                td
+                  p 20W
+                td
+                  p E26 E27 E39 E40
+                td
+                  p 3150~3400LM
+                td
+                  p ⌀5"x5.6"
+              tr
+                td
+                  p NS-GLA30W-01
+                td
+                  p 30W
+                td
+                  p E26 E27 E39 E40
+                td
+                  p 4800~4946LM
+                td
+                  p ⌀5"x5.6"
+              tr
+                td
+                  p NS-GLA40W-01
+                td
+                  p 40W
+                td
+                  p E26 E27 E39 E40
+                td
+                  p 6180~6300LM
+                td
+                  p ⌀5"x5.6"
+              tr
+                td
+                  p NS-GLA50W-01
+                td
+                  p 50W
+                td
+                  p E26 E27 E39 E40
+                td
+                  p 7590~7711LM
+                td
+                  p ⌀5"x5.6"
+              tr
+                td
+                  p NS-GLA60W-01
+                td
+                  p 60W
+                td
+                  p E26 E27 E39 E40
+                td
+                  p 8940~9150LM
+                td
+                  p ⌀5"x5.6"
+        .single__table__ctn
+          table
+            tbody
+              tr
+                td
+                  p CTN size
+                td
+                  p CTN quantity
+                td
+                  p CTN weight
+              tr
+                td
+                  p 22.05"x16.93"x15.35"
+                td
+                  p 24pcs
+                td
+                  p 17.72kg
+              tr
+                td
+                  p 22.05"x16.93"x15.35"
+                td
+                  p 24pcs
+                td
+                  p 17.72kg
+              tr
+                td
+                  p 22.05"x16.93"x15.35"
+                td
+                  p 24pcs
+                td
+                  p 19.28kg
+              tr
+                td
+                  p 22.05"x16.93"x15.35"
+                td
+                  p 24pcs
+                td
+                  p 19.28kg
+              tr
+                td
+                  p 22.05"x16.93"x15.35"
+                td
+                  p 24pcs
+                td
+                  p 19.28kg

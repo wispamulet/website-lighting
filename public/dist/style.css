@@ -128,6 +128,12 @@
   text-transform: uppercase;
   font-weight: 600;
 }
+.form-specification {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr auto 1fr;
+      grid-template-columns: auto 1fr auto 1fr;
+}
 .contact__title {
   margin: 5rem 0;
 }
@@ -1541,6 +1547,8 @@ template {
   }
 }
 .single {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -1553,6 +1561,11 @@ template {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+}
+.single__descriptions > h2 {
+  color: #f08519;
+  font-weight: 600;
+  font-size: 2.4rem !important;
 }
 .single__descriptions ol {
   list-style: none;
@@ -1599,8 +1612,9 @@ template {
   display: grid;
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
-  -ms-grid-column-align: flex-start;
-      justify-items: flex-start;
+  grid-gap: 1rem;
+  -ms-grid-column-align: center;
+      justify-items: center;
   -ms-flex-line-pack: start;
       align-content: flex-start;
 }
@@ -1610,8 +1624,53 @@ template {
 .single-gallery figure:first-child {
   grid-column: 1/-1;
 }
+.single-gallery figure img {
+  outline: 1px solid #eee;
+}
 .single__table {
   grid-column: 1/-1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+.single__table h2 {
+  grid-column: 1/-1;
+}
+.single__table p {
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 0;
+}
+.single__table__details table,
+.single__table__ctn table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.single__table__details table tr:first-child,
+.single__table__ctn table tr:first-child {
+  background: #f08519;
+  color: #fff;
+}
+.single__table__details table tr:first-child p,
+.single__table__ctn table tr:first-child p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.single__table__details table tr:nth-child(2n+3),
+.single__table__ctn table tr:nth-child(2n+3) {
+  background: #eee;
+}
+.single__table__details table tr td,
+.single__table__ctn table tr td {
+  padding: 1rem;
+}
+.single__table--head {
+  background: #f08519;
+  color: #fff;
+}
+.single__table--head p {
+  font-weight: 500;
 }
 #skype {
   z-index: 95;
