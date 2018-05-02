@@ -66,7 +66,9 @@ exports.createProduct = async (req, res) => {
 
 // exports.getProducts = async (req, res) => {
 //   const products = await Product.find();
-//   res.render('products', { title: 'Products', products });
+//   const garden = await Product.find({ type: 'LED Garden Light' });
+//   res.json(garden);
+//   // res.render('products', { title: 'Products', products });
 // };
 
 exports.getProductsByType = async (req, res) => {

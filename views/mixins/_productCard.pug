@@ -15,7 +15,7 @@ mixin productCard(product = {})
             != h.icon('pencil')
       .product__detail
         li= product.power.join(' | ')
-        li= product.color_temperatures.join(' | ')
+        //- li= product.color_temperatures.join(' | ')
         //- if product.brochure
           .product__text__button
             //- a(href=`uploads/pdf/${product.brochure}`) Peek Brochure
