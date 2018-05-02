@@ -42,6 +42,10 @@ const productSchema = new mongoose.Schema({
     type: [String],
     trim: true
   },
+  certificates: {
+    type: [String],
+    trim: true
+  },
   model_no: {
     type: [String],
     trim: true

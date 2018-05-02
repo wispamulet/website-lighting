@@ -1,8 +1,19 @@
-function formAddItem(element) {
-  const div = document.createElement('div');
+function addItem(element, html, css) {
+  if (!element) return;
 
+  const div = document.createElement('div');
+  div.classList.add(css);
+  div.innerHTML = html;
+
+  element.parentNode.insertBefore(div, element);
+}
+
+function addSpecification(element) {
+  const div = document.createElement('div');
   div.classList.add('form-specification');
+
   div.innerHTML = `
+    <button class="form__remove" onclick="this.parentElement.remove()"> &times; </button>
     <label for="model_no">Model No.</label>
     <input id="model_no" type="text" name="model_no">
     <label for="power">Power</label>
@@ -24,4 +35,32 @@ function formAddItem(element) {
   element.parentNode.insertBefore(div, element);
 }
 
-export default formAddItem;
+function addBulletPoint(element) {
+  const div = document.createElement('div');
+  div.classList.add('form-bullet-point');
+
+  div.innerHTML = `
+    <button class="form__remove" onclick="this.parentElement.remove()"> &times; </button>
+    <label for="bullet_point">Description</label>
+    <input type="text" name="bullet_points">
+  `;
+
+  element.parentNode.insertBefore(div, element);
+}
+
+function addPhoto(element) {
+  const div = document.createElement('div');
+  div.classList.add('form-photo');
+
+  div.innerHTML = `
+    <button class="form__remove" onclick="this.parentElement.remove()"> &times; </button>
+    <label for="photo">Photo</label>
+    <input type="file" name="photos" accept="image/gif, image/png, image/jpeg">
+    <label for="description">Description</label>
+    <input type="text" name="descriptions">
+  `;
+
+  element.parentNode.insertBefore(div, element);
+}
+
+export { addItem, addSpecification, addBulletPoint, addPhoto };

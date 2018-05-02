@@ -34,33 +34,73 @@ mixin productForm(product = {})
         .type
           input(type="checkbox" id=choice value=choice name="color_temperatures" checked=(colorTemperatures.includes(choice)))
           label(for=choice) #{choice}
+    label(for="certificate") Certificate
+    - const certificateChoices = ['UL', 'DLC', 'TUV']
+    - const certificates = product.certificates || []
+    .types
+      each choice in certificateChoices
+        .type
+          input(type="checkbox" id=choice value=choice name="certificates" checked=(certificates.includes(choice)))
+          label(for=choice) #{choice}
     //- Specifications
     h3 Specifications
-    .form-specification
-      label(for="model_no") Model No.
-      input#model_no(type="text" name="model_no" value=product.model_no)
-      label(for="power") Power
-      input#power(type="text" name="power" value=product.power)
-      label(for="base_type") Base Type
-      input#base_type(type="text" name="base_type" value=product.base_type)
-      label(for="lumen") Lumens
-      input#lumen(type="text" name="lumen" value=product.lumen)
-      label(for="dim") Dimensions
-      input#dim(type="text" name="dim" value=product.dim)
-      label(for="ctn_size") CTN Size
-      input#ctn_size(type="text" name="ctn_size" value=product.ctn_size)
-      label(for="ctn_quantity") CTN Quantity
-      input#ctn_quantity(type="text" name="ctn_quantity" value=product.ctn_quantity)
-      label(for="ctn_weight") CTN Weight
-      input#ctn_weight(type="text" name="ctn_weight" value=product.ctn_weight)
-    input#form-add-item(type="button" value="Add One Item")
+    - let l = 0
+    - const model_no = product.model_no || []
+    - const power = product.power || []
+    - const base_type = product.base_type || []
+    - const lumen = product.lumen || []
+    - const dim = product.dim || []
+    - const ctn_size = product.ctn_size || []
+    - const ctn_quantity = product.ctn_quantity || []
+    - const ctn_weight = product.ctn_weight || []
+    - const length = model_no.length
+      while l < length
+        .form-specification
+          button.form__remove(onClick="this.parentElement.remove()") &times;
+          label(for="model_no") Model No.
+          input#model_no(type="text" name="model_no" value=model_no[l])
+          label(for="power") Power
+          input#power(type="text" name="power" value=power[l])
+          label(for="base_type") Base Type
+          input#base_type(type="text" name="base_type" value=base_type[l])
+          label(for="lumen") Lumens
+          input#lumen(type="text" name="lumen" value=lumen[l])
+          label(for="dim") Dimensions
+          input#dim(type="text" name="dim" value=dim[l])
+          label(for="ctn_size") CTN Size
+          input#ctn_size(type="text" name="ctn_size" value=ctn_size[l])
+          label(for="ctn_quantity") CTN Quantity
+          input#ctn_quantity(type="text" name="ctn_quantity" value=ctn_quantity[l])
+          label(for="ctn_weight") CTN Weight
+          input#ctn_weight(type="text" name="ctn_weight" value=ctn_weight[l])
+          - l++
+    input#add-specification.button(type="button" value="Add An Item")
     //- Bullet points
     h3 Bullet Points
-    - const num = [1, 2, 3, 4, 5]
+    - let b = 0
     - const bulletPoints = product.bullet_points || []
-      each n in num
-        label(for=`bullet_point${n}`) Description#{n}
-        input(type="text" id=`bullet_point${n}` name="bullet_points" value=bulletPoints[n - 1])
+      while b < bulletPoints.length
+        .form-bullet-point
+          button.form__remove(onClick="this.parentElement.remove()") &times;
+          label(for="bullet_point") Description
+          input(type="text" name="bullet_points" value=bulletPoints[b])
+          - b++
+    input#add-bullet-point.button(type="button" value="Add An Item")
+    //- Photos
+    h3 Photos
+    - let p = 0
+    - const photos = product.photos || []
+    - const descriptions = product.descriptions || []
+      while p < photos.length
+        .form-photo
+          button.form__remove(onClick="this.parentElement.remove()") &times;
+          label(for="photo") Photo
+          input(type="file" name="photos" accept="image/gif, image/png, image/jpeg")
+          img(src=`/uploads/products/${photos[p].thumbnail}`, alt=`${descriptions[p]}`)
+          label(for=description) Description
+          input(type="text" name="descriptions" value=descriptions[p])
+          - p++
+    input#add-photo.button(type="button" value="Add An Item")
     //- Brochure
     h3 Brochure
     label(for="brochure")
@@ -68,23 +108,4 @@ mixin productForm(product = {})
       span (Recommended)
     input#brochure(type="file" name="brochure" accept=".pdf")
     p= product.brochure
-    //- Photos
-    h3 Photos
-    - const index = [1, 2, 3, 4, 5, 6, 7]
-    - const photos = product.photos || []
-    - const descriptions = product.descriptions || []
-      each i in index
-        label(for=`photo${i}`)
-          | Photo #{i}&nbsp;
-          if i <= 3
-            span (Required)
-        input(type="file" id=`photo${i}` name="photos" accept="image/gif, image/png, image/jpeg")
-          //-  required=(i <= 3 ? true : false)
-        if photos[i - 1]
-          img(src=`/uploads/products/${photos[i - 1].thumbnail}`, alt="")
-        label(for=`description${i}`)
-          | Description #{i}&nbsp;
-          if i <= 3
-            span (Recommended)
-        input(type="text" id=`description${i}` name="descriptions" value=descriptions[i -1])
     input.button(type="submit" value="Save")

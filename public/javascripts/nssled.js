@@ -10,7 +10,7 @@ import { queryOpen, queryClose } from './modules/query';
 import skype from './modules/skype';
 import setDimension from './modules/about-video';
 import fixNav from './modules/fixNav';
-import formAddItem from './modules/formAddItem';
+import { addItem, addSpecification, addBulletPoint, addPhoto } from './modules/formAddItem';
 
 // toggle navbar button
 if (window.innerWidth < 800) {
@@ -79,7 +79,15 @@ setDimension($('.about__video iframe'));
 // toggle support page button
 $$('button[aria-controls="support-list"]').on('click', toggle);
 
-// form add item
-$('#form-add-item').on('click', function () {
-  formAddItem(this);
+// form add specification
+$('#add-specification').on('click', function () {
+  addSpecification(this);
+});
+// form add bullet point
+$('#add-bullet-point').on('click', function () {
+  addBulletPoint(this);
+});
+// form add photo
+$('#add-photo').on('click', function () {
+  addPhoto(this);
 });

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,600);@import url(https://fonts.googleapis.com/css?family=Lato:400,500,600);.about__us {
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,600);@import url(https://fonts.googleapis.com/css?family=Lato:400,700);.about__us {
   max-width: 1000px;
   padding: 5rem 0;
   margin: 0 auto;
@@ -128,11 +128,46 @@
   text-transform: uppercase;
   font-weight: 600;
 }
+.add__form > :last-child {
+  margin-top: 5rem;
+}
+.form__remove {
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+}
 .form-specification {
+  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto 1fr auto 1fr;
       grid-template-columns: auto 1fr auto 1fr;
+  -ms-flex-align: center;
+      align-items: center;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+}
+.form-bullet-point {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  -ms-flex-align: center;
+      align-items: center;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+}
+.form-photo {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-flex-align: center;
+      align-items: center;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
 }
 .contact__title {
   margin: 5rem 0;
@@ -711,6 +746,9 @@ body.rb--hide .rb__btn {
       transform: translateY(500%);
   opacity: 0.5;
 }
+.pswp__bg {
+  opacity: 0.5 !important;
+}
 .content .quote {
   background: #444;
   text-align: center;
@@ -1270,6 +1308,7 @@ template {
   display: none;
 }
 .products {
+  margin-bottom: 5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -1291,6 +1330,19 @@ template {
 }
 .products .product article {
   padding: 2rem 0;
+  height: 30em;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.products .product article a {
+  outline: 2px solid #ccc;
+  padding: 1rem 4rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
 }
 .products .product__title h2 {
   color: #f08519;
@@ -1299,11 +1351,18 @@ template {
 .products .product__edit {
   width: 3rem;
 }
+.products .product__detail {
+  -ms-flex: 1;
+      flex: 1;
+  padding: 3rem 0;
+}
 .products .product__detail li {
+  color: #808080;
   font-size: 1.4rem;
   list-style: none;
   line-height: 2;
   text-align: center;
+  font-style: italic;
 }
 .products .product__detail__button {
   margin-top: 3rem;
@@ -1586,6 +1645,10 @@ template {
   text-align: left;
   font-weight: 500;
 }
+.single p {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
 .single__features ul {
   list-style: none;
   padding-left: 0;
@@ -1593,11 +1656,11 @@ template {
 .single__features ul li {
   font-size: 1.3rem;
   line-height: 1.5;
-}
-.single__features ul li span {
-  font-size: 1.4rem;
-  text-transform: uppercase;
   font-weight: 600;
+  letter-spacing: 1px;
+}
+.single__features ul li::before {
+  content: '\2022   ';
 }
 .single__brochure a {
   display: inline-block;
@@ -1631,8 +1694,8 @@ template {
   grid-column: 1/-1;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 3fr 2fr;
+      grid-template-columns: 3fr 2fr;
 }
 .single__table h2 {
   grid-column: 1/-1;
@@ -1655,7 +1718,7 @@ template {
 .single__table__details table tr:first-child p,
 .single__table__ctn table tr:first-child p {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 .single__table__details table tr:nth-child(2n+3),
 .single__table__ctn table tr:nth-child(2n+3) {
@@ -1941,7 +2004,7 @@ template {
   margin: 0;
 }
 html {
-  font-family: 'Montserrat', 'sans-serif';
+  font-family: 'Lato', 'sans-serif';
   font-size: 62.5%;
 }
 pre {
@@ -1954,6 +2017,7 @@ h4,
 h5,
 h6 {
   text-align: center;
+  font-family: 'Montserrat', 'sans-serif';
 }
 h2 {
   font-size: 2.5rem;
@@ -1968,6 +2032,7 @@ a {
 a {
   color: #000;
   text-decoration: none;
+  font-family: 'Montserrat', 'sans-serif';
 }
 /*# sourceMappingURL=public/stylus/style.css.map */
 /*# sourceMappingURL=style.css.map*/

@@ -16,23 +16,24 @@ block content
               li= point
         .single__features
           //- h2 Features
-          ol
-            li #{product.power} available
+          ul
+            li #{product.power.join(', ')} available
             li= product.voltage
-            li
-              - const bt = product.base_types || []
-              span Base Type:&nbsp;
-              | #{bt.join(' ')}
             li
               - const ct = product.color_temperatures || []
               span Color Temperature:&nbsp;
               | #{ct.join(' ')}
-            li= product.ip_rate
+            li IP #{product.ip_rate}
             li
-              span CRI > &nbsp;
+              span CRI&nbsp;
               | #{product.cri}
+            li
+              span Lifespan:&nbsp;
+              | #{product.lifespan}
+            li #{product.certificates.join(', ')} certificated
         .single__applications
           h2 Applications
+          p= product.application
         .single__documents
           h2 Documents
           .single__brochure
@@ -61,61 +62,20 @@ block content
                   p Lumens
                 td
                   p Dim.(E26)
-              tr
-                td
-                  p NS-GLA20W-01
-                td
-                  p 20W
-                td
-                  p E26 E27 E39 E40
-                td
-                  p 3150~3400LM
-                td
-                  p ⌀5"x5.6"
-              tr
-                td
-                  p NS-GLA30W-01
-                td
-                  p 30W
-                td
-                  p E26 E27 E39 E40
-                td
-                  p 4800~4946LM
-                td
-                  p ⌀5"x5.6"
-              tr
-                td
-                  p NS-GLA40W-01
-                td
-                  p 40W
-                td
-                  p E26 E27 E39 E40
-                td
-                  p 6180~6300LM
-                td
-                  p ⌀5"x5.6"
-              tr
-                td
-                  p NS-GLA50W-01
-                td
-                  p 50W
-                td
-                  p E26 E27 E39 E40
-                td
-                  p 7590~7711LM
-                td
-                  p ⌀5"x5.6"
-              tr
-                td
-                  p NS-GLA60W-01
-                td
-                  p 60W
-                td
-                  p E26 E27 E39 E40
-                td
-                  p 8940~9150LM
-                td
-                  p ⌀5"x5.6"
+              - let j = 0
+                while j < product.model_no.length
+                  tr
+                    td
+                      p= product.model_no[j]
+                    td
+                      p= product.power[j]
+                    td
+                      p= product.base_type[j]
+                    td
+                      p= product.lumen[j]
+                    td
+                      p= product.dim[j]
+                    - j++
         .single__table__ctn
           table
             tbody
@@ -126,38 +86,13 @@ block content
                   p CTN quantity
                 td
                   p CTN weight
-              tr
-                td
-                  p 22.05"x16.93"x15.35"
-                td
-                  p 24pcs
-                td
-                  p 17.72kg
-              tr
-                td
-                  p 22.05"x16.93"x15.35"
-                td
-                  p 24pcs
-                td
-                  p 17.72kg
-              tr
-                td
-                  p 22.05"x16.93"x15.35"
-                td
-                  p 24pcs
-                td
-                  p 19.28kg
-              tr
-                td
-                  p 22.05"x16.93"x15.35"
-                td
-                  p 24pcs
-                td
-                  p 19.28kg
-              tr
-                td
-                  p 22.05"x16.93"x15.35"
-                td
-                  p 24pcs
-                td
-                  p 19.28kg
+              - let m = 0
+              while m < product.model_no.length
+                tr
+                  td
+                    p= product.ctn_size[m]
+                  td
+                    p= product.ctn_quantity[m]
+                  td
+                    p= product.ctn_weight[m]
+                  - m++

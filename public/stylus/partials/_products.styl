@@ -1,5 +1,6 @@
 .products
   @extend .inner-2
+  margin-bottom 5rem
   display grid
   grid-template-columns repeat(3, 1fr)
   grid-gap 3rem
@@ -18,6 +19,15 @@
 
     article
       padding 2rem 0
+      height 30em
+      display flex
+      flex-direction column
+      align-items center
+      a
+        outline 2px solid #ccc
+        padding 1rem 4rem
+        text-transform uppercase
+        font-size 1.2rem
 
     &__title
       h2
@@ -26,11 +36,15 @@
     &__edit
       width 3rem
     &__detail
+      flex 1
+      padding 3rem 0
       li
+        color rgb(128, 128, 128)
         font-size 1.4rem
         list-style none
         line-height 2
         text-align center
+        font-style italic
       &__button
         margin-top 3rem
         a

@@ -77,7 +77,7 @@ const config = {
   },
   plugins: [
     // finally we pass it an array of our plugins - uncomment if you want to uglify
-    uglify,
+    // uglify,
     // here is where we tell it to output our css to a separate file
     new ExtractTextPlugin('style.css'),
   ]

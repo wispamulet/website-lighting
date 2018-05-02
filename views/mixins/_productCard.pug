@@ -14,7 +14,7 @@ mixin productCard(product = {})
           a(href=`/products/${product._id}/edit`)
             != h.icon('pencil')
       .product__detail
-        li= product.power
+        li= product.power.join(' | ')
         li= product.color_temperatures.join(' | ')
         //- if product.brochure
           .product__text__button
