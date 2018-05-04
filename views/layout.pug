@@ -23,57 +23,56 @@ html(lang="en")
         //-   i.fa.fa-envelope
         button#toTop.rb__btn
           i.fa.fa-angle-up
-      .header-wrapper
-        #top
-          .user
-            if user
-              if user.level === 1
-                //- a(href="/add-slideshow") Add Slideshow
-                a(href="/add-product") Add Product
-                a(href="/add-project") Add Project
-                a(href="/add-certificate") Add Certificate
-              a(href="/account") Account
-              a(href="/logout") Log Out
-            else
-              a(href='/register') Register
-              a(href='/login') Log In
-          .language
-            a(href=`${currentPath}?clang=en` class=(lang === 'en' ? 'language--active' : '')) EN
-            span |
-            a(href=`${currentPath}?clang=es` class=(lang === 'es' ? 'language--active' : '')) ES
-        header
-          .header--logo
+      #top
+        .user
+          if user
+            if user.level === 1
+              //- a(href="/add-slideshow") Add Slideshow
+              a(href="/add-product") Add Product
+              a(href="/add-project") Add Project
+              a(href="/add-certificate") Add Certificate
+            a(href="/account") Account
+            a(href="/logout") Log Out
+          else
+            a(href='/register') Register
+            a(href='/login') Log In
+        .language
+          a(href=`${currentPath}?clang=en` class=(lang === 'en' ? 'language--active' : '')) EN
+          span |
+          a(href=`${currentPath}?clang=es` class=(lang === 'es' ? 'language--active' : '')) ES
+      header
+        .header--logo
             img(src="/images/photos/NS.png")
-          button(aria-expanded="false" aria-controls="menu-list")
-            span.open
-              i.fa.fa-align-justify
-            span.close
-              i.fa.fa-times
-          nav.nav
-            .nav__section.nav__section--logo
-              img(src="/images/photos/new-sunshine.png")
-            .nav__section.nav__section--pages
-              each ITEM in TRANSLATION.MENU
-                li.nav__item
-                  if ITEM.DROPDOWN
-                    a.nav__link(href=ITEM.SLUG class=(currentPath.startsWith(ITEM.SLUG) ? 'nav__link--active' : ''))
-                      span.nav__title #{ITEM.TITLE}
-                      span.down
-                        i.fa.fa-angle-down
-                    span.down--mobile(aria-expanded="false" aria-controls="dropdown-list")
-                      i.fa.fa-angle-up
+        button(aria-expanded="false" aria-controls="menu-list")
+          span.open
+            i.fa.fa-align-justify
+          span.close
+            i.fa.fa-times
+        nav.nav
+          .nav__section.nav__section--logo
+            img(src="/images/photos/new-sunshine.png")
+          .nav__section.nav__section--pages
+            each ITEM in TRANSLATION.MENU
+              li.nav__item
+                if ITEM.DROPDOWN
+                  a.nav__link(href=ITEM.SLUG class=(currentPath.startsWith(ITEM.SLUG) ? 'nav__link--active' : ''))
+                    span.nav__title #{ITEM.TITLE}
+                    span.down
                       i.fa.fa-angle-down
-                    - const LIST = ITEM.DROPDOWN
-                    ul.nav__dropdown
-                      each ITEM in LIST
-                        li.nav__dropdown__item
-                          a.nav__dropdown__link(href=ITEM.SLUG)
-                            span #{ITEM.TITLE}
-                  else
-                    a.nav__link(href=ITEM.SLUG class=(currentPath.startsWith(ITEM.SLUG) ? 'nav__link--active' : ''))
-                      span.nav__title #{ITEM.TITLE}
-            //- .nav__section.nav__section--search
-            //- .nav__section.nav__section--user
+                  span.down--mobile(aria-expanded="false" aria-controls="dropdown-list")
+                    i.fa.fa-angle-up
+                    i.fa.fa-angle-down
+                  - const LIST = ITEM.DROPDOWN
+                  ul.nav__dropdown
+                    each ITEM in LIST
+                      li.nav__dropdown__item
+                        a.nav__dropdown__link(href=ITEM.SLUG)
+                          span #{ITEM.TITLE}
+                else
+                  a.nav__link(href=ITEM.SLUG class=(currentPath.startsWith(ITEM.SLUG) ? 'nav__link--active' : ''))
+                    span.nav__title #{ITEM.TITLE}
+          //- .nav__section.nav__section--search
+          //- .nav__section.nav__section--user
 
     block messages
       if locals.flashes

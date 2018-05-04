@@ -537,8 +537,8 @@ header {
   color: #fff;
   display: -ms-grid !important;
   display: grid !important;
-  -ms-grid-rows: auto 1fr;
-      grid-template-rows: auto 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   -ms-flex-pack: center;
       justify-content: center;
   -ms-flex-align: center;
@@ -547,6 +547,7 @@ header {
 .header--logo {
   justify-self: center;
   width: 10rem;
+  padding: 2rem 0;
 }
 @media (max-width: 1100px) {
   .header--logo {
@@ -869,6 +870,7 @@ body.rb--hide .rb__btn {
   }
 }
 .nav {
+  justify-self: center;
   background: #000;
   z-index: 49;
   display: -ms-flexbox;
@@ -968,6 +970,7 @@ body.rb--hide .rb__btn {
 }
 @media (max-width: 800px) {
   .nav {
+    justify-self: unset;
     grid-column: 1/-1;
     display: -ms-flexbox;
     display: flex;
