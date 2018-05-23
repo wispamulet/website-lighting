@@ -37,8 +37,8 @@ block content
         .single__documents
           h2 Documents
           .single__brochure
-            //- a(href=`uploads/pdf/${product.brochure}`) Peek Brochure
-            a(href=`/download/${product.brochure}`) Download Brochure
+            a(href=`uploads/pdf/${product.brochure}`) Download Brochure
+            //- a(href=`/download/${product.brochure}`) Download Brochure
       .single-gallery(itemscope itemtype="http://schema.org/ImageGallery")
         - let i = 0
           each image in product.photos

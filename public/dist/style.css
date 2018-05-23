@@ -772,6 +772,21 @@ body.rb--hide .rb__btn {
   text-transform: uppercase;
   font-size: 3.5rem;
 }
+.content .certificate {
+  padding: 5rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column-align: center;
+      justify-items: center;
+}
+.content .certificate h2 {
+  text-transform: uppercase;
+  color: #f08519;
+  font-size: 2.2rem;
+}
+.content .certificate img {
+  width: 80%;
+}
 .inner,
 .inner-2,
 .products,
