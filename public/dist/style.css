@@ -1722,10 +1722,11 @@ template {
   font-weight: 600;
 }
 .single-gallery {
+  padding: 0 7rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[6];
-      grid-template-columns: repeat(6, 1fr);
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
   -ms-grid-column-align: center;
       justify-items: center;
