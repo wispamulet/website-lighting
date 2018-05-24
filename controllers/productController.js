@@ -42,7 +42,7 @@ exports.save = async (req, res, next) => { // resize and save to ./public/upload
         uploadController.getDimension(file, photo);
         uploadController.rename(file, photo);
         req.body.photos.push(photo);
-        uploadController.toUploads(file, req, i, 'products');
+        uploadController.toUploads(file, req, i, 'products', 400);
         i += 1;
       });
     }

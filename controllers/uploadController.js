@@ -24,9 +24,9 @@ exports.rename = (file, photo) => {
   photo.thumbnail = `${name}_thumbnail.${extension}`;
 };
 
-exports.toUploads = async (file, req, i, dest) => {
+exports.toUploads = async (file, req, i, dest, width = 350) => {
   const photo = await jimp.read(file.buffer);
   await photo.write(`./public/uploads/${dest}/${req.body.photos[i].original}`);
-  const photoThumbnail = await photo.resize(350, jimp.AUTO);
+  const photoThumbnail = await photo.resize(width, jimp.AUTO);
   await photoThumbnail.write(`./public/uploads/${dest}/${req.body.photos[i].thumbnail}`);
 };
