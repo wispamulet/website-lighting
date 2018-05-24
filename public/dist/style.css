@@ -258,6 +258,20 @@
   line-height: 2;
   margin: 5rem;
 }
+.error-status {
+  margin: 5rem;
+}
+.error-status h2 {
+  font-size: 4rem;
+}
+.error-status p {
+  text-align: center;
+}
+.error-status .bullshit {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-style: italic;
+}
 .flash-wrapper {
   max-width: 90rem;
   position: absolute;
