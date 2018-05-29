@@ -5112,7 +5112,7 @@ window.on('scroll', function () {
 // initPhotoSwipeFromDOM('.product-gallery');
 (0, _photoswipe2.default)('.intro__company-gallery');
 (0, _photoswipe2.default)('.intro__product-gallery');
-(0, _photoswipe2.default)('.support__certificate-gallery');
+(0, _photoswipe2.default)('.certificate-gallery');
 
 // contact page google map
 (0, _map2.default)((0, _bling.$)('#map'));

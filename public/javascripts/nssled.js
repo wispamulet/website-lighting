@@ -50,7 +50,7 @@ initPhotoSwipeFromDOM('.project-gallery');
 // initPhotoSwipeFromDOM('.product-gallery');
 initPhotoSwipeFromDOM('.intro__company-gallery');
 initPhotoSwipeFromDOM('.intro__product-gallery');
-initPhotoSwipeFromDOM('.support__certificate-gallery');
+initPhotoSwipeFromDOM('.certificate-gallery');
 
 // contact page google map
 makeMap($('#map'));

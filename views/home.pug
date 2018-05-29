@@ -30,9 +30,9 @@ block content
       .dot
       //- .dot
   .content
+    +pswp()
     .intro
       .intro__company
-        +pswp()
         h2 New sunshine
         .inner-2
           //- h2= TRANSLATION.HOME_MSG
@@ -179,10 +179,11 @@ block content
               .intro__product__detail
                 p 123123123
               a(href="#") More
-
-    .certificate
-      h2 Our Certificates
-      img(src="/images/photos/certificates.png", alt="certificate")
+      .intro__certificates
+        h2 Our Certificates
+        .intro__certificates__link
+          a(href="/certificates")
+            img(src="/images/photos/certificates.png", alt="certificate")
     .quote
       .inner
         p.one "Tech innovation, quality first"

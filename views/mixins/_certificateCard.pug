@@ -1,15 +1,14 @@
 mixin certificateCard(certificate = {})
-  .support__certificate
+  .certificate
     - const name = certificate.name
     - const images = certificate.photos
       h2
         if user && certificate.author.equals(user._id)
-          .support__certificate__edit
+          .certificate__edit
             a(href=`/certificates/${certificate._id}/edit`)
               != h.icon('pencil')
         | #{name}
-      +supportBtn()
-      .support__certificate-gallery(itemscope itemtype="http://schema.org/ImageGallery")
+      .certificate-gallery(itemscope itemtype="http://schema.org/ImageGallery")
         - let i = 0
           each image in images
             - const { original, thumbnail, dimension } = image

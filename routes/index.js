@@ -33,7 +33,7 @@ router.get('/home', catchErrors(homeController.home));
 
 // );
 
-// product
+// products
 router.get(
   '/add-product',
   authController.isLoggedIn,
@@ -80,6 +80,10 @@ router.post(
 );
 
 // support
+router.get('/support', navController.support);
+
+//certificates
+router.get('/certificates', certificateController.getCertificates);
 router.get(
   '/add-certificate',
   authController.isLoggedIn,
@@ -91,7 +95,6 @@ router.post(
   catchErrors(certificateController.save),
   catchErrors(certificateController.createCertificate)
 );
-router.get('/support', certificateController.support);
 router.get('/certificates/:id/edit', catchErrors(certificateController.editCertificate));
 router.post(
   '/add-certificate/:id',

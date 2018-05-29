@@ -169,6 +169,35 @@
   grid-gap: 1rem;
   margin-bottom: 2rem;
 }
+.certificate {
+  width: 1000px;
+  margin: 0 auto;
+  border: 1px solid #f08519;
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+.certificate h2 {
+  text-align: left;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  color: #f08519;
+  font-size: 2rem;
+}
+.certificate__edit {
+  width: 3rem;
+}
+.certificate-gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(100px, 1fr))[5];
+      grid-template-columns: repeat(5, minmax(100px, 1fr));
+  grid-gap: 2rem;
+}
+.certificate-gallery figure {
+  margin: 0;
+}
 .contact__title {
   margin: 5rem 0;
 }
@@ -601,7 +630,6 @@ header {
   background-size: cover !important;
 }
 .intro__company-gallery {
-  padding-top: 5rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
@@ -724,9 +752,22 @@ header {
   color: #fff;
   border-color: #fff;
 }
-.intro__projects {
-  height: 40rem;
-  padding: 3rem 0;
+.intro__certificates {
+  padding-bottom: 3rem;
+}
+.intro__certificates h2 {
+  text-transform: uppercase;
+  color: #f08519;
+  font-size: 2.2rem;
+}
+.intro__certificates__link {
+  text-align: center;
+}
+.intro__certificates__link a {
+  display: block;
+}
+.intro__certificates__link img {
+  width: 80%;
 }
 @media (max-width: 800px) {
   .intro__company {
@@ -785,21 +826,6 @@ body.rb--hide .rb__btn {
   font-style: italic;
   text-transform: uppercase;
   font-size: 3.5rem;
-}
-.content .certificate {
-  padding: 5rem 0;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-column-align: center;
-      justify-items: center;
-}
-.content .certificate h2 {
-  text-transform: uppercase;
-  color: #f08519;
-  font-size: 2.2rem;
-}
-.content .certificate img {
-  width: 80%;
 }
 .inner,
 .inner-2,
@@ -2021,39 +2047,6 @@ template {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-}
-.support__certificate {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
-  -ms-flex-align: center;
-      align-items: center;
-}
-.support__certificate h2 {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-}
-.support__certificate__edit {
-  width: 3rem;
-}
-.support__certificate button[aria-controls="support-list"] {
-  width: 2.4rem;
-  height: 2.4rem;
-  font-size: 2.2rem;
-}
-.support__certificate-gallery {
-  grid-column: 1/-1;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(100px, 1fr))[5];
-      grid-template-columns: repeat(5, minmax(100px, 1fr));
-  grid-gap: 2rem;
-}
-.support__certificate-gallery figure {
-  margin: 0;
 }
 html {
   font-family: 'Lato', 'sans-serif';

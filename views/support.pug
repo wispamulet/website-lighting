@@ -2,7 +2,6 @@ extends layout
 
 include mixins/_pswp
 include mixins/_supportBtn
-include mixins/_certificateCard
 
 block content
   .content
@@ -123,9 +122,3 @@ block content
           .support__fb
             h2 Product quality assurance
             p We have 8 Product certificates,With rights to import more than 80 countries and win thousands of companies trust.
-      .support__certificates
-        h2 Certificates
-        +supportBtn()
-        .support__certificates__details
-          each certificate in certificates
-            +certificateCard(certificate)

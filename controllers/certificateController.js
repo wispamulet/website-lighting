@@ -42,11 +42,6 @@ exports.save = async (req, res, next) => { // resize and save to /public/uploads
   next();
 };
 
-exports.support = async (req, res) => {
-  const certificates = await Certificate.find();
-  res.render('support', { title: 'Support', certificates });
-};
-
 exports.addCertificate = (req, res) => {
   res.render('editCertificate', { title: 'Add Certificate' });
 };
@@ -56,7 +51,7 @@ exports.createCertificate = async (req, res) => {
   const certificate = await (new Certificate(req.body)).save();
 
   req.flash('success', `Successfully create <strong>${certificate.name}</strong>!`);
-  res.redirect('/support');
+  res.redirect('/certificates');
 };
 
 exports.editCertificate = async (req, res) => {
@@ -75,4 +70,9 @@ exports.updateCertificate = async (req, res) => {
 
   req.flash('success', `Successfully updated <strong>${certificate.name}</strong>`);
   res.redirect(`/certificates/${certificate._id}/edit`); // eslint-disable-line
+};
+
+exports.getCertificates = async (req, res) => {
+  const certificates = await Certificate.find();
+  res.render('certificates', { title: 'Certificates', certificates });
 };

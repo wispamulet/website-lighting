@@ -1,0 +1,13 @@
+extends layout
+
+include mixins/_pswp
+include mixins/_certificateCard
+
+block content
+  .content
+    +pswp()
+    .projects__banner
+    .certificates
+      h2 Certificates
+      each certificate in certificates
+        +certificateCard(certificate)

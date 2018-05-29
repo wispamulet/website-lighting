@@ -17,7 +17,6 @@
       height 15rem
       background-size cover !important
     &-gallery
-      padding-top 5rem
       display grid
       grid-template-columns repeat(4, 1fr)
       grid-gap 3.5rem
@@ -106,10 +105,18 @@
           background $orange
           color white
           border-color white
-
-  &__projects
-    height 40rem
-    padding 3rem 0
+  &__certificates
+    padding-bottom 3rem
+    h2
+      text-transform uppercase
+      color $orange
+      font-size 2.2rem
+    &__link
+      text-align center
+      a
+        display block
+      img
+        width 80%
 
 @media (max-width: 800px)
   .intro
