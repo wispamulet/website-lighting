@@ -82,7 +82,7 @@ router.post(
 // support
 router.get('/support', navController.support);
 
-//certificates
+// certificates
 router.get('/certificates', certificateController.getCertificates);
 router.get(
   '/add-certificate',

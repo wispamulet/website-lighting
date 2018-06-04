@@ -7,10 +7,9 @@ block content
   .content
     //- h2= TRANSLATION.SUPPORT_MSG
     //- p It's #{h.moment().format('MMMM Do YYYY, h:mm:ss a')}
-    +pswp()
     .projects__banner
     .support
-      .support__QA
+      //- .support__QA
         h2 Q&A
         - const value = "true"
         +supportBtn(value)
@@ -100,7 +99,7 @@ block content
                   h3 Address:
                 .payment__info--detail-r
                   p 9647 Las Tunas Drive, Temple City, CA, 91780
-      .support__FB
+      //- .support__FB
         h2 Features&Benefits
         +supportBtn()
         .support__FB__details
@@ -122,3 +121,36 @@ block content
           .support__fb
             h2 Product quality assurance
             p We have 8 Product certificates,With rights to import more than 80 countries and win thousands of companies trust.
+      .support__qa
+        h2 How to visit us?
+        p About 30 minutes’ driving from Luohu or Huanggang border (come from Hongkong).
+      .support__qa
+        h2 How to get the samples?
+        p Please email us what items and how many you need. Our teams will send you a PI (Proforma Invoice) for your ref. Normally it takes 3-5 days to prepare samples after we confirm your payments.
+      .support__qa
+        h2 How to pay us?
+        .support__payment
+          p 1. Paypal Account:
+          p robertqin86@163.com
+        .support__payment
+          p 2. Wester Union:
+          p Beneficiary
+          p Fore name: Dangui
+          p Last Name: Wei
+          p Address: 3/F, Building 6th, Jiayiyuan Science&Technology Park, Huaning Rd, Dalang street, Longhua new district, Shenzhen, P.R.China.
+        .support__payment
+          p 3. Wire Transfer:
+          .support__payment__bank
+            p 1. BENEFICIARY BANKER:
+            p Agricultural Bank of china ,Shenzhen Branch Longhua Sub-brank
+            p BENEFICIARY: Shen zhen zhaopeng Technology Co.,Ltd
+            p USD A/C: 41029400040022807
+            p SWIFT CODE: ABOCCNBJ410
+            p ADDRESS: Agricultural Bank Building,Renminbei road,Longhua District,Shenzhen,518109,P.R.China
+          .support__payment__bank
+            p 2. US customer pay to this bank info blw:
+            p Bank Name: Chase
+            p Account name: New Sunshine  Lighting Inc
+            p Account Number: 912500977
+            p Wire Routing Transit Number: 322271627(domestic wire)
+            p Bank Address: 9647 Las Tunas Drive, Temple City CA 91780

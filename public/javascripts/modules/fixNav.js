@@ -1,6 +1,6 @@
-function fixNav(topOfNav, nav, topofHeader, header) {
+function fixNav(bottomOfNav, topOfNav, nav, topofHeader, header) {
   if (window.innerWidth > 800) {
-    if (window.scrollY >= topOfNav) {
+    if (window.scrollY >= bottomOfNav) {
       // console.log('> 800');
       // document.body.style.paddingTop = `${heightOfHeader}px`;
       document.body.style.paddingTop = `${nav.offsetHeight}px`;

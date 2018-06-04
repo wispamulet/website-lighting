@@ -925,6 +925,8 @@ body.rb--hide .rb__btn {
   }
 }
 .nav {
+  top: -65px;
+  transition: top 0.5s ease-in-out;
   justify-self: center;
   background: #000;
   z-index: 49;
@@ -1919,7 +1921,7 @@ template {
 }
 .support {
   max-width: 1000px;
-  padding: 0 5rem;
+  padding: 5rem;
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
@@ -1927,126 +1929,26 @@ template {
       grid-template-columns: 1fr;
   grid-gap: 2rem;
 }
-.support button[aria-controls="support-list"] {
-  background: #fff;
-  color: #f08519;
-  width: 3rem;
-  height: 3rem;
-  font-size: 3rem;
-  padding: 0;
-  border: 0;
-  outline: 0;
-}
-.support button[aria-expanded="false"] > .close {
-  display: none;
-}
-.support button[aria-expanded="false"] > .open {
-  display: block;
-}
-.support button[aria-expanded="false"] ~ * {
-  display: none;
-}
-.support button[aria-expanded="true"] > .close {
-  display: block;
-}
-.support button[aria-expanded="true"] > .open {
-  display: none;
-}
-.support button[aria-expanded="true"] ~ * {
-  display: -ms-grid;
-  display: grid;
-}
-.support__QA,
-.support__FB,
-.support__certificates {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
-  -ms-flex-align: center;
-      align-items: center;
-}
-.support__QA > h2,
-.support__FB > h2,
-.support__certificates > h2 {
-  font-size: 2.5rem;
+.support__qa h2 {
+  text-align: left;
+  font-size: 2.2rem;
   color: #f08519;
 }
-.support__QA__details,
-.support__FB__details,
-.support__certificates__details {
-  grid-column: 1/-1;
-  padding: 1rem 2rem;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  grid-gap: 1rem;
+.support__payment {
+  margin-bottom: 4rem;
 }
-.support__qa h2,
-.support__fb h2,
-.support__certificate h2 {
+.support__payment > :first-child {
   font-size: 1.8rem;
-  text-align: left;
-  text-transform: uppercase;
 }
-.support__qa h3,
-.support__fb h3,
-.support__certificate h3 {
-  font-size: 1.6rem;
-  text-align: left;
-  font-weight: 500;
+.support__payment :first-child {
+  font-style: italic;
+  font-weight: bold;
 }
-.support__qa p,
-.support__fb p,
-.support__certificate p {
-  font-size: 1.5rem;
+.support__payment :not(:first-child) {
+  padding-left: 3rem;
 }
-.support__qa:nth-child(3) {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
-  -ms-flex-align: center;
-      align-items: center;
-}
-.support__qa:nth-child(3) .payment__info {
-  grid-column: 1/-1;
-}
-.support .payment__info {
-  margin-bottom: 2rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 4fr;
-      grid-template-columns: 1fr 4fr;
-  grid-gap: 1.5rem;
-  -ms-flex-align: center;
-      align-items: center;
-}
-.support .payment__info h3,
-.support .payment__info p {
-  margin: 0;
-}
-.support .payment__info--name {
-  justify-self: flex-end;
-}
-.support .payment__info--detail {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 3fr;
-      grid-template-columns: 1fr 3fr;
-  grid-gap: 1rem 2rem;
-}
-.support .payment__info--detail > h3 {
-  grid-column: 1/-1;
-  justify-self: center;
-}
-.support .payment__info--detail-l h3 {
-  text-align: right;
-}
-.support .payment__info--detail-r {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
+.support__payment__bank {
+  margin-bottom: 3rem;
 }
 html {
   font-family: 'Lato', 'sans-serif';

@@ -128,9 +128,9 @@ exports.$$ = $$;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-function fixNav(topOfNav, nav, topofHeader, header) {
+function fixNav(bottomOfNav, topOfNav, nav, topofHeader, header) {
   if (window.innerWidth > 800) {
-    if (window.scrollY >= topOfNav) {
+    if (window.scrollY >= bottomOfNav) {
       // console.log('> 800');
       // document.body.style.paddingTop = `${heightOfHeader}px`;
       document.body.style.paddingTop = nav.offsetHeight + 'px';
@@ -5085,11 +5085,12 @@ if (window.innerWidth < 800) {
 // fix navbar
 var nav = (0, _bling.$)('.nav');
 var topOfNav = nav.offsetTop;
+var bottomOfNav = nav.offsetTop + nav.offsetHeight;
 var header = (0, _bling.$)('header');
 var topOfHeader = header.offsetTop;
 
 window.on('scroll', function () {
-  (0, _fixNav2.default)(topOfNav, nav, topOfHeader, header);
+  (0, _fixNav2.default)(bottomOfNav, topOfNav, nav, topOfHeader, header);
 });
 
 // scroll to top button
@@ -5142,17 +5143,23 @@ window.on('scroll', function () {
 (0, _bling.$$)('button[aria-controls="support-list"]').on('click', _toggle2.default);
 
 // form add specification
-(0, _bling.$)('#add-specification').on('click', function () {
-  (0, _formAddItem.addSpecification)(this);
-});
+if ((0, _bling.$)('#add-specification')) {
+  (0, _bling.$)('#add-specification').on('click', function () {
+    (0, _formAddItem.addSpecification)(this);
+  });
+}
 // form add bullet point
-(0, _bling.$)('#add-bullet-point').on('click', function () {
-  (0, _formAddItem.addBulletPoint)(this);
-});
+if ((0, _bling.$)('#add-bullet-point')) {
+  (0, _bling.$)('#add-bullet-point').on('click', function () {
+    (0, _formAddItem.addBulletPoint)(this);
+  });
+}
 // form add photo
-(0, _bling.$)('#add-photo').on('click', function () {
-  (0, _formAddItem.addPhoto)(this);
-});
+if ((0, _bling.$)('#add-photo')) {
+  (0, _bling.$)('#add-photo').on('click', function () {
+    (0, _formAddItem.addPhoto)(this);
+  });
+}
 
 /***/ })
 /******/ ]);

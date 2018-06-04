@@ -23,11 +23,12 @@ if (window.innerWidth < 800) {
 // fix navbar
 const nav = $('.nav');
 const topOfNav = nav.offsetTop;
+const bottomOfNav = nav.offsetTop + nav.offsetHeight;
 const header = $('header');
 const topOfHeader = header.offsetTop;
 
 window.on('scroll', () => {
-  fixNav(topOfNav, nav, topOfHeader, header);
+  fixNav(bottomOfNav, topOfNav, nav, topOfHeader, header);
 });
 
 // scroll to top button
@@ -80,14 +81,20 @@ setDimension($('.about__video iframe'));
 $$('button[aria-controls="support-list"]').on('click', toggle);
 
 // form add specification
-$('#add-specification').on('click', function () {
-  addSpecification(this);
-});
+if ($('#add-specification')) {
+  $('#add-specification').on('click', function () {
+    addSpecification(this);
+  });
+}
 // form add bullet point
-$('#add-bullet-point').on('click', function () {
-  addBulletPoint(this);
-});
+if ($('#add-bullet-point')) {
+  $('#add-bullet-point').on('click', function () {
+    addBulletPoint(this);
+  });
+}
 // form add photo
-$('#add-photo').on('click', function () {
-  addPhoto(this);
-});
+if ($('#add-photo')) {
+  $('#add-photo').on('click', function () {
+    addPhoto(this);
+  });
+}
