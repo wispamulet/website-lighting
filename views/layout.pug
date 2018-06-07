@@ -10,7 +10,7 @@ html(lang="en")
     link(rel="stylesheet", href="/dist/photoswipe/photoswipe.css")
     link(rel="stylesheet", href="/dist/photoswipe/default-skin/default-skin.css")
     link(rel="stylesheet", href="/dist/style.css")
-    link(rel="shortcut icon" type="image/png" href="/images/icons/doughnut.png")
+    link(rel="shortcut icon" type="image/png" href="/images/icons/NS.png")
 
   body.rb--hide
     block header
@@ -23,25 +23,27 @@ html(lang="en")
         //-   i.fa.fa-envelope
         button#toTop.rb__btn
           i.fa.fa-angle-up
-      #top
-        .user
-          if user
-            if user.level === 1
-              //- a(href="/add-slideshow") Add Slideshow
-              a(href="/add-product") Add Product
-              a(href="/add-project") Add Project
-              a(href="/add-certificate") Add Certificate
-            a(href="/account") Account
-            a(href="/logout") Log Out
-          else
-            a(href='/register') Register
-            a(href='/login') Log In
-        .language
-          a(href=`${currentPath}?clang=en` class=(lang === 'en' ? 'language--active' : '')) EN
-          span |
-          a(href=`${currentPath}?clang=es` class=(lang === 'es' ? 'language--active' : '')) ES
       header
-        .header--logo
+        .top
+          .top__logo
+            img(src="/images/photos/new-sunshine.png")
+          .user
+            if user
+              if user.level === 1
+                //- a(href="/add-slideshow") Add Slideshow
+                a(href="/add-product") Add Product
+                a(href="/add-project") Add Project
+                a(href="/add-certificate") Add Certificate
+              a(href="/account") Account
+              a(href="/logout") Log Out
+            else
+              a(href='/register') Register
+              a(href='/login') Log In
+          .language
+            a(href=`${currentPath}?clang=en` class=(lang === 'en' ? 'language--active' : '')) EN
+            span |
+            a(href=`${currentPath}?clang=es` class=(lang === 'es' ? 'language--active' : '')) ES
+        //- .header--logo
             img(src="/images/photos/NS.png")
         button(aria-expanded="false" aria-controls="menu-list")
           span.open
@@ -49,7 +51,7 @@ html(lang="en")
           span.close
             i.fa.fa-times
         nav.nav
-          .nav__section.nav__section--logo
+          //- .nav__section.nav__section--logo
             img(src="/images/photos/new-sunshine.png")
           .nav__section.nav__section--pages
             each ITEM in TRANSLATION.MENU

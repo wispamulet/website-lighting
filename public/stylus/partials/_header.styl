@@ -1,10 +1,13 @@
-#top
-  padding 1rem 0
-  background black
+.top
+  // padding 1rem 0
+  background #f7ecdd
   display grid
-  grid-template-columns 4fr 1fr
-  grid-gap .5rem
+  grid-template-columns repeat(10, 1fr)
+  align-items center
+  &__logo
+    grid-column 3 / span 2
   .user
+    grid-column-end -3
     justify-self flex-end
     > *
       padding 0 .5rem
@@ -14,14 +17,14 @@
     span
       color #b3b3b3
   a
-    color white
+    color #000
     text-decoration none
     font-size 1.2rem
 
 header
   z-index 49
   // padding 1rem 2rem
-  background black
+  background $orange
   color white
   display grid !important
   grid-template-columns 1fr

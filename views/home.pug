@@ -5,17 +5,17 @@ include mixins/_pswp
 block content
   .slideshow
     .slide.fade
-      img(src="/images/photos/18-28-25-60-1.jpg")
-      .slide__caption Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+      img(src="/images/photos/banner-0902-01.jpg")
+      //- .slide__caption Lorem ipsum, dolor sit amet consectetur adipisicing elit.
     .slide.fade
-      img(src="/images/photos/1-150G61G51c25.jpg")
-      .slide__caption Lorem ipsum dolor sit.
+      img(src="/images/photos/banner-0902-03.jpg")
+      //- .slide__caption Lorem ipsum dolor sit.
     .slide.fade
-      img(src="/images/photos/1-150513223F9244.jpg")
-      .slide__caption Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, quibusdam!
+      img(src="/images/photos/banner-0902-01.jpg")
+      //- .slide__caption Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, quibusdam!
     .slide.fade
-      img(src="/images/photos/1-150912114H3510.jpg")
-      .slide__caption Lorem ipsum dolor sit amet consectetur.
+      img(src="/images/photos/banner-0902-03.jpg")
+      //- .slide__caption Lorem ipsum dolor sit amet consectetur.
     //- .slide.fade
     //-   img(src="/images/photos/photo-1520320142774-5381578416fa.jpg")
     //-   .slide__caption Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -32,48 +32,76 @@ block content
   .content
     +pswp()
     .intro
+      .intro__cornlight
+        h1 Features & Benefits
+        p For Commercial & Residential Use
+        .inner-2
+          img(src="/images/photos/bg-box-001.jpg", alt="")
+          .intro__cornlight__desc
+            h2 Affordable
+            p Prices of the New Sunshine LED corn bulbs have come down to an affordable level price where it can most projects to make the switch it.
+          .intro__cornlight__desc
+            h2 Green without mercury
+            p Mercury is classified as a poison to humans, when disposed of improperly, it harmful to our health, New Sunshine LED light bulbs do not contain any mercury.
+          .intro__cornlight__desc
+            h2 80% Energy Save
+            p The New Sunshine LED corn bulbs consumes 80-85% less energy than incandescent lamp and high voltage sodium lamp.
+          .intro__cornlight__desc
+            h2 Green and recyclable
+            p New sunshine products do not contain any harmful substances, when the LED light bulb reaches its end of life simply toss it in the recycling bucket,Unlike traditional fluorescent lamp, need special treatment.
+          .intro__cornlight__desc
+            h2 Long lifespan, over 50,000 hours
+            p The New Sunshine LED corn bulb is tested to last 50,000 hours , if lighting 3 hours a day the New Sunshine LED lamp can last up to 31 years.
+          .intro__cornlight__desc
+            h2 Product quality assurance
+            p We have 8 Product certificates,With rights to import more than 80 countries and win thousands of companies trust.
       .intro__company
-        h2 New sunshine
+        h1 New sunshine
         .inner-2
           //- h2= TRANSLATION.HOME_MSG
           //- p It's #{h.moment().format('MMMM Do YYYY, h:mm:ss a')}
           p New Sunshine LED (New Sunshine Manufacturing Co.,Ltd) was founded in 2004, we specialize in application of LED light technology for indoor-outdoor development and manufacture for illumination, such as LED street light, LED warehouse light, LED high bay light, LED corn bulb, LED flood light, LED tunnel light and other outdoor and indoor lights.
-          .intro__company-gallery(itemscope itemtype="http://schema.org/ImageGallery")
-            figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
-              a(href="/images/photos/1-15051322364D42.jpg" itemprop="contentUrl" data-size="780x522")
-                img(src="/images/photos/1-15051322364D42.jpg" itemprop="thumbnail" alt="Img")
-                .intro__company__img(style="background: url(/images/photos/1-15051322364D42.jpg);")
-              h2 Street
-              figcaption(itemprop="caption description") Street
-            figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
-              a(href="/images/photos/1-150513224519222.jpg" itemprop="contentUrl" data-size="800x600")
-                img(src="/images/photos/1-150513224519222.jpg" itemprop="thumbnail" alt="Img")
-                .intro__company__img(style="background: url(/images/photos/1-150513224519222.jpg);")
-              h2 Parking lot
-              figcaption(itemprop="caption description") Parking lot
-            figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
-              a(href="/images/photos/1-151223101KYV.jpg" itemprop="contentUrl" data-size="800x600")
-                img(src="/images/photos/1-151223101KYV.jpg" itemprop="thumbnail" alt="Img")
-                .intro__company__img(style="background: url(/images/photos/1-151223101KYV.jpg);")
-              h2 Lobby
-              figcaption(itemprop="caption description") Lobby
-            figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
-              a(href="/images/photos/1-150513221F5209.jpg" itemprop="contentUrl" data-size="780x715")
-                img(src="/images/photos/1-150513221F5209.jpg" itemprop="thumbnail" alt="Img")
-                .intro__company__img(style="background: url(/images/photos/1-150513221F5209.jpg);")
-              h2 and more
-              figcaption(itemprop="caption description") and more
-            figure.figure--hide(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
-              a(href="/images/photos/products.jpg" itemprop="contentUrl" data-size="1920x1080")
-                img(src="/images/photos/products.jpg" itemprop="thumbnail" alt="Img")
-              figcaption(itemprop="caption description") and more
-            figure.figure--hide(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
-              a(href="/images/photos/projects.jpg" itemprop="contentUrl" data-size="1920x1080")
-                img(src="/images/photos/projects.jpg" itemprop="thumbnail" alt="Img")
-              figcaption(itemprop="caption description") and more
+          p
+            a(href="/about-us") Read more
+            span or
+            a(href="/contact") Contact us
+          //- .intro__company-gallery(itemscope itemtype="http://schema.org/ImageGallery")
+          //-   figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+          //-     a(href="/images/photos/1-15051322364D42.jpg" itemprop="contentUrl" data-size="780x522")
+          //-       img(src="/images/photos/1-15051322364D42.jpg" itemprop="thumbnail" alt="Img")
+          //-       .intro__company__img(style="background: url(/images/photos/1-15051322364D42.jpg);")
+          //-     h2 Street
+          //-     figcaption(itemprop="caption description") Street
+          //-   figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+          //-     a(href="/images/photos/1-150513224519222.jpg" itemprop="contentUrl" data-size="800x600")
+          //-       img(src="/images/photos/1-150513224519222.jpg" itemprop="thumbnail" alt="Img")
+          //-       .intro__company__img(style="background: url(/images/photos/1-150513224519222.jpg);")
+          //-     h2 Parking lot
+          //-     figcaption(itemprop="caption description") Parking lot
+          //-   figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+          //-     a(href="/images/photos/1-151223101KYV.jpg" itemprop="contentUrl" data-size="800x600")
+          //-       img(src="/images/photos/1-151223101KYV.jpg" itemprop="thumbnail" alt="Img")
+          //-       .intro__company__img(style="background: url(/images/photos/1-151223101KYV.jpg);")
+          //-     h2 Lobby
+          //-     figcaption(itemprop="caption description") Lobby
+          //-   figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+          //-     a(href="/images/photos/1-150513221F5209.jpg" itemprop="contentUrl" data-size="780x715")
+          //-       img(src="/images/photos/1-150513221F5209.jpg" itemprop="thumbnail" alt="Img")
+          //-       .intro__company__img(style="background: url(/images/photos/1-150513221F5209.jpg);")
+          //-     h2 and more
+          //-     figcaption(itemprop="caption description") and more
+          //-   figure.figure--hide(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+          //-     a(href="/images/photos/products.jpg" itemprop="contentUrl" data-size="1920x1080")
+          //-       img(src="/images/photos/products.jpg" itemprop="thumbnail" alt="Img")
+          //-     figcaption(itemprop="caption description") and more
+          //-   figure.figure--hide(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+          //-     a(href="/images/photos/projects.jpg" itemprop="contentUrl" data-size="1920x1080")
+          //-       img(src="/images/photos/projects.jpg" itemprop="thumbnail" alt="Img")
+          //-     figcaption(itemprop="caption description") and more
       .intro__products
-        h2 Our Products
         .inner-2
+          h2 3-5 years warranty
+          p We specialize in applications of LED light technology for indoor-outdoor development and manufacturer for illumination, such as LED street light, LED warehouse light, LED high bay light, LED corn bulb, LED flood light, LED tunnel light and other lights.
           .intro__product
             .intro__product-gallery(itemscope itemtype="http://schema.org/ImageGallery")
               figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")

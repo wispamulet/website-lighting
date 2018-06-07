@@ -5,16 +5,48 @@
   "ABOUTUS_MSG": "Esto es sobre nosotros!",
   "CONTACT_MSG": "Esto es contacto!",
   "MENU": [
-    { "SLUG": "/home", "TITLE": "hogar" },
-    { "SLUG": "/products", "TITLE": "productos", "DROPDOWN": [
-      { "SLUG": "/products/LED Corn Light", "TITLE": "LED luz de maíz" },
-      { "SLUG": "/products/LED Garden Light", "TITLE": "LED luz de jardín" },
-      { "SLUG": "/products/LED Street Light", "TITLE": "farola LED" }
-    ] },
-    { "SLUG": "/gallery", "TITLE": "galería" },
-    { "SLUG": "/support", "TITLE": "apoyo" },
-    { "SLUG": "/about-us", "TITLE": "nosotros" },
-    { "SLUG": "/contact", "TITLE": "contacto" }
+    {
+      "SLUG": "/home",
+      "TITLE": "hogar"
+    },
+    {
+      "SLUG": "/products",
+      "TITLE": "productos",
+      "DROPDOWN": [
+        {
+          "SLUG": "/products/LED Corn Light",
+          "TITLE": "LED luz de maíz"
+        },
+        {
+          "SLUG": "/products/LED Garden Light",
+          "TITLE": "LED luz de jardín"
+        },
+        {
+          "SLUG": "/products/LED Street Light",
+          "TITLE": "farola LED"
+        }
+      ]
+    },
+    {
+      "SLUG": "/gallery",
+      "TITLE": "galería"
+    },
+    {
+      "SLUG": "/support",
+      "TITLE": "apoyo"
+    },
+    {
+      "SLUG": "/about-us",
+      "TITLE": "nosotros"
+    },
+    {
+      "SLUG": "/contact",
+      "TITLE": "contacto"
+    },
+    {
+      "SLUG": "/certificates",
+      "TITLE": "Certificates"
+    }
   ],
   "CONTACT_DESCRIPTION": "New Sunshine se destaca como líder en la industria LED del país. Con su negocio expandido a más de 64 países en el mundo. Con el fin de desarrollar los países de habla hispana en América del Sur, abrimos una sucursal en Lima, capital de Perú.",
   "READ_MORE": "Lee mas",
@@ -22,10 +54,10 @@
   "CONTACT_INFO_ADDR_US": "13321 Garden Grove Blvd, #N, Garden Grove, CA 92843, USA",
   "CONTACT_INFO_EMAIL_ROBERT": "robert@nssled.com",
   "CONTACT_INFO_TEL_ROBERT": "+1 201 969 5019 (Robert)",
-  "CONTACT_INFO_TEL_LYNA":"+1 323 616 7060 (Lyna)",
-  "CONTACT_INFO_ADDR_CN":"4/F, Block D, Dejiarun industrial park, 128 indstrial zone, Tangxia, Dongguan, Guangdong Province, P.R.China",
-  "CONTACT_INFO_TEL_CN1":"+86 769 8800 4885",
-  "CONTACT_INFO_TEL_CN2":"+86 138 2658 8764",
+  "CONTACT_INFO_TEL_LYNA": "+1 323 616 7060 (Lyna)",
+  "CONTACT_INFO_ADDR_CN": "4/F, Block D, Dejiarun industrial park, 128 indstrial zone, Tangxia, Dongguan, Guangdong Province, P.R.China",
+  "CONTACT_INFO_TEL_CN1": "+86 769 8800 4885",
+  "CONTACT_INFO_TEL_CN2": "+86 138 2658 8764",
   "CONTACT_US": "Contáctenos",
   "SEND_EMAIL": "Enviar un correo electrónico"
 }

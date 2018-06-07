@@ -2,11 +2,11 @@
   top -65px
   transition top .5s ease-in-out
   justify-self center
-  background black
+  background $orange
   // flex 1
   z-index 49
   display flex
-  justify-content space-between
+  justify-content center
   align-items center
   &__item
     list-style none
@@ -18,16 +18,15 @@
     text-transform uppercase
     color white
     font-size 1.4rem
-    font-weight 400
+    font-weight 600
     position relative
     display flex
     justify-content center
     align-items center
-    &--active
-      color $orange
-    &:hover
-      color $orange
-      transition all .5s ease
+    // &--active
+    //   // color $orange
+    // &:hover
+    //   background #000
   &__dropdown
     display none
     position absolute
@@ -38,17 +37,19 @@
       text-decoration none
       text-transform capitalize
       width 18rem
-      height 3rem
-      background black
-      color white
+      height 4rem
+      background #fff
+      color $orange
       display grid
       align-items center
       border-bottom 1px solid rgba(0, 0, 0, .1)
       font-size 1.3rem
+      font-weight 600
       span
         padding-left 2rem
       &:hover
-        color $orange
+        color #fff
+        background #000
   .down
     padding-left 1rem
     &--mobile

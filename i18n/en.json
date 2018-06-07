@@ -5,32 +5,62 @@
   "SUPPORT_MSG": "This is support!",
   "ABOUTUS_MSG": "This is about us!",
   "CONTACT_MSG": "This is contact!",
-
   "_comment_navbar_menu_list": "",
   "MENU": [
-    { "SLUG": "/home", "TITLE": "home" },
-    { "SLUG": "/products", "TITLE": "products", "DROPDOWN": [
-      { "SLUG": "/products/LED Corn Light", "TITLE": "LED Corn Light" },
-      { "SLUG": "/products/LED Garden Light", "TITLE": "LED Garden Light" },
-      { "SLUG": "/products/LED Street Light", "TITLE": "LED Street Light" }
-    ] },
-    { "SLUG": "/gallery", "TITLE": "gallery" },
-    { "SLUG": "/support", "TITLE": "support" },
-    { "SLUG": "/about-us", "TITLE": "about us" },
-    { "SLUG": "/contact", "TITLE": "contact" }
+    {
+      "SLUG": "/home",
+      "TITLE": "home"
+    },
+    {
+      "SLUG": "/products",
+      "TITLE": "products",
+      "DROPDOWN": [
+        {
+          "SLUG": "/products/LED Corn Light",
+          "TITLE": "LED Corn Light"
+        },
+        {
+          "SLUG": "/products/LED Garden Light",
+          "TITLE": "LED Garden Light"
+        },
+        {
+          "SLUG": "/products/LED Street Light",
+          "TITLE": "LED Street Light"
+        }
+      ]
+    },
+    {
+      "SLUG": "/gallery",
+      "TITLE": "gallery"
+    },
+    {
+      "SLUG": "/support",
+      "TITLE": "support"
+    },
+    {
+      "SLUG": "/about-us",
+      "TITLE": "about us"
+    },
+    {
+      "SLUG": "/contact",
+      "TITLE": "contact"
+    },
+    {
+      "SLUG": "/certificates",
+      "TITLE": "Certificates"
+    }
   ],
-
   "_comment_footer_contact_area": "",
   "CONTACT_DESCRIPTION": "New Sunshine stands out as leader in the country's LED industry. With its business expanded to over 64 countries over the world. In order to develop the Spanish speaking countries in South America, we opened a branch company in Lima, capital of Peru.",
   "CONTACT_INFO": "Contact info",
   "CONTACT_INFO_ADDR_US": "13321 Garden Grove Blvd, #N, Garden Grove, CA 92843, USA",
   "CONTACT_INFO_EMAIL_ROBERT": "robert@nssled.com",
   "CONTACT_INFO_TEL_ROBERT": "+1 201 969 5019",
-  "CONTACT_INFO_TEL_LYNA":"+1 323 616 7060",
-  "CONTACT_INFO_ADDR_CN":"4/F, Block D, Dejiarun industrial park, 128 indstrial zone, Tangxia, Dongguan, Guangdong Province, P.R.China",
+  "CONTACT_INFO_TEL_LYNA": "+1 323 616 7060",
+  "CONTACT_INFO_ADDR_CN": "4/F, Block D, Dejiarun industrial park, 128 indstrial zone, Tangxia, Dongguan, Guangdong Province, P.R.China",
   "CONTACT_INFO_EMAIL_CN": "order@newsunshine.net",
-  "CONTACT_INFO_TEL_CN1":"+86 769 8800 4885",
-  "CONTACT_INFO_TEL_CN2":"+86 138 2658 8764",
+  "CONTACT_INFO_TEL_CN1": "+86 769 8800 4885",
+  "CONTACT_INFO_TEL_CN2": "+86 138 2658 8764",
   "CONTACT_US": "Contact us",
   "READ_MORE": "Read more",
   "SEND_EMAIL": "Send an email"
