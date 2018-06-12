@@ -6,18 +6,22 @@
     justify-content center
   &__link
     display grid
-    grid-template-columns 1fr 1rem
+    grid-template-columns 1fr 2rem
     grid-gap 2rem
     font-size 1.8rem
     text-decoration none
     color #3a3a3a
-    background white
+    // background white
     border 1px solid #d8d8d8
     padding .5rem 1rem
     transition all .2s ease-out
     &:hover, &--active
       background $orange
       color white
+
+.gallery
+  @extend .inner-2
+  padding 5rem 0
 
 .projects
   display grid
@@ -29,7 +33,7 @@
     background: url(/images/photos/projects.jpg) center 67%
 
   .project
-    background white
+    background #fff
     // height 50rem
     position relative
     top 0

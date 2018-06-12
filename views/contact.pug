@@ -1,53 +1,54 @@
 extends layout
 
 block content
-  .map
-    #map
-      p Loading Map...
+  .content
+    .map
+      #map
+        p Loading Map...
 
-  .inner
-    //- h2= TRANSLATION.CONTACT_MSG
-    .contact__title
-      h2 Welcome to visit our factory and warehouse or&nbsp;
-        a.query__btn= TRANSLATION.SEND_EMAIL
-    .contact__region
-      - function addrTransform(addr) {
-      -   const addrArray = addr.split(', ')
-      -   addrArray.pop()
-      -   return addrArray.join(', ')
-      - }
-      .contact__region__us
-        h2 USA
-        .contact__region__cities
-          .contact__region__city
-            h2= addrTransform(TRANSLATION.CONTACT_INFO_ADDR_US)
-            .contact__region__person
-              h3 Robert
-              p
-                a(href=`mailto:${TRANSLATION.CONTACT_INFO_EMAIL_ROBERT}`)= TRANSLATION.CONTACT_INFO_EMAIL_ROBERT
-              p
-                span Tel.&nbsp;
-                a(href=`tel:${TRANSLATION.CONTACT_INFO_TEL_ROBERT}`)= TRANSLATION.CONTACT_INFO_TEL_ROBERT
-              p
-                span Skype.&nbsp;
-                a(href=`callto:${TRANSLATION.CONTACT_INFO_TEL_ROBERT}`)= TRANSLATION.CONTACT_INFO_TEL_ROBERT
-      .contact__region__cn
-        h2 CHINA
-        .contact__region__cities
-          .contact__region__city
-            h2= addrTransform(TRANSLATION.CONTACT_INFO_ADDR_CN)
-            .contact__region__person
-              h3 Lyna
-              p
-                a(href=`mailto:lyna@nssled.com`)= TRANSLATION.CONTACT_INFO_EMAIL_CN
-              p
-                span Tel.&nbsp;
-                a(href=`tel:${TRANSLATION.CONTACT_INFO_TEL_LYNA}`)= TRANSLATION.CONTACT_INFO_TEL_LYNA
-              p
-                span Skype.&nbsp;
-                a(href=`callto:${TRANSLATION.CONTACT_INFO_TEL_LYNA}`) newsunshine06
+    .inner
+      //- h2= TRANSLATION.CONTACT_MSG
+      .contact__title
+        h2 Welcome to visit our factory and warehouse or&nbsp;
+          a.query__btn= TRANSLATION.SEND_EMAIL
+      .contact__region
+        - function addrTransform(addr) {
+        -   const addrArray = addr.split(', ')
+        -   addrArray.pop()
+        -   return addrArray.join(', ')
+        - }
+        .contact__region__us
+          h2 USA
+          .contact__region__cities
+            .contact__region__city
+              h2= addrTransform(TRANSLATION.CONTACT_INFO_ADDR_US)
+              .contact__region__person
+                h3 Robert
+                p
+                  a(href=`mailto:${TRANSLATION.CONTACT_INFO_EMAIL_ROBERT}`)= TRANSLATION.CONTACT_INFO_EMAIL_ROBERT
+                p
+                  span Tel.&nbsp;
+                  a(href=`tel:${TRANSLATION.CONTACT_INFO_TEL_ROBERT}`)= TRANSLATION.CONTACT_INFO_TEL_ROBERT
+                p
+                  span Skype.&nbsp;
+                  a(href=`callto:${TRANSLATION.CONTACT_INFO_TEL_ROBERT}`)= TRANSLATION.CONTACT_INFO_TEL_ROBERT
+        .contact__region__cn
+          h2 CHINA
+          .contact__region__cities
+            .contact__region__city
+              h2= addrTransform(TRANSLATION.CONTACT_INFO_ADDR_CN)
+              .contact__region__person
+                h3 Lyna
+                p
+                  a(href=`mailto:lyna@nssled.com`)= TRANSLATION.CONTACT_INFO_EMAIL_CN
+                p
+                  span Tel.&nbsp;
+                  a(href=`tel:${TRANSLATION.CONTACT_INFO_TEL_LYNA}`)= TRANSLATION.CONTACT_INFO_TEL_LYNA
+                p
+                  span Skype.&nbsp;
+                  a(href=`callto:${TRANSLATION.CONTACT_INFO_TEL_LYNA}`) newsunshine06
 
-  .about__video
-    h2 Our new waterproof garden light
-    .about__video-wrapper
-      iframe(width="560" height="315" src="https://www.youtube.com/embed/Els_pJrIDsw", frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+    .about__video
+      h2 Our new waterproof garden light
+      .about__video-wrapper
+        iframe(width="560" height="315" src="https://www.youtube.com/embed/Els_pJrIDsw", frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)

@@ -40,7 +40,6 @@
   text-transform: uppercase;
 }
 .about__us .tip {
-  background: #fafafa;
   padding: 1rem;
 }
 .about__us .tip p {
@@ -169,12 +168,15 @@
   grid-gap: 1rem;
   margin-bottom: 2rem;
 }
+.certificates {
+  padding: 5rem 0;
+}
 .certificate {
   width: 1000px;
   margin: 0 auto;
   border: 1px solid #f08519;
   padding: 1rem;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 .certificate h2 {
   text-align: left;
@@ -210,7 +212,6 @@
 .contact__title .query__btn {
   outline: none;
   color: #000;
-  background: #fff;
   border: 1px #000 solid;
   border-radius: 5px;
   padding: 8px 6px;
@@ -840,6 +841,9 @@ body.rb--hide .rb__btn {
 .pswp__bg {
   opacity: 0.5 !important;
 }
+.content {
+  background: #f7ecdd;
+}
 .content .quote {
   background: #444;
   text-align: center;
@@ -859,6 +863,7 @@ body.rb--hide .rb__btn {
 .inner,
 .inner-2,
 .products,
+.gallery,
 .single {
   max-width: 900px;
   margin: 0 auto;
@@ -866,6 +871,7 @@ body.rb--hide .rb__btn {
 }
 .inner-2,
 .products,
+.gallery,
 .single {
   max-width: 1200px;
 }
@@ -1398,7 +1404,7 @@ template {
   display: none;
 }
 .products {
-  margin-bottom: 5rem;
+  padding: 5rem 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -1414,6 +1420,7 @@ template {
   background: url("/images/photos/products.jpg") center 35%;
 }
 .products .product {
+  background: #fff;
   padding: 0 2rem;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -1507,13 +1514,12 @@ template {
 .project__link {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1rem;
-      grid-template-columns: 1fr 1rem;
+  -ms-grid-columns: 1fr 2rem;
+      grid-template-columns: 1fr 2rem;
   grid-gap: 2rem;
   font-size: 1.8rem;
   text-decoration: none;
   color: #3a3a3a;
-  background: #fff;
   border: 1px solid #d8d8d8;
   padding: 0.5rem 1rem;
   transition: all 0.2s ease-out;
@@ -1522,6 +1528,9 @@ template {
 .project__link--active {
   background: #f08519;
   color: #fff;
+}
+.gallery {
+  padding: 5rem 0;
 }
 .projects {
   display: -ms-grid;
