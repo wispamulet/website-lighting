@@ -1718,8 +1718,7 @@ template {
   }
 }
 .single {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  padding: 5rem 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -1835,7 +1834,7 @@ template {
 }
 .single__table__details table tr:nth-child(2n+3),
 .single__table__ctn table tr:nth-child(2n+3) {
-  background: #eee;
+  background: #fff;
 }
 .single__table__details table tr td,
 .single__table__ctn table tr td {
