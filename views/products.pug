@@ -13,7 +13,7 @@ block content
           span.product-type__text All
           span.product-type__count= all
         each t in types
-          a.product__link(href=`products/${t._id}` class=(t._id === type ? 'product__link--active' : ''))
+          a.product__link(href=`/products/${t._id}` class=(t._id === type ? 'product__link--active' : ''))
             span.product-type__text= t._id
             span.product-type__count= t.count
       //- - const garden = products.filter(elem => elem.type === 'LED Garden Light')
