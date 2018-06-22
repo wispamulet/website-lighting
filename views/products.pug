@@ -5,22 +5,32 @@ include mixins/_productCard
 block content
   .content
     .products__banner
-    //- p Coming soon...
-    //- pre= h.dump(title)
-    //- h2= title
-    .products
-      - const garden = products.filter(elem => elem.type === 'LED Garden Light')
-      - const corn = products.filter(elem => elem.type === 'LED Corn Light')
-      - const street = products.filter(elem => elem.type === 'LED Street Light')
-        if garden.length !== 0
-          h2 LED Garden Light
-          each product in garden
-            +productCard(product)
-        if corn.length !== 0
-          h2 LED Corn Light
-          each product in corn
-            +productCard(product)
-        if street.length !== 0
-          h2 LED Street Light
-          each product in street
-            +productCard(product)
+      .banner
+    .products-container
+      h2 Products
+      .product-types
+        a.product__link(href=`/products` class=(currentPath === '/products' ? 'product__link--active' : ''))
+          span.product-type__text All
+          span.product-type__count= all
+        each t in types
+          a.product__link(href=`products/${t._id}` class=(t._id === type ? 'product__link--active' : ''))
+            span.product-type__text= t._id
+            span.product-type__count= t.count
+      //- - const garden = products.filter(elem => elem.type === 'LED Garden Light')
+      //- - const corn = products.filter(elem => elem.type === 'LED Corn Light')
+      //- - const street = products.filter(elem => elem.type === 'LED Street Light')
+      //-   if garden.length !== 0
+      //-     //- h2 LED Garden Light
+      //-     each product in garden
+      //-       +productCard(product)
+      //-   if corn.length !== 0
+      //-     //- h2 LED Corn Light
+      //-     each product in corn
+      //-       +productCard(product)
+      //-   if street.length !== 0
+      //-     //- h2 LED Street Light
+      //-     each product in street
+      //-       +productCard(product)
+      .products
+        each product in products
+          +productCard(product)

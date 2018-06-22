@@ -5,6 +5,7 @@ include mixins/_pswp
 block content
   .content
     .products__banner
+      .banner
     //- pre= h.dump(product)
     +pswp()
     .single
@@ -39,13 +40,14 @@ block content
           .single__brochure
             a(href=`uploads/pdf/${product.brochure}`) Download Brochure
             //- a(href=`/download/${product.brochure}`) Download Brochure
-      .single-gallery(itemscope itemtype="http://schema.org/ImageGallery")
-        - let i = 0
-          each image in product.photos
-            - const { original, thumbnail, dimension } = image
-              figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
-                a(href=`/uploads/products/${original}` itemprop="contentUrl" data-size=`${dimension.w}x${dimension.h}`)
-                  img(src=`/uploads/products/${thumbnail || 'default_300x300.jpg'}` itemprop="thumbnail" alt="Image description")
+      .single-gallery__container
+        .single-gallery(itemscope itemtype="http://schema.org/ImageGallery")
+          - let i = 0
+            each image in product.photos
+              - const { original, thumbnail, dimension } = image
+                figure(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
+                  a(href=`/uploads/products/${original}` itemprop="contentUrl" data-size=`${dimension.w}x${dimension.h}`)
+                    img(src=`/uploads/products/${thumbnail || 'default_300x300.jpg'}` itemprop="thumbnail" alt="Image description")
       .single__table
         h2 Specifications
         .single__table__details

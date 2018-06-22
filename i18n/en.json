@@ -35,19 +35,17 @@
     },
     {
       "SLUG": "/support",
-      "TITLE": "support"
-    },
-    {
-      "SLUG": "/about-us",
-      "TITLE": "about us"
+      "TITLE": "support",
+      "DROPDOWN": [
+        {
+          "SLUG": "/support/certificates",
+          "TITLE": "Certificates"
+        }
+      ]
     },
     {
       "SLUG": "/contact",
       "TITLE": "contact"
-    },
-    {
-      "SLUG": "/certificates",
-      "TITLE": "Certificates"
     }
   ],
   "_comment_footer_contact_area": "",

@@ -36,17 +36,17 @@
     &__link
       text-decoration none
       text-transform capitalize
-      width 18rem
-      height 4rem
-      background #fff
+      padding 2rem 1rem
+      // width 18rem
+      // height 4rem
+      background white
       color $orange
-      display grid
-      align-items center
+      display block
       border-bottom 1px solid rgba(0, 0, 0, .1)
       font-size 1.3rem
       font-weight 600
-      span
-        padding-left 2rem
+      // span
+      //   padding-left 2rem
       &:hover
         color #fff
         background #000
@@ -64,7 +64,7 @@
 
 // hide navbar button
 [aria-controls="menu-list"]
-  background black
+  background $orange
   color white
   justify-self flex-end
   display none
@@ -98,6 +98,7 @@
     &__item:hover > &__dropdown
       display none
     &__link
+      height 5rem
       justify-content flex-start
       grid-column 1 / -1
       grid-row-start 1
@@ -108,7 +109,7 @@
       &__link
         width 100%
         // font-size 1.5rem
-        height 4rem
+        // height 4rem
         span
           padding 0 2rem
     &__section

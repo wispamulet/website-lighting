@@ -1,18 +1,17 @@
 mixin productCard(product = {})
   .product
-    .product__img
-      - const slug = product.slug
-      - const photo = product.photos[0].thumbnail || ''
-      - const description = product.descriptions[0] || ''
+    - const slug = product.slug
+    - const photo = product.photos[0].thumbnail || ''
+    - const description = product.descriptions[0] || ''
       a(href=`/product/${slug}`)
-        img(src=`/uploads/products/${photo}`, alt=`${description}`)
+        .product__img(style=`background-image: url(/uploads/products/${photo})`)
+        //- img(src=`/uploads/products/${photo}`, alt=`${description}`)
     article
-      .product__title
-        h2= product.name
       if user && product.author.equals(user._id)
         .product__edit
           a(href=`/products/${product._id}/edit`)
             != h.icon('pencil')
+      h2= product.name
       .product__detail
         li= product.power.join(' | ')
         //- li= product.color_temperatures.join(' | ')

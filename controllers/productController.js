@@ -81,7 +81,13 @@ exports.getProductsByType = async (req, res) => {
   const typePromise = Product.getTypesList();
   const productPromise = Product.find({ type: typeQuery });
   const [types, products] = await Promise.all([typePromise, productPromise]);
-  res.render('products', { title: `${type || 'Products'}`, types, products });
+
+  let all = 0;
+  types.forEach((t) => {
+    all += t.count;
+    return all;
+  });
+  res.render('products', { title: `${type || 'Products'}`, type, types, all,  products });
 };
 
 exports.downloadBrochure = (req, res) => {

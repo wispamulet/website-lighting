@@ -55,7 +55,7 @@ projectSchema.pre('save', async function (next) {
 projectSchema.statics.getTypesList = function () {
   return this.aggregate([
     { $unwind: '$type' },
-    { $group: { _id: '$type', count: { $sum: 1 } } },
+    { $group: { _id: '$type', count: { $sum: 1 } }},
     { $sort: { count: -1 } }
   ]);
 };

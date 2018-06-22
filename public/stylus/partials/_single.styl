@@ -51,7 +51,9 @@
       font-weight 600
 
   &-gallery
-    padding 0 7rem
+    &__container
+      width 40rem
+    // padding 0 7rem
     display grid
     grid-template-columns repeat(4, 1fr)
     grid-gap 1rem
@@ -62,7 +64,7 @@
       &:first-child
         grid-column 1 / -1
       img
-        outline 1px solid #eee
+        outline 1px solid $orange
 
   &__table
     grid-column 1 / -1

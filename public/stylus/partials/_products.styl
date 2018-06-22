@@ -1,49 +1,77 @@
+.product
+  &-types
+    margin 5rem 0
+    display flex
+    justify-content center
+  &__link
+    display grid
+    grid-template-columns 1fr 2rem
+    grid-gap 2rem
+    font-size 1.8rem
+    text-decoration none
+    color #3a3a3a
+    border 1px solid #d8d8d8
+    padding 5px 1rem
+    transition all .2s ease-out
+    &:hover, &--active
+      background $orange
+      color white
+
 .products
-  @extend .inner-2
-  padding 5rem 0
+  &-container
+    @extend .inner-2
+    padding 5rem 0
   display grid
-  grid-template-columns repeat(3, 1fr)
-  grid-gap 3rem
+  grid-template-columns repeat(4, 1fr)
+  grid-gap 2rem
   h2
     grid-column 1 / -1
-    text-transform uppercase
+    // text-transform uppercase
 
   &__banner
     height 30rem
     background url(/images/photos/products.jpg) center 35%
+    &::after
+      background rgba(0, 0, 0, .5)
 
   .product
     background #fff
-    padding 0 2rem
+    position relative
+    outline 1px solid $orange
     transition all .3s ease-in-out
     box-shadow 0 2px 5px rgba(0, 0, 0, .1)
     &:hover
       top -2px
       box-shadow 0 2px 5px rgba(0, 0, 0, .3)
 
+    &__img
+      height 25rem
+      background-size cover
+      background-repeat no-repeat
+      background-position center center
+
     article
-      padding 2rem 0
+      padding 2rem
       height 30em
       display flex
       flex-direction column
       align-items center
+      h2
+        // color $orange
+        font-size 2rem
+        text-align left
       a
-        font-size 1.2rem
+        font-size 1.4rem
       > :last-child
-        padding 1.2rem 2.4rem
+        padding 1rem 2rem
         outline 2px solid #ccc
         font-weight 700
         text-transform uppercase
-        transition all .5s ease-out
+        transition all .3s ease-out
         &:hover
           background $orange
           color white
           outline-color white
-
-    &__title
-      h2
-        color $orange
-        font-size 2rem
     &__edit
       width 3rem
     &__detail

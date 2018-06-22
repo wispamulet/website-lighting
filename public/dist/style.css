@@ -549,6 +549,19 @@ footer .copyright p span {
         grid-column-start: 2;
   }
 }
+header {
+  z-index: 49;
+  background: #f08519;
+  color: #fff;
+  display: -ms-grid !important;
+  display: grid !important;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
 .top {
   background: #f7ecdd;
   display: -ms-grid;
@@ -563,12 +576,21 @@ footer .copyright p span {
   -ms-grid-column: 3;
       grid-column: 3/span 2;
 }
+.top__logo a {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
 .top .user {
-  grid-column-end: -3;
+  grid-column: 5/-3;
   justify-self: flex-end;
 }
 .top .user > * {
   padding: 0 0.5rem;
+}
+.top .language {
+  padding-left: 2rem;
 }
 .top .language--active {
   color: #f08519 !important;
@@ -581,35 +603,8 @@ footer .copyright p span {
   text-decoration: none;
   font-size: 1.2rem;
 }
-header {
-  z-index: 49;
-  background: #f08519;
-  color: #fff;
-  display: -ms-grid !important;
-  display: grid !important;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-}
-.header--logo {
-  justify-self: center;
-  width: 10rem;
-  padding: 2rem 0;
-}
-@media (max-width: 1100px) {
-  .header--logo {
-    width: 7rem;
-  }
-}
 @media (max-width: 800px) {
-  .header--logo {
-    justify-self: flex-start;
-    margin-left: 1.5rem;
-  }
-  header {
+  .top {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
@@ -841,6 +836,10 @@ body.rb--hide .rb__btn {
 .pswp__bg {
   opacity: 0.5 !important;
 }
+.banner {
+  background: rgba(0,0,0,0.3);
+  height: 30rem;
+}
 .content {
   background: #f7ecdd;
 }
@@ -862,7 +861,7 @@ body.rb--hide .rb__btn {
 }
 .inner,
 .inner-2,
-.products,
+.products-container,
 .gallery,
 .single {
   max-width: 900px;
@@ -870,7 +869,7 @@ body.rb--hide .rb__btn {
   padding: 0 5rem;
 }
 .inner-2,
-.products,
+.products-container,
 .gallery,
 .single {
   max-width: 1200px;
@@ -1003,20 +1002,13 @@ body.rb--hide .rb__btn {
 .nav__dropdown__link {
   text-decoration: none;
   text-transform: capitalize;
-  width: 18rem;
-  height: 4rem;
+  padding: 2rem 1rem;
   background: #fff;
   color: #f08519;
-  display: -ms-grid;
-  display: grid;
-  -ms-flex-align: center;
-      align-items: center;
+  display: block;
   border-bottom: 1px solid rgba(0,0,0,0.1);
   font-size: 1.3rem;
   font-weight: 600;
-}
-.nav__dropdown__link span {
-  padding-left: 2rem;
 }
 .nav__dropdown__link:hover {
   color: #fff;
@@ -1039,7 +1031,7 @@ body.rb--hide .rb__btn {
   padding: 0 2rem;
 }
 [aria-controls="menu-list"] {
-  background: #000;
+  background: #f08519;
   color: #fff;
   justify-self: flex-end;
   display: none;
@@ -1075,6 +1067,7 @@ body.rb--hide .rb__btn {
     display: none;
   }
   .nav__link {
+    height: 5rem;
     -ms-flex-pack: start;
         justify-content: flex-start;
     grid-column: 1/-1;
@@ -1089,7 +1082,6 @@ body.rb--hide .rb__btn {
   }
   .nav__dropdown__link {
     width: 100%;
-    height: 4rem;
   }
   .nav__dropdown__link span {
     padding: 0 2rem;
@@ -1403,25 +1395,55 @@ template {
 [hidden] {
   display: none;
 }
-.products {
-  padding: 5rem 0;
+.product-types {
+  margin: 5rem 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+.product__link {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  grid-gap: 3rem;
+  -ms-grid-columns: 1fr 2rem;
+      grid-template-columns: 1fr 2rem;
+  grid-gap: 2rem;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #3a3a3a;
+  border: 1px solid #d8d8d8;
+  padding: 5px 1rem;
+  transition: all 0.2s ease-out;
+}
+.product__link:hover,
+.product__link--active {
+  background: #f08519;
+  color: #fff;
+}
+.products {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+.products-container {
+  padding: 5rem 0;
 }
 .products h2 {
   grid-column: 1/-1;
-  text-transform: uppercase;
 }
 .products__banner {
   height: 30rem;
   background: url("/images/photos/products.jpg") center 35%;
 }
+.products__banner::after {
+  background: rgba(0,0,0,0.5);
+}
 .products .product {
   background: #fff;
-  padding: 0 2rem;
+  position: relative;
+  outline: 1px solid #f08519;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -1429,8 +1451,14 @@ template {
   top: -2px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
+.products .product__img {
+  height: 25rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 .products .product article {
-  padding: 2rem 0;
+  padding: 2rem;
   height: 30em;
   display: -ms-flexbox;
   display: flex;
@@ -1439,24 +1467,24 @@ template {
   -ms-flex-align: center;
       align-items: center;
 }
+.products .product article h2 {
+  font-size: 2rem;
+  text-align: left;
+}
 .products .product article a {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 .products .product article > :last-child {
-  padding: 1.2rem 2.4rem;
+  padding: 1rem 2rem;
   outline: 2px solid #ccc;
   font-weight: 700;
   text-transform: uppercase;
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
 }
 .products .product article > :last-child:hover {
   background: #f08519;
   color: #fff;
   outline-color: #fff;
-}
-.products .product__title h2 {
-  color: #f08519;
-  font-size: 2rem;
 }
 .products .product__edit {
   width: 3rem;
@@ -1544,6 +1572,7 @@ template {
   background: url("/images/photos/projects.jpg") center 67%;
 }
 .projects .project {
+  outline: 1px solid #f08519;
   background: #fff;
   position: relative;
   top: 0;
@@ -1569,6 +1598,9 @@ template {
 }
 .projects .project__img {
   height: 25rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 .projects .project article {
   -ms-flex: 1;
@@ -1782,7 +1814,6 @@ template {
   font-weight: 600;
 }
 .single-gallery {
-  padding: 0 7rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
@@ -1793,6 +1824,9 @@ template {
   -ms-flex-line-pack: start;
       align-content: flex-start;
 }
+.single-gallery__container {
+  width: 40rem;
+}
 .single-gallery figure {
   margin: 0;
 }
@@ -1800,7 +1834,7 @@ template {
   grid-column: 1/-1;
 }
 .single-gallery figure img {
-  outline: 1px solid #eee;
+  outline: 1px solid #f08519;
 }
 .single__table {
   grid-column: 1/-1;

@@ -83,7 +83,7 @@ router.post(
 router.get('/support', navController.support);
 
 // certificates
-router.get('/certificates', certificateController.getCertificates);
+router.get('/support/certificates', certificateController.getCertificates);
 router.get(
   '/add-certificate',
   authController.isLoggedIn,

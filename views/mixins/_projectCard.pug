@@ -12,7 +12,7 @@ mixin projectCard(project = {})
               a(href=`/uploads/projects/${original}` itemprop="contentUrl" data-size=`${dimension.w}x${dimension.h}`)
                 img(src=`/uploads/projects/${thumbnail || 'default_300x300.jpg'}` itemprop="thumbnail" alt="Image description")
                 if image === images[0]
-                  .project__img(style=`background: url(/uploads/projects/${thumbnail || 'default_300x300.jpg'}) center center no-repeat`)
+                  .project__img(style=`background-image: url(/uploads/projects/${thumbnail || 'default_300x300.jpg'})`)
               figcaption(itemprop="caption description")= descriptions[i]
             - i += 1;
     article

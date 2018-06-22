@@ -33,19 +33,17 @@
     },
     {
       "SLUG": "/support",
-      "TITLE": "apoyo"
-    },
-    {
-      "SLUG": "/about-us",
-      "TITLE": "nosotros"
+      "TITLE": "apoyo",
+      "DROPDOWN": [
+        {
+          "SLUG": "/support/certificates",
+          "TITLE": "Certificates"
+        }
+      ]
     },
     {
       "SLUG": "/contact",
       "TITLE": "contacto"
-    },
-    {
-      "SLUG": "/certificates",
-      "TITLE": "Certificates"
     }
   ],
   "CONTACT_DESCRIPTION": "New Sunshine se destaca como líder en la industria LED del país. Con su negocio expandido a más de 64 países en el mundo. Con el fin de desarrollar los países de habla hispana en América del Sur, abrimos una sucursal en Lima, capital de Perú.",
