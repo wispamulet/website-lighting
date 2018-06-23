@@ -87,7 +87,9 @@ exports.getProductsByType = async (req, res) => {
     all += t.count;
     return all;
   });
-  res.render('products', { title: `${type || 'Products'}`, type, types, all,  products });
+  res.render('products', {
+    title: `${type || 'Products'}`, type, types, all, products
+  });
 };
 
 exports.downloadBrochure = (req, res) => {

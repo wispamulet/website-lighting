@@ -1866,9 +1866,13 @@ template {
   font-size: 1.5rem;
   font-weight: 700;
 }
+.single__table__details table tr:nth-child(2n+2),
+.single__table__ctn table tr:nth-child(2n+2) {
+  background: #dfdfdf;
+}
 .single__table__details table tr:nth-child(2n+3),
 .single__table__ctn table tr:nth-child(2n+3) {
-  background: #fff;
+  background: #eee;
 }
 .single__table__details table tr td,
 .single__table__ctn table tr td {
