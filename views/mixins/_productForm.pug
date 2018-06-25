@@ -3,7 +3,7 @@ mixin productForm(product = {})
     label(for="type")
       | Type&nbsp;
       span (Required)
-    - const choices = ['LED Corn Light', 'LED Garden Light', 'LED Street Light', 'Smart LED']
+    - const choices = ['LED Corn Light', 'LED Garden Light', 'LED Retrofit Kit', 'Smart LED']
     - const type = product.type || ''
     .types
       each choice in choices

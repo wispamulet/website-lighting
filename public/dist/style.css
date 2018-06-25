@@ -200,16 +200,7 @@
 .certificate-gallery figure {
   margin: 0;
 }
-.contact__title {
-  margin: 5rem 0;
-}
-.contact__title h2 {
-  font-size: 2rem;
-  font-weight: 500;
-  text-align: left;
-  line-height: 1.5;
-}
-.contact__title .query__btn {
+.query__btn {
   outline: none;
   color: #000;
   border: 1px #000 solid;
@@ -223,10 +214,19 @@
   transition: all 0.5s ease;
   cursor: pointer;
 }
-.contact__title .query__btn:hover {
+.query__btn:hover {
   background: #f08519;
   color: #fff;
   border-color: #fff;
+}
+.contact__title {
+  margin: 5rem 0;
+}
+.contact__title h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.5;
 }
 .contact__region {
   margin: 5rem 0;
