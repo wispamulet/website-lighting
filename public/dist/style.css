@@ -636,6 +636,9 @@ header {
   -ms-flex-align: center;
       align-items: center;
 }
+.intro__cornlight .inner-2 img {
+  border-radius: 50%;
+}
 .intro__cornlight .inner-2 h2 {
   font-size: 2rem;
   color: #666;
@@ -720,11 +723,10 @@ header {
 }
 .intro__product {
   background: #fff;
-  height: 60rem;
-  padding: 0 2rem;
+  height: 65rem;
 }
 .intro__product-gallery {
-  height: 30rem;
+  height: 35rem;
 }
 .intro__product figure {
   margin: 0;
