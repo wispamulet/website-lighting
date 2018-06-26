@@ -219,6 +219,12 @@
   color: #fff;
   border-color: #fff;
 }
+.contact__image {
+  -ms-grid-row-span: 1;
+  -ms-grid-row: 2;
+      grid-row: 2/span 1;
+  grid-column: 1/-1;
+}
 .contact__title {
   margin: 5rem 0;
 }
@@ -634,13 +640,11 @@ header {
 .intro > * > h1 {
   font-size: 3.5rem;
   color: #000;
-  margin: 0;
   text-transform: uppercase;
 }
 .intro__company {
   max-width: 90rem;
   margin: 0 auto;
-  padding-top: 3rem;
 }
 .intro__company-wrapper {
   padding: 3rem 0;
@@ -651,11 +655,13 @@ header {
   line-height: 1.5;
   text-indent: 2rem;
 }
-.intro__company p:nth-child(2n) {
-  margin-top: 4rem;
+.intro__company__button {
+  font-size: 1.6rem;
+  padding: 2rem 0 3rem 0;
   text-align: center;
 }
-.intro__company p:nth-child(2n) a {
+.intro__company__button a {
+  display: inline-block;
   font-size: 1.4rem;
   outline: 1px #f08519 solid;
   color: #8cc640;
@@ -664,11 +670,11 @@ header {
   margin: 0 1rem;
   transition: all 0.3s ease-in-out;
 }
-.intro__company p:nth-child(2n) a:last-child {
+.intro__company__button a:last-child {
   background: #f08519;
   color: #fff;
 }
-.intro__company p:nth-child(2n) a:hover {
+.intro__company__button a:hover {
   color: #fff;
   background: #8cc640;
   outline-color: #8cc640;
@@ -974,6 +980,7 @@ body.rb--hide .rb__btn {
   text-decoration: none;
   text-transform: capitalize;
   padding: 2rem 1rem;
+  width: 15rem;
   background: #fff;
   color: #f08519;
   display: block;

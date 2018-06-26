@@ -5,7 +5,6 @@
     > h1
       font-size 3.5rem
       color #000
-      margin 0
       text-transform uppercase
 
   // &__cornlight
@@ -54,7 +53,6 @@
   &__company
     max-width 90rem
     margin 0 auto
-    padding-top 3rem
     &-wrapper
       padding 3rem 0
       background-color $light
@@ -62,10 +60,12 @@
       font-size 1.6rem
       line-height 1.5
       text-indent 2rem
-    p:nth-child(2n)
-      margin-top 4rem
+    &__button
+      font-size 1.6rem
+      padding 2rem 0 3rem 0
       text-align center
       a
+        display inline-block
         font-size 1.4rem
         outline 1px $orange solid
         color #8cc640
