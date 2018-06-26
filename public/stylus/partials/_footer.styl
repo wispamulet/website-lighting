@@ -7,18 +7,34 @@ footer
   font-size 1.5rem
 
   .socials
+    padding 5rem 0
     height 400px
     display grid
-    grid-template-columns repeat(3, 1fr)
+    grid-template-columns repeat(5, 1fr)
     grid-gap 2rem
     &__links
+      grid-column-start 2
       display grid
       grid-template-rows 1fr 2fr
       justify-items center
       grid-gap 1rem
-      > *
-        grid-row-start 2
+    &__link
+      grid-row 2 / span 1
+      svg
         font-size 3.5rem
+        color #fff
+      .fa-twitter
+        transition color .3s ease-in
+        &:hover
+          color #0084b4
+      .fa-facebook
+        transition color .3s ease-in
+        &:hover
+          color #3B5998
+      .fa-youtube
+        transition color .3s ease-in
+        &:hover
+          color #FF0000
 
   .contact
     background black

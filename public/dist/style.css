@@ -271,7 +271,6 @@
 }
 .contact__region__person a {
   font-size: 1.5rem;
-  text-decoration: underline wavy #f08519;
 }
 .contact__region__person span {
   font-style: italic;
@@ -387,14 +386,17 @@ footer {
   font-size: 1.5rem;
 }
 footer .socials {
+  padding: 5rem 0;
   height: 400px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
   grid-gap: 2rem;
 }
 footer .socials__links {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 2fr;
@@ -403,10 +405,32 @@ footer .socials__links {
       justify-items: center;
   grid-gap: 1rem;
 }
-footer .socials__links > * {
+footer .socials__link {
+  -ms-grid-row-span: 1;
   -ms-grid-row: 2;
-      grid-row-start: 2;
+      grid-row: 2/span 1;
+}
+footer .socials__link svg {
   font-size: 3.5rem;
+  color: #fff;
+}
+footer .socials__link .fa-twitter {
+  transition: color 0.3s ease-in;
+}
+footer .socials__link .fa-twitter:hover {
+  color: #0084b4;
+}
+footer .socials__link .fa-facebook {
+  transition: color 0.3s ease-in;
+}
+footer .socials__link .fa-facebook:hover {
+  color: #3b5998;
+}
+footer .socials__link .fa-youtube {
+  transition: color 0.3s ease-in;
+}
+footer .socials__link .fa-youtube:hover {
+  color: #f00;
 }
 footer .contact {
   background: #000;
@@ -1774,7 +1798,7 @@ template {
   letter-spacing: 1px;
 }
 .single__descriptions ol li::before {
-  content: '\2022   ';
+  content: '\2728   ';
 }
 .single h2 {
   font-size: 2rem;
@@ -1797,7 +1821,7 @@ template {
   letter-spacing: 1px;
 }
 .single__features ul li::before {
-  content: '\2022   ';
+  content: '\1F525   ';
 }
 .single__brochure a {
   display: inline-block;
