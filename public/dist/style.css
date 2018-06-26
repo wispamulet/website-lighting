@@ -635,58 +635,16 @@ header {
   font-size: 3.5rem;
   color: #000;
   margin: 0;
-  text-transform: capitalize;
-}
-.intro__cornlight {
-  background: #f7ecdd;
-  padding: 3rem 0;
-}
-.intro__cornlight .inner-2 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
-  grid-gap: 2rem;
-  -ms-flex-align: center;
-      align-items: center;
-}
-.intro__cornlight .inner-2 img {
-  border-radius: 50%;
-}
-.intro__cornlight .inner-2 h2 {
-  font-size: 2rem;
-  color: #666;
-}
-.intro__cornlight .inner-2 > :nth-child(2n) h2 {
-  text-align: right;
-}
-.intro__cornlight .inner-2 > :nth-child(2n) p {
-  text-align: right;
-}
-.intro__cornlight .inner-2 > :nth-child(2n+1) h2 {
-  text-align: left;
-}
-.intro__cornlight .inner-2 > :nth-child(2n+1) p {
-  text-align: left;
-}
-.intro__cornlight .inner-2 img {
-  grid-column: 2/3;
-  -ms-grid-row-span: 3;
-  -ms-grid-row: 1;
-      grid-row: 1/span 3;
-}
-.intro__cornlight h1 {
-  position: relative;
-}
-.intro__cornlight p {
-  text-align: center;
-  color: #666;
+  text-transform: uppercase;
 }
 .intro__company {
-  background-color: #fdf9f5;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+.intro__company-wrapper {
   padding: 3rem 0;
+  background-color: #fdf9f5;
 }
 .intro__company p {
   font-size: 1.6rem;
@@ -716,83 +674,78 @@ header {
   outline-color: #8cc640;
 }
 .intro__products {
-  background: #f7ecdd;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
   padding: 3rem 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
-.intro__products .inner-2 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0 3rem;
+.intro__products-wrapper {
+  background-image: url("/images/photos/intro_products_bg.jpg");
+  background-size: cover;
+  background-position: 50% 20%;
+  background-attachment: fixed;
+  height: 60rem;
+  position: relative;
 }
-.intro__products .inner-2 > h2,
-.intro__products .inner-2 > p {
-  grid-column: 1/-1;
-  text-align: left;
-}
-.intro__products .inner-2 > h2 {
-  margin-bottom: 0;
-}
-.intro__products .inner-2 > p {
-  font-size: 1.4rem;
-}
-.intro__product {
-  background: #fff;
-  height: 65rem;
-}
-.intro__product-gallery {
-  height: 35rem;
-}
-.intro__product figure {
+.intro__products h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
   margin: 0;
 }
-.intro__product .figure--hide {
-  display: none;
-}
-.intro__product figcaption {
-  display: none;
-}
-.intro__product article {
-  height: 30rem;
-  padding: 2rem 0;
+.intro__product {
+  height: 48rem;
+  padding: 2.5rem;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  -ms-flex-align: center;
-      align-items: center;
 }
-.intro__product article h2 {
-  font-size: 1.8rem;
-  color: #f08519;
-  text-transform: uppercase;
-  font-weight: 600;
+.intro__product-wrapper {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  padding: 3rem 5rem;
 }
-.intro__product article .intro__product__detail {
+.intro__product__detail {
   -ms-flex: 1;
       flex: 1;
 }
-.intro__product article p {
+.intro__product__detail h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.intro__product__detail p {
+  padding: 2rem;
   font-size: 1.4rem;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+.intro__product__link {
   text-align: center;
-  font-style: italic;
-  color: #808080;
 }
-.intro__product article a {
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 1.2rem 2.4rem;
-  outline: 2px solid #ccc;
+.intro__product__link a {
   transition: all 0.5s ease-out;
-}
-.intro__product article a:hover {
-  background: #f08519;
+  padding: 1rem 2rem;
   color: #fff;
-  border-color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.intro__product__link a:hover {
+  background: #f08519;
+}
+.intro__product__link a span {
+  padding-right: 1rem;
 }
 .intro__certificates {
   background: #fdf9f5;
@@ -859,7 +812,7 @@ body.rb--hide .rb__btn {
   height: 30rem;
 }
 .content {
-  background: #f7ecdd;
+  background: #fdf9f5;
 }
 .content .quote {
   background: #444;
@@ -1984,8 +1937,8 @@ template {
 }
 .slideshow .dots .dot {
   background: #fff;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   transition: all 0.5s ease-out;
 }

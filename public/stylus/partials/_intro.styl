@@ -6,54 +6,58 @@
       font-size 3.5rem
       color #000
       margin 0
-      text-transform capitalize
+      text-transform uppercase
 
-  &__cornlight
-    background #f7ecdd
-    padding 3rem 0
-    // &__left, &__right
-    //   grid-row 1 / -1
-    .inner-2
-      display grid
-      grid-template-columns repeat(3, 1fr)
-      grid-template-rows repeat(3, 1fr)
-      grid-gap 2rem
-      align-items center
-      img
-        border-radius 50%
-      h2
-        font-size 2rem
-        color #666
-      > :nth-child(2n)
-        h2
-          text-align right
-        p
-          text-align right
-      > :nth-child(2n+1)
-        h2
-          text-align left
-        p
-          text-align left
-      img
-        grid-column 2 / 3
-        grid-row 1 / span 3
-    h1
-      position relative
-      // &:after
-      //   content ""
-      //   height 5px
-      //   width 3rem
-      //   background #ccc
-      //   position absolute
-      //   top -1px
-      //   left 29px
-    p
-      text-align center
-      color #666
+  // &__cornlight
+  //   background #f7ecdd
+  //   padding 3rem 0
+  //   // &__left, &__right
+  //   //   grid-row 1 / -1
+  //   .inner-2
+  //     display grid
+  //     grid-template-columns repeat(3, 1fr)
+  //     grid-template-rows repeat(3, 1fr)
+  //     grid-gap 2rem
+  //     align-items center
+  //     img
+  //       border-radius 50%
+  //     h2
+  //       font-size 2rem
+  //       color #666
+  //     > :nth-child(2n)
+  //       h2
+  //         text-align right
+  //       p
+  //         text-align right
+  //     > :nth-child(2n+1)
+  //       h2
+  //         text-align left
+  //       p
+  //         text-align left
+  //     img
+  //       grid-column 2 / 3
+  //       grid-row 1 / span 3
+  //   h1
+  //     position relative
+  //     // &:after
+  //     //   content ""
+  //     //   height 5px
+  //     //   width 3rem
+  //     //   background #ccc
+  //     //   position absolute
+  //     //   top -1px
+  //     //   left 29px
+  //   p
+  //     text-align center
+  //     color #666
 
   &__company
-    background-color #fdf9f5
-    padding 3rem 0
+    max-width 90rem
+    margin 0 auto
+    padding-top 3rem
+    &-wrapper
+      padding 3rem 0
+      background-color $light
     p
       font-size 1.6rem
       line-height 1.5
@@ -77,105 +81,68 @@
           background #8cc640
           outline-color #8cc640
 
-    // &__img
-    //   height 15rem
-    //   background-size cover !important
-    // &-gallery
-    //   display grid
-    //   grid-template-columns repeat(4, 1fr)
-    //   grid-gap 3.5rem
-    //   h2
-    //     font-size 1.8rem
-    //     font-weight 500
-    //     text-transform uppercase
-    //   figure
-    //     cursor pointer
-    //     margin 0
-    //     display flex
-    //     flex-direction column-reverse
-    //     img
-    //       display none
-    //   .figure--hide
-    //     display none
-    //   figcaption
-    //     display none
-
   &__products
-    background #f7ecdd
+    // background rgba(240, 133, 25, .7)
+    background rgba(0, 0, 0, .3)
+    color #fff
     padding 3rem 0
-    .inner-2
-      display grid
-      grid-template-columns repeat(3, 1fr)
-      grid-gap 0 3rem
-      > h2, > p
-        grid-column 1 / -1
-        text-align left
-      > h2
-        margin-bottom 0
-      > p
-        font-size 1.4rem
-      // display grid
-      // grid-template-columns 1fr auto 1fr
-      // grid-gap 2rem
-      // align-items center
-      // &::before, &::after
-      //   display block
-      //   content ''
-      //   height 1rem
-      //   background liner-gradient(to var(--direction, left), $orange, transparent)
-      // &::after
-      //   --direction right
-
-  &__product
-    background white
-    height 65rem
-    // padding 0 2rem
-    // position relative
-    // transition all .3s ease-in-out
-    // box-shadow 0 2px 5px rgba(0, 0, 0, .1)
-    // &:hover
-    //   // top -2px
-    //   box-shadow 0 2px 5px rgba(0, 0, 0, .3)
-    &-gallery
-      height 35rem
-    figure
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    &-wrapper
+      background-image url('/images/photos/intro_products_bg.jpg')
+      // background-image url('http://www.lektroninc.com/wp-content/uploads/2018/03/DSC_0256-e1522245038167.jpg')
+      background-size cover
+      background-position 50% 20%
+      background-attachment fixed
+      height 60rem
+      position relative
+    h2
+      text-transform uppercase
+      font-size 2rem
       margin 0
-    .figure--hide
-      display none
-    figcaption
-      display none
-    article
-      height 30rem
-      padding 2rem 0
-      display flex
-      flex-direction column
-      justify-content space-between
-      align-items center
+  &__product
+    height 48rem
+    padding 2.5rem
+    display flex
+    flex-direction column
+    &-wrapper
+      max-width 120rem
+      margin 0 auto
+      display grid
+      grid-template-columns repeat(4, 1fr)
+      grid-gap 2rem
+      padding 3rem 5rem
+    &__detail
+      flex 1
       h2
-        font-size 1.8rem
-        color $orange
-        text-transform uppercase
-        font-weight 600
-      .intro__product__detail
-        flex 1
+        font-size 2rem
+        font-weight 500
+        letter-spacing 1px
       p
+        padding 2rem
         font-size 1.4rem
-        text-align center
-        font-style italic
-        color #808080
+        letter-spacing 1px
+        line-height 1.5
+    &__link
+      text-align center
       a
-        font-size 1.2rem
-        font-weight 600
-        text-transform uppercase
-        padding 1.2rem 2.4rem
-        outline 2px solid #ccc
         transition all .5s ease-out
+        padding 1rem 2rem
+        color #fff
+        text-transform uppercase
+        letter-spacing 1px
+        font-weight 600
+        font-size 1.2rem
         &:hover
           background $orange
-          color white
-          border-color white
+        span
+          padding-right 1rem
+
   &__certificates
-    background #fdf9f5
+    background $light
     padding 3rem 0
     h2
       text-transform uppercase
