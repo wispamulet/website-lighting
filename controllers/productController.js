@@ -81,6 +81,7 @@ exports.getProductsByType = async (req, res) => {
   const typePromise = Product.getTypesList();
   const productPromise = Product.find({ type: typeQuery });
   const [types, products] = await Promise.all([typePromise, productPromise]);
+  // res.json(types);
 
   let all = 0;
   types.forEach((t) => {

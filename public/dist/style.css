@@ -90,14 +90,15 @@
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  grid-gap: 2rem;
+  grid-gap: 1.5rem;
   font-size: 1.8rem;
 }
 .add__form h2 {
   text-transform: uppercase;
 }
 .add__form input {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  color: #333;
   padding: 1rem;
   border: 1px solid #d8d8d8;
 }
@@ -149,6 +150,9 @@
       align-items: center;
   grid-gap: 1rem;
   margin-bottom: 2rem;
+}
+.form-specification label {
+  text-align: right;
 }
 .form-bullet-point {
   position: relative;
@@ -1397,8 +1401,8 @@ template {
 .products {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (minmax(28.5rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(28.5rem, 1fr));
   grid-gap: 2rem;
 }
 .products-container {
@@ -1416,6 +1420,7 @@ template {
 }
 .products .product {
   background: #fff;
+  margin-bottom: 3rem;
   position: relative;
   outline: 1px solid #f08519;
   transition: all 0.3s ease-in-out;
@@ -1433,7 +1438,7 @@ template {
 }
 .products .product article {
   padding: 2rem;
-  height: 30em;
+  height: 32rem;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -1446,10 +1451,10 @@ template {
   text-align: left;
 }
 .products .product article a {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 .products .product article > :last-child {
-  padding: 1rem 2rem;
+  padding: 0.6rem 2rem;
   outline: 2px solid #ccc;
   font-weight: 700;
   text-transform: uppercase;
@@ -1819,6 +1824,10 @@ template {
 }
 .single-gallery__container {
   width: 40rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
 }
 .single-gallery figure {
   margin: 0;
