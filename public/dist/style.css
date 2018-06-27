@@ -204,25 +204,6 @@
 .certificate-gallery figure {
   margin: 0;
 }
-.query__btn {
-  outline: none;
-  color: #000;
-  border: 1px #000 solid;
-  border-radius: 5px;
-  padding: 8px 6px;
-  margin: 2rem 0;
-  font-size: 1.2rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.5s ease;
-  cursor: pointer;
-}
-.query__btn:hover {
-  background: #f08519;
-  color: #fff;
-  border-color: #fff;
-}
 .contact__image {
   -ms-grid-row-span: 1;
   -ms-grid-row: 2;
@@ -913,12 +894,23 @@ body.rb--hide .rb__btn {
 .map #map {
   width: 100%;
   height: 50rem;
+  background: #eee;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
 }
 .map #map > p {
-  margin: 0;
   text-align: center;
-  padding-top: 5rem;
   font-size: 2rem;
+}
+.map #map > p svg {
+  font-size: 5rem;
+  color: #f08519;
 }
 .map #map .popup {
   width: 20rem;
@@ -1653,6 +1645,25 @@ template {
 }
 .query-display {
   display: block;
+}
+.query__btn {
+  outline: none;
+  color: #000;
+  border: 1px #000 solid;
+  border-radius: 5px;
+  padding: 8px 6px;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.query__btn:hover {
+  background: #f08519;
+  color: #fff;
+  border-color: #fff;
 }
 .query-btn[disabled="disabled"] {
   background: #ccc !important;
