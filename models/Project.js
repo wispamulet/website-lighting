@@ -11,7 +11,7 @@ const projectSchema = new mongoose.Schema({
   },
   slug: String,
   type: {
-    type: String,
+    type: [String],
     required: 'Please choose a type!'
   },
   photos: [
@@ -27,10 +27,10 @@ const projectSchema = new mongoose.Schema({
       thumbnail: String
     }
   ],
-  descriptions: {
-    type: [String],
-    trim: true,
-  },
+  // descriptions: {
+  //   type: [String],
+  //   trim: true,
+  // },
   author: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
@@ -55,16 +55,16 @@ projectSchema.pre('save', async function (next) {
 projectSchema.statics.getTypesList = function () {
   return this.aggregate([
     { $unwind: '$type' },
-    { $group: { _id: '$type', count: { $sum: 1 } }},
+    { $group: { _id: '$type', count: { $sum: 1 } } },
     { $sort: { count: -1 } }
   ]);
 };
 
-projectSchema.statics.getIntroList = function () {
-  return this.aggregate([
-    { $unwind: '$type' },
-    { $sample: { size: 3 } }
-  ]);
-};
+// projectSchema.statics.getIntroList = function () {
+//   return this.aggregate([
+//     { $unwind: '$type' },
+//     { $sample: { size: 3 } }
+//   ]);
+// };
 
 module.exports = mongoose.model('Project', projectSchema);

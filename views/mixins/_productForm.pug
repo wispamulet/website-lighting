@@ -74,7 +74,7 @@ mixin productForm(product = {})
           label(for="ctn_weight") CTN Weight
           input#ctn_weight(type="text" name="ctn_weight" value=ctn_weight[l])
           - l++
-    input#add-specification.button(type="button" value="Add An Item")
+    input#add-specification.button(type="button" value="Add An Specification")
     //- Bullet points
     h3 Bullet Points
     - let b = 0
@@ -85,7 +85,7 @@ mixin productForm(product = {})
           label(for="bullet_point") Description
           input(type="text" name="bullet_points" value=bulletPoints[b])
           - b++
-    input#add-bullet-point.button(type="button" value="Add An Item")
+    input#add-bullet-point.button(type="button" value="Add An Bullet Point")
     //- Photos
     h3 Photos
     - let p = 0
@@ -100,7 +100,7 @@ mixin productForm(product = {})
           label(for=description) Description
           input(type="text" name="descriptions" value=descriptions[p])
           - p++
-    input#add-photo.button(type="button" value="Add An Item")
+    input#add-photo.button(type="button" value="Add An Photo")
     //- Brochure
     h3 Brochure
     label(for="brochure")

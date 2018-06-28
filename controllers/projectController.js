@@ -67,7 +67,7 @@ exports.getProjectsByType = async (req, res) => {
   const typePromise = Project.getTypesList();
   const projectPromise = Project.find({ type: typeQuery });
   const [types, projects] = await Promise.all([typePromise, projectPromise]);
-
+  // res.json(types);
   let all = 0;
   types.forEach((t) => {
     all += t.count;

@@ -3,31 +3,46 @@ mixin projectForm(project = {})
     label(for="type")
       | Type&nbsp;
       span (Required)
-    - const choices = ['Indoor', 'Outdoor']
+    - const choices = ['Indoor', 'Outdoor', 'Street', 'Commercial', 'Farm', 'Garden', 'Park', 'Parking lot', 'Residential', 'Tunnel', 'Warehouse', 'Others']
     - const type = project.type || ''
     .types
       each choice in choices
         .type
-          input(type="radio" id=choice value=choice name="type" checked=(type.includes(choice)) required)
+          input(type="checkbox" id=choice value=choice name="type" checked=(type.includes(choice)))
           label(for=choice) #{choice}
     label(for="name")
       | Name&nbsp;
       span (Required)
     input(type="text" id="name" name="name" value=project.name required)
-    - const index = [1, 2, 3, 4, 5]
+    //- - const index = [1, 2, 3, 4, 5]
+    //- - const photos = project.photos || []
+    //- - const descriptions = project.description || []
+    //-   each i in index
+    //-     label(for=`photo${i}`)
+    //-       | Photo#{i}&nbsp;
+    //-       if i <= 1
+    //-         span (Required)
+    //-     input(type="file" id=`photo${i}` name="photos" accept="iamge/gif, image/png, image/jpeg")
+    //-     if photos[i - 1]
+    //-       img(src=`/uploads/projects/${photos[i - 1].thumbnail}`, alt="")
+    //-     label(for=`description${i}`)
+    //-       | Description#{i}&nbsp;
+    //-       if i <= 1
+    //-         span (Recommended)
+    //-     input(type="text" id=`description${i}` name="descriptions" value=descriptions[i - 1])
+    h3 Photos&nbsp;
+      span no more than 5 pictures
+    - let p = 0
     - const photos = project.photos || []
-    - const descriptions = project.description || []
-      each i in index
-        label(for=`photo${i}`)
-          | Photo#{i}&nbsp;
-          if i <= 1
-            span (Required)
-        input(type="file" id=`photo${i}` name="photos" accept="iamge/gif, image/png, image/jpeg")
-        if photos[i - 1]
-          img(src=`/uploads/projects/${photos[i - 1].thumbnail}`, alt="")
-        label(for=`description${i}`)
-          | Description#{i}&nbsp;
-          if i <= 1
-            span (Recommended)
-        input(type="text" id=`description${i}` name="descriptions" value=descriptions[i - 1])
+    - const descriptions = project.descriptions || []
+      while p < photos.length
+        .form-photo
+          button.form__remove(onClick="this.parentElement.remove()") &times;
+          label(for="photo") Photo
+          input(type="file" name="photos" accept="image/gif, image/png, image/jpeg")
+          img(src=`/uploads/projects/${photos[p].thumbnail}`, alt=`${descriptions[p]}`)
+          label(for=description) Description
+          input(type="text" name="descriptions" value=descriptions[p])
+          - p++
+    input#add-photo.button(type="button" value="Add An Photo")
     input.button(type="submit" value="Save")
