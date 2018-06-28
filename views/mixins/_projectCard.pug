@@ -15,10 +15,10 @@ mixin projectCard(project = {})
                   .project__img(style=`background-image: url(/uploads/projects/${thumbnail || 'default_300x300.jpg'})`)
               //- figcaption(itemprop="caption description")= descriptions[i]
             - i += 1;
-      if user && project.author.equals(user._id)
-        .project__edit
-          a(href=`/projects/${project._id}/edit`)
-            != h.icon('pencil')
+    if user && project.author.equals(user._id)
+      .project__edit
+        a(href=`/projects/${project._id}/edit`)
+          != h.icon('pencil')
 
     //- article
       h2= project.name
