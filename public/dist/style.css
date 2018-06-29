@@ -851,6 +851,9 @@ header {
   }
 }
 @media (max-width: 600px) {
+  .intro__company__button a {
+    font-size: 1rem;
+  }
   .intro__products-wrapper {
     height: 210rem;
   }
