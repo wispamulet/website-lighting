@@ -1,13 +1,21 @@
 .certificates
-  padding 5rem 0
+  // @extend .inner-2
+  // padding 5rem 0
+  max-width 120rem
+  padding 5rem 2rem
+  margin 0 auto
 
 .certificate
-  width 1000px
-  margin 0 auto
+  // width 1000px
+  // margin 0 auto
   border 1px solid $orange
   padding 1rem
   margin-top 3rem
+  // display grid
+  // grid-template-columns repeat(auto-fit, minmax(200px, 1fr))
+  // grid-gap 2rem
   h2
+    grid-column 1 / -1
     text-align left
     display flex
     align-items center
@@ -17,7 +25,22 @@
     width 3rem
   &-gallery
     display grid
-    grid-template-columns repeat(5, minmax(100px, 1fr))
+    grid-template-columns repeat(5, 1fr)
     grid-gap 2rem
     figure
       margin 0
+
+@media (max-width: 1000px)
+  .certificate
+    &-gallery
+      grid-template-columns repeat(4, 1fr)
+
+@media (max-width: 800px)
+  .certificate
+    &-gallery
+      grid-template-columns repeat(3, 1fr)
+
+@media (max-width: 600px)
+  .certificate
+    &-gallery
+      grid-template-columns repeat(2, 1fr)

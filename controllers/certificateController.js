@@ -51,7 +51,7 @@ exports.createCertificate = async (req, res) => {
   const certificate = await (new Certificate(req.body)).save();
 
   req.flash('success', `Successfully create <strong>${certificate.name}</strong>!`);
-  res.redirect('/certificates');
+  res.redirect('/support/certificates');
 };
 
 exports.editCertificate = async (req, res) => {

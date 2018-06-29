@@ -1,5 +1,5 @@
 mixin certificateForm(certificate = {})
-  pre= h.dump(certificate)
+  //- pre= h.dump(certificate)
   form.add__form(action=`/add-certificate/${certificate._id || ''}` method="POST" enctype="multipart/form-data")
     label(for="name")
       | Name&nbsp;

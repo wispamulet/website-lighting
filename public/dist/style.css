@@ -175,16 +175,17 @@
   margin-bottom: 2rem;
 }
 .certificates {
-  padding: 5rem 0;
+  max-width: 120rem;
+  padding: 5rem 2rem;
+  margin: 0 auto;
 }
 .certificate {
-  width: 1000px;
-  margin: 0 auto;
   border: 1px solid #f08519;
   padding: 1rem;
   margin-top: 3rem;
 }
 .certificate h2 {
+  grid-column: 1/-1;
   text-align: left;
   display: -ms-flexbox;
   display: flex;
@@ -199,12 +200,30 @@
 .certificate-gallery {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(100px, 1fr))[5];
-      grid-template-columns: repeat(5, minmax(100px, 1fr));
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
   grid-gap: 2rem;
 }
 .certificate-gallery figure {
   margin: 0;
+}
+@media (max-width: 1000px) {
+  .certificate-gallery {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  .certificate-gallery {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .certificate-gallery {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
 }
 .contact__image {
   -ms-grid-row-span: 1;
