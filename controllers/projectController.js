@@ -68,16 +68,16 @@ exports.getProjectsByType = async (req, res) => {
   const projectPromise = Project.find({ type: typeQuery });
   const [types, projects] = await Promise.all([typePromise, projectPromise]);
   // res.json(types);
-  let all = 0;
-  types.forEach((t) => {
-    all += t.count;
-    return all;
-  });
+  // let all = 0;
+  // types.forEach((t) => {
+  //   all += t.count;
+  //   return all;
+  // });
   // types.unshift({ _id: 'Gallery', count: all });
   // console.log(types);
 
   // res.json(types);
-  res.render('projects', { title: `${type || 'Gallery'}`, type, types, all, projects }); // eslint-disable-line
+  res.render('projects', { title: `${type || 'Gallery'}`, type, types, projects }); // eslint-disable-line
 };
 
 exports.editProject = async (req, res) => {

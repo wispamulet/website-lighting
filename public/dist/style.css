@@ -1550,7 +1550,6 @@ template {
 }
 .projects .project {
   position: relative;
-  outline: 1px solid #f08519;
   background: #fff;
   position: relative;
   top: 0;
