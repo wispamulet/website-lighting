@@ -807,10 +807,10 @@ header {
 }
 @media (max-width: 1000px) {
   .intro__products-wrapper {
-    height: 105rem;
+    height: 110rem;
   }
   .intro__product-wrapper {
-    padding: 1rem 12rem;
+    max-width: 70rem;
     -ms-grid-columns: (1fr)[2] !important;
         grid-template-columns: repeat(2, 1fr) !important;
     grid-gap: 2rem 12rem;
@@ -818,16 +818,15 @@ header {
 }
 @media (max-width: 800px) {
   .intro__product-wrapper {
-    padding: 1rem 5rem;
-    grid-gap: 2rem 10rem;
+    grid-gap: 2rem 5rem;
   }
 }
 @media (max-width: 600px) {
   .intro__products-wrapper {
-    height: 205rem;
+    height: 210rem;
   }
   .intro__product-wrapper {
-    padding: 1rem 12rem;
+    max-width: 40rem;
     -ms-grid-columns: 1fr !important;
         grid-template-columns: 1fr !important;
   }
