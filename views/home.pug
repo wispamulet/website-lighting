@@ -3,34 +3,34 @@ extends layout
 include mixins/_pswp
 
 block content
-  .slideshow
-    .slide.fade
-      img(src="/images/photos/banner-0623-01.jpg")
-      //- .slide__caption Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    .slide.fade
-      img(src="/images/photos/banner-0902-01.jpg")
-      //- .slide__caption Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, quibusdam!
-    .slide.fade
-      img(src="/images/photos/banner-0623-02.jpg")
-      //- .slide__caption Lorem ipsum dolor sit.
-    .slide.fade
-      img(src="/images/photos/banner-0902-03.jpg")
-      //- .slide__caption Lorem ipsum dolor sit amet consectetur.
-    //- .slide.fade
-    //-   img(src="/images/photos/photo-1520320142774-5381578416fa.jpg")
-    //-   .slide__caption Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    //- a.prev
-    //-   i.fa.fa-angle-left
-    //- a.next
-    //-   i.fa.fa-angle-right
-    .dots
-      .dot
-      .dot
-      .dot
-      .dot
-      //- .dot
   .content
-    +pswp()
+    .slideshow
+      .slide.fade
+        img(src="/images/photos/banner-0623-01.jpg")
+        //- .slide__caption Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+      .slide.fade
+        img(src="/images/photos/banner-0902-01.jpg")
+        //- .slide__caption Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, quibusdam!
+      .slide.fade
+        img(src="/images/photos/banner-0623-02.jpg")
+        //- .slide__caption Lorem ipsum dolor sit.
+      .slide.fade
+        img(src="/images/photos/banner-0902-03.jpg")
+        //- .slide__caption Lorem ipsum dolor sit amet consectetur.
+      //- .slide.fade
+      //-   img(src="/images/photos/photo-1520320142774-5381578416fa.jpg")
+      //-   .slide__caption Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      //- a.prev
+      //-   i.fa.fa-angle-left
+      //- a.next
+      //-   i.fa.fa-angle-right
+      .dots
+        .dot
+        .dot
+        .dot
+        .dot
+        //- .dot
+
     .intro
       //- .intro__cornlight
         h1 Features & Benefits
@@ -109,12 +109,12 @@ block content
                 a(href="/products/Smart LED")
                   span more
                   i.fas.fa-chevron-right
-
       .intro__certificates
         h2 Our Certificates
         .intro__certificates__link
           a(href="/certificates")
             img(src="/images/photos/certificates.png", alt="certificate")
+
     .quote
       .inner
         p.one "Tech innovation, quality first"

@@ -12,11 +12,14 @@ header
 
 .top
   // padding 1rem 0
+  height 5rem
   background #f7ecdd
   display grid
   grid-template-columns repeat(10, 1fr)
   align-items center
   &__logo
+    .mobile
+      display none
     grid-column 3 / span 2
     a
       display flex
@@ -28,6 +31,7 @@ header
       padding 0 .5rem
   .language
     padding-left 2rem
+    grid-column-start -3
     &--active
       color $orange !important
     span
@@ -37,20 +41,27 @@ header
     text-decoration none
     font-size 1.2rem
 
-// .header--logo
-//   justify-self center
-//   width 10rem
-//   padding 2rem 0
+@media (max-width: 1000px)
+  .top
+    height 5.5rem
+    &__logo
+      grid-column 3 / span 3
+    .user
+      grid-column 6 / -3
 
-// @media (max-width: 1100px)
-//   .header--logo
-//     width 7rem
 
 @media (max-width: 800px)
-  // header
-  //   grid-template-columns 1fr 1fr
   .top
-    grid-template-columns 1fr 1fr
-  .language-wrapper
-    .language
-      padding 5px 5px
+    &__logo
+      grid-column 2 / span 3
+    .user
+      grid-column 5 / -3
+
+@media (max-width: 600px)
+  .top
+    &__logo
+      img
+        display none
+      .mobile
+        display block
+        height 5rem

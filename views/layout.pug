@@ -28,9 +28,10 @@ html(lang="en")
           .top__logo
             a(href="/")
               img(src="/images/photos/new-sunshine.png")
+              img.mobile(src="/images/photos/NS.png")
           .user
             if user
-              if user.level === 1
+              //- if user.level === 1
                 //- a(href="/add-slideshow") Add Slideshow
                 a(href="/add-product") Add Product
                 a(href="/add-project") Add Project
