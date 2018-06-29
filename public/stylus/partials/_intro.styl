@@ -52,6 +52,7 @@
 
   &__company
     max-width 90rem
+    padding 0 3rem
     margin 0 auto
     &-wrapper
       padding 3rem 0
@@ -93,7 +94,6 @@
     left 0
     &-wrapper
       background-image url('/images/photos/intro_products_bg.jpg')
-      // background-image url('http://www.lektroninc.com/wp-content/uploads/2018/03/DSC_0256-e1522245038167.jpg')
       background-size cover
       background-position 50% 20%
       background-attachment fixed
@@ -155,17 +155,31 @@
       img
         width 80%
 
+@media (max-width: 1000px)
+  .intro
+    &__products
+      &-wrapper
+        height 105rem
+    &__product
+      // height 52rem
+      &-wrapper
+        padding 1rem 12rem
+        grid-template-columns repeat(2, 1fr) !important
+        grid-gap 2rem 12rem
+
 @media (max-width: 800px)
   .intro
-    &__company
-      padding 2rem 0
-      p
-        font-size 1.6rem
-        word-wrap true
-      &-gallery
-        grid-template-columns 1fr
-      &__img
-        height 20rem
+    &__product
+      &-wrapper
+        padding 1rem 5rem
+        grid-gap 2rem 10rem
+
+@media (max-width: 600px)
+  .intro
     &__products
-      .inner-2
-        grid-template-columns 1fr
+      &-wrapper
+        height 205rem
+    &__product
+      &-wrapper
+        padding 1rem 12rem
+        grid-template-columns 1fr !important

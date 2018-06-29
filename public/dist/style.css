@@ -417,6 +417,24 @@ footer .socials__links {
       justify-items: center;
   grid-gap: 1rem;
 }
+footer .socials__twitter {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 2fr;
+      grid-template-rows: 1fr 2fr;
+  -ms-grid-column-align: center;
+      justify-items: center;
+  grid-gap: 1rem;
+}
+footer .socials__fb {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 2fr;
+      grid-template-rows: 1fr 2fr;
+  -ms-grid-column-align: center;
+      justify-items: center;
+  grid-gap: 1rem;
+}
 footer .socials__link {
   -ms-grid-row-span: 1;
   -ms-grid-row: 2;
@@ -555,6 +573,15 @@ footer .copyright p span {
   color: #fff;
 }
 @media (max-width: 1200px) {
+  .socials {
+    padding: 5rem !important;
+    -ms-grid-columns: (1fr)[3] !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .socials__links {
+    -ms-grid-column: 1 !important;
+        grid-column-start: 1 !important;
+  }
   .contact {
     -ms-grid-columns: (1fr)[6] !important;
         grid-template-columns: repeat(6, 1fr) !important;
@@ -650,6 +677,7 @@ header {
 }
 .intro__company {
   max-width: 90rem;
+  padding: 0 3rem;
   margin: 0 auto;
 }
 .intro__company-wrapper {
@@ -777,24 +805,31 @@ header {
 .intro__certificates__link img {
   width: 80%;
 }
+@media (max-width: 1000px) {
+  .intro__products-wrapper {
+    height: 105rem;
+  }
+  .intro__product-wrapper {
+    padding: 1rem 12rem;
+    -ms-grid-columns: (1fr)[2] !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    grid-gap: 2rem 12rem;
+  }
+}
 @media (max-width: 800px) {
-  .intro__company {
-    padding: 2rem 0;
+  .intro__product-wrapper {
+    padding: 1rem 5rem;
+    grid-gap: 2rem 10rem;
   }
-  .intro__company p {
-    font-size: 1.6rem;
-    word-wrap: true;
+}
+@media (max-width: 600px) {
+  .intro__products-wrapper {
+    height: 205rem;
   }
-  .intro__company-gallery {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-  }
-  .intro__company__img {
-    height: 20rem;
-  }
-  .intro__products .inner-2 {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+  .intro__product-wrapper {
+    padding: 1rem 12rem;
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
   }
 }
 body {

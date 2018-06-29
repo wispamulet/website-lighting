@@ -18,6 +18,16 @@ footer
       grid-template-rows 1fr 2fr
       justify-items center
       grid-gap 1rem
+    &__twitter
+      display grid
+      grid-template-rows 1fr 2fr
+      justify-items center
+      grid-gap 1rem
+    &__fb
+      display grid
+      grid-template-rows 1fr 2fr
+      justify-items center
+      grid-gap 1rem
     &__link
       grid-row 2 / span 1
       svg
@@ -116,6 +126,11 @@ footer
         color white
 
 @media (max-width: 1200px)
+  .socials
+    padding 5rem !important
+    grid-template-columns repeat(3, 1fr) !important
+    &__links
+      grid-column-start 1 !important
   .contact
     grid-template-columns repeat(6, 1fr) !important
     &__email
