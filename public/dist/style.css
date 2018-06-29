@@ -1377,6 +1377,7 @@ template {
   -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 2rem;
+  margin-bottom: 3rem;
 }
 .products-container {
   padding: 5rem 2rem;
@@ -1393,7 +1394,6 @@ template {
 }
 .products .product {
   background: #fff;
-  margin-bottom: 3rem;
   position: relative;
   outline: 1px solid #f08519;
   transition: all 0.3s ease-in-out;
@@ -1479,13 +1479,9 @@ template {
 .products .product-gallery figure figcaption {
   display: none;
 }
-@media (max-width: 800px) {
-  .products {
-    background: #000;
-  }
-}
 .project-types {
-  margin: 5rem 0;
+  grid-column: 1/-1;
+  margin: 3rem 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(15rem, 1fr))[auto-fill];
@@ -1517,7 +1513,7 @@ template {
   display: grid;
   -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-gap: 5rem 2rem;
+  grid-gap: 4rem 2rem;
 }
 .projects__banner {
   height: 30rem;
