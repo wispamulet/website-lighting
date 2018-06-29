@@ -2,8 +2,8 @@
 .project
   &-types
     margin 5rem 0
-    display flex
-    justify-content center
+    display grid
+    grid-template-columns repeat(auto-fill, minmax(15rem, 1fr))
   &__link
     display grid
     grid-template-columns 1fr 2rem
@@ -21,11 +21,12 @@
 
 .gallery
   @extend .inner-2
-  padding 5rem 0
+  padding 5rem 2rem
 
 .projects
   display grid
-  grid-template-columns repeat(4, 1fr)
+  // grid-template-columns repeat(4, 1fr)
+  grid-template-columns repeat(auto-fit, minmax(25rem, 1fr))
   grid-gap 5rem 2rem
   &__banner
     height 30rem
@@ -80,6 +81,10 @@
     //   font-weight 600
     //   letter-spacing .1rem
 
-@media (max-width: 800px)
-  .projects
-    grid-template-columns 1fr
+// @media (max-width: 1200px)
+//   .projects
+//     grid-template-columns 1fr
+
+// @media (max-width: 800px)
+//   .projects
+//     grid-template-columns 1fr
