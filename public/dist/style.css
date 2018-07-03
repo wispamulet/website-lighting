@@ -1926,6 +1926,10 @@ template {
     -ms-grid-columns: 1fr !important;
         grid-template-columns: 1fr !important;
   }
+  .single-gallery__container {
+    width: 90%;
+    margin: 0 auto;
+  }
   .single__table {
     -ms-grid-columns: 1fr !important;
         grid-template-columns: 1fr !important;
