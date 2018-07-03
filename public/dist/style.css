@@ -879,6 +879,9 @@ header {
     -ms-grid-columns: 1fr !important;
         grid-template-columns: 1fr !important;
   }
+  .intro__certificates__link img {
+    width: 100%;
+  }
 }
 body {
   position: relative;
@@ -993,6 +996,12 @@ body.rb--hide .rb__btn {
   }
   .content {
     padding: 0;
+  }
+  .content .quote p {
+    font-size: 1.6rem;
+  }
+  .content .quote p.one {
+    font-size: 3rem;
   }
   .banner {
     height: 15rem;
