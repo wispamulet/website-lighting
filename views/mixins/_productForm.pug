@@ -19,9 +19,9 @@ mixin productForm(product = {})
     label(for="voltage") Voltage
     input#voltage(type="text" name="voltage" value=product.voltage)
     label(for="ip_rate") IP Rate
-    input#ip_rate(type="text" name="ip_rate" value=product.ip_rate)
+    input#ip_rate(type="text" name="ip_rate" value=product.ip_rate placeholder="40")
     label(for="cri") CRI
-    input#cri(type="text" name="cri" value=product.cri)
+    input#cri(type="text" name="cri" value=product.cri placeholder="> 80")
     label(for="lifespan") Lifespan
     input#lifespan(type="text" name="lifespan" value=product.lifespan)
     label(for="application") Application
@@ -59,19 +59,19 @@ mixin productForm(product = {})
           button.form__remove(onClick="this.parentElement.remove()") &times;
           label(for="model_no") Model No.
           input#model_no(type="text" name="model_no" value=model_no[l])
-          label(for="power") Power
+          label(for="power") Power (W)
           input#power(type="text" name="power" value=power[l])
           label(for="base_type") Base Type
           input#base_type(type="text" name="base_type" value=base_type[l])
-          label(for="lumen") Lumens
+          label(for="lumen") Lumens (LM)
           input#lumen(type="text" name="lumen" value=lumen[l])
-          label(for="dim") Dimensions
+          label(for="dim") Dimensions (in)
           input#dim(type="text" name="dim" value=dim[l])
-          label(for="ctn_size") CTN Size
+          label(for="ctn_size") CTN Size (in)
           input#ctn_size(type="text" name="ctn_size" value=ctn_size[l])
-          label(for="ctn_quantity") CTN Quantity
+          label(for="ctn_quantity") CTN Quantity (pcs)
           input#ctn_quantity(type="text" name="ctn_quantity" value=ctn_quantity[l])
-          label(for="ctn_weight") CTN Weight
+          label(for="ctn_weight") CTN Weight (lbs)
           input#ctn_weight(type="text" name="ctn_weight" value=ctn_weight[l])
           - l++
     input#add-specification.button(type="button" value="Add An Specification")

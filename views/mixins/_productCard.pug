@@ -1,5 +1,6 @@
 mixin productCard(product = {})
   .product
+    - const name = product.name
     - const slug = product.slug
     - const photo = product.photos[0].thumbnail || ''
     - const description = product.descriptions[0] || ''

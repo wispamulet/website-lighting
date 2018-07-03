@@ -4,7 +4,7 @@ mixin projectForm(project = {})
       | Type&nbsp;
       span (Required)
     - const choices = ['Indoor', 'Outdoor', 'Street', 'Commercial', 'Farm', 'Garden', 'Park', 'Parking lot', 'Residential', 'Tunnel', 'Warehouse', 'Others']
-    - const type = project.type || ''
+    - const type = project.type || []
     .types
       each choice in choices
         .type
