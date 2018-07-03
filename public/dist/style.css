@@ -1934,6 +1934,9 @@ template {
     -ms-grid-columns: 1fr !important;
         grid-template-columns: 1fr !important;
   }
+  .single__table h2 {
+    text-align: center;
+  }
 }
 #skype {
   z-index: 95;
