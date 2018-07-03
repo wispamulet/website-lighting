@@ -63,3 +63,18 @@
     margin 0 auto
     display flex
     justify-content center
+
+@media (max-width: 800px)
+  .about__us
+    padding 5rem 1rem
+    grid-template-columns 1fr
+    > h2, > p
+      grid-column 1 / -1
+    .tip
+      .query__btn
+        display block
+    figure
+      margin 0
+    blockquote
+      p
+        font-size 3rem
