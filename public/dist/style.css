@@ -974,6 +974,9 @@ body.rb--hide .rb__btn {
   .content {
     padding: 0;
   }
+  .banner {
+    height: 15rem;
+  }
 }
 .map #map {
   width: 100%;
@@ -1561,6 +1564,11 @@ template {
 .products .product-gallery figure figcaption {
   display: none;
 }
+@media (max-width: 800px) {
+  .products__banner {
+    height: 15rem;
+  }
+}
 .project-types {
   grid-column: 1/-1;
   margin: 3rem 0;
@@ -1638,6 +1646,11 @@ template {
   top: 1rem;
   right: 1rem;
   z-index: 99;
+}
+@media (max-width: 800px) {
+  .projects__banner {
+    height: 15rem;
+  }
 }
 .query {
   color: #000;
@@ -1843,6 +1856,7 @@ template {
       align-content: flex-start;
 }
 .single-gallery__container {
+  padding: 1rem;
   width: 40rem;
   display: -ms-flexbox;
   display: flex;
@@ -1906,6 +1920,16 @@ template {
 }
 .single__table--head p {
   font-weight: 500;
+}
+@media (max-width: 800px) {
+  .single {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+  }
+  .single__table {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+  }
 }
 #skype {
   z-index: 95;

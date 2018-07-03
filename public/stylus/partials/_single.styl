@@ -52,6 +52,7 @@
 
   &-gallery
     &__container
+      padding 1rem
       width 40rem
       display flex
       align-items center
@@ -102,3 +103,9 @@
       color #fff
       p
         font-weight 500
+
+@media (max-width: 800px)
+  .single
+    grid-template-columns 1fr !important
+    &__table
+      grid-template-columns 1fr !important
