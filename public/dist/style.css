@@ -245,74 +245,42 @@
         grid-template-columns: repeat(2, 1fr);
   }
 }
-.contact__image {
-  -ms-grid-row-span: 1;
-  -ms-grid-row: 2;
-      grid-row: 2/span 1;
-  grid-column: 1/-1;
+.contact-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 5rem 0;
 }
-.contact__title {
-  margin: 5rem 0;
-}
-.contact__title h2 {
+.contact-wrapper > h2 {
   font-size: 2rem;
   font-weight: 500;
   text-align: left;
   line-height: 1.5;
+  margin-bottom: 10rem;
 }
-.contact__region {
-  margin: 5rem 0;
-}
-.contact__region > * {
+.contact__us,
+.contact__cn {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 3fr;
       grid-template-columns: 1fr 3fr;
-}
-.contact__region > * > h2 {
-  grid-column: 1/-1;
-  text-align: left;
-  color: #f08519;
-  font-weight: 500;
-}
-.contact__region > *:not(:last-child) {
-  border-bottom: 1px solid #b9b6b6;
-}
-.contact__region__cities {
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
   grid-gap: 5rem;
+  padding-bottom: 3rem;
 }
-.contact__region__city {
-  text-align: center;
+.contact__title > * {
+  margin: 0;
+  line-height: 1.5;
+  text-align: left;
 }
-.contact__region__city h2 {
-  font-size: 1.8rem;
-  font-weight: 500;
+.contact__title h2 {
+  font-size: 2.4rem;
+  text-transform: capitalize;
+  color: #f08519;
 }
-.contact__region__person {
-  font-weight: 500;
+.contact__title p {
+  font-size: 1.6rem;
 }
-.contact__region__person h3 {
-  font-weight: 500;
+.contact__addr {
   font-style: italic;
-}
-.contact__region__person a {
-  font-size: 1.5rem;
-}
-.contact__region__person span {
-  font-style: italic;
-}
-@media (max-width: 800px) {
-  .contact__region__cities {
-    grid-column: 1/-1;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-  }
 }
 .error {
   font-size: 1.5rem;
@@ -743,7 +711,7 @@ header {
 .intro__company__button a {
   display: inline-block;
   font-size: 1.4rem;
-  outline: 1px #f08519 solid;
+  border: 1px #f08519 solid;
   color: #8cc640;
   text-transform: uppercase;
   padding: 1rem 2rem;
@@ -757,7 +725,7 @@ header {
 .intro__company__button a:hover {
   color: #fff;
   background: #8cc640;
-  outline-color: #8cc640;
+  border-color: #8cc640;
 }
 .intro__products {
   background: rgba(0,0,0,0.3);
@@ -911,6 +879,7 @@ body.rb--hide .rb__btn {
 }
 .content {
   background: #fdf9f5;
+  background: #fff;
 }
 .content .quote {
   background: #444;
