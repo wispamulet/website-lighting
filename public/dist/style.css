@@ -2056,6 +2056,13 @@ template {
   font-size: 2.2rem;
   color: #f08519;
 }
+.support__qa p.sample {
+  line-height: 1.5;
+}
+.support__qa p a {
+  background: #f08519;
+  color: #fff;
+}
 .support__payment {
   margin-bottom: 4rem;
 }
@@ -2071,6 +2078,11 @@ template {
 }
 .support__payment__bank {
   margin-bottom: 3rem;
+}
+@media (max-width: 800px) {
+  .support {
+    padding: 5rem 2rem;
+  }
 }
 html {
   font-family: 'Lato', 'sans-serif';

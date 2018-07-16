@@ -10,125 +10,19 @@ block content
     .projects__banner
       .banner
     .support
-      //- .support__QA
-        h2 Q&A
-        - const value = "true"
-        +supportBtn(value)
-        .support__QA__details
-          .support__qa
-            h2 How to visit us?
-            p About 30 minutes’ driving from Luohu or Huanggang border (come from Hongkong).
-          .support__qa
-            h2 How to get the samples?
-            p Please email us what items and how many you need. Our team will send you a PI (Proforma Invoice) for your ref. Normally it takes 3-5 days to prepare samples after we confirm your payments.
-          .support__qa
-            h2 How to pay us?
-            +supportBtn()
-            .payment__info
-              .payment__info--name
-                h3 Paypal Account:
-              .payment__info--detail
-                p robertqin86@163.com
-            .payment__info
-              .payment__info--name
-                h3 Wester Union:
-              .payment__info--detail
-                h3 Beneficiary
-                .payment__info--detail-l
-                  h3 Fore name:
-                .payment__info--detail-r
-                  p Dangui
-                .payment__info--detail-l
-                  h3 Last name:
-                .payment__info--detail-r
-                  p Wei
-                .payment__info--detail-l
-                  h3 Address:
-                .payment__info--detail-r
-                  p 3/F, Building 6th, Jiayiyuan Science&Technology Park, Huaning Rd, Dalang street, Longhua new district, Shenzhen, P.R.China.
-                .payment__info--detail-l
-                  h3 Tel.
-                .payment__info--detail-r
-                  p +86 769 8800 4885 / +86 138 2658 8764
-                .payment__info--detail-l
-                  h3 24/7 service:
-                .payment__info--detail-r
-                  p +1 201 969 5019 (Robert)
-            .payment__info
-              .payment__info--name
-                h3 Wire Transfer:
-              .payment__info--detail
-                h3 1. Beneficiary Banker
-                .payment__info--detail-l
-                  h3 Bank Name:
-                .payment__info--detail-r
-                  p Agricultural Bank of china, Shenzhen Branch Longhua Sub-bank
-                .payment__info--detail-l
-                  h3 Beneficiary:
-                .payment__info--detail-r
-                  p Shenzhen zhaopeng Technology Co.,Ltd
-                .payment__info--detail-l
-                  h3 USD A/C:
-                .payment__info--detail-r
-                  p 41029400040022807
-                .payment__info--detail-l
-                  h3 Swift Code:
-                .payment__info--detail-r
-                  p ABOCCNBJ410
-                .payment__info--detail-l
-                  h3 Address:
-                .payment__info--detail-r
-                  p Agricultural Bank Building, Renminbei road, Longhua District, Shenzhen, 518109, P.R.China.
-                h3 2. US customer pay to this bank info blw:
-                .payment__info--detail-l
-                  h3 Bank Name:
-                .payment__info--detail-r
-                  p Chase
-                .payment__info--detail-l
-                  h3 Account Name:
-                .payment__info--detail-r
-                  p New Sunshine Lighting Inc
-                .payment__info--detail-l
-                  h3 Account Number:
-                .payment__info--detail-r
-                  p 912500977
-                .payment__info--detail-l
-                  h3 Wire Routing Transit Number:
-                .payment__info--detail-r
-                  p 322271627 (domestic wire)
-                .payment__info--detail-l
-                  h3 Address:
-                .payment__info--detail-r
-                  p 9647 Las Tunas Drive, Temple City, CA, 91780
-      //- .support__FB
-        h2 Features&Benefits
-        +supportBtn()
-        .support__FB__details
-          .support__fb
-            h2 Affordable
-            p Prices of the New Sunshine LED corn bulbs have come down to an affordable level price where it can most projects to make the switch it.
-          .support__fb
-            h2 80% Energy Save
-            p The New Sunshine LED corn bulbs consumes 80-85% less energy than incandescent lamp and high voltage sodium lamp.
-          .support__fb
-            h2 Long lifespan, over 50,000 hours
-            p The New Sunshine LED corn bulb is tested to last 50,000 hours , if lighting 3 hours a day the New Sunshine LED lamp can last up to 31 years.
-          .support__fb
-            h2 Green without mercury
-            p Mercury is classified as a poison to humans, when disposed of improperly, it harmful to our health, New Sunshine LED light bulbs do not contain any mercury.
-          .support__fb
-            h2 Green and recyclable
-            p New sunshine products do not contain any harmful substances, when the LED light bulb reaches its end of life simply toss it in the recycling bucket,Unlike traditional fluorescent lamp, need special treatment.
-          .support__fb
-            h2 Product quality assurance
-            p We have 8 Product certificates,With rights to import more than 80 countries and win thousands of companies trust.
       .support__qa
         h2 How to visit us?
         p US warehouse: 13321 Garden Grove Blvd, #N, Garden Grove, CA 92843, USA
         p CN industry: 4/F, Block D, Dejiarun industrial park, 128 indstrial zone, Tangxia, Dongguan, Guangdong Province, P.R.China
       .support__qa
         h2 How to get the samples?
-        p Please email us what items and how many you need. Our teams will send you a PI (Proforma Invoice) for your ref. Normally it takes 3-5 days to prepare samples after we confirm your payments.
+        p.sample Please email us to&nbsp;
+          a(href="mailto:order@newsunshine.net") order@newsunshine.net
+          | &nbsp;or call us directly&nbsp;
+          a(href="tel:+1 201-969-5019") +1 201-969-5019
+          | &nbsp;/&nbsp;
+          a(href="tel:+1 323-616-7060") +1 323-616-7060
+          | , we will send you samples by UPS/Fedex ASAP after you comfirm your payments.
       .support__qa
         h2 How to pay us?
         .support__payment
@@ -142,11 +36,11 @@ block content
             p Bank Address: 9647 Las Tunas Drive, Temple City, CA 91780
           .support__payment__bank
             p 2. BENEFICIARY BANKER:
-            p INDUSTRIAL AND COMMERCIAL BANK OF CHINA DONGGUAN BRANCH TANGXIA SUB-BRANCH
-            p BENEFICIARY: Dongguan Zhao Peng Lighting Technology Co., Ltd
+            p INDUSTRIAL AND COMMERCIAL BANK OF CHINA DONGGUAN BRANCH TANGXIA SUB-BRANCH
+            p BENEFICIARY: Dongguan ZhaoPeng Lighting Technology Co., Ltd
             p USD A/C: 2010028709144518371
             p SWIFT CODE: ICBKCNBJGDG
-            p ADDRESS: NO.10 HUAYUANXIN STREET TANGXIA TOWN DONGGUAN CHINA
+            p ADDRESS: NO.10 HUAYUANXIN STREET TANGXIA TOWN DONGGUAN CHINA
         .support__payment
           p 2. Paypal Account:
           p 13510025749@163.com (US customers pay)
