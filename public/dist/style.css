@@ -86,7 +86,7 @@
 }
 @media (max-width: 800px) {
   .about__us {
-    padding: 5rem 1rem;
+    padding: 5rem 2rem;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
@@ -696,12 +696,12 @@ header {
 }
 .intro__company-wrapper {
   padding: 3rem 0;
-  background-color: #fdf9f5;
 }
 .intro__company p {
   font-size: 1.6rem;
   line-height: 1.5;
   text-indent: 2rem;
+  letter-spacing: 1px;
 }
 .intro__company__button {
   font-size: 1.6rem;
@@ -802,7 +802,6 @@ header {
   padding-right: 1rem;
 }
 .intro__certificates {
-  background: #fdf9f5;
   padding: 3rem 0;
 }
 .intro__certificates h2 {
@@ -2055,6 +2054,9 @@ template {
   text-align: left;
   font-size: 2.2rem;
   color: #f08519;
+}
+.support__qa p {
+  letter-spacing: 1px;
 }
 .support__qa p.sample {
   line-height: 1.5;
