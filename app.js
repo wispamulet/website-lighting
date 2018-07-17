@@ -74,9 +74,6 @@ app.use(i18n({
   textsVarName: 'TRANSLATION',
 }));
 
-// After allllll that above middleware, we finally handle our own routes!
-app.use('/', routes);
-
 // 301 redirect from no-www domain to www domain
 app.use((req, res, next) => {
   const host = req.hostname;
@@ -85,6 +82,9 @@ app.use((req, res, next) => {
   }
   return next();
 });
+
+// After allllll that above middleware, we finally handle our own routes!
+app.use('/', routes);
 
 // If that above routes didnt work, we 404 them and forward to error handler
 app.use(errorHandlers.notFound);
