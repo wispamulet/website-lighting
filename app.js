@@ -77,6 +77,15 @@ app.use(i18n({
 // After allllll that above middleware, we finally handle our own routes!
 app.use('/', routes);
 
+// 301 redirect from no-www domain to www domain
+app.use((req, res, next) => {
+  const host = req.hostname;
+  if (host === 'nssled.com') {
+    return res.redirect(301, `http://www.${host}`);
+  }
+  return next();
+});
+
 // If that above routes didnt work, we 404 them and forward to error handler
 app.use(errorHandlers.notFound);
 
