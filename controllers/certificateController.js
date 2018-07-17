@@ -74,5 +74,5 @@ exports.updateCertificate = async (req, res) => {
 
 exports.getCertificates = async (req, res) => {
   const certificates = await Certificate.find();
-  res.render('certificates', { title: 'Certificates', certificates });
+  res.render('certificates', { title: 'Our Certificates', certificates });
 };

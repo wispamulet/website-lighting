@@ -1,0 +1,33 @@
+.team
+  &-wrapper
+    max-width 1200px
+    margin 0 auto
+    padding 5rem 2rem
+  padding 2rem 0
+  display grid
+  grid-template-columns repeat(3, 1fr)
+  grid-gap 3rem
+
+.member
+  &__img
+    width 36rem
+    height 36rem
+    overflow hidden
+    margin-bottom 2rem
+  img
+    transition all .5s ease
+    &:hover
+      transform scale(1.1)
+  h2
+    margin 0
+  h3
+    font-size 1.8rem
+    font-weight 400
+    margin 0
+  &__contact
+    margin 2rem 0
+    // padding 2rem
+    p
+      text-align center
+      margin 0
+      line-height 1.5

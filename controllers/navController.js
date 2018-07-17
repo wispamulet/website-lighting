@@ -7,8 +7,16 @@ exports.index = (req, res) => {
   res.render('index', { title: 'LED corn light bulb, LED garden light, LED street light' });
 };
 
+exports.home = async (req, res) => {
+  res.render('home', { title: 'Home' });
+};
+
 exports.support = async (req, res) => {
-  res.render('support', { title: 'Support'});
+  res.render('support', { title: 'Support' });
+};
+
+exports.team = async (req, res) => {
+  res.render('team', { title: 'Our Team' });
 };
 
 exports.aboutUs = (req, res) => {

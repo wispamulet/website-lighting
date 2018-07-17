@@ -12,13 +12,17 @@
     list-style none
   &__item:hover > &__dropdown
     display block
+  &__item:hover > &__link
+    color: #333
   &__link
+    transition all .5s ease
     height 6.5rem
     text-decoration none
     text-transform uppercase
     color white
     font-size 1.4rem
     font-weight 600
+    letter-spacing 1px
     position relative
     display flex
     justify-content center
@@ -38,6 +42,7 @@
       text-transform capitalize
       padding 2rem 1rem
       width 15rem
+      letter-spacing 1px
       background white
       color $orange
       display block

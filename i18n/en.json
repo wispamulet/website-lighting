@@ -43,7 +43,11 @@
       "DROPDOWN": [
         {
           "SLUG": "/support/certificates",
-          "TITLE": "Certificates"
+          "TITLE": "Our Certificates"
+        },
+        {
+          "SLUG": "/support/team",
+          "TITLE": "Our Team"
         }
       ]
     },

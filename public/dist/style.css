@@ -1034,13 +1034,18 @@ body.rb--hide .rb__btn {
 .nav__item:hover > .nav__dropdown {
   display: block;
 }
+.nav__item:hover > .nav__link {
+  color: #333;
+}
 .nav__link {
+  transition: all 0.5s ease;
   height: 6.5rem;
   text-decoration: none;
   text-transform: uppercase;
   color: #fff;
   font-size: 1.4rem;
   font-weight: 600;
+  letter-spacing: 1px;
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -1061,6 +1066,7 @@ body.rb--hide .rb__btn {
   text-transform: capitalize;
   padding: 2rem 1rem;
   width: 15rem;
+  letter-spacing: 1px;
   background: #fff;
   color: #f08519;
   display: block;
@@ -1469,7 +1475,7 @@ template {
 }
 .products__banner {
   height: 30rem;
-  background: url("/images/photos/products.jpg") center 35%;
+  background: url("/images/photos/products.jpg") center 45%;
 }
 .products__banner::after {
   background: rgba(0,0,0,0.5);
@@ -2050,6 +2056,10 @@ template {
       grid-template-columns: 1fr;
   grid-gap: 2rem;
 }
+.support__banner {
+  height: 30rem;
+  background: url("/images/photos/support.jpg") center 90%;
+}
 .support__qa h2 {
   text-align: left;
   font-size: 2.2rem;
@@ -2085,6 +2095,48 @@ template {
   .support {
     padding: 5rem 2rem;
   }
+}
+.team {
+  padding: 2rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+}
+.team-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+.member__img {
+  width: 36rem;
+  height: 36rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.member img {
+  transition: all 0.5s ease;
+}
+.member img:hover {
+  -ms-transform: scale(1.1);
+      transform: scale(1.1);
+}
+.member h2 {
+  margin: 0;
+}
+.member h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0;
+}
+.member__contact {
+  margin: 2rem 0;
+}
+.member__contact p {
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
 }
 html {
   font-family: 'Lato', 'sans-serif';

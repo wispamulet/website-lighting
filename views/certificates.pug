@@ -6,9 +6,9 @@ include mixins/_certificateCard
 block content
   .content
     +pswp()
-    .projects__banner
+    .support__banner
       .banner
     .certificates
-      h2 Certificates
+      h2= title
       each certificate in certificates
         +certificateCard(certificate)
