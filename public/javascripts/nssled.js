@@ -10,7 +10,9 @@ import { queryOpen, queryClose } from './modules/query';
 import skype from './modules/skype';
 import setDimension from './modules/about-video';
 import fixNav from './modules/fixNav';
-import { addItem, addSpecification, addBulletPoint, addPhoto } from './modules/formAddItem';
+import {
+  addItem, addSpecification, addBulletPoint, addPhoto
+} from './modules/formAddItem';
 
 // toggle navbar button
 if (window.innerWidth < 800) {
@@ -54,7 +56,7 @@ initPhotoSwipeFromDOM('.intro__product-gallery');
 initPhotoSwipeFromDOM('.certificate-gallery');
 
 // contact page google map
-makeMap($('#map'));
+makeMap($('#map'), $('#map-2'));
 
 // toggle query display
 $$('.query__btn').forEach((btn) => {

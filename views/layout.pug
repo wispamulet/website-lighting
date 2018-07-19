@@ -111,14 +111,14 @@ html(lang="en")
                 i.fab.fa-youtube
           .socials__twitter
           .socials__fb
-        .contact
+        .contact__footer
           //- .contact__about
             img(src="/images/photos/new-sunshine.png")
             p.contact__about__description= TRANSLATION.CONTACT_DESCRIPTION
             a(href="/about-us").contact__about__more= TRANSLATION.READ_MORE
               span
                 i.fa.fa-long-arrow-alt-right
-          .contact__info
+          .contact__footer__info
             //- h2= TRANSLATION.CONTACT_INFO
             p= TRANSLATION.CONTACT_INFO_ADDR_US
             p
@@ -139,10 +139,10 @@ html(lang="en")
             p
               span Tel.&nbsp;
               a(href=`tel:${TRANSLATION.CONTACT_INFO_TEL_CN2}`)= TRANSLATION.CONTACT_INFO_TEL_CN2
-          .contact__email
+          .contact__footer__email
             //- h2= TRANSLATION.CONTACT_US
             .query__btn= TRANSLATION.SEND_EMAIL
-            a(href="/contact").contact__about__more= TRANSLATION.READ_MORE
+            a(href="/contact").contact__footer__more= TRANSLATION.READ_MORE
               span
                 i.fa.fa-long-arrow-alt-right
         .copyright

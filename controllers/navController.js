@@ -24,7 +24,7 @@ exports.aboutUs = (req, res) => {
 };
 
 exports.contact = (req, res) => {
-  res.render('contact', { title: 'Contact' });
+  res.render('contact', { title: 'Contact Us' });
 };
 
 exports.queryValidate = async (req, res, next) => {
