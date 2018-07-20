@@ -49,8 +49,12 @@ mixin productForm(product = {})
     - const power = product.power || []
     - const base_type = product.base_type || []
     - const lumen = product.lumen || []
-    - const dim = product.dim || []
-    - const ctn_size = product.ctn_size || []
+    - const dim_width = product.dim_width || []
+    - const dim_height = product.dim_height || []
+    - const dim_depth = product.dim_depth || []
+    - const ctn_size_width = product.ctn_size_width || []
+    - const ctn_size_height = product.ctn_size_height || []
+    - const ctn_size_depth = product.ctn_size_depth || []
     - const ctn_quantity = product.ctn_quantity || []
     - const ctn_weight = product.ctn_weight || []
     - const length = model_no.length
@@ -65,10 +69,18 @@ mixin productForm(product = {})
           input#base_type(type="text" name="base_type" value=base_type[l])
           label(for="lumen") Lumens (LM)
           input#lumen(type="text" name="lumen" value=lumen[l])
-          label(for="dim") Dimensions (in)
-          input#dim(type="text" name="dim" value=dim[l])
-          label(for="ctn_size") CTN Size (in)
-          input#ctn_size(type="text" name="ctn_size" value=ctn_size[l])
+          label(for="dim_width") Width (in)
+          input#dim_width(type="text" name="dim_width" value=dim_width[l])
+          label(for="dim_height") Height (in)
+          input#dim_height(type="text" name="dim_height" value=dim_height[l])
+          label(for="dim_depth") Depth (in)
+          input#dim_depth(type="text" name="dim_depth" value=dim_depth[l])
+          label(for="ctn_size_depth_width") CTN Width (in)
+          input#ctn_size_width(type="text" name="ctn_size_width" value=ctn_size_width[l])
+          label(for="ctn_size_height") CTN Height (in)
+          input#ctn_size_height(type="text" name="ctn_size_height" value=ctn_size_height[l])
+          label(for="ctn_size_depth") CTN Depth (in)
+          input#ctn_size_depth(type="text" name="ctn_size_depth" value=ctn_size_depth[l])
           label(for="ctn_quantity") CTN Quantity (pcs)
           input#ctn_quantity(type="text" name="ctn_quantity" value=ctn_quantity[l])
           label(for="ctn_weight") CTN Weight (lbs)

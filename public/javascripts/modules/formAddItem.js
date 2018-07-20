@@ -22,10 +22,18 @@ function addSpecification(element) {
     <input id="base_type" type="text" name="base_type">
     <label for="lumen">Lumens (LM)</label>
     <input id="lumen" type="text" name="lumen">
-    <label for="dim">Dimensions (in)</label>
-    <input id="dim" type="text" name="dim">
-    <label for="ctn_size">CTN Size (in)</label>
-    <input id="ctn_size" type="text" name="ctn_size">
+    <label for="dim_width">Width (in)</label>
+    <input id="dim_width" type="text" name="dim_width">
+    <label for="dim_height">Height (in)</label>
+    <input id="dim_height" type="text" name="dim_height">
+    <label for="dim_depth">Depth (in)</label>
+    <input id="dim_depth" type="text" name="dim_depth">
+    <label for="ctn_size_width">CTN Width (in)</label>
+    <input id="ctn_size_width" type="text" name="ctn_size_width">
+    <label for="ctn_size_height">CTN Height (in)</label>
+    <input id="ctn_size_height" type="text" name="ctn_size_height">
+    <label for="ctn_size_depth">CTN Depth (in)</label>
+    <input id="ctn_size_depth" type="text" name="ctn_size_depth">
     <label for="ctn_quantity">CTN Quantity (pcs)</label>
     <input id="ctn_quantity" type="text" name="ctn_quantity">
     <label for="ctn_weight">CTN Weight (lbs)</label>

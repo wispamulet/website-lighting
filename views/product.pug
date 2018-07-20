@@ -70,13 +70,14 @@ block content
                     td
                       p= product.model_no[j]
                     td
-                      p= product.power[j]
+                      p #{product.power[j]}W
                     td
                       p= product.base_type[j]
                     td
-                      p= product.lumen[j]
+                      p #{product.lumen[j]}LM
                     td
-                      p= product.dim[j]
+                      p #{product.dim_width[j]}x#{product.dim_height[j]}x#{product.dim_depth[j]}in
+                      p #{parseFloat((product.dim_width[j] * 2.54).toFixed(2))}x#{parseFloat((product.dim_height[j] * 2.54).toFixed(2))}x#{parseFloat((product.dim_depth[j] * 2.54).toFixed(2))}cm
                     - j++
         .single__table__ctn
           table
@@ -92,11 +93,13 @@ block content
               while m < product.model_no.length
                 tr
                   td
-                    p= product.ctn_size[m]
+                    p #{product.ctn_size_width[m]}x#{product.ctn_size_height[m]}x#{product.ctn_size_depth[m]}in
+                    p #{parseFloat((product.ctn_size_width[m] * 2.54).toFixed(2))}x#{parseFloat((product.ctn_size_height[m] * 2.54).toFixed(2))}x#{parseFloat((product.ctn_size_depth[m] * 2.54).toFixed(2))}in
                   td
-                    p= product.ctn_quantity[m]
+                    p #{product.ctn_quantity[m]}pcs
                   td
-                    p= product.ctn_weight[m]
+                    p #{product.ctn_weight[m]}lbs
+                    p #{parseFloat((product.ctn_weight[m] * 0.453592).toFixed(2))}kg
                   - m++
 
     .about__video

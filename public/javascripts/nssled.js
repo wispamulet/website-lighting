@@ -11,13 +11,16 @@ import skype from './modules/skype';
 import setDimension from './modules/about-video';
 import fixNav from './modules/fixNav';
 import {
-  addItem, addSpecification, addBulletPoint, addPhoto
+  addItem,
+  addSpecification,
+  addBulletPoint,
+  addPhoto,
 } from './modules/formAddItem';
 
 // toggle navbar button
 if (window.innerWidth < 800) {
   $('header button[aria-expanded]').on('click', toggle);
-  $$('header span[aria-expanded]').forEach((btn) => {
+  $$('header span[aria-expanded]').forEach(btn => {
     btn.on('click', toggle);
   });
 }
@@ -59,7 +62,7 @@ initPhotoSwipeFromDOM('.certificate-gallery');
 makeMap($('#map'), $('#map-2'));
 
 // toggle query display
-$$('.query__btn').forEach((btn) => {
+$$('.query__btn').forEach(btn => {
   btn.on('click', () => {
     queryOpen($('.query-wrapper'), $('.query-overlay'));
   });
@@ -84,19 +87,19 @@ $$('button[aria-controls="support-list"]').on('click', toggle);
 
 // form add specification
 if ($('#add-specification')) {
-  $('#add-specification').on('click', function () {
+  $('#add-specification').on('click', function() {
     addSpecification(this);
   });
 }
 // form add bullet point
 if ($('#add-bullet-point')) {
-  $('#add-bullet-point').on('click', function () {
+  $('#add-bullet-point').on('click', function() {
     addBulletPoint(this);
   });
 }
 // form add photo
 if ($('#add-photo')) {
-  $('#add-photo').on('click', function () {
+  $('#add-photo').on('click', function() {
     addPhoto(this);
   });
 }

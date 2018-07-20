@@ -7,12 +7,12 @@ const productSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
-    required: 'Please enter a product name!'
+    required: 'Please enter a product name!',
   },
   slug: String,
   type: {
     type: String,
-    required: 'Please choose a type!'
+    required: 'Please choose a type!',
   },
   bullet_points: {
     type: [String],
@@ -20,93 +20,109 @@ const productSchema = new mongoose.Schema({
   },
   voltage: {
     type: String,
-    trim: true
+    trim: true,
   },
   ip_rate: {
     type: String,
-    trim: true
+    trim: true,
   },
   cri: {
     type: String,
-    trim: true
+    trim: true,
   },
   lifespan: {
     type: String,
-    trim: true
+    trim: true,
   },
   application: {
     type: String,
-    trim: true
+    trim: true,
   },
   color_temperatures: {
     type: [String],
-    trim: true
+    trim: true,
   },
   certificates: {
     type: [String],
-    trim: true
+    trim: true,
   },
   model_no: {
     type: [String],
-    trim: true
+    trim: true,
   },
   power: {
-    type: [String],
-    trim: true
+    type: [Number],
+    trim: true,
   },
   base_type: {
     type: [String],
-    trim: true
+    trim: true,
   },
   lumen: {
-    type: [String],
-    trim: true
+    type: [Number],
+    trim: true,
   },
-  dim: {
-    type: [String],
-    trim: true
+  dim_width: {
+    type: [Number],
+    trim: true,
   },
-  ctn_size: {
-    type: [String],
-    trim: true
+  dim_height: {
+    type: [Number],
+    trim: true,
+  },
+  dim_depth: {
+    type: [Number],
+    trim: true,
+  },
+  ctn_size_width: {
+    type: [Number],
+    trim: true,
+  },
+  ctn_size_height: {
+    type: [Number],
+    trim: true,
+  },
+  ctn_size_depth: {
+    type: [Number],
+    trim: true,
   },
   ctn_quantity: {
-    type: [String],
-    trim: true
+    type: [Number],
+    trim: true,
   },
   ctn_weight: {
-    type: [String],
-    trim: true
+    type: [Number],
+    trim: true,
   },
   brochure: {
     type: String,
-    trim: true
+    trim: true,
   },
   photos: [
     {
       original: {
         type: String,
-        trim: true
+        trim: true,
       },
       dimension: {
         w: String,
-        h: String
+        h: String,
       },
-      thumbnail: String
-    }
+      thumbnail: String,
+    },
   ],
   descriptions: {
     type: [String],
-    trim: true
+    trim: true,
   },
   author: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
-    required: 'You must supply an author!'
-  }
+    required: 'You must supply an author!',
+  },
 });
 
-productSchema.pre('save', async function (next) {
+productSchema.pre('save', async function(next) {
   if (!this.isModified('name')) {
     next(); // skip it!
     return;
@@ -120,11 +136,11 @@ productSchema.pre('save', async function (next) {
   next();
 });
 
-productSchema.statics.getTypesList = function () {
+productSchema.statics.getTypesList = function() {
   return this.aggregate([
     { $unwind: '$type' },
     { $group: { _id: '$type', count: { $sum: 1 } } },
-    { $sort: { count: -1 } }
+    { $sort: { count: -1 } },
   ]);
 };
 
