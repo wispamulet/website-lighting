@@ -14,11 +14,11 @@ router.get('/', navController.home);
 router.get('/home', catchErrors(navController.home));
 router.get('/about-us', navController.aboutUs);
 router.get('/support', navController.support);
-// router.get(
-//   '/support/team',
-//   authController.isLoggedIn,
-//   navController.team
-// );
+router.get(
+  '/support/team',
+  authController.isLoggedIn,
+  navController.team
+);
 router.get('/contact', navController.contact);
 router.post(
   '/query',

@@ -42,6 +42,10 @@
         {
           "SLUG": "/support/certificates",
           "TITLE": "Our Certificates"
+        },
+        {
+          "SLUG": "/support/team",
+          "TITLE": "Our Team"
         }
       ]
     },
