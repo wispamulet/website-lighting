@@ -1,12 +1,12 @@
-function addItem(element, html, css) {
-  if (!element) return;
+// function addItem(element, html, css) {
+//   if (!element) return;
 
-  const div = document.createElement('div');
-  div.classList.add(css);
-  div.innerHTML = html;
+//   const div = document.createElement('div');
+//   div.classList.add(css);
+//   div.innerHTML = html;
 
-  element.parentNode.insertBefore(div, element);
-}
+//   element.parentNode.insertBefore(div, element);
+// }
 
 function addSpecification(element) {
   const div = document.createElement('div');
@@ -71,4 +71,30 @@ function addPhoto(element) {
   element.parentNode.insertBefore(div, element);
 }
 
-export { addItem, addSpecification, addBulletPoint, addPhoto };
+function addIes(element) {
+  const div = document.createElement('div');
+  div.classList.add('form-ies');
+
+  div.innerHTML = `
+    <button class="form__remove" onclick="this.parentElement.remove()"> &times; </button>
+    <label for="ies">IES</label>
+    <input type="file" name="ies" accept=".pdf">
+  `;
+
+  element.parentNode.insertBefore(div, element);
+}
+
+function addIst(element) {
+  const div = document.createElement('div');
+  div.classList.add('form-ist');
+
+  div.innerHTML = `
+    <button class="form__remove" onclick="this.parentElement.remove()"> &times; </button>
+    <label for="ist">IST</label>
+    <input type="file" name="ist" accept=".pdf">
+  `;
+
+  element.parentNode.insertBefore(div, element);
+}
+
+export { addSpecification, addBulletPoint, addPhoto, addIes, addIst };

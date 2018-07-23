@@ -11,10 +11,11 @@ import skype from './modules/skype';
 import setDimension from './modules/about-video';
 import fixNav from './modules/fixNav';
 import {
-  addItem,
   addSpecification,
   addBulletPoint,
   addPhoto,
+  addIes,
+  addIst,
 } from './modules/formAddItem';
 
 // toggle navbar button
@@ -101,5 +102,17 @@ if ($('#add-bullet-point')) {
 if ($('#add-photo')) {
   $('#add-photo').on('click', function() {
     addPhoto(this);
+  });
+}
+// form add IES
+if ($('#add-ies')) {
+  $('#add-ies').on('click', function() {
+    addIes(this);
+  });
+}
+// form add IST
+if ($('#add-ist')) {
+  $('#add-ist').on('click', function() {
+    addIst(this);
   });
 }

@@ -15,7 +15,7 @@ mixin productCard(product = {})
             != h.icon('pencil')
       h2= product.name
       .product__detail
-        li #{product.power.join(' | ')}W
+        li= product.power.map(p => `${p}W`).join(' | ')
         //- li= product.color_temperatures.join(' | ')
         //- if product.brochure
           .product__text__button

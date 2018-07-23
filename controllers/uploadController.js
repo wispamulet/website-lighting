@@ -3,10 +3,28 @@ const uuid = require('uuid'); // rename images
 const sizeOf = require('image-size'); // get dimensions of images
 const fs = require('fs'); // handle pdf file
 
-exports.savePdf = (file, req) => {
+exports.saveBrochure = (file, req) => {
   const name = uuid.v4();
   const extension = file.mimetype.split('/')[1];
   req.body.brochure = `${name}.${extension}`;
+  const data = file.buffer;
+  fs.writeFileSync(`./public/uploads/pdf/${name}.${extension}`, data);
+};
+
+exports.saveIes = (file, req) => {
+  const name = uuid.v4();
+  const extension = file.mimetype.split('/')[1];
+  req.body.ies.push(`${name}.${extension}`);
+  // req.body.ies = `${name}.${extension}`;
+  const data = file.buffer;
+  fs.writeFileSync(`./public/uploads/pdf/${name}.${extension}`, data);
+};
+
+exports.saveIst = (file, req) => {
+  const name = uuid.v4();
+  const extension = file.mimetype.split('/')[1];
+  req.body.ist.push(`${name}.${extension}`);
+  // req.body.ies = `${name}.${extension}`;
   const data = file.buffer;
   fs.writeFileSync(`./public/uploads/pdf/${name}.${extension}`, data);
 };
@@ -28,5 +46,7 @@ exports.toUploads = async (file, req, i, dest, width = 350) => {
   const photo = await jimp.read(file.buffer);
   await photo.write(`./public/uploads/${dest}/${req.body.photos[i].original}`);
   const photoThumbnail = await photo.resize(width, jimp.AUTO);
-  await photoThumbnail.write(`./public/uploads/${dest}/${req.body.photos[i].thumbnail}`);
+  await photoThumbnail.write(
+    `./public/uploads/${dest}/${req.body.photos[i].thumbnail}`
+  );
 };

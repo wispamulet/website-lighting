@@ -120,4 +120,29 @@ mixin productForm(product = {})
       span (Recommended)
     input#brochure(type="file" name="brochure" accept=".pdf")
     p= product.brochure
+    //- IES
+    h3 Illuminating Engineering Society
+    - let i = 0
+    - const ies = product.ies || []
+      while i < ies.length
+        .form-ies
+          button.form__remove(onClick="this.parentElement.remove()") &times;
+          label(for="ies") IES
+          input#ies(type="file" name="ies" accept=".pdf")
+          p= product.ies[i]
+          - i++
+    input#add-ies.button(type="button" value="Add An IES")
+    //- IST
+    h3 Integrating Sphere test
+    - let s = 0
+    - const ist = product.ist || []
+      while s < ist.length
+        .form-ist
+          button.form__remove(onClick="this.parentElement.remove()") &times;
+          label(for="ist") IST
+          input#ist(type="file" name="ist" accept=".pdf")
+          p= product.ist[s]
+          - s++
+    input#add-ist.button(type="button" value="Add An IST")
+
     input.button(type="submit" value="Save")

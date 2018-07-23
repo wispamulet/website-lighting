@@ -115,6 +115,14 @@ const productSchema = new mongoose.Schema({
     type: [String],
     trim: true,
   },
+  ies: {
+    type: [String],
+    trim: true,
+  },
+  ist: {
+    type: [String],
+    trim: true,
+  },
   author: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',

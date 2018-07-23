@@ -183,7 +183,9 @@
   grid-gap: 1rem;
   margin-bottom: 2rem;
 }
-.form-photo {
+.form-photo,
+.form-ies,
+.form-ist {
   position: relative;
   display: -ms-grid;
   display: grid;
@@ -1788,7 +1790,7 @@ template {
   }
 }
 .single {
-  padding: 5rem 0;
+  padding: 5rem 1rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -1796,7 +1798,6 @@ template {
   grid-gap: 2rem;
 }
 .single__descriptions {
-  padding: 1rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -1863,7 +1864,6 @@ template {
       align-content: flex-start;
 }
 .single-gallery__container {
-  padding: 1rem;
   width: 40rem;
   display: -ms-flexbox;
   display: flex;
@@ -1881,51 +1881,70 @@ template {
 }
 .single__table {
   grid-column: 1/-1;
-  display: -ms-grid;
-  display: grid;
   -ms-grid-columns: 3fr 2fr;
       grid-template-columns: 3fr 2fr;
 }
-.single__table h2 {
+.single__table,
+.single__report {
+  display: -ms-grid;
+  display: grid;
+}
+.single__table h2,
+.single__report h2 {
   grid-column: 1/-1;
 }
-.single__table p {
+.single__table p,
+.single__report p {
   text-align: center;
   font-size: 1.3rem;
   margin: 0;
 }
 .single__table__details table,
-.single__table__ctn table {
+.single__report__details table,
+.single__table__ctn table,
+.single__report__ctn table {
   border-collapse: collapse;
   width: 100%;
 }
 .single__table__details table tr:first-child,
-.single__table__ctn table tr:first-child {
+.single__report__details table tr:first-child,
+.single__table__ctn table tr:first-child,
+.single__report__ctn table tr:first-child {
   background: #f08519;
   color: #fff;
 }
 .single__table__details table tr:first-child p,
-.single__table__ctn table tr:first-child p {
+.single__report__details table tr:first-child p,
+.single__table__ctn table tr:first-child p,
+.single__report__ctn table tr:first-child p {
   font-size: 1.5rem;
   font-weight: 700;
 }
 .single__table__details table tr:nth-child(2n+2),
-.single__table__ctn table tr:nth-child(2n+2) {
+.single__report__details table tr:nth-child(2n+2),
+.single__table__ctn table tr:nth-child(2n+2),
+.single__report__ctn table tr:nth-child(2n+2) {
   background: #dfdfdf;
 }
 .single__table__details table tr:nth-child(2n+3),
-.single__table__ctn table tr:nth-child(2n+3) {
+.single__report__details table tr:nth-child(2n+3),
+.single__table__ctn table tr:nth-child(2n+3),
+.single__report__ctn table tr:nth-child(2n+3) {
   background: #eee;
 }
 .single__table__details table tr td,
-.single__table__ctn table tr td {
+.single__report__details table tr td,
+.single__table__ctn table tr td,
+.single__report__ctn table tr td {
   padding: 1rem;
 }
-.single__table--head {
+.single__table--head,
+.single__report--head {
   background: #f08519;
   color: #fff;
 }
-.single__table--head p {
+.single__table--head p,
+.single__report--head p {
   font-weight: 500;
 }
 @media (max-width: 800px) {

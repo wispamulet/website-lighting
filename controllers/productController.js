@@ -24,6 +24,8 @@ const multerOption = {
 exports.multer = multer(multerOption).fields([
   { name: 'photos', maxCount: 7 },
   { name: 'brochure', maxCount: 1 },
+  { name: 'ies', maxCount: 10 },
+  { name: 'ist', maxCount: 10 },
 ]);
 
 exports.save = async (req, res, next) => {
@@ -35,7 +37,7 @@ exports.save = async (req, res, next) => {
     return;
   }
   if (req.files.brochure) {
-    uploadController.savePdf(req.files.brochure[0], req);
+    uploadController.saveBrochure(req.files.brochure[0], req);
   }
   if (req.files.photos) {
     let i = 0;
@@ -48,6 +50,14 @@ exports.save = async (req, res, next) => {
       uploadController.toUploads(file, req, i, 'products', 400);
       i += 1;
     });
+  }
+  if (req.files.ies) {
+    req.body.ies = [];
+    req.files.ies.map(file => uploadController.saveIes(file, req));
+  }
+  if (req.files.ist) {
+    req.body.ist = [];
+    req.files.ist.map(file => uploadController.saveIst(file, req));
   }
 
   // res.json(req.body);

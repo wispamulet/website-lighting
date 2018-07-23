@@ -38,7 +38,7 @@ block content
         .single__documents
           h2 Documents
           .single__brochure
-            a(href=`uploads/pdf/${product.brochure}`) Download Brochure
+            a(href=`/uploads/pdf/${product.brochure}` target="_blank") Download Brochure
             //- a(href=`/download/${product.brochure}`) Download Brochure
       .single-gallery__container
         .single-gallery(itemscope itemtype="http://schema.org/ImageGallery")
@@ -78,7 +78,7 @@ block content
                     td
                       p #{product.dim_width[j]}x#{product.dim_height[j]}x#{product.dim_depth[j]}in
                       p #{parseFloat((product.dim_width[j] * 2.54).toFixed(2))}x#{parseFloat((product.dim_height[j] * 2.54).toFixed(2))}x#{parseFloat((product.dim_depth[j] * 2.54).toFixed(2))}cm
-                    - j++
+                  - j++
         .single__table__ctn
           table
             tbody
@@ -100,7 +100,40 @@ block content
                   td
                     p #{product.ctn_weight[m]}lbs
                     p #{parseFloat((product.ctn_weight[m] * 0.453592).toFixed(2))}kg
-                  - m++
+                - m++
+
+      .single__report
+        h2 Test Report
+        .single__report__details
+          table
+            tbody
+              tr
+                td
+                  p Model
+                td
+                  p IES
+                td
+                  p Integrating Sphere Test
+              - let n = 0
+              while n < product.model_no.length
+                tr
+                  td
+                    p= product.model_no[n]
+                  td
+                    p
+                      a(href=`/uploads/pdf/${product.ies[n]}` target="_blank") Download
+                  td
+                    p
+                      a(href=`/uploads/pdf/${product.ist[n]}` target="_blank") Download
+                - n++
+                //- tr
+                  td
+                    p 123
+        //- each ies in product.ies
+        //-   .single__ies
+        //-     a(href=`/uploads/pdf/${ies}` target="_blank") Download IES
+        //- each ist in product.ist
+        //-   p= ist
 
     .about__video
       h2 Our new smart LED bulb
