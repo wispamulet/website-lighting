@@ -1070,7 +1070,7 @@ body.rb--hide .rb__btn {
 .nav__dropdown__link {
   text-decoration: none;
   text-transform: capitalize;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   width: 15rem;
   letter-spacing: 1px;
   background: #fff;
