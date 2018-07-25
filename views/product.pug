@@ -121,10 +121,16 @@ block content
                     p= product.model_no[n]
                   td
                     p
-                      a(href=`/uploads/pdf/${product.ies[n]}` target="_blank") Download
+                      if product.ies[n]
+                        a(href=`/uploads/pdf/${product.ies[n]}` target="_blank") Download
+                      else
+                        | Null
                   td
                     p
-                      a(href=`/uploads/pdf/${product.ist[n]}` target="_blank") Download
+                      if product.ist[n]
+                        a(href=`/uploads/pdf/${product.ist[n]}` target="_blank") Download
+                      else
+                        | Null
                 - n++
                 //- tr
                   td
