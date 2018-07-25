@@ -59,7 +59,8 @@ html(lang="en")
             each ITEM in TRANSLATION.MENU
               li.nav__item
                 if ITEM.DROPDOWN
-                  a.nav__link(href=ITEM.SLUG class=(currentPath.startsWith(ITEM.SLUG) ? 'nav__link--active' : ''))
+                  //- a.nav__link(href=ITEM.SLUG class=(currentPath.startsWith(ITEM.SLUG) ? 'nav__link--active' : ''))
+                  a.nav__link(class=(currentPath.startsWith(ITEM.SLUG) ? 'nav__link--active' : ''))
                     span.nav__title #{ITEM.TITLE}
                     span.down
                       i.fa.fa-angle-down

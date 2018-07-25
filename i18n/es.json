@@ -28,6 +28,10 @@
         {
           "SLUG": "/products/Smart LED",
           "TITLE": "LED inteligente"
+        },
+        {
+          "SLUG": "/products",
+          "TITLE": "All Products"
         }
       ]
     },
@@ -39,6 +43,10 @@
       "SLUG": "/support",
       "TITLE": "apoyo",
       "DROPDOWN": [
+        {
+          "SLUG": "/support",
+          "TITLE": "Payment Methods"
+        },
         {
           "SLUG": "/support/certificates",
           "TITLE": "Our Certificates"

@@ -4,15 +4,17 @@ const mail = require('../handlers/mail');
 const h = require('../helpers');
 
 exports.index = (req, res) => {
-  res.render('index', { title: 'LED corn light bulb, LED garden light, LED street light' });
+  res.render('index', {
+    title: 'LED corn light bulb, LED garden light, LED street light',
+  });
 };
 
 exports.home = async (req, res) => {
   res.render('home', { title: 'Home' });
 };
 
-exports.support = async (req, res) => {
-  res.render('support', { title: 'Support' });
+exports.payment = async (req, res) => {
+  res.render('payment', { title: 'Q & A' });
 };
 
 exports.team = async (req, res) => {
@@ -33,16 +35,17 @@ exports.queryValidate = async (req, res, next) => {
 
   const recaptcha = new reCAPTCHA({ // eslint-disable-line
     siteKey: process.env.SITE_KEY,
-    secretKey: process.env.SECRET_KEY
+    secretKey: process.env.SECRET_KEY,
   });
 
   // validate recaptcha on server side
-  await recaptcha.validateRequest(req)
+  await recaptcha
+    .validateRequest(req)
     .then(() => {
       // res.json({ formSubmit: true });
       next();
     })
-    .catch((errorCodes) => {
+    .catch(errorCodes => {
       // res.json({
       //   formSubmit: false,
       //   errors: recaptcha.translateErrors(errorCodes)
@@ -68,9 +71,12 @@ exports.query = async (req, res) => {
   await mail.query({
     query,
     subject,
-    filename: 'query'
+    filename: 'query',
   });
 
-  req.flash('success', 'Successfully send the query! We will send you a feedback as soon as possible.');
+  req.flash(
+    'success',
+    'Successfully send the query! We will send you a feedback as soon as possible.'
+  );
   res.redirect('back');
 };
