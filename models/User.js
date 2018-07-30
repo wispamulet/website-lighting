@@ -13,19 +13,19 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     trim: true,
     validate: [validator.isEmail, 'Invalid Email Address!'],
-    required: 'Please supply an email address!'
+    required: 'Please supply an email address!',
   },
   name: {
     type: String,
     required: 'Please supply a name!',
-    trim: true
+    trim: true,
   },
   level: Number,
   resetPasswordToken: String,
-  resetPasswordExpires: Date
+  resetPasswordExpires: Date,
 });
 
-userSchema.pre('save', async function (next) {
+userSchema.pre('save', async function(next) {
   // 1 for admin
   // 10 for staff
   // 20 for the others

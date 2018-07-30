@@ -18,16 +18,24 @@ exports.validateRegister = (req, res, next) => {
   req.sanitizeBody('email').normalizeEmail({
     remove_dots: false,
     remove_extension: false,
-    gmail_remove_subaddress: false
+    gmail_remove_subaddress: false,
   });
   req.checkBody('password', 'Password cannot be blank!').notEmpty();
-  req.checkBody('password-confirm', 'Confirm password cannot be blank').notEmpty();
-  req.checkBody('password-confirm', 'Oops! Your password do not match.').equals(req.body.password);
+  req
+    .checkBody('password-confirm', 'Confirm password cannot be blank')
+    .notEmpty();
+  req
+    .checkBody('password-confirm', 'Oops! Your password do not match.')
+    .equals(req.body.password);
 
   const errors = req.validationErrors();
   if (errors) {
     req.flash('error', errors.map(err => err.msg));
-    res.render('register', { title: 'Register', body: req.body, flashes: req.flash() });
+    res.render('register', {
+      title: 'Register',
+      body: req.body,
+      flashes: req.flash(),
+    });
     return;
   }
   next();
@@ -50,7 +58,7 @@ exports.account = (req, res) => {
 exports.updateAccount = async (req, res) => {
   const updates = {
     name: req.body.name,
-    email: req.body.email
+    email: req.body.email,
   };
 
   const user = await User.findOneAndUpdate(

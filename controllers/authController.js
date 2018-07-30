@@ -11,7 +11,7 @@ exports.login = passport.authenticate('local', {
   failureRedirect: '/login',
   failureFlash: 'Failed Login!',
   successRedirect: '/home',
-  successFlash: 'You are now logged in!'
+  successFlash: 'You are now logged in!',
 });
 
 exports.logout = (req, res) => {
@@ -22,7 +22,7 @@ exports.logout = (req, res) => {
 };
 
 exports.isLoggedIn = (req, res, next) => {
-  if (req.isAuthenticated() && req.user.level === 1) {
+  if (req.isAuthenticated() && req.user.level <= 20) {
     next();
     return;
   }
@@ -46,13 +46,15 @@ exports.forgot = async (req, res) => {
   user.resetPasswordExpires = Date.now() + 7200000; // 2 hours from now
   await user.save();
   // 3. Send them an email with the token
-  const resetURL = `http://${req.headers.host}/account/reset/${user.resetPasswordToken}`;
+  const resetURL = `http://${req.headers.host}/account/reset/${
+    user.resetPasswordToken
+  }`;
 
   await mail.send({
     user,
     subject: 'Password Reset',
     resetURL,
-    filename: 'password-reset'
+    filename: 'password-reset',
   });
 
   req.flash('success', `You have been emailed a password reset link.`);
@@ -64,7 +66,7 @@ exports.reset = async (req, res) => {
   // res.json(req.params);
   const user = await User.findOne({
     resetPasswordToken: req.params.token,
-    resetPasswordExpires: { $gt: Date.now() }
+    resetPasswordExpires: { $gt: Date.now() },
   });
 
   if (!user) {
@@ -88,7 +90,7 @@ exports.confirmPasswords = (req, res, next) => {
 exports.update = async (req, res) => {
   const user = await User.findOne({
     resetPasswordToken: req.params.token,
-    resetPasswordExpires: { $gt: Date.now() }
+    resetPasswordExpires: { $gt: Date.now() },
   });
 
   if (!user) {
@@ -105,7 +107,10 @@ exports.update = async (req, res) => {
   const updatedUser = await user.save();
   await req.login(updatedUser);
 
-  req.flash('success', '😛 Nice! Your password has been reset! You are now logged in!');
+  req.flash(
+    'success',
+    '😛 Nice! Your password has been reset! You are now logged in!'
+  );
   res.redirect('/');
 };
 
