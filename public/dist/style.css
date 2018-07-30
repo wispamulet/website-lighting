@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700);@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);.about__us {
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);.about__us {
   max-width: 1200px;
   padding: 5rem 0;
   margin: 0 auto;
@@ -1488,14 +1488,9 @@ template {
 }
 .products .product {
   background: #fff;
-  position: relative;
   outline: 1px solid #f08519;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.products .product:hover {
-  top: -2px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 .products .product__img {
   height: 25rem;
@@ -1621,7 +1616,6 @@ template {
 .projects .project {
   position: relative;
   background: #fff;
-  position: relative;
   top: 0;
   text-decoration: none;
   color: #444;
@@ -1630,10 +1624,6 @@ template {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-}
-.projects .project:hover {
-  top: -2px;
-  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
 }
 .projects .project-gallery figure {
   margin: 0;
