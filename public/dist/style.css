@@ -1576,26 +1576,29 @@ template {
 .project-types {
   grid-column: 1/-1;
   margin: 3rem 0;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  display: -ms-flexbox;
+  display: flex;
+}
+.project-type__text {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d8d8d8;
+  transition: all 0.2s ease-out;
+}
+.project-type__count {
+  display: inline-block;
+  border: 1px solid #d8d8d8;
+  padding: 0.5rem 1rem;
 }
 .project__link {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 2rem;
-      grid-template-columns: 1fr 2rem;
-  grid-gap: 2rem;
   font-size: 1.8rem;
   text-decoration: none;
   color: #3a3a3a;
-  border: 1px solid #d8d8d8;
-  padding: 0.5rem 1rem;
-  transition: all 0.2s ease-out;
+  margin-right: 2rem;
 }
-.project__link:hover,
-.project__link--active {
+.project__link:hover .project-type__text,
+.project__link--active .project-type__text {
+  border-color: #f08519;
   background: #f08519;
   color: #fff;
 }

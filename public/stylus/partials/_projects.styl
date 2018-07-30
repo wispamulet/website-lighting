@@ -3,22 +3,39 @@
   &-types
     grid-column 1 / -1
     margin 3rem 0
-    display grid
-    grid-template-columns repeat(auto-fill, minmax(15rem, 1fr))
+    // display grid
+    // grid-template-columns repeat(auto-fill, minmax(15rem, 1fr))
+    display flex
+  &-type
+    &__text
+      display inline-block
+      padding .5rem 1rem
+      border 1px solid #d8d8d8
+      transition all .2s ease-out
+      // background $orange
+      // color #fff
+    &__count
+      display inline-block
+      border 1px solid #d8d8d8
+      padding .5rem 1rem
   &__link
-    display grid
-    grid-template-columns 1fr 2rem
-    grid-gap 2rem
+    // display grid
+    // grid-template-columns 1fr 2rem
+    // grid-gap 2rem
     font-size 1.8rem
     text-decoration none
     color #3a3a3a
     // background white
-    border 1px solid #d8d8d8
-    padding .5rem 1rem
-    transition all .2s ease-out
+    // border 1px solid #d8d8d8
+    margin-right 2rem
+    // padding .5rem 1rem
+    // transition all .2s ease-out
     &:hover, &--active
-      background $orange
-      color white
+      .project-type
+        &__text
+          border-color $orange
+          background $orange
+          color #fff
 
 .gallery
   @extend .inner-2
