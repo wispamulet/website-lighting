@@ -1578,6 +1578,8 @@ template {
   margin: 3rem 0;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .project-type__text {
   display: inline-block;
@@ -1594,7 +1596,7 @@ template {
   font-size: 1.8rem;
   text-decoration: none;
   color: #3a3a3a;
-  margin-right: 2rem;
+  margin: 0 1.5rem 1rem 0;
 }
 .project__link:hover .project-type__text,
 .project__link--active .project-type__text {
