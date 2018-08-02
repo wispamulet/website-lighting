@@ -279,14 +279,18 @@
 }
 .contact__title p {
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.5;
   font-size: 1.6rem;
+}
+.contact__title p span {
+  font-style: italic;
+  color: #333;
+}
+.contact__title p a {
+  text-decoration: underline !important;
 }
 .contact__btn {
   margin-top: 3rem;
-}
-.contact__addr {
-  font-style: italic;
 }
 .error {
   font-size: 1.5rem;
