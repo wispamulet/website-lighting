@@ -2118,18 +2118,36 @@ template {
   padding: 2rem 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (minmax(26rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
   grid-gap: 3rem;
 }
-.team-wrapper {
+.team-wrapper,
+.team-more {
   max-width: 1200px;
   margin: 0 auto;
   padding: 5rem 2rem;
 }
+.team-more {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-top: 0;
+}
+.member {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+}
 .member__img {
-  width: 36rem;
-  height: 36rem;
+  width: 26.5rem;
+  height: 26.5rem;
   overflow: hidden;
   margin-bottom: 2rem;
 }

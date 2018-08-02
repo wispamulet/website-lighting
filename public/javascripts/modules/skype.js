@@ -9,10 +9,10 @@
 function skype() {
   console.log('skype start');
   Skype.ui({
-    name: "chat",
-    element: "SkypeButton_Call_live:newsunshine06_1",
-    participants: ["live:newsunshine06"],
-    imageSize: 24
+    name: 'chat',
+    element: 'SkypeButton_Call_live:newsunshine06_1',
+    participants: ['live:newsunshine06'],
+    imageSize: 24,
   });
 }
 
