@@ -38,8 +38,12 @@
       ]
     },
     {
-      "SLUG": "/gallery",
-      "TITLE": "gallery"
+      "SLUG": "/projects",
+      "TITLE": "projects"
+    },
+    {
+      "SLUG": "/news",
+      "TITLE": "news"
     },
     {
       "SLUG": "/support",
