@@ -9,10 +9,6 @@
     "node": true
   },
   "rules": {
-    "linebreak-style": [
-      2,
-      "windows"
-    ],
     "no-plusplus": 0,
     "no-debugger": 0,
     "no-unused-vars": [

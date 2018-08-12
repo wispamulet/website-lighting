@@ -2,6 +2,7 @@ const express = require('express');
 const navController = require('../controllers/navController');
 const productController = require('../controllers/productController');
 const projectController = require('../controllers/projectController');
+const newsController = require('../controllers/newsController');
 const certificateController = require('../controllers/certificateController');
 const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
@@ -9,18 +10,12 @@ const { catchErrors } = require('../handlers/errorHandlers');
 
 const router = express.Router();
 
-// navbar
+// home
 router.get('/', navController.home);
 router.get('/home', catchErrors(navController.home));
+
+// about us
 router.get('/about-us', navController.aboutUs);
-router.get('/support/payment', navController.payment);
-router.get('/support/team', authController.isLoggedIn, navController.team);
-router.get('/contact', navController.contact);
-router.post(
-  '/query',
-  catchErrors(navController.queryValidate),
-  catchErrors(navController.query)
-);
 
 // products
 router.get(
@@ -68,7 +63,12 @@ router.post(
   catchErrors(projectController.updateProject)
 );
 
-// support/certificates
+// news
+router.get('/news', catchErrors(newsController.news));
+
+// support
+router.get('/support/payment', navController.payment);
+router.get('/support/team', authController.isLoggedIn, navController.team);
 router.get('/support/certificates', certificateController.getCertificates);
 router.get(
   '/add-certificate',
@@ -90,6 +90,16 @@ router.post(
   certificateController.multer,
   catchErrors(certificateController.save),
   catchErrors(certificateController.updateCertificate)
+);
+
+// contact
+router.get('/contact', navController.contact);
+
+// query
+router.post(
+  '/query',
+  catchErrors(navController.queryValidate),
+  catchErrors(navController.query)
 );
 
 // user
