@@ -7,25 +7,25 @@ const projectSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
-    required: 'Please enter a project name!'
+    required: 'Please enter a project name!',
   },
   slug: String,
   type: {
     type: [String],
-    required: 'Please choose a type!'
+    required: 'Please choose a type!',
   },
   photos: [
     {
       original: {
         type: String,
-        trim: true
+        trim: true,
       },
       dimension: {
         w: String,
-        h: String
+        h: String,
       },
-      thumbnail: String
-    }
+      thumbnail: String,
+    },
   ],
   // descriptions: {
   //   type: [String],
@@ -34,11 +34,11 @@ const projectSchema = new mongoose.Schema({
   author: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
-    required: 'You must supply an author!'
-  }
+    required: 'You must supply an author!',
+  },
 });
 
-projectSchema.pre('save', async function (next) {
+projectSchema.pre('save', async function(next) {
   if (!this.isModified('name')) {
     next();
     return;
@@ -52,11 +52,11 @@ projectSchema.pre('save', async function (next) {
   next();
 });
 
-projectSchema.statics.getTypesList = function () {
+projectSchema.statics.getTypesList = function() {
   return this.aggregate([
     { $unwind: '$type' },
     { $group: { _id: '$type', count: { $sum: 1 } } },
-    { $sort: { count: -1 } }
+    { $sort: { count: -1 } },
   ]);
 };
 
