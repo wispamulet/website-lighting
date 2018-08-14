@@ -5,10 +5,10 @@ function slideshow(slides, dots) {
     return;
   }
 
-  slides.forEach((slide) => {
+  slides.forEach(slide => {
     slide.classList.remove('slide--show');
   });
-  dots.forEach((dot) => {
+  dots.forEach(dot => {
     dot.classList.remove('dot--active');
   });
 

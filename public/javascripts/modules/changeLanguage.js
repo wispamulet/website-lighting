@@ -8,7 +8,7 @@ function getSiblings(elem, query) {
 function changeLanguage() {
   this.classList.add('language--active');
   const siblings = getSiblings(this, 'a');
-  siblings.forEach((sibling) => {
+  siblings.forEach(sibling => {
     sibling.classList.remove('language--active');
   });
 }
