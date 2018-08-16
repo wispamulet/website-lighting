@@ -42,10 +42,6 @@
       "TITLE": "projects"
     },
     {
-      "SLUG": "/news",
-      "TITLE": "news"
-    },
-    {
       "SLUG": "/support",
       "TITLE": "support",
       "DROPDOWN": [

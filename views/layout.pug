@@ -6,6 +6,8 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="keywords" content="led retrofit, led corn bulb, high lumen led, corn bulb, led corn lamp, high wattage led, corn light bulb, led corn lights")
+    meta(name="description" content="New Sunshine Lighting Inc. base in Los Angeles of USA. Our factory is base in Shenzhen & Dongguan of China. Our products cover LED corn bulbs, E26/27 & E39/40 base retrofit kits, smart LED lighting, commercial lighting, street lamp.")
     title= `${title} | ${h.siteName}`
     link(rel="stylesheet", href="/dist/photoswipe/photoswipe.css")
     link(rel="stylesheet", href="/dist/photoswipe/default-skin/default-skin.css")
@@ -29,10 +31,9 @@ html(lang="en")
             a(href="/")
               img(src="/images/photos/new-sunshine.png")
               img.mobile(src="/images/photos/NS.png")
-          .user
+          //- .user
             if user
               if user.level === 1
-                //- a(href="/add-slideshow") Add Slideshow
                 a(href="/add-product") Add Product
                 a(href="/add-project") Add Project
                 a(href="/add-certificate") Add Certificate

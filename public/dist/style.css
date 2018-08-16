@@ -2122,8 +2122,8 @@ template {
   padding: 2rem 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(26rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+  -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;
 }
 .team-wrapper,
@@ -2150,8 +2150,8 @@ template {
       align-items: center;
 }
 .member__img {
-  width: 26.5rem;
-  height: 26.5rem;
+  width: 20rem;
+  height: 20rem;
   overflow: hidden;
   margin-bottom: 2rem;
 }
