@@ -1,0 +1,24 @@
+mixin newsForm(news = {})
+  form.add__form.editor__form(action=`/add-news/` method="POST")
+    label(for="type")
+      | Type&nbsp;
+      span (Required)
+    - const choices = ['LED Corn Light', 'LED Garden Light', 'LED Retrofit Kit', 'Smart LED']
+    - const type = ''
+    .types
+      each choice in choices
+        .type
+          input(type="radio" id=choice value=choice name="type" checked=(type.includes(choice)) required)
+          label(for=choice) #{choice}
+    label(for="title")
+      | Title&nbsp;
+      span (Required)
+    input#title(type="text" name="title")
+    #news-editor
+    input.button#news-editor-confirm(type="button" value="Confirm")
+    input.button#news-editor-clear(type="button" value="Clear")
+    input.button#news-editor-json(type="button" value="JSON")
+    textarea#news-editor-html(name="html", cols="30", rows="10")
+    textarea#news-editor-txt(name="txt", cols="30", rows="10")
+
+    input.button(type="submit" value="Save")

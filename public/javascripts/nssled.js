@@ -17,6 +17,18 @@ import {
   addIes,
   addIst,
 } from './modules/formAddItem';
+import createEditor from './modules/editor';
+import getNews from './modules/getNews';
+
+// Editor
+if ($('#news-editor')) {
+  createEditor();
+}
+
+// get news article on new page
+if ($('#news__article')) {
+  getNews();
+}
 
 // toggle navbar button
 if (window.innerWidth < 800) {

@@ -1,0 +1,13 @@
+extends layout
+
+include mixins/_newsCard
+include mixins/_newsCategoryCard
+
+block content
+  .news-wrapper
+    .news__content
+      h2= n.title
+      #news__article
+    .news__categories
+      each t in types
+        +newsCategoryCard(t)

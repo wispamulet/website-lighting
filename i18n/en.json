@@ -42,6 +42,10 @@
       "TITLE": "projects"
     },
     {
+      "SLUG": "/news",
+      "TITLE": "News"
+    },
+    {
       "SLUG": "/support",
       "TITLE": "support",
       "DROPDOWN": [

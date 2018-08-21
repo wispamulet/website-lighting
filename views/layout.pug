@@ -31,16 +31,17 @@ html(lang="en")
             a(href="/")
               img(src="/images/photos/new-sunshine.png")
               img.mobile(src="/images/photos/NS.png")
-          //- .user
+          .user
             if user
               if user.level === 1
                 a(href="/add-product") Add Product
                 a(href="/add-project") Add Project
                 a(href="/add-certificate") Add Certificate
+                a(href="/add-news") Add News
               a(href="/account") Account
               a(href="/logout") Log Out
             else
-              a(href='/register') Register
+              //- a(href='/register') Register
               a(href='/login') Log In
           .language
             a(href=`${currentPath}?clang=en` class=(lang === 'en' ? 'language--active' : '')) EN

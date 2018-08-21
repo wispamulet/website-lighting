@@ -78,7 +78,12 @@ exports.getProjectsByType = async (req, res) => {
   // console.log(types);
 
   // res.json(types);
-  res.render('projects', { title: `${type || 'Gallery'}`, type, types, projects }); // eslint-disable-line
+  res.render('projects', {
+    title: `${type || 'Gallery'}`,
+    type,
+    types,
+    projects,
+  });
 };
 
 exports.editProject = async (req, res) => {

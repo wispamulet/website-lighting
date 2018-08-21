@@ -119,7 +119,7 @@
   padding: 1rem;
   border: 1px solid #d8d8d8;
 }
-.add__form span {
+.add__form label span {
   font-size: 1.2rem;
   background: #f08519;
   padding: 2px;
@@ -1222,6 +1222,38 @@ body.rb--hide .rb__btn {
   [aria-expanded="true"] .fa-angle-down {
     display: none;
   }
+}
+.news {
+  display: -ms-flexbox;
+  display: flex;
+}
+.news-wrapper {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 5rem 3rem;
+}
+.news__content {
+  -ms-flex: 3;
+      flex: 3;
+  margin-right: 4rem;
+}
+.news__categories {
+  -ms-flex: 1;
+      flex: 1;
+  text-transform: uppercase;
+}
+.new {
+  margin-bottom: 4rem;
+}
+.new h2 {
+  text-align: left;
+  font-weight: normal;
+}
+.new h2 a {
+  font-size: 2.8rem;
+}
+.new p {
+  font-size: 1.4rem;
 }
 html {
   box-sizing: border-box;

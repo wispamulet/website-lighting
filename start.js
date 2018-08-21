@@ -26,6 +26,7 @@ require('./models/Product');
 require('./models/Project');
 require('./models/User');
 require('./models/Certificate');
+require('./models/News');
 
 // Start our app!
 const app = require('./app');

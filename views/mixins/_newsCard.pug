@@ -1,0 +1,9 @@
+mixin newsCard(n = {})
+  .new
+    h2
+      a(href=`/news/${n.type}/${n.slug}`)= n.title
+    p
+      | Posted on&nbsp;
+      | #{n.date.toDateString()}
+    .new__article
+      p= n.txt.split(' ').slice(0, 40).join(' ').concat('...')

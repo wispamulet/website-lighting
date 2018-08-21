@@ -3,8 +3,9 @@ const navController = require('../controllers/navController');
 const productController = require('../controllers/productController');
 const projectController = require('../controllers/projectController');
 const certificateController = require('../controllers/certificateController');
-// const userController = require('../controllers/userController');
-// const authController = require('../controllers/authController');
+const newsController = require('../controllers/newsController');
+const userController = require('../controllers/userController');
+const authController = require('../controllers/authController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 const router = express.Router();
@@ -19,7 +20,7 @@ router.get('/about-us', navController.aboutUs);
 // products
 router.get(
   '/add-product',
-  // authController.isLoggedIn,
+  authController.isLoggedIn,
   productController.addProduct
 );
 router.post(
@@ -43,7 +44,7 @@ router.post(
 // projects
 router.get(
   '/add-project',
-  // authController.isLoggedIn,
+  authController.isLoggedIn,
   projectController.addProject
 );
 router.post(
@@ -63,19 +64,19 @@ router.post(
 );
 
 // news
-// router.get('/news', catchErrors(newsController.news));
+router.get('/add-news', authController.isLoggedIn, newsController.addNews);
+router.post('/add-news', newsController.createNews);
+router.get('/news', catchErrors(newsController.getNewsByType));
+router.get('/news/:type', catchErrors(newsController.getNewsByType));
+router.get('/news/:type/:slug', catchErrors(newsController.getNewsBySlug));
 
 // support
 router.get('/support/payment', navController.payment);
-router.get(
-  '/support/team',
-  // authController.isLoggedIn,
-  navController.team
-);
+router.get('/support/team', authController.isLoggedIn, navController.team);
 router.get('/support/certificates', certificateController.getCertificates);
 router.get(
   '/add-certificate',
-  // authController.isLoggedIn,
+  authController.isLoggedIn,
   certificateController.addCertificate
 );
 router.post(
@@ -113,17 +114,22 @@ router.post(
 //   catchErrors(userController.register), // 2. Register the user
 //   authController.login // 3. Log them in
 // );
-// router.get('/login', userController.loginForm);
-// router.post('/login', authController.login);
-// router.get('/logout', authController.logout);
-// router.get('/account', userController.account);
-// router.post('/account', catchErrors(userController.updateAccount));
-// router.post('/account/forgot', catchErrors(authController.forgot));
-// router.get('/account/reset/:token', catchErrors(authController.reset));
-// router.post(
-//   '/account/reset/:token',
-//   authController.confirmPasswords,
-//   catchErrors(authController.update)
-// );
+router.get('/login', userController.loginForm);
+router.post('/login', authController.login);
+router.get('/logout', authController.logout);
+router.get('/account', userController.account);
+router.post('/account', catchErrors(userController.updateAccount));
+router.post('/account/forgot', catchErrors(authController.forgot));
+router.get('/account/reset/:token', catchErrors(authController.reset));
+router.post(
+  '/account/reset/:token',
+  authController.confirmPasswords,
+  catchErrors(authController.update)
+);
+
+/*
+  API
+*/
+router.get('/api/get/news', catchErrors(newsController.renderNews));
 
 module.exports = router;
