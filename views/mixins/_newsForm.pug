@@ -20,5 +20,9 @@ mixin newsForm(news = {})
     input.button#news-editor-json(type="button" value="JSON")
     textarea#news-editor-html(name="html", cols="30", rows="10")
     textarea#news-editor-txt(name="txt", cols="30", rows="10")
+    label(for="keywords") Keywords
+    input#keywords(type="text" name="keywords")
+    label(for="description") Description
+    input#description(type="text" name="description")
 
     input.button(type="submit" value="Save")

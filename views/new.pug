@@ -1,13 +1,22 @@
-extends layout
+extends layout-news
 
-include mixins/_newsCard
 include mixins/_newsCategoryCard
 
 block content
+  .projects__banner
+    .banner
   .news-wrapper
-    .news__content
-      h2= n.title
-      #news__article
-    .news__categories
-      each t in types
-        +newsCategoryCard(t)
+    .news
+      .news__content
+        .new
+          h2
+            a(href=`/news/${n.type}/${n.slug}`)= n.title
+          p
+            | Posted on&nbsp;
+            | #{n.date.toDateString()}
+          #news__article
+      .news__categories
+        p Categories
+        ul
+          each t in types
+            +newsCategoryCard(t)

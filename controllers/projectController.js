@@ -53,7 +53,7 @@ exports.createProject = async (req, res) => {
 
   req.flash('success', `Successfully create <strong>${project.name}</strong>!`);
   // res.redirect(`/project/${project.slug}`);
-  res.redirect('/gallery');
+  res.redirect('/projects');
 };
 
 // exports.getProjects = async (req, res) => {

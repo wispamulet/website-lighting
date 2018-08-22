@@ -197,8 +197,8 @@
   margin-bottom: 2rem;
 }
 .certificates {
-  max-width: 120rem;
-  padding: 5rem 2rem;
+  max-width: 1200px;
+  padding: 3rem 2rem;
   margin: 0 auto;
 }
 .certificate {
@@ -250,7 +250,7 @@
 .contact {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
 }
 .contact > p {
   line-height: 1.5;
@@ -1228,13 +1228,13 @@ body.rb--hide .rb__btn {
   display: flex;
 }
 .news-wrapper {
-  max-width: 120rem;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 5rem 3rem;
+  padding: 3rem 2rem;
 }
 .news__content {
-  -ms-flex: 3;
-      flex: 3;
+  -ms-flex: 4;
+      flex: 4;
   margin-right: 4rem;
 }
 .news__categories {
@@ -1242,8 +1242,38 @@ body.rb--hide .rb__btn {
       flex: 1;
   text-transform: uppercase;
 }
+.news__categories p {
+  font-size: 2rem;
+  background: #cecece;
+  font-style: italic;
+  color: #fff;
+  padding: 1rem;
+  letter-spacing: 1px;
+}
+.news__categories ul {
+  padding-left: 1rem;
+}
+.news__categories li {
+  list-style: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  font-size: 1.8rem;
+}
+.news__categories li:hover {
+  background: #f08519;
+}
+.news__categories li:hover a {
+  color: #fff;
+}
+.news__active {
+  background: #f08519 !important;
+  font-style: italic;
+}
+.news__active a {
+  color: #fff !important;
+}
 .new {
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 .new h2 {
   text-align: left;
@@ -1252,8 +1282,39 @@ body.rb--hide .rb__btn {
 .new h2 a {
   font-size: 2.8rem;
 }
+.new h2 a:hover {
+  text-decoration: underline;
+  color: #f08519;
+}
 .new p {
   font-size: 1.4rem;
+}
+#news__article {
+  margin-top: 4rem;
+}
+#news__article p {
+  font-size: 1.6rem;
+}
+#news__article h1,
+#news__article h2,
+#news__article h3,
+#news__article h4,
+#news__article h5,
+#news__article h6 {
+  font-weight: bold;
+  padding-top: 2rem;
+}
+#news__article h1 {
+  font-size: 2.2rem;
+}
+#news__article h2 {
+  font-size: 2rem;
+}
+#news__article h3 {
+  font-size: 1.8rem;
+}
+#news__article h4 {
+  font-size: 1.6rem;
 }
 html {
   box-sizing: border-box;
@@ -1510,7 +1571,7 @@ template {
   margin-bottom: 3rem;
 }
 .products-container {
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
 }
 .products h2 {
   grid-column: 1/-1;
@@ -1641,7 +1702,7 @@ template {
   color: #fff;
 }
 .gallery {
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
 }
 .projects {
   display: -ms-grid;
@@ -2102,7 +2163,7 @@ template {
 }
 .support {
   max-width: 1000px;
-  padding: 5rem;
+  padding: 3rem 2rem;
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
@@ -2162,7 +2223,7 @@ template {
 .team-more {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
 }
 .team-more {
   display: -ms-flexbox;

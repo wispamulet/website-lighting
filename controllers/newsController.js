@@ -36,7 +36,7 @@ exports.getNewsBySlug = async (req, res) => {
   const n = await News.findOne({
     slug,
   });
-  res.render('new', { title: `${n.title}`, n, type, types });
+  res.render('new', { title: n.title, n, type, types });
 };
 
 exports.renderNews = async (req, res) => {

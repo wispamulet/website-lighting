@@ -1,2 +1,3 @@
 mixin newsCategoryCard(t = {})
-  li= t._id
+  li(class=(type === t._id ? 'news__active' : ''))
+    a(href=`/news/${t._id}`)=t._id

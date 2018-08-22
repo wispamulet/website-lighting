@@ -5,13 +5,15 @@ include mixins/_newsCategoryCard
 
 block content
   .content
+    .projects__banner
+      .banner
     .news-wrapper
-      h2= title
       .news
         .news__content
           each n in news
             +newsCard(n)
         .news__categories
           p Categories
-          each t in types
-            +newsCategoryCard(t)
+          ul
+            each t in types
+              +newsCategoryCard(t)

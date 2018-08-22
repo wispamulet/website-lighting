@@ -8,8 +8,11 @@ function createEditor() {
   const txt = document.querySelector('#news-editor-txt');
 
   const editor = new E('#news-editor');
+  editor.customConfig.uploadImgShowBase64 = true;
+  // editor.customConfig.debug = true;
+  // editor.customConfig.uploadImgServer = '/uploads/';
   editor.create();
-  console.log('Create editor!');
+  // console.log('Create editor!');
 
   btnConfirm.addEventListener('click', () => {
     // alert(editor.txt.html());

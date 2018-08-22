@@ -24,6 +24,14 @@ const newSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
+  keywords: {
+    type: String,
+    trim: true,
+  },
+  description: {
+    type: String,
+    trim: true,
+  },
   date: {
     type: Date,
     default: Date.now,
