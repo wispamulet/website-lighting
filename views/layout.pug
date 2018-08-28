@@ -13,10 +13,11 @@ html(lang="en")
     link(rel="stylesheet", href="/dist/photoswipe/default-skin/default-skin.css")
     link(rel="stylesheet", href="/dist/style.css")
     link(rel="shortcut icon" type="image/png" href="/images/icons/NS.png")
+    script(src="/dist/chatra/chatra.js")
 
   body.rb--hide
     block header
-      #skype
+      //- #skype
         div(id="SkypeButton_Call_live:newsunshine06_1")
       .rb
         //- button#weixin.rb__btn
@@ -193,5 +194,6 @@ html(lang="en")
       script(defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js")
       script(src=`https://maps.googleapis.com/maps/api/js?key=${process.env.MAP_KEY}&libraries=places`)
       script(src="https://www.google.com/recaptcha/api.js")
-      script(src="https://secure.skypeassets.com/i/scom/js/skype-uri.js")
+      //- script(src="https://secure.skypeassets.com/i/scom/js/skype-uri.js")
+      script(src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b84fd39347b2a6b")
       script(src="/dist/App.bundle.js")

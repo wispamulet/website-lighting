@@ -7,9 +7,9 @@ import initPhotoSwipeFromDOM from './modules/photoswipe';
 import makeMap from './modules/map';
 import { rbToggle, toTop } from './modules/toTop';
 import { queryOpen, queryClose } from './modules/query';
-import skype from './modules/skype';
+// import skype from './modules/skype';
 import setDimension from './modules/about-video';
-import fixNav from './modules/fixNav';
+// import fixNav from './modules/fixNav';
 import {
   addSpecification,
   addBulletPoint,
@@ -35,9 +35,9 @@ const bottomOfNav = nav.offsetTop + nav.offsetHeight;
 const header = $('header');
 const topOfHeader = header.offsetTop;
 
-window.on('scroll', () => {
-  fixNav(bottomOfNav, topOfNav, nav, topOfHeader, header);
-});
+// window.on('scroll', () => {
+//   fixNav(bottomOfNav, topOfNav, nav, topOfHeader, header);
+// });
 
 // scroll to top button
 window.on('scroll', () => {
@@ -80,7 +80,7 @@ $('.query__remove').on('click', () => {
 });
 
 // run skype
-skype();
+// skype();
 
 // set video's width and height on about-us page
 setDimension($('.about__video iframe'));
