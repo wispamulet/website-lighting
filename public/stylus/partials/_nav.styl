@@ -2,8 +2,8 @@
   top -65px
   transition top .5s ease-in-out
   justify-self center
-  background $orange
-  // flex 1
+  // background $orange
+  flex 1
   z-index 49
   display flex
   justify-content center
@@ -13,13 +13,13 @@
   &__item:hover > &__dropdown
     display block
   &__item:hover > &__link
-    color: #333
+    border-bottom 2px solid $orange
   &__link
-    transition all .5s ease
     height 6.5rem
     text-decoration none
     text-transform uppercase
-    color white
+    // color white
+    color #6c6c6c
     font-size 1.4rem
     font-weight 600
     letter-spacing 1px
@@ -27,8 +27,8 @@
     display flex
     justify-content center
     align-items center
-    // &--active
-    //   // color $orange
+    &--active
+      border-bottom 2px solid $orange
     // &:hover
     //   background #000
   &__dropdown
@@ -40,20 +40,20 @@
     &__link
       text-decoration none
       text-transform capitalize
-      padding 1.5rem 1rem
-      width 15rem
-      letter-spacing 1px
-      background white
-      color $orange
+      padding 1rem
+      width 14rem
+      // background $orange
+      // color #fff
+      background #fff
+      color #6c6c6c
       display block
-      border-bottom 1px solid rgba(0, 0, 0, .1)
+      // border-bottom 1px solid rgba(0, 0, 0, .1)
       font-size 1.3rem
       font-weight 600
       // span
       //   padding-left 2rem
       &:hover
-        color #fff
-        background #000
+        background #efefef
   .down
     padding-left 1rem
     &--mobile

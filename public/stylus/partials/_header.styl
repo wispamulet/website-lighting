@@ -1,8 +1,7 @@
 header
   z-index 49
   // padding 1rem 2rem
-  background $orange
-  color white
+  // background $orange
   display grid !important
   grid-template-columns 1fr
   // grid-template-rows auto 1fr
@@ -12,55 +11,76 @@ header
 
 .top
   // padding 1rem 0
-  height 6rem
-  background #f7ecdd
-  display grid
-  grid-template-columns repeat(10, 1fr)
-  align-items center
+  // background #fff
+  // background #f5f5f5
+  border-bottom 1px solid #e7e7e7
+  height 10rem
+  display flex
+  &__left, &__right
+    flex 1
+    display flex
+    justify-content flex-end
+    align-items center
+  &__right
+    justify-content flex-start
   &__logo
-    .mobile
-      display none
-    grid-column 3 / span 2
+    width 8rem
+    // height 9.2rem
+  &__brand
+    padding 1rem
+    h2
+      text-transform capitalize
+      text-align left
+      margin-top 0
+      margin-bottom 1rem
+      color $orange
+    p
+      margin 0
+      color #000
+  &__tel
+    display flex
+    align-items center
+    span
+      color green
+      font-size 3rem
     a
-      display flex
-      align-items center
+      font-size 2.5rem
   .user
-    grid-column 5 / -3
-    justify-self flex-end
     > *
       padding 0 .5rem
   .language
     padding-left 2rem
-    grid-column-start -3
     &--active
       color $orange !important
+    a
+      font-size 1.2rem
     span
       color #b3b3b3
-  a
-    color #000
-    text-decoration none
-    font-size 1.2rem
+  // a
+  //   color #000
+  //   text-decoration none
+  //   font-size 1.2rem
 
-@media (max-width: 1000px)
-  .top
-    &__logo
-      grid-column 3 / span 3
-    .user
-      grid-column 6 / -3
+// @media (max-width: 1000px)
+//   .top
+//     &__logo
+//       grid-column 3 / span 3
+//     .user
+//       grid-column 6 / -3
 
 
-@media (max-width: 800px)
-  .top
-    &__logo
-      grid-column 2 / span 3
-    .user
-      grid-column 5 / -3
+// @media (max-width: 800px)
+//   .top
+//     &__logo
+//       grid-column 2 / span 3
+//     .user
+//       grid-column 5 / -3
 
-@media (max-width: 600px)
-  .top
-    &__logo
-      img
-        display none
-      .mobile
-        display block
-        height 5rem
+// @media (max-width: 600px)
+//   .top
+//     &__logo
+//       img
+//         display none
+//       .mobile
+//         display block
+//         height 5rem
