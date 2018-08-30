@@ -892,7 +892,8 @@ body.rb--hide .rb__btn {
 .single {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 5rem;
+  padding: 3rem 5rem;
+  min-height: 600px;
 }
 .inner-2,
 .products-container,
@@ -1282,6 +1283,7 @@ body.rb--hide .rb__btn {
 }
 #news__article p {
   font-size: 1.6rem;
+  letter-spacing: 1px;
 }
 #news__article h1,
 #news__article h2,
