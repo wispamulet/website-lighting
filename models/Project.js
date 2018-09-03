@@ -27,10 +27,10 @@ const projectSchema = new mongoose.Schema({
       thumbnail: String,
     },
   ],
-  // descriptions: {
-  //   type: [String],
-  //   trim: true,
-  // },
+  descriptions: {
+    type: [String],
+    trim: true,
+  },
   author: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',

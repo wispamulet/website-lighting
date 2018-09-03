@@ -1671,7 +1671,6 @@ template {
 .project-type__text {
   display: inline-block;
   padding: 0.5rem 1rem;
-  border: 1px solid #d8d8d8;
   transition: all 0.2s ease-out;
 }
 .project-type__count {
@@ -1683,11 +1682,17 @@ template {
   font-size: 1.8rem;
   text-decoration: none;
   color: #3a3a3a;
-  margin: 0 1.5rem 1rem 0;
+}
+.project__link:last-child .project-type__text {
+  border: 1px solid #d8d8d8;
+}
+.project__link:not(:last-child) .project-type__text {
+  border: 1px solid #d8d8d8;
+  border-right: none;
 }
 .project__link:hover .project-type__text,
 .project__link--active .project-type__text {
-  border-color: #f08519;
+  border-color: #f08519 !important;
   background: #f08519;
   color: #fff;
 }

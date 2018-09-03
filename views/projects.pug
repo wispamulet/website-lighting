@@ -13,12 +13,12 @@ block content
       +pswp()
       .projects
         .project-types
-          //- a.project__link(href=`/gallery` class=(currentPath === '/gallery' ? 'project__link--active' : ''))
-          //-   span.project-type__text All
+          a.project__link(href=`/projects` class=(currentPath === '/projects' ? 'project__link--active' : ''))
+            span.project-type__text All
           //-   span.project-type__count= all
           each t in types
             a.project__link(href=`/projects/${t._id}` class=(t._id === type ? 'project__link--active' : ''))
               span.project-type__text= t._id
-              span.project-type__count= t.count
+              //- span.project-type__count= t.count
         each project in projects
           +projectCard(project)

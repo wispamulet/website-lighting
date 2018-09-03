@@ -3,7 +3,7 @@ mixin projectForm(project = {})
     label(for="type")
       | Type&nbsp;
       span (Required)
-    - const choices = ['Indoor', 'Outdoor', 'Street', 'Commercial', 'Farm', 'Garden', 'Park', 'Parking lot', 'Residential', 'Tunnel', 'Warehouse', 'Others']
+    - const choices = ['Farm house', 'Garden', 'Gas station', 'Indoor', 'Office', 'Parking lot', 'Street', 'Supermarket', 'Warehouse']
     - const type = project.type || []
     .types
       each choice in choices

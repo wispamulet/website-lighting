@@ -11,8 +11,8 @@
     &__text
       display inline-block
       padding .5rem 1rem
-      border 1px solid #d8d8d8
       transition all .2s ease-out
+      // border 1px solid #d8d8d8
       // background $orange
       // color #fff
     &__count
@@ -26,15 +26,24 @@
     font-size 1.8rem
     text-decoration none
     color #3a3a3a
-    // background white
     // border 1px solid #d8d8d8
-    margin 0 1.5rem 1rem 0
+    // background white
+    // margin 0 1.5rem 1rem 0
     // padding .5rem 1rem
     // transition all .2s ease-out
+    &:last-child
+      .project-type
+        &__text
+          border 1px solid #d8d8d8
+    &:not(:last-child)
+      .project-type
+        &__text
+          border 1px solid #d8d8d8
+          border-right none
     &:hover, &--active
       .project-type
         &__text
-          border-color $orange
+          border-color $orange !important
           background $orange
           color #fff
 
