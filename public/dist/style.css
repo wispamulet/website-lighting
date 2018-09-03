@@ -1663,6 +1663,7 @@ template {
 .project-types {
   grid-column: 1/-1;
   margin: 3rem 0;
+  justify-self: center;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
