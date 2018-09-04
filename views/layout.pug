@@ -24,9 +24,14 @@ html(lang="en")
         //-   i.fab.fa-weixin
         //- button.rb__btn.query__btn
         //-   i.fa.fa-envelope
-
         button#toTop.rb__btn
           i.fa.fa-angle-up
+      .user__admin
+        if user && user.level === 1
+          a(href="/add-product") Add Product
+          a(href="/add-project") Add Project
+          a(href="/add-certificate") Add Certificate
+          a(href="/add-news") Add News
       header
         .top
           .top__left
@@ -67,16 +72,11 @@ html(lang="en")
               a(href="") +1.201.969.5019
             .user
               if user
-                if user.level === 1
-                  a(href="/add-product") Add Product
-                  a(href="/add-project") Add Project
-                  a(href="/add-certificate") Add Certificate
-                  a(href="/add-news") Add News
                 a(href="/account") Account
                 a(href="/logout") Log Out
-              //- else
+              else
                 //- a(href='/register') Register
-                //- a(href='/login') Log In
+                a(href='/login') Log In
             .language
               a(href=`${currentPath}?clang=en` class=(lang === 'en' ? 'language--active' : '')) EN
               span |
