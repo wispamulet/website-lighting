@@ -930,6 +930,9 @@ body.rb--hide .rb__btn {
 .rb__btn:hover {
   opacity: 1;
 }
+.user {
+  padding: 0.5rem;
+}
 .user__admin {
   position: fixed;
   top: 20%;

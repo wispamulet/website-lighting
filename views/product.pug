@@ -18,8 +18,8 @@ block content
         .single__features
           //- h2 Features
           ul
-            li #{product.power.join(', ')} available
-            li= product.voltage
+            li Wattage: #{product.power.join(', ')}W available
+            li Voltage: #{product.voltage}
             li
               - const ct = product.color_temperatures || []
               span Color Temperature:&nbsp;

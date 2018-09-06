@@ -107,13 +107,13 @@ router.post(
 );
 
 // user
-// router.get('/register', userController.registerForm);
-// router.post(
-//   '/register',
-//   userController.validateRegister, // 1. Validate the registration data
-//   catchErrors(userController.register), // 2. Register the user
-//   authController.login // 3. Log them in
-// );
+router.get('/register', userController.registerForm);
+router.post(
+  '/register',
+  userController.validateRegister, // 1. Validate the registration data
+  catchErrors(userController.register), // 2. Register the user
+  authController.login // 3. Log them in
+);
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);
 router.get('/logout', authController.logout);
