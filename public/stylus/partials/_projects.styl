@@ -86,12 +86,19 @@
       background-repeat no-repeat
       background-position center center
       position relative
+      &:hover
+        .project__caption
+          min-height 100%
     &__caption
+      width 100%
+      min-height 0
       padding 1rem
+      background rgba(0, 0, 0, .5)
       color #fff
       letter-spacing 1px
       position absolute
       bottom 0
+      transition all .5s
     // article
     //   flex 1
     //   display flex

@@ -1756,12 +1756,19 @@ template {
   background-position: center center;
   position: relative;
 }
+.projects .project__img:hover .project__caption {
+  min-height: 100%;
+}
 .projects .project__caption {
+  width: 100%;
+  min-height: 0;
   padding: 1rem;
+  background: rgba(0,0,0,0.5);
   color: #fff;
   letter-spacing: 1px;
   position: absolute;
   bottom: 0;
+  transition: all 0.5s;
 }
 .projects .project__edit {
   width: 3rem;
