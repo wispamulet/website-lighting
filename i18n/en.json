@@ -39,7 +39,45 @@
     },
     {
       "SLUG": "/projects",
-      "TITLE": "projects"
+      "TITLE": "projects",
+      "DROPDOWN": [
+        {
+          "SLUG": "/projects/Farm house",
+          "TITLE": "Farm house"
+        },
+        {
+          "SLUG": "/projects/Garden",
+          "TITLE": "Garden"
+        },
+        {
+          "SLUG": "/projects/Gas station",
+          "TITLE": "Gas station"
+        },
+        {
+          "SLUG": "/projects/Indoor",
+          "TITLE": "Indoor"
+        },
+        {
+          "SLUG": "/projects/Office",
+          "TITLE": "Office"
+        },
+        {
+          "SLUG": "/projects/Parking lot",
+          "TITLE": "Parking lot"
+        },
+        {
+          "SLUG": "/projects/Street",
+          "TITLE": "Street"
+        },
+        {
+          "SLUG": "/projects/Supermarket",
+          "TITLE": "Supermarket"
+        },
+        {
+          "SLUG": "/projects/Warehouse",
+          "TITLE": "Warehouse"
+        }
+      ]
     },
     {
       "SLUG": "/news",

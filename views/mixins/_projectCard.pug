@@ -13,6 +13,7 @@ mixin projectCard(project = {})
                 img(src=`/uploads/projects/${thumbnail || 'default_300x300.jpg'}` itemprop="thumbnail" alt="Image description")
                 if image === images[0]
                   .project__img(style=`background-image: url(/uploads/projects/${thumbnail || 'default_300x300.jpg'})`)
+                    .project__caption= descriptions[0]
               figcaption(itemprop="caption description")= descriptions[i]
             - i += 1;
     if user && project.author.equals(user._id)

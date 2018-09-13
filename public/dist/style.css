@@ -1754,6 +1754,14 @@ template {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  position: relative;
+}
+.projects .project__caption {
+  padding: 1rem;
+  color: #fff;
+  letter-spacing: 1px;
+  position: absolute;
+  bottom: 0;
 }
 .projects .project__edit {
   width: 3rem;
