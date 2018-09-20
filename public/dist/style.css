@@ -2244,13 +2244,13 @@ template {
   padding: 2rem 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-gap: 3rem;
+  -ms-grid-columns: (20rem)[3];
+      grid-template-columns: repeat(3, 20rem);
+  grid-gap: 15rem;
 }
 .team-wrapper,
 .team-more {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 3rem 2rem;
 }

@@ -72,7 +72,7 @@ router.get('/news/:type/:slug', catchErrors(newsController.getNewsBySlug));
 
 // support
 router.get('/support/payment', navController.payment);
-router.get('/support/team', authController.isLoggedIn, navController.team);
+router.get('/support/team', navController.team);
 router.get('/support/certificates', certificateController.getCertificates);
 router.get(
   '/add-certificate',
