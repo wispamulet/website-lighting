@@ -20,6 +20,7 @@ block content
       - const garden = products.filter(elem => elem.type === 'LED Garden Light')
       - const corn = products.filter(elem => elem.type === 'LED Corn Light')
       - const retrofit = products.filter(elem => elem.type === 'LED Retrofit Kit')
+      - const temporary = products.filter(elem => elem.type === 'LED Temporary Work Light')
       - const smart = products.filter(elem => elem.type === 'Smart LED')
         if garden.length !== 0
           .products
@@ -35,6 +36,11 @@ block content
           .products
             h2 LED Retrofit Kit
             each product in retrofit
+              +productCard(product)
+        if temporary.length !== 0
+          .products
+            h2 LED Temporary Work Light
+            each product in temporary
               +productCard(product)
         if smart.length !== 0
           .products

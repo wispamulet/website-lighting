@@ -26,12 +26,16 @@
           "TITLE": "Kit de modificación LED"
         },
         {
+          "SLUG": "products/Luz de trabajo temporal LED",
+          "TITLE": "Luz de trabajo temporal LED"
+        },
+        {
           "SLUG": "/products/Smart LED",
           "TITLE": "LED inteligente"
         },
         {
           "SLUG": "/products",
-          "TITLE": "All Products"
+          "TITLE": "Todos Los Productos"
         }
       ]
     },
@@ -74,8 +78,16 @@
         {
           "SLUG": "/projects/Warehouse",
           "TITLE": "Warehouse"
+        },
+        {
+          "SLUG": "/projects",
+          "TITLE": "Todos Los Proyectos"
         }
       ]
+    },
+    {
+      "SLUG": "/news",
+      "TITLE": "Noticias"
     },
     {
       "SLUG": "/support",
@@ -111,5 +123,6 @@
   "CONTACT_INFO_TEL_CN1": "+86 769 8800 4885",
   "CONTACT_INFO_TEL_CN2": "+86 138 2658 8764",
   "CONTACT_US": "Contáctenos",
-  "SEND_EMAIL": "Enviar un correo electrónico"
+  "SEND_EMAIL": "Enviar un correo electrónico",
+  "ADD": "Agregar Producto"
 }

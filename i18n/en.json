@@ -28,6 +28,10 @@
           "TITLE": "LED Retrofit Kit"
         },
         {
+          "SLUG": "products/LED Temporary Work Light",
+          "TITLE": "LED Temporary Work Light"
+        },
+        {
           "SLUG": "/products/Smart LED",
           "TITLE": "Smart LED"
         },
@@ -76,6 +80,10 @@
         {
           "SLUG": "/projects/Warehouse",
           "TITLE": "Warehouse"
+        },
+        {
+          "SLUG": "/projects",
+          "TITLE": "All Projects"
         }
       ]
     },
@@ -119,5 +127,6 @@
   "CONTACT_INFO_TEL_CN2": "+86 138 2658 8764",
   "CONTACT_US": "Contact us",
   "READ_MORE": "Read more",
-  "SEND_EMAIL": "Send an email"
+  "SEND_EMAIL": "Send an email",
+  "ADD": "Add Product"
 }
