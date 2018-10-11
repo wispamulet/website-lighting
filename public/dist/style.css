@@ -2229,11 +2229,38 @@ template {
   font-style: italic;
   font-weight: bold;
 }
-.support__payment :not(:first-child) {
+.support__payment > :not(:first-child) {
   padding-left: 3rem;
 }
 .support__payment__bank {
   margin-bottom: 3rem;
+}
+.support__payment__credit {
+  display: -ms-flexbox;
+  display: flex;
+}
+.support__payment__credit--l {
+  padding-right: 3rem;
+}
+.support__payment__credit--r {
+  padding: 0 2rem;
+  border: 2px solid #888;
+}
+.support__payment__credit--r p {
+  margin: 0;
+  font-weight: normal !important;
+  font-style: normal !important;
+}
+.support__payment ul {
+  list-style: none;
+  display: -ms-flexbox;
+  display: flex;
+}
+.support__payment ul li {
+  font-weight: normal !important;
+  font-style: italic;
+  font-size: 1.6rem;
+  padding-right: 2rem;
 }
 @media (max-width: 800px) {
   .support {

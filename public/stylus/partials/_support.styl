@@ -27,10 +27,29 @@
     :first-child
       font-style italic
       font-weight bold
-    :not(:first-child)
+    > :not(:first-child)
       padding-left 3rem
     &__bank
       margin-bottom 3rem
+    &__credit
+      display flex
+      &--l
+        padding-right 3rem
+      &--r
+        padding 0 2rem
+        border 2px solid #888
+        p
+          margin  0
+          font-weight normal !important
+          font-style normal !important
+    ul
+      list-style none
+      display flex
+      li
+        font-weight normal !important
+        font-style italic
+        font-size 1.6rem
+        padding-right 2rem
 
 @media (max-width: 800px)
   .support
