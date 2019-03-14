@@ -809,7 +809,7 @@ header {
 }
 @media (max-width: 1000px) {
   .intro__products-wrapper {
-    height: 110rem;
+    height: 150rem;
   }
   .intro__product-wrapper {
     max-width: 70rem;
