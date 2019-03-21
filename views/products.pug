@@ -22,6 +22,7 @@ block content
       - const retrofit = products.filter(elem => elem.type === 'LED Retrofit Kit')
       - const temporary = products.filter(elem => elem.type === 'LED Temporary Work Light')
       - const smart = products.filter(elem => elem.type === 'Emergency light')
+      - const massage = products.filter(elem => elem.type === 'Massage gun')
         if garden.length !== 0
           .products
             h2 LED Garden Light
@@ -47,7 +48,11 @@ block content
             h2 Emergency light
             each product in smart
               +productCard(product)
-
+        if massage.length !== 0
+          .products
+            h2 Massage gun
+            each product in massage
+              +productCard(product)
       //- .products
         each product in products
           +productCard(product)
