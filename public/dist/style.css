@@ -752,8 +752,8 @@ header {
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
   padding: 3rem 5rem;
 }
@@ -809,7 +809,7 @@ header {
 }
 @media (max-width: 1000px) {
   .intro__products-wrapper {
-    height: 150rem;
+    height: 110rem;
   }
   .intro__product-wrapper {
     max-width: 70rem;
@@ -828,7 +828,7 @@ header {
     font-size: 1rem;
   }
   .intro__products-wrapper {
-    height: 300rem;
+    height: 210rem;
   }
   .intro__product-wrapper {
     max-width: 40rem;
